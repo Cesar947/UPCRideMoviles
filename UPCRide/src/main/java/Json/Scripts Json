@@ -1,0 +1,96 @@
+    Modelos post
+
+    //Pasajero
+    {
+
+        "codigo": "u201711033",
+        "correoUPC": "u201711033@upc.edu.pe",
+        "contraseña": "adgasdqwerqwetdg",
+        "nombres": "José Sebastián",
+        "apellidos": "Pinillos Zentento",
+        "ubicacion": "asdgsdgsdgsdvsdsdg",
+        "telefono": "999123512",
+        "distrito": "Carabayllo",
+        "sede": "UPC San Miguel",
+        "ubicacionLongitud": "2.0",
+        "ubicacionLatitud":"6.0"
+    }
+
+    //Conductor
+
+   {
+
+              "codigo": "u201710947",
+              "correoUPC": "u201710947@upc.edu.pe",
+              "contraseña": "adgasdgasdg",
+              "nombres": "César Alejandro",
+              "apellidos": "Pizarro Llanos",
+              "ubicacion": "Casa",
+              "facebook_id": "www.facebook.com",
+              "telefono": "999999999",
+              "distrito": "Magdalena del Mar",
+              "licenciaConducir": "asc124",
+              "sede": "UPC San Miguel",
+              "ubicacionLongitud": "5.0",
+              "ubicacionLatitud":"6.0"
+          }
+
+        //Viaje
+
+       {
+
+               "conductor": {
+                   "id": 1,
+                   "codigo": "U201710061",
+                   "correoUPC": "U201710061@upc.edu.pe",
+                   "contraseña": "xdxdxd5000",
+                   "nombres": "Bryan Antony",
+                   "apellidos": "Miramira Morales",
+                   "ubicacionLatitud": "-11.9909776",
+                   "ubicacionLongitud": "-77.0713316",
+                   "facebook_id": "www.facebook.com",
+                   "telefono": "98720339",
+                   "distrito": "Los Olivos",
+                   "rol": "C",
+                   "licenciaConducir": "X01928374",
+                   "sede": "UPC San Miguel"
+               },
+               "descripcion": "Iré desde Izaguirre hasta la UPC San Miguel. Los espero",
+               "puntoPartida": "Av. Izaguirre",
+               "puntoDestino": "UPC San Miguel",
+               "destinoLatitud": -12.0768117,
+               "destintoLongitud": -77.0958753,
+               "partidaLatitud": -11.9909776,
+               "partidaLongitud": -77.0713316,
+               "horaPartida": "11:00:00",
+               "horaLlegada": "13:00:00",
+               "entrada_salida": 0,
+               "fecha": "2019-06-26",
+               "dia": "Miércoles"
+
+           }
+           SOLICTIAR INCOMPLETO
+        {
+
+              "pasajero":  {
+                 "id": 8,
+                "codigo": "u201711033",
+                "correoUPC": "u201711033@upc.edu.pe",
+                "contraseña": "adgasdqwerqwetdg",
+                "nombres": "José Sebastián",
+                "apellidos": "Pinillos Zentento",
+                "ubicacion": "asdgsdgsdgsdvsdsdg",
+                "telefono": "999123512",
+                "distrito": "Carabayllo",
+                "sede": "UPC San Miguel",
+                "ubicacionLongitud": "2.0",
+                "ubicacionLatitud":"6.0"
+            },
+
+             "mensaje": "Quiero solicitar el viaje y quisiera que el punto de encuentro sea en el Aeropuerto Jorge Chávez",
+                  "confirmacion_conductor":"Pendiente" ,
+                    "punto_encuentro":"Aeropuerto Jorge Chavez",
+                    "encuentro_latitud": -12.0240474,
+                    "encuentro_longitud": -77.1142247,
+                    "fecha": "2019-06-22"
+         }
