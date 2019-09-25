@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("transaccion")
 public class TransaccionController {
 
-   /* private TransaccionService transaccionService;
+   private TransaccionService transaccionService;
 
     @Autowired
     public TransaccionController(TransaccionService transaccionService){
@@ -25,5 +25,6 @@ public class TransaccionController {
     @RequestMapping(path = "/transacciones")
     public Transaccion visualizarTransaccionesPorViaje(@RequestParam(value = "viajeId" , required = true) Integer viajeId) throws Exception {
         return transaccionService.visualizarTransaccionesPorViaje(viajeId);
-    }*/
+    }
+
 }

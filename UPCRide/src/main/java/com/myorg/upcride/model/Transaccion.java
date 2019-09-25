@@ -8,11 +8,12 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 import java.io.Serializable;
 
-@Entity
-@Table(name = "transaccion")
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Entity
+@Table(name = "transaccion")
 public class Transaccion implements Serializable {
 
 

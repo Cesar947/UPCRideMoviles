@@ -4,7 +4,9 @@ import com.myorg.upcride.model.Transaccion;
 import com.myorg.upcride.repository.TransaccionRepository;
 import com.myorg.upcride.service.TransaccionService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class TransaccionServiceImpl implements TransaccionService {
 
 
