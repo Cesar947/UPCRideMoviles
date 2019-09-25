@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">UPCRide</string>
+    <string name="tvInicio">UPCRide</string>
 </resources>
+
