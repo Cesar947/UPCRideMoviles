@@ -16,16 +16,16 @@ import java.io.Serializable;
 @AllArgsConstructor
 public class Rol implements Serializable {
 
+
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name= "rol_id")
     private Integer id;
 
-    @ManyToOne
-    @JoinColumn (name = "cliente_id")
-    private Usuario cliente;
+    @Column (name="descripcion", length = 100, nullable = false)
+    private String descripcion;
 
-    @ManyToOne
-    @JoinColumn (name = "rol_id")
-    private Rol rol;
+
+
 }

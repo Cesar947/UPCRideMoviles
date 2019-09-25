@@ -7,6 +7,8 @@
     <bytecodeTargetLevel>
       <module name="com.myorg.upcride.UPCRide.main" target="1.8" />
       <module name="com.myorg.upcride.UPCRide.test" target="1.8" />
+      <module name="UPCRide.main" target="1.8" />
+      <module name="UPCRide.test" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

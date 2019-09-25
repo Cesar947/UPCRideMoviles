@@ -9,7 +9,7 @@ import javax.persistence.*;
 
 @Entity
 
-@Table(name = "rol")
+@Table(name = "Usuario_X_Rol")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -17,11 +17,17 @@ public class Usuario_X_Rol {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name= "rol_id")
+    @Column(name= "Usuario_x_Rol_id")
     private Integer id;
 
-    @Column (name="descripcion", length = 100, nullable = false)
-    private String descripcion;
+    @ManyToOne
+    @JoinColumn (name = "cliente_id")
+    private Usuario cliente;
+
+    @ManyToOne
+    @JoinColumn (name = "rol_id")
+    private Rol rol;
+
 
 
 
