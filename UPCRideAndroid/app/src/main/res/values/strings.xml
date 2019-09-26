@@ -10,6 +10,7 @@
     <string name="etTelefono">Telefono</string>
     <string name="spSede">Sede</string>
     <string name="tvRegistro">Registro</string>
-    <string name="btnRegistrar">Registrar</string>
+    <string name="btnRegistrar">Siguiente</string>
+    <string name="btnIrRegistro">Registrarme</string>
 </resources>
 
