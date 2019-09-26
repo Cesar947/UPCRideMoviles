@@ -18,7 +18,6 @@ import com.example.upcride.interfaces.UsuarioPlaceHolderApi;
 import com.example.upcride.model.Usuario;
 
 
-import java.lang.reflect.Array;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -68,11 +67,12 @@ public class RegistroGeneral extends AppCompatActivity {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spSede.setAdapter(adapter);
 
-        spSede.setOnItemClickListener(new AdapterView.OnItemSelectedListener() {
+        spSede.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener(
 
+        ) {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-
+                sede = parent.getItemAtPosition(position).toString();
             }
 
             @Override
@@ -82,10 +82,9 @@ public class RegistroGeneral extends AppCompatActivity {
         });
 
 
-
     }
 
-    private void RegistrarPasajero(){
+    private void RegistrarPasajero(View view){
 
         if(etEmail.getText().toString().isEmpty() ||
            etContraseña.getText().toString().isEmpty() ||
@@ -106,11 +105,9 @@ public class RegistroGeneral extends AppCompatActivity {
                 -11.1345235, -77.1213432,
                 etTelefono.getText().toString(),
                 etDistrito.getText().toString(),
-                "P",
-                etDNI.getText().toString(),
-                /* String codigo, String correoUPC, String contraseña, String nombres, String apellidos, double ubicacionLatitud,
-                   double ubicacionLongitud, String telefono, String distrito, char rol, String sede, int dni*/
-
+                'P',
+                sede,
+                Integer.parseInt(etDNI.getText().toString())
         );
 
         Call<Usuario> call = usuarioPlaceHolderApi.registrarPasajero(pasajero);
@@ -119,11 +116,11 @@ public class RegistroGeneral extends AppCompatActivity {
             @Override
             public void onResponse(Call<Usuario> call, Response<Usuario> response) {
                 if(!response.isSuccessful()){
-                    Toast.makeText(getApplicationContext(), response.code(), Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), "No funciono :c", Toast.LENGTH_LONG).show();
                 }
 
-                Usuario pasajeroResponse = response.body();
-
+                Toast.makeText(getApplicationContext(), "Funciono", Toast.LENGTH_LONG).show();
+              /*  Usuario pasajeroResponse = response.body();
                 String content = "";
                 content += "correoUPC: " + pasajeroResponse.getCorreoUPC() + "\n";
                 content += "codigo: " + pasajeroResponse.getCodigo() + "\n";
@@ -133,10 +130,10 @@ public class RegistroGeneral extends AppCompatActivity {
                 content += "distrito: " + pasajeroResponse.getDistrito() + "\n";
                 content += "telefono: " + pasajeroResponse.getTelefono() + "\n";
                 content += "sede: " + pasajeroResponse.getSede() + "\n";
-                content += "rol" + pasajeroResponse.getRol() + "\n";
+                content += "rol" + pasajeroResponse.getRol() + "\n";*/
 
 
-// COMPLETAR CON GOOGLE MAPS EL REGISTRO DE LATITUD Y LONGITUD O EN OTRO ACTIVITY
+
 
             }
 
