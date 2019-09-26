@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">UPCRide</string>
+    <string name="app_name"></string>
     <string name="tvInicio">UPCRide</string>
     <string name="etEmail">Correo UPC</string>
     <string name="etContraseña">Contraseña</string>
@@ -11,5 +11,9 @@
     <string name="spSede">Sede</string>
     <string name="tvRegistro">Registro</string>
     <string name="btnRegistrar">Registrar</string>
+    <string name="nat_inicio">Inicio</string>
+    <string name="nat_viajes">Viajes</string>
+    <string name="nat_solicitudes">Solicitudes</string>
+    <string name="nat_perfil">Perfil</string>
 </resources>
 
