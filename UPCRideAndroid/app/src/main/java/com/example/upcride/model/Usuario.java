@@ -16,6 +16,7 @@ public class Usuario {
     private char rol;
     private String licenciaConducir;
     private String sede;
+    private int dni;
 
     public Usuario(){
 
@@ -40,7 +41,7 @@ public class Usuario {
     }
     //Constructor del pasajero
     public Usuario(String codigo, String correoUPC, String contraseña, String nombres, String apellidos, double ubicacionLatitud,
-                   double ubicacionLongitud, String telefono, String distrito, char rol, String sede){
+                   double ubicacionLongitud, String telefono, String distrito, char rol, String sede, int dni){
         this.codigo = codigo;
         this.correoUPC = correoUPC;
         this.contraseña = contraseña;
@@ -52,6 +53,7 @@ public class Usuario {
         this.distrito = distrito;
         this.rol = rol;
         this.sede = sede;
+        this.dni = dni;
     }
 
     public int getId() {
@@ -164,6 +166,14 @@ public class Usuario {
 
     public void setSede(String sede) {
         this.sede = sede;
+    }
+
+    public int getDni() {
+        return dni;
+    }
+
+    public void setDni(int dni) {
+        this.dni = dni;
     }
 }
 
