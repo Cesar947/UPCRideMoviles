@@ -21,15 +21,22 @@ public class AutoController {
         this.autoService = autoService;
     }
 
+    @RequestMapping(method = RequestMethod.GET)
+    public List<Auto> listarAutos() throws Exception{
+        return autoService.mostrarAutos();
+    }
 
     @RequestMapping(method = RequestMethod.POST)
     public Auto guardarAuto(@RequestBody Auto a) throws Exception{
         return autoService.guardarAuto(a);
         }
-    @RequestMapping(method = RequestMethod.GET)
+    @RequestMapping(path="/{conductorId}", method = RequestMethod.GET)
     public Auto buscarAutoPorConductor(Integer conductorId) throws Exception{
         return autoService.buscarAutoPorConductor(conductorId);
     }
+
+
+
 
 }
 

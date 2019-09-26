@@ -27,4 +27,9 @@ public class AutoServiceImpl implements AutoService {
         return autoRepository.buscarAutoPorConductor(conductorId);
     }
 
+    @Override
+    public List<Auto> mostrarAutos() throws Exception {
+        return autoRepository.findAll();
+    }
+
 }

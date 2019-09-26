@@ -6,7 +6,7 @@ import android.util.Log
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import com.example.upcridekotlin.R
-import com.example.upcridekotlin.interfaces.UsuarioService
+import com.example.upcridekotlin.interfaces.UsuarioApiService
 import com.example.upcridekotlin.model.Usuario
 import com.google.gson.Gson
 import retrofit2.Call
@@ -19,7 +19,7 @@ class MainActivity : AppCompatActivity() {
 
     val TAG_LOGS = "kikopalomares"
 
-    lateinit var service: UsuarioService
+    lateinit var apiService: UsuarioApiService
 
     private lateinit var  text : TextView
 
@@ -34,7 +34,7 @@ class MainActivity : AppCompatActivity() {
             .addConverterFactory(GsonConverterFactory.create())
             .build()
 
-        service = retrofit.create<UsuarioService>(UsuarioService::class.java)
+        apiService = retrofit.create<UsuarioApiService>(UsuarioApiService::class.java)
 
         text = findViewById(R.id.textView) as TextView
 
@@ -51,7 +51,7 @@ class MainActivity : AppCompatActivity() {
     fun getAllUsers(){
 
         var user: String="";
-        service.getAllUsers().enqueue(object: Callback<List<Usuario>>{
+        apiService.getAllUsers().enqueue(object: Callback<List<Usuario>>{
             override fun onResponse(call: Call<List<Usuario>>, response: Response<List<Usuario>>) {
                 val usuarios = response.body()
 
@@ -75,7 +75,7 @@ class MainActivity : AppCompatActivity() {
         var pasajero: Usuario? = Usuario("a", "a", "x", "a", "b", 123.0, 123.0,
             "s", "a", "a", 'c', "asd", "SM")
 
-        service.insertarPasajero(pasajero).enqueue(object : Callback<Usuario> {
+        apiService.insertarPasajero(pasajero).enqueue(object : Callback<Usuario> {
             override fun onResponse(call: Call<Usuario>?, response: Response<Usuario>?) {
                 pasajero = response?.body()
                 Log.i(TAG_LOGS, Gson().toJson(pasajero))
@@ -90,7 +90,7 @@ class MainActivity : AppCompatActivity() {
     fun getUsuarioById(){
 
         var usuario: Usuario?
-        service.getUsuarioById(1).enqueue(object: Callback<Usuario>{
+        apiService.getUsuarioById(1).enqueue(object: Callback<Usuario>{
             override fun onResponse(call: Call<Usuario>?, response: Response<Usuario>?) {
                 usuario = response?.body()
                 Log.i(TAG_LOGS, Gson().toJson(usuario))

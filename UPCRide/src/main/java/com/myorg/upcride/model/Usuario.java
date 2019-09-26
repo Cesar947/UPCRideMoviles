@@ -32,6 +32,9 @@ public class Usuario implements Serializable {
  @Column(name = "contraseña", length = 40, nullable = false)
  private String contraseña;
 
+ @Column(name = "dni", length = 8, nullable = false)
+ private String DNI;
+
  @Column(name = "nombres", length = 60, nullable = false)
  private String nombres;
 

@@ -11,4 +11,7 @@ public interface AutoRepository extends JpaRepository<Auto,Integer> {
   Auto buscarAutoPorConductor(Integer idConductor) throws Exception;
 
 
+
+
+
 }
