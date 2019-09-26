@@ -16,9 +16,15 @@ public class Usuario {
     private char rol;
     private String licenciaConducir;
     private String sede;
+    private int dni;
 
-    public Usuario(int id, String codigo, String correoUPC, String contraseña, String nombres, String apellidos, double ubicacionLatitud, double ubicacionLongitud, String facebook_id, String telefono, String distrito, char rol, String licenciaConducir, String sede) {
-        this.id = id;
+    public Usuario(){
+
+    }
+
+    public Usuario(String codigo, String correoUPC, String contraseña, String nombres, String apellidos, double ubicacionLatitud,
+                   double ubicacionLongitud, String facebook_id, String telefono, String distrito, char rol, String licenciaConducir, String sede) {
+
         this.codigo = codigo;
         this.correoUPC = correoUPC;
         this.contraseña = contraseña;
@@ -32,6 +38,22 @@ public class Usuario {
         this.rol = rol;
         this.licenciaConducir = licenciaConducir;
         this.sede = sede;
+    }
+    //Constructor del pasajero
+    public Usuario(String codigo, String correoUPC, String contraseña, String nombres, String apellidos, double ubicacionLatitud,
+                   double ubicacionLongitud, String telefono, String distrito, char rol, String sede, int dni){
+        this.codigo = codigo;
+        this.correoUPC = correoUPC;
+        this.contraseña = contraseña;
+        this.nombres = nombres;
+        this.apellidos = apellidos;
+        this.ubicacionLatitud = ubicacionLatitud;
+        this.ubicacionLongitud = ubicacionLongitud;
+        this.telefono = telefono;
+        this.distrito = distrito;
+        this.rol = rol;
+        this.sede = sede;
+        this.dni = dni;
     }
 
     public int getId() {
@@ -144,6 +166,14 @@ public class Usuario {
 
     public void setSede(String sede) {
         this.sede = sede;
+    }
+
+    public int getDni() {
+        return dni;
+    }
+
+    public void setDni(int dni) {
+        this.dni = dni;
     }
 }
 
