@@ -19,7 +19,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 class MainActivity : AppCompatActivity() {
 
-    val TAG_LOGS = "kikopalomares"
+
 
     lateinit var apiService: UsuarioApiService
 
@@ -38,7 +38,7 @@ class MainActivity : AppCompatActivity() {
 
         apiService = retrofit.create<UsuarioApiService>(UsuarioApiService::class.java)
 
-        text = findViewById(R.id.textView) as TextView
+
 
         getAllUsers()
 
@@ -66,7 +66,6 @@ class MainActivity : AppCompatActivity() {
                 for (p2 in usuarios.orEmpty()) { user += p2.codigo }
                 text.setText(user)
 
-                Log.i(TAG_LOGS, Gson().toJson(usuarios))
             }
             override fun onFailure(call: Call<List<Usuario>>?, t: Throwable?) {
                 t?.printStackTrace()
@@ -86,7 +85,7 @@ class MainActivity : AppCompatActivity() {
         apiService.insertarPasajero(pasajero).enqueue(object : Callback<Usuario> {
             override fun onResponse(call: Call<Usuario>?, response: Response<Usuario>?) {
                 pasajero = response?.body()
-                Log.i(TAG_LOGS, Gson().toJson(pasajero))
+
             }
 
             override fun onFailure(call: Call<Usuario>?, t: Throwable?) {
@@ -101,7 +100,7 @@ class MainActivity : AppCompatActivity() {
         apiService.getUsuarioById(1).enqueue(object: Callback<Usuario>{
             override fun onResponse(call: Call<Usuario>?, response: Response<Usuario>?) {
                 usuario = response?.body()
-                Log.i(TAG_LOGS, Gson().toJson(usuario))
+
             }
             override fun onFailure(call: Call<Usuario>?, t: Throwable?) {
                 t?.printStackTrace()

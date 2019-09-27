@@ -1,6 +1,6 @@
 package com.example.upcridekotlin.model
 
-import android.text.Editable
+
 import java.sql.Date
 import java.sql.Time
 
@@ -14,8 +14,8 @@ class Viaje{
     var destinoLongitud: Double = 0.0
     var partidaLatitud: Double = 0.0
     var partidaLongitud: Double = 0.0
-    var horaPartida: Date? = null
-    var horaLlegada: Date? = null
+    var horaPartida: Time? = null
+    var horaLlegada: Time? = null
     var entradaSalida: Int = 0
     var fecha: Date? = null
     var dia: String? = ""
@@ -37,8 +37,8 @@ class Viaje{
         destinoLongitud: Double,
         partidaLatitud: Double,
         partidaLongitud: Double,
-        horaPartida: Date?,
-        horaLlegada: Date?,
+        horaPartida: Time?,
+        horaLlegada: Time?,
         entradaSalida: Int,
         fecha: Date?,
         dia: String?,

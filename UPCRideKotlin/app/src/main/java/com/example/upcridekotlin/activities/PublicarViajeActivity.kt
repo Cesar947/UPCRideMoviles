@@ -2,7 +2,9 @@ package com.example.upcridekotlin.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+
 import android.widget.EditText
+import com.example.upcridekotlin.R
 import com.example.upcridekotlin.interfaces.UsuarioApiService
 import com.example.upcridekotlin.interfaces.ViajeApiService
 import com.example.upcridekotlin.model.Usuario
@@ -13,14 +15,14 @@ import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
+
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.sql.Date
-import android.R
-import java.text.SimpleDateFormat
+import java.sql.Time
 
 
 class PublicarViajeActivity : AppCompatActivity() {
@@ -82,14 +84,11 @@ class PublicarViajeActivity : AppCompatActivity() {
     }
 
     fun publicarViaje() {
-        val str = etHoraPartida?.getText().toString()
-        val str1 = etHoraLlegada?.getText().toString()
-        val formatter = SimpleDateFormat("hh:mm:ss")
-        val horaP = formatter.parse(str)
-        val horaD = formatter.parse(str1)
+
+
         var viaje: Viaje? = Viaje(conductor, etMensaje?.text.toString(), etPuntoPartida?.text.toString(),
-            etPuntoDestino?.text.toString(), -12.1243231, -77.1234567,-12.1243231, -78.1234567, horaP,
-            horaD, 1, Date(2019/9/30), "lunes", "publicado", 1, 0, 4, 6.5)
+            etPuntoDestino?.text.toString(), -12.1243231, -77.1234567,-12.1243231, -78.1234567, Time(170000),
+           Time(190000), 1, Date(2019/9/30), "lunes", "publicado", 1, 0, 4, 6.5)
 
         var idx = conductor!!.id
         viajeApiService?.publicarViaje(idx, viaje)?.enqueue(object : Callback<Viaje> {
@@ -98,7 +97,7 @@ class PublicarViajeActivity : AppCompatActivity() {
             }
 
             override fun onResponse(call: Call<Viaje>, response: Response<Viaje>) {
-                viaje = response?.body()
+                viaje = response.body()
 
             }
 
