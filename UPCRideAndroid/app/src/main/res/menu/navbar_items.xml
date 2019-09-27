@@ -3,15 +3,19 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
+        android:id="@+id/inicio"
         android:icon="@drawable/ic_action_logo"
         android:title="@string/nat_inicio" />
     <item
+        android:id="@+id/viajes"
         android:icon="@drawable/ic_action_viaje"
         android:title="@string/nat_viajes" />
     <item
+        android:id="@+id/solis"
         android:icon="@drawable/ic_action_solis"
         android:title="@string/nat_solicitudes" />
     <item
+        android:id="@+id/perfil"
         android:icon="@drawable/ic_action_perfil"
         android:title="@string/nat_perfil" />
 </menu>

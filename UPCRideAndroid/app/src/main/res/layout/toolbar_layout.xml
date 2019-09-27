@@ -11,15 +11,15 @@
     app:menu="@menu/menu">
 
     <androidx.appcompat.widget.AppCompatCheckedTextView
+        android:id="@+id/txt_toolbar"
         android:layout_width="80dp"
         android:layout_height="40dp"
         android:layout_marginLeft="30dp"
         android:fontFamily="@font/gibson_regular"
-        android:text="Inicio"
+        android:text="@string/toolbarText"
         android:textColor="?attr/colorPrimaryDark"
         android:textSize="30sp"
-        android:textStyle="normal"
-        />
+        android:textStyle="normal" />
 
 
 </androidx.appcompat.widget.Toolbar>
