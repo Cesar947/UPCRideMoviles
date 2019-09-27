@@ -1,8 +1,10 @@
 package com.example.upcridekotlin.activities
 
+import android.content.Intent
 import android.os.Bundle
 
 import android.util.Log
+import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import com.example.upcridekotlin.R
@@ -41,6 +43,12 @@ class MainActivity : AppCompatActivity() {
         getAllUsers()
 
 
+        var btnIrInicio = findViewById<View>(R.id.btnIrInicio) as Button
+
+        btnIrInicio.setOnClickListener(View.OnClickListener {
+            val intent = Intent(this, Inicio::class.java)
+            startActivity(intent)
+        })
 
 
 

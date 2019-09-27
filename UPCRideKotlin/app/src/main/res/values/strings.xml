@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">UPCRideKotlin</string>
+    <string name="btnIrPublicacion">PUBLICAR</string>
+    <string name="btnIrInicio">IR AL INICIO</string>
 </resources>

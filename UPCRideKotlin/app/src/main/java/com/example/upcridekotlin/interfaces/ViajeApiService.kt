@@ -1,0 +1,23 @@
+package com.example.upcridekotlin.interfaces
+
+import com.example.upcridekotlin.model.Solicitud
+import retrofit2.Call
+import com.example.upcridekotlin.model.Viaje
+import retrofit2.http.POST
+import retrofit2.http.Path
+
+interface ViajeApiService {
+
+    @POST("/publicar/{conductorId}")
+    fun publicarViaje(@Path("conductorId") conductorId: Integer): Call<Viaje>
+
+
+    /* @RequestMapping(path="/solicitar/{viajeId}", method = RequestMethod.POST)
+    public Solicitud solictarViaje( @PathVariable Integer viajeId,  @RequestBody Solicitud s) throws Exception {
+*/
+
+    @POST("/solicitar/{viajeId}")
+    fun solicitarViaje(@Path("viajeId") viajeId: Integer ): Call<Solicitud>
+
+
+}

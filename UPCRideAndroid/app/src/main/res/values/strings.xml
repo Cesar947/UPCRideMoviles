@@ -4,7 +4,7 @@
     <string name="etEmail">Correo UPC</string>
     <string name="etContraseña">Contraseña</string>
     <string name="etNombres">Nombres</string>
-    <string name="etApellidos">Contraseña</string>
+    <string name="etApellidos">Apellidos</string>
     <string name="etDNI">DNI</string>
     <string name="etDistrito">Distrito</string>
     <string name="etTelefono">Telefono</string>
