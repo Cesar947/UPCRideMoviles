@@ -12,6 +12,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.FrameLayout;
+import android.widget.TextView;
 
 
 import com.example.upcride.R;
@@ -22,6 +23,7 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity{
     private Toolbar toolbar;
+    private TextView txttoolbar;
 
     private BottomNavigationView mainNav;
 
@@ -39,12 +41,14 @@ public class MainActivity extends AppCompatActivity{
 
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         mainNav = (BottomNavigationView) findViewById(R.id.main_nav);
+        txttoolbar = (TextView)  findViewById(R.id.toolbartxt);
         mainFrame = (FrameLayout) findViewById(R.id.main_frame);
         homeFragment = new HomeFragment();
         viajesFragment = new ViajesFragment();
         solicitudesFragment = new SolicitudesFragment();
         perfilFragment = new PerfilFragment();
 
+        getSupportFragmentManager().beginTransaction().replace(R.id.main_frame, new HomeFragment()).commit();
 
         setSupportActionBar(toolbar);
 
@@ -56,14 +60,18 @@ public class MainActivity extends AppCompatActivity{
                 switch (item.getItemId()) {
                     case R.id.inicio:
                         selectedFragment = new HomeFragment();
+                        txttoolbar.setText("Inicio");
                         break;
                     case R.id.perfil:
                         selectedFragment = new PerfilFragment();
+                        txttoolbar.setText("Perfil");
                         break;
                     case R.id.solis:
+                        txttoolbar.setText("Solicitudes");
                         selectedFragment = new SolicitudesFragment();
                         break;
                     case R.id.viajes:
+                        txttoolbar.setText("Viajes");
                         selectedFragment = new ViajesFragment();
                         break;
                 }
