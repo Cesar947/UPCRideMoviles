@@ -17,7 +17,7 @@ class Usuario {
     var licenciaConducir: String? = null
     var sede: String? = null
 
-
+   constructor(){}
     constructor(id:Int, codigo: String, correoUPC: String, contraseña: String, nombres: String, apellidos: String, ubicacionLatitud: Double,
                 ubicacionLongitud: Double, facebook_id: String, telefono: String, distrito: String, rol: Char, licenciaConducir: String, sede: String) {
 

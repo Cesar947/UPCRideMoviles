@@ -2,4 +2,13 @@
     <string name="app_name">UPCRideKotlin</string>
     <string name="btnIrPublicacion">PUBLICAR</string>
     <string name="btnIrInicio">IR AL INICIO</string>
+    <string name="etMensaje">Breve mensaje</string>
+    <string name="etPuntoPartida">Punto de partida</string>
+    <string name="etPuntoDestino">Punto de destino</string>
+    <string name="etHoraPartida">Hora Partida</string>
+    <string name="etHoraLlegada">Hora Llegada</string>
+    <string name="etPrecioBase">Precio</string>
+    <string name="btnPublicar">Publicar</string>
+
+
 </resources>
