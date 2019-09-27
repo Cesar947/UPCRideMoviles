@@ -32,6 +32,8 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var registrarCond :Button
 
+    private lateinit var publicarViaje :Button
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -52,6 +54,8 @@ class MainActivity : AppCompatActivity() {
 
         registrarCond = findViewById(R.id.btnRegCond) as Button
 
+        publicarViaje = findViewById(R.id.btnPublicarViaje) as Button
+
         registrarCond.setOnClickListener{
             val intent = Intent(this, registro_conductor::class.java)
             startActivity(intent)
@@ -62,6 +66,10 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        publicarViaje.setOnClickListener{
+            val intent = Intent(this, publicar_viaje::class.java)
+            startActivity(intent)
+        }
 
     }
 

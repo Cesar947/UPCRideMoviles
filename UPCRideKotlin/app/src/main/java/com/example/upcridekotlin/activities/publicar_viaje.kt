@@ -1,106 +1,143 @@
 package com.example.upcridekotlin.activities
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-
-import android.widget.EditText
+import android.util.Log
+import android.view.View
+import android.widget.*
 import com.example.upcridekotlin.R
 import com.example.upcridekotlin.interfaces.UsuarioApiService
 import com.example.upcridekotlin.interfaces.ViajeApiService
 import com.example.upcridekotlin.model.Usuario
-import com.example.upcridekotlin.model.Viaje
-import com.google.android.gms.maps.CameraUpdateFactory
-import com.google.android.gms.maps.GoogleMap
-import com.google.android.gms.maps.OnMapReadyCallback
-import com.google.android.gms.maps.SupportMapFragment
-import com.google.android.gms.maps.model.LatLng
-import com.google.android.gms.maps.model.MarkerOptions
-
+import com.google.gson.Gson
+import kotlinx.android.synthetic.main.activity_registro_pasajero.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import java.sql.Date
-import java.sql.Time
+
 
 
 class publicar_viaje : AppCompatActivity() {
 
+    val TAG_LOGS = "Bryan Miramira"
 
-    lateinit var mapFragment: SupportMapFragment
-    lateinit var googleMap: GoogleMap
-    private var retrofit: Retrofit? = null
-    private var viajeApiService: ViajeApiService? = null
-    private var apiService: UsuarioApiService? = null
-    private var conductor: Usuario? = null
-    private var etMensaje : EditText? = null
-    private var etPuntoPartida: EditText? = null
-    private var etPuntoDestino: EditText? = null
-    private var etHoraPartida: EditText? = null
-    private var etHoraLlegada: EditText? = null
-    private var etPrecioBase : EditText? = null
+
+    lateinit var viajeService: ViajeApiService
+
+
+
+    private lateinit var btnPublicar: Button
+
+
+    private lateinit var etTelefono: EditText
+    private lateinit var etDistrito: EditText
+    private lateinit var etDNI: EditText
+    private lateinit var etNombre: EditText
+    private lateinit var etApellido: EditText
+    private lateinit var etContraseña: EditText
+    private lateinit var etEmail: EditText
+    private lateinit var etCodigo: EditText
+
+    private lateinit var sede:String
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_publicar_viaje)
+        setContentView(R.layout.activity_registro_pasajero)
 
-        retrofit = Retrofit.Builder()
+
+        val retrofit: Retrofit = Retrofit.Builder()
             .baseUrl("http://upcride.jl.serv.net.mx/")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
-        viajeApiService = retrofit!!.create(ViajeApiService::class.java)
-        apiService = retrofit!!.create(UsuarioApiService::class.java)
-        etMensaje = findViewById(R.id.etMensaje) as EditText
-        etPuntoPartida = findViewById(R.id.etPuntoPartida) as EditText
-        etPuntoDestino = findViewById(R.id.etPuntoDestino) as EditText
-        etHoraPartida = findViewById(R.id.etHoraPartida) as EditText
-        etHoraLlegada = findViewById(R.id.etHoraLlegada) as EditText
-        etPrecioBase = findViewById(R.id.etPrecioBase) as EditText
 
-        mapFragment = supportFragmentManager.findFragmentById(R.id.publicacionMap) as SupportMapFragment
-        mapFragment.getMapAsync(OnMapReadyCallback {
-            googleMap = it
 
-            val location1 = LatLng(-12.0145055, -77.0874391)
-            googleMap.isMyLocationEnabled = true
-            googleMap.addMarker(MarkerOptions().position(location1).title("My Location"))
-            googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(location1, 10f))
-        })
+        val adapter = ArrayAdapter.createFromResource(this,
+            R.array.sedes, android.R.layout.simple_spinner_item)
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        spSede.adapter = adapter
+
+
+
+
+
+
+        userService = retrofit.create<UsuarioApiService>(UsuarioApiService::class.java)
+
+        btnRegistrarme = findViewById<Button>(R.id.btnIrRegistro)
+
+
+        spSede.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(
+                parent: AdapterView<*>,
+                view: View,
+                position: Int,
+                id: Long
+            )
+            {
+                sede = parent.getItemAtPosition(position).toString()
+            }
+            override fun onNothingSelected(parent: AdapterView<*>) {
+            }
+        }
+
+
+
+        btnRegistrarme.setOnClickListener {
+
+
+
+            AgregarPasajero()
+        }
+
+
     }
-    fun getUsuarioById(id: Int){
 
-        var usuario: Usuario?
-        apiService?.getUsuarioById(id)?.enqueue(object: Callback<Usuario>{
+
+    fun AgregarPasajero() {
+
+
+        etTelefono = findViewById<EditText>(R.id.etTelefono)
+        etDistrito = findViewById<EditText>(R.id.etDistrito)
+        etDNI = findViewById<EditText>(R.id.etDNI)
+        etNombre = findViewById<EditText>(R.id.etNombres)
+        etApellido = findViewById<EditText>(R.id.etApellidos)
+        etContraseña = findViewById<EditText>(R.id.etContraseña)
+        etEmail = findViewById<EditText>(R.id.etEmail)
+        etCodigo = findViewById<EditText>(R.id.etCodigo)
+
+
+
+
+        var pasajero: Usuario? = Usuario(
+            etCodigo.text.toString(),
+            etEmail.text.toString(),
+            etContraseña.text.toString(),
+            etDNI.text.toString(),
+            etNombre.text.toString(),
+            etApellido.text.toString(),
+            0.0,
+            0.0,
+            etTelefono.text.toString(),
+            etDistrito.text.toString(),
+            'C', sede)
+
+        Log.i(TAG_LOGS, Gson().toJson(pasajero))
+
+        userService.insertarPasajero(pasajero).enqueue(object : Callback<Usuario> {
             override fun onResponse(call: Call<Usuario>?, response: Response<Usuario>?) {
-                usuario = response?.body()
-                conductor = usuario
+                pasajero = response?.body()
+                Log.i(TAG_LOGS, Gson().toJson(pasajero))
+
+
             }
 
             override fun onFailure(call: Call<Usuario>?, t: Throwable?) {
                 t?.printStackTrace()
             }
-        })
-
-    }
-
-    fun publicarViaje() {
-
-
-        var viaje: Viaje? = Viaje(conductor, etMensaje?.text.toString(), etPuntoPartida?.text.toString(),
-            etPuntoDestino?.text.toString(), -12.1243231, -77.1234567,-12.1243231, -78.1234567, Time(170000),
-            Time(190000), 1, Date(2019/9/30), "lunes", "publicado", 1, 0, 4, 6.5)
-
-        var idx = conductor!!.id
-        viajeApiService?.publicarViaje(idx, viaje)?.enqueue(object : Callback<Viaje> {
-            override fun onFailure(call: Call<Viaje>, t: Throwable) {
-
-            }
-
-            override fun onResponse(call: Call<Viaje>, response: Response<Viaje>) {
-                viaje = response.body()
-
-            }
-
         })
     }
 
