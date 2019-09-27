@@ -1,0 +1,9 @@
+<resources>
+    <string-array name="sedes">
+        <item>Seleccione una sede...</item>
+        <item>San Miguel</item>
+        <item>San Isidro</item>
+        <item>Monterrico</item>
+        <item>Villa</item>
+    </string-array>
+</resources>

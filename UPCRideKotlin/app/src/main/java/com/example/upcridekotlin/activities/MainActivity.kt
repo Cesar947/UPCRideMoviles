@@ -1,12 +1,15 @@
 package com.example.upcridekotlin.activities
 
+import android.content.Intent
 import android.os.Bundle
 
 import android.util.Log
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import com.example.upcridekotlin.R
+import com.example.upcridekotlin.interfaces.AutoApiService
 import com.example.upcridekotlin.interfaces.UsuarioApiService
+import com.example.upcridekotlin.model.Auto
 import com.example.upcridekotlin.model.Usuario
 import com.google.gson.Gson
 import retrofit2.Call
@@ -19,9 +22,15 @@ class MainActivity : AppCompatActivity() {
 
     val TAG_LOGS = "kikopalomares"
 
-    lateinit var apiService: UsuarioApiService
+    lateinit var userService: UsuarioApiService
+
+    lateinit var autoService: AutoApiService
 
     private lateinit var  text : TextView
+
+    private lateinit var registrarPas :Button
+
+    private lateinit var registrarCond :Button
 
 
 
@@ -34,72 +43,26 @@ class MainActivity : AppCompatActivity() {
             .addConverterFactory(GsonConverterFactory.create())
             .build()
 
-        apiService = retrofit.create<UsuarioApiService>(UsuarioApiService::class.java)
-
-        text = findViewById(R.id.textView) as TextView
-
-        getAllUsers()
+        userService = retrofit.create<UsuarioApiService>(UsuarioApiService::class.java)
+        autoService = retrofit.create<AutoApiService>(AutoApiService::class.java)
 
 
 
+        registrarPas = findViewById(R.id.btnRegPas) as Button
 
+        registrarCond = findViewById(R.id.btnRegCond) as Button
 
+        registrarCond.setOnClickListener{
+            val intent = Intent(this, registro_conductor::class.java)
+            startActivity(intent)
+        }
 
-
-    }
-
-    fun getAllUsers(){
-
-        var user: String="";
-        apiService.getAllUsers().enqueue(object: Callback<List<Usuario>>{
-            override fun onResponse(call: Call<List<Usuario>>, response: Response<List<Usuario>>) {
-                val usuarios = response.body()
-
-                for (p2 in usuarios.orEmpty()) { user += p2.codigo }
-                text.setText(user)
-
-                Log.i(TAG_LOGS, Gson().toJson(usuarios))
-            }
-            override fun onFailure(call: Call<List<Usuario>>?, t: Throwable?) {
-                t?.printStackTrace()
-                Toast.makeText(applicationContext,"fallo",Toast.LENGTH_LONG)
-            }
-        })
-
+        registrarPas.setOnClickListener{
+            val intent = Intent(this, registro_pasajero::class.java)
+            startActivity(intent)
+        }
 
 
     }
-
-
-    fun AgregarPasajero() {
-        var pasajero: Usuario? = Usuario("a", "a", "x", "a", "b", 123.0, 123.0,
-            "s", "a", "a", 'c', "asd", "SM")
-
-        apiService.insertarPasajero(pasajero).enqueue(object : Callback<Usuario> {
-            override fun onResponse(call: Call<Usuario>?, response: Response<Usuario>?) {
-                pasajero = response?.body()
-                Log.i(TAG_LOGS, Gson().toJson(pasajero))
-            }
-
-            override fun onFailure(call: Call<Usuario>?, t: Throwable?) {
-                t?.printStackTrace()
-            }
-        })
-    }
-
-    fun getUsuarioById(){
-
-        var usuario: Usuario?
-        apiService.getUsuarioById(1).enqueue(object: Callback<Usuario>{
-            override fun onResponse(call: Call<Usuario>?, response: Response<Usuario>?) {
-                usuario = response?.body()
-                Log.i(TAG_LOGS, Gson().toJson(usuario))
-            }
-            override fun onFailure(call: Call<Usuario>?, t: Throwable?) {
-                t?.printStackTrace()
-            }
-        })
-    }
-
 
 }

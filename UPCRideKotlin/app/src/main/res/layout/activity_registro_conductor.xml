@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.registro_conductor">
+
+
+    <TextView
+        android:id="@+id/tvRegistro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tvRegistroConductor"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/scrollView4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.455" />
+
+    <Spinner
+        android:id="@+id/spSede"
+        android:layout_width="344dp"
+        android:layout_height="59dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.462"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.886" />
+
+    <Button
+        android:id="@+id/btnIrRegistro"
+        android:layout_width="350dp"
+        android:layout_height="46dp"
+        android:layout_marginBottom="16dp"
+        android:text="@string/btnRegistrar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.508"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <ScrollView
+        android:id="@+id/scrollView4"
+        android:layout_width="333dp"
+        android:layout_height="432dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.538"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.354">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/etCodigo"
+                android:layout_width="350dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="5dp"
+                android:ems="10"
+                android:hint="Codigo"
+                android:inputType="textPersonName" />
+
+            <EditText
+                android:id="@+id/etEmail"
+                android:layout_width="350dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:ems="10"
+                android:hint="@string/etEmail"
+                android:inputType="textEmailAddress" />
+
+            <EditText
+                android:id="@+id/etContraseña"
+                android:layout_width="350dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:ems="10"
+                android:hint="@string/etContraseña"
+                android:inputType="textPassword" />
+
+            <EditText
+                android:id="@+id/etNombres"
+                android:layout_width="350dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:ems="10"
+                android:hint="@string/etNombres"
+                android:inputType="textPersonName" />
+
+            <EditText
+                android:id="@+id/etApellidos"
+                android:layout_width="350dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:ems="10"
+                android:hint="@string/etApellidos"
+                android:inputType="textPersonName" />
+
+            <EditText
+                android:id="@+id/etDNI"
+                android:layout_width="350dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:ems="10"
+                android:hint="@string/etDNI"
+                android:inputType="number" />
+
+            <EditText
+                android:id="@+id/etTelefono"
+                android:layout_width="350dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:ems="10"
+                android:hint="@string/etTelefono"
+                android:inputType="number" />
+
+            <EditText
+                android:id="@+id/etDistrito"
+                android:layout_width="350dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:ems="10"
+                android:hint="@string/etDistrito"
+                android:inputType="textPersonName" />
+
+            <EditText
+                android:id="@+id/etLicConduc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Licencia de Conducir"
+                android:inputType="textPersonName" />
+
+            <EditText
+                android:id="@+id/etFacebook"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Facebook"
+                android:inputType="textPersonName" />
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

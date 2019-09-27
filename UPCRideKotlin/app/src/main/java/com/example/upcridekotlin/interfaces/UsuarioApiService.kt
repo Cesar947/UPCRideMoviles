@@ -19,9 +19,12 @@ interface UsuarioApiService {
     fun getUsuarioById(@Path("id") id: Int): Call<Usuario>
 
 
-
     @POST("usuarios/pasajero")
     fun insertarPasajero(@Body usuario: Usuario?): Call<Usuario>
+
+    @POST("usuarios/conductor")
+    fun insertarConductor(@Body usuario: Usuario?): Call<Usuario>
+
 
 
 }

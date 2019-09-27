@@ -1,24 +1,26 @@
 create database upcridetest;
 use upcridetest;
 SET GLOBAL time_zone = '-3:00';
-INSERT INTO usuario(nombres, apellidos, codigo_upc, correo_upc, contraseña, distrito, licencia_conducir, facebook_id, rol, sede, telefono,ubicacion_latitud, ubicacion_longitud )
-VALUES ('Bryan Antony', 'Miramira Morales', 'U201710061', 'U201710061@upc.edu.pe', 'xdxdxd5000', 'Los Olivos', 'X01928374', 'www.facebook.com', 'C', 'UPC San Miguel',
+
+
+INSERT INTO usuario(nombres, apellidos, codigo_upc, correo_upc, contraseña,dni, distrito, licencia_conducir, facebook_id, rol, sede, telefono,ubicacion_latitud, ubicacion_longitud )
+VALUES ('Bryan Antony', 'Miramira Morales', 'U201710061', 'U201710061@upc.edu.pe', 'xdxdxd5000','12345678', 'Los Olivos', 'X01928374', 'www.facebook.com', 'C', 'UPC San Miguel',
 '98720339', -11.9909776, -77.0713316);
 
-INSERT INTO usuario(nombres, apellidos, codigo_upc, correo_upc, contraseña, distrito, rol, sede, telefono,ubicacion_latitud, ubicacion_longitud )
-VALUES ('Juan Alberto', 'Pérez Rojas', 'U201710947', 'U201710947@upc.edu.pe', 'xdxdxd4000', 'Callao', 'P', 'UPC San Miguel',
+INSERT INTO usuario(nombres, apellidos, codigo_upc, correo_upc, contraseña,dni, distrito, rol, sede, telefono,ubicacion_latitud, ubicacion_longitud )
+VALUES ('Juan Alberto', 'Pérez Rojas', 'U201710947', 'U201710947@upc.edu.pe', 'xdxdxd4000','123415', 'Callao', 'P', 'UPC San Miguel',
 '98736482',-12.0277097, -77.0999577);
 
-INSERT INTO usuario(nombres, apellidos, codigo_upc, correo_upc, contraseña, distrito, rol, sede, telefono,ubicacion_latitud, ubicacion_longitud )
-VALUES ('Juan José', 'Sánchez Bellido', 'U201610987', 'U201610987@upc.edu.pe', 'xdxdxd4400', 'Callao', 'P', 'UPC San Miguel',
+INSERT INTO usuario(nombres, apellidos, codigo_upc, correo_upc, contraseña,dni, distrito, rol, sede, telefono,ubicacion_latitud, ubicacion_longitud )
+VALUES ('Juan José', 'Sánchez Bellido', 'U201610987', 'U201610987@upc.edu.pe', 'xdxdxd4400','5123123', 'Callao', 'P', 'UPC San Miguel',
 '99796232',-12.3347097, -77.0933577);
 
-INSERT INTO usuario(nombres, apellidos, codigo_upc, correo_upc, contraseña, distrito, licencia_conducir, facebook_id, rol, sede, telefono,ubicacion_latitud, ubicacion_longitud )
-VALUES ('Ruben', 'Doblas', 'U201900962', 'U201900962@upc.edu.pe', '12345', 'San Miguel', 'LC1001837', 'www.facebook.com', 'C', 'UPC San Miguel',
+INSERT INTO usuario(nombres, apellidos, codigo_upc, correo_upc, contraseña,dni, distrito, licencia_conducir, facebook_id, rol, sede, telefono,ubicacion_latitud, ubicacion_longitud )
+VALUES ('Ruben', 'Doblas', 'U201900962', 'U201900962@upc.edu.pe', '12345','512321', 'San Miguel', 'LC1001837', 'www.facebook.com', 'C', 'UPC San Miguel',
 '98720339', -11.9909776, -77.0713316);
 
-INSERT INTO usuario(nombres, apellidos, codigo_upc, correo_upc, contraseña, distrito, rol, sede, telefono,ubicacion_latitud, ubicacion_longitud )
-VALUES ('Kevin', 'Vergara Gonzáles', 'U201811327', 'U201811327@upc.edu.pe', 'asdfgh', 'Los Olivos', 'P', 'UPC San Miguel',
+INSERT INTO usuario(nombres, apellidos, codigo_upc, correo_upc, contraseña,dni, distrito, rol, sede, telefono,ubicacion_latitud, ubicacion_longitud )
+VALUES ('Kevin', 'Vergara Gonzáles', 'U201811327', 'U201811327@upc.edu.pe', 'asdfgh','12345678', 'Los Olivos', 'P', 'UPC San Miguel',
 '993465271',-12.0145055, -77.0874391);
 
 INSERT INTO auto(limite_personas, marca, modelo, placa, poliza_soat, conductor_id)
