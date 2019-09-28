@@ -65,9 +65,9 @@ class publicar_viaje : AppCompatActivity() {
 
 
 
-        userService = retrofit.create<UsuarioApiService>(UsuarioApiService::class.java)
+        viajeService = retrofit.create<ViajeApiService>(ViajeApiService::class.java)
 
-        btnRegistrarme = findViewById<Button>(R.id.btnIrRegistro)
+        btnPublicar = findViewById<Button>(R.id.btnIrRegistro)
 
 
         spSede.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
@@ -86,7 +86,7 @@ class publicar_viaje : AppCompatActivity() {
 
 
 
-        btnRegistrarme.setOnClickListener {
+       btnPublicar.setOnClickListener {
 
 
 
