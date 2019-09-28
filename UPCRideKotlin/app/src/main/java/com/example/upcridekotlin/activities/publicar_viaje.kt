@@ -1,23 +1,21 @@
 package com.example.upcridekotlin.activities
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.view.View
 import android.widget.*
 import com.example.upcridekotlin.R
-import com.example.upcridekotlin.interfaces.UsuarioApiService
 import com.example.upcridekotlin.interfaces.ViajeApiService
 import com.example.upcridekotlin.model.Usuario
+import com.example.upcridekotlin.model.Viaje
 import com.google.gson.Gson
-import kotlinx.android.synthetic.main.activity_registro_pasajero.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-
+import java.sql.Date
+import java.sql.Time
 
 
 class publicar_viaje : AppCompatActivity() {
@@ -27,26 +25,20 @@ class publicar_viaje : AppCompatActivity() {
 
     lateinit var viajeService: ViajeApiService
 
-
-
     private lateinit var btnPublicar: Button
 
+    private lateinit var etHoraPartida: EditText
+    private lateinit var etHoraLlegada: EditText
+    private lateinit var etPrecioBase: EditText
+    private lateinit var etPuntoDestino: EditText
+    private lateinit var etPuntoPartida: EditText
+    private lateinit var etMensaje: EditText
 
-    private lateinit var etTelefono: EditText
-    private lateinit var etDistrito: EditText
-    private lateinit var etDNI: EditText
-    private lateinit var etNombre: EditText
-    private lateinit var etApellido: EditText
-    private lateinit var etContraseña: EditText
-    private lateinit var etEmail: EditText
-    private lateinit var etCodigo: EditText
-
-    private lateinit var sede:String
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_registro_pasajero)
+        setContentView(R.layout.activity_publicar_viaje)
 
 
         val retrofit: Retrofit = Retrofit.Builder()
@@ -55,87 +47,53 @@ class publicar_viaje : AppCompatActivity() {
             .build()
 
 
-        val adapter = ArrayAdapter.createFromResource(this,
-            R.array.sedes, android.R.layout.simple_spinner_item)
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-        spSede.adapter = adapter
+        viajeService = retrofit.create<ViajeApiService>(ViajeApiService::class.java)
+
+        btnPublicar = findViewById(R.id.btnPublicar)
 
 
 
 
 
+        btnPublicar.setOnClickListener {
 
-        userService = retrofit.create<UsuarioApiService>(UsuarioApiService::class.java)
-
-        btnRegistrarme = findViewById<Button>(R.id.btnIrRegistro)
-
-
-        spSede.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-            override fun onItemSelected(
-                parent: AdapterView<*>,
-                view: View,
-                position: Int,
-                id: Long
-            )
-            {
-                sede = parent.getItemAtPosition(position).toString()
-            }
-            override fun onNothingSelected(parent: AdapterView<*>) {
-            }
-        }
-
-
-
-        btnRegistrarme.setOnClickListener {
-
-
-
-            AgregarPasajero()
+            PublicarViaje()
         }
 
 
     }
 
 
-    fun AgregarPasajero() {
+    fun PublicarViaje() {
 
 
-        etTelefono = findViewById<EditText>(R.id.etTelefono)
-        etDistrito = findViewById<EditText>(R.id.etDistrito)
-        etDNI = findViewById<EditText>(R.id.etDNI)
-        etNombre = findViewById<EditText>(R.id.etNombres)
-        etApellido = findViewById<EditText>(R.id.etApellidos)
-        etContraseña = findViewById<EditText>(R.id.etContraseña)
-        etEmail = findViewById<EditText>(R.id.etEmail)
-        etCodigo = findViewById<EditText>(R.id.etCodigo)
-
+        etHoraPartida = findViewById<EditText>(R.id.etHoraPartida)
+        etHoraLlegada = findViewById<EditText>(R.id.etHoraLlegada)
+        etPrecioBase = findViewById<EditText>(R.id.etPrecioBase)
+        etPuntoDestino = findViewById<EditText>(R.id.etPuntoDestino)
+        etPuntoPartida = findViewById<EditText>(R.id.etPuntoPartida)
+        etMensaje = findViewById<EditText>(R.id.etMensaje)
 
 
 
-        var pasajero: Usuario? = Usuario(
-            etCodigo.text.toString(),
-            etEmail.text.toString(),
-            etContraseña.text.toString(),
-            etDNI.text.toString(),
-            etNombre.text.toString(),
-            etApellido.text.toString(),
-            0.0,
-            0.0,
-            etTelefono.text.toString(),
-            etDistrito.text.toString(),
-            'C', sede)
+        var conductor: Usuario = Usuario("u2017", "a", "x", "a", "b","a" ,123.0, 123.0,
+            "s", "a", "a", 'c', "asd", "SM")
 
-        Log.i(TAG_LOGS, Gson().toJson(pasajero))
+        var viaje: Viaje? = Viaje( conductor,"descrpcion","lima","limades",
+            12.0,24.0,25.0,50.0,Time(19,0,0),Time(19,0,0),1,
+            Date(2019,9,28),"Lunes","Feliz",1,4,3,5.00)
 
-        userService.insertarPasajero(pasajero).enqueue(object : Callback<Usuario> {
-            override fun onResponse(call: Call<Usuario>?, response: Response<Usuario>?) {
-                pasajero = response?.body()
-                Log.i(TAG_LOGS, Gson().toJson(pasajero))
+        Log.i(TAG_LOGS, Gson().toJson(viaje))
+
+        viajeService.publicarViaje(viaje).enqueue(object : Callback<Viaje> {
+            override fun onResponse(call: Call<Viaje>?, response: Response<Viaje>?) {
+                viaje = response?.body()
+                Log.i(TAG_LOGS, Gson().toJson(viaje))
 
 
             }
 
-            override fun onFailure(call: Call<Usuario>?, t: Throwable?) {
+            override fun onFailure(call: Call<Viaje>?, t: Throwable?) {
                 t?.printStackTrace()
             }
         })
