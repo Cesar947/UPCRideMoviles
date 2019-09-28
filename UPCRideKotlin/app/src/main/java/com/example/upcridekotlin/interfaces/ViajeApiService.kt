@@ -9,8 +9,8 @@ import retrofit2.http.Path
 
 interface ViajeApiService {
 
-    @POST("/publicar/{conductorId}")
-    fun publicarViaje(@Path("conductorId") conductorId: Int, @Body viaje: Viaje?): Call<Viaje>
+    @POST("/publicar/")
+    fun publicarViaje(@Body viaje: Viaje?): Call<Viaje>
 
 
     /* @RequestMapping(path="/solicitar/{viajeId}", method = RequestMethod.POST)

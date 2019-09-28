@@ -56,6 +56,10 @@ class MainActivity : AppCompatActivity() {
 
         publicarViaje = findViewById(R.id.btnPublicarViaje) as Button
 
+
+
+
+
         registrarCond.setOnClickListener{
             val intent = Intent(this, registro_conductor::class.java)
             startActivity(intent)
