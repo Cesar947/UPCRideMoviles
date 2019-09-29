@@ -47,10 +47,10 @@ public class ViajesFragment extends Fragment {
 
     public List<ViajeModelo> listaViajes(){
         List<ViajeModelo> viajes = new ArrayList<>();
-        viajes.add(new ViajeModelo("Brian", "09:10", "Nuevo viaje Gaaaaa", "Mi Casa", "La Mierda", "20", "10", R.drawable.ricardo));
-        viajes.add(new ViajeModelo("Sebastian", "22:10", "Ahhh mi pcihulaaa", "Mi Casa", "La Bika", "20", "10", R.drawable.queso));
-        viajes.add(new ViajeModelo("Emilio", "21:10", "Muchachos me canse", "Mi Casa", "Desempleo", "20", "10", R.drawable.calamardo));
-        viajes.add(new ViajeModelo("Brian", "09:10", "Nuevo viaje Gaaaaa", "Mi Casa", "La Mierda", "20", "10", R.drawable.ricardo));
+        viajes.add(new ViajeModelo("Brian", "09:10", "Nuevo viaje de mi casa a la u", "Av.Izaguirre", "UPC San Miguel", "20", "10", R.drawable.ricardo));
+        viajes.add(new ViajeModelo("Sebastian", "22:10", "Mensaje de prueba", "Carabayllo", "UPC San Monterrioc", "20", "10", R.drawable.queso));
+        viajes.add(new ViajeModelo("Emilio", "21:10", "Muchachos estare realizando un viaje por toda Universitaria", "Puente Piedra", "UPC San Isidro", "20", "10", R.drawable.calamardo));
+        viajes.add(new ViajeModelo("Brian", "09:10", "Nuevo viaje para probar", "Comas", "UPC San Miguel", "20", "10", R.drawable.ricardo));
         return viajes;
     }
 

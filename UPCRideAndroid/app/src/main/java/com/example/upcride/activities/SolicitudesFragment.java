@@ -47,10 +47,10 @@ public class SolicitudesFragment extends Fragment {
 
     public List<SolicitudModelo> carteraSolicitudes(){
         List<SolicitudModelo> solicitudes = new ArrayList<>();
-        solicitudes.add(new SolicitudModelo("Burga", "09:10", "Yo no quiero jalar", R.drawable.ricardo));
-        solicitudes.add(new SolicitudModelo("Semanche", "22:10", "Cuanto por tu caca", R.drawable.queso));
-        solicitudes.add(new SolicitudModelo("Emilio", "21:10", "Muchachos me canse", R.drawable.calamardo));
-        solicitudes.add(new SolicitudModelo("Elba", "09:10", "Tu yo piensale", R.drawable.ricardo));
+        solicitudes.add(new SolicitudModelo("Brian", "09:10", "Solicitó un viaje", R.drawable.ricardo));
+        solicitudes.add(new SolicitudModelo("Bonifacio", "22:10", "Realizó una reseña", R.drawable.queso));
+        solicitudes.add(new SolicitudModelo("Emilio", "21:10", "Solicitó un viaje", R.drawable.calamardo));
+        solicitudes.add(new SolicitudModelo("Juanelv", "09:10", "Solicitó un viaje", R.drawable.ricardo));
         return solicitudes;
     }
 
