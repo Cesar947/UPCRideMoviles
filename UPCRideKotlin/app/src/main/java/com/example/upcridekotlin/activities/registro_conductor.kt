@@ -94,7 +94,6 @@ class registro_conductor : AppCompatActivity() {
 
             AgregarConductor()
 
-
             val intent = Intent(this, mActivity::class.java)
             startActivity(intent)
 

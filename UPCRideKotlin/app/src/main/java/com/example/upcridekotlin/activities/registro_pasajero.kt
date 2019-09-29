@@ -86,10 +86,10 @@ class registro_pasajero : AppCompatActivity() {
 
 
         btnRegistrarme.setOnClickListener {
-
-
-
             AgregarPasajero()
+            val intent = Intent(this,mActivity::class.java)
+            startActivity(intent)
+
         }
 
 
@@ -130,6 +130,8 @@ class registro_pasajero : AppCompatActivity() {
             override fun onResponse(call: Call<Usuario>?, response: Response<Usuario>?) {
                 pasajero = response?.body()
                 Log.i(TAG_LOGS, Gson().toJson(pasajero))
+
+
 
 
             }
