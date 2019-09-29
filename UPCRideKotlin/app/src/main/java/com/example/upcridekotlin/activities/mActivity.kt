@@ -45,7 +45,7 @@ class mActivity : AppCompatActivity() {
 
         setSupportActionBar(toolbar)
 
-        mainNav!!.setOnNavigationItemSelectedListener { item ->
+        mainNav?.setOnNavigationItemSelectedListener { item ->
             var selectedFragment: Fragment? = null
 
             when (item.itemId) {

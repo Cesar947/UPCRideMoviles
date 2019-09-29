@@ -12,7 +12,13 @@ import android.view.View
 import android.view.ViewGroup
 
 import com.example.upcridekotlin.R
-
+import com.example.upcridekotlin.interfaces.ViajeApiService
+import com.example.upcridekotlin.model.Viaje
+import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 import java.util.ArrayList
 
 /**
@@ -22,8 +28,8 @@ class HomeFragment : Fragment() {
 
     private var recyclerViewViaje: RecyclerView? = null
     private var adaptadorViaje: RecyclerViewAdaptador? = null
-
-
+    lateinit var viajeService: ViajeApiService
+    lateinit var viajesLista: List<Viaje>
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -43,15 +49,41 @@ class HomeFragment : Fragment() {
 
     }
 
+    fun ObtenerViajes(){
+
+        val retrofit: Retrofit = Retrofit.Builder()
+            .baseUrl("http://upcride.jl.serv.net.mx/")
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
+
+        viajeService = retrofit.create<ViajeApiService>(ViajeApiService::class.java)
+        viajeService.visualizarViajes().enqueue(object : Callback<List<Viaje>>{
+            override fun onFailure(call: Call<Viaje>, t: Throwable) {
+                TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+            }
+
+            override fun onResponse(call: Call<Viaje>, response: Response<Viaje>) {
+
+
+
+
+            }
+
+        })
+
+
+
+    }
+
     fun carteraViajes(): List<ViajeModelo> {
         val viajes = ArrayList<ViajeModelo>()
         viajes.add(
             ViajeModelo(
                 "Brian",
                 "09:10",
-                "Nuevo viaje Gaaaaa",
-                "Mi Casa",
-                "La Mierda",
+                "Nuevo viaje",
+                "Av. Sucre 111",
+                "UPC Villa",
                 "20",
                 "10",
                 R.drawable.ricardo
@@ -61,9 +93,9 @@ class HomeFragment : Fragment() {
             ViajeModelo(
                 "Sebastian",
                 "22:10",
-                "Ahhh mi pcihulaaa",
-                "Mi Casa",
-                "La Bika",
+                "Nuevo viaje",
+                "Av. La Marina 344",
+                "UPC Monterrico",
                 "20",
                 "10",
                 R.drawable.queso
@@ -73,9 +105,9 @@ class HomeFragment : Fragment() {
             ViajeModelo(
                 "Emilio",
                 "21:10",
-                "Muchachos me canse",
-                "Mi Casa",
-                "Desempleo",
+                "Muchachos, les tengo un viaje",
+                "Av. Izaguirre 999",
+                "UPC San Miguel",
                 "20",
                 "10",
                 R.drawable.calamardo
@@ -85,9 +117,9 @@ class HomeFragment : Fragment() {
             ViajeModelo(
                 "Brian",
                 "09:10",
-                "Nuevo viaje Gaaaaa",
-                "Mi Casa",
-                "La Mierda",
+                "Nuevo viaje",
+                "Av. Sucre 111",
+                "UPC Villa",
                 "20",
                 "10",
                 R.drawable.ricardo
