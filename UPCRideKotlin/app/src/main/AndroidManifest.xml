@@ -3,8 +3,8 @@
     package="com.example.upcridekotlin">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
     <application
         android:allowBackup="true"
@@ -14,18 +14,27 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".activities.publicar_viaje" android:windowSoftInputMode="adjustNothing" ></activity>
-        <activity android:name=".activities.registro_pasajero" android:windowSoftInputMode="adjustNothing" />
-        <activity
-            android:name=".activities.registro_conductor"
-            android:windowSoftInputMode="adjustNothing" />
-        <activity android:name=".activities.MainActivity">
+        <activity android:name=".activities.Bienvenido">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".activities.solicitar_viaje" />
+        <activity
+            android:name=".activities.publicar_viaje"
+            android:windowSoftInputMode="adjustNothing" />
+        <activity
+            android:name=".activities.registro_pasajero"
+            android:windowSoftInputMode="adjustNothing" />
+        <activity
+            android:name=".activities.registro_conductor"
+            android:windowSoftInputMode="adjustNothing" />
+        <activity android:name=".activities.MainActivity"
+            android:windowSoftInputMode="adjustNothing" />
+
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyAkSoqQ9v3nMJ9Tv60ZSwkZcgjoNkCGBsw" />

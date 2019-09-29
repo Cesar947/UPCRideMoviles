@@ -54,7 +54,6 @@ class publicar_viaje : AppCompatActivity() {
         viajeService = retrofit.create<ViajeApiService>(ViajeApiService::class.java)
 
 
-
         etHoraPartida = findViewById<EditText>(R.id.etHoraPartida)
         etHoraLlegada = findViewById<EditText>(R.id.etHoraLlegada)
         etPrecioBase = findViewById<EditText>(R.id.etPrecioBase)
@@ -65,6 +64,8 @@ class publicar_viaje : AppCompatActivity() {
         etHoraPartida.setText("12:00:00")
         etHoraLlegada.setText("12:00:00")
 
+
+        btnPublicar = findViewById(R.id.btnPublicar)
 
 
 
