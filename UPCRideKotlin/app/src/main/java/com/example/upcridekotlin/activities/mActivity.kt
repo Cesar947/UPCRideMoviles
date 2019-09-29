@@ -1,15 +1,11 @@
-package com.example.upcride.activities
+package com.example.upcridekotlin.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentTransaction
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 
 import android.os.Bundle
-import android.view.Menu
-import android.view.MenuItem
+
 import android.widget.FrameLayout
 import android.widget.TextView
 
@@ -21,7 +17,6 @@ import com.example.upcridekotlin.activities.SolicitudesFragment
 import com.example.upcridekotlin.activities.ViajesFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
-import java.util.ArrayList
 
 class mActivity : AppCompatActivity() {
     private var toolbar: Toolbar? = null
@@ -40,10 +35,7 @@ class mActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        toolbar = findViewById(R.id.toolbar) as Toolbar
-        mainNav = findViewById(R.id.main_nav) as BottomNavigationView
-        txttoolbar = findViewById(R.id.toolbartxt) as TextView
-        mainFrame = findViewById(R.id.main_frame) as FrameLayout
+
         homeFragment = HomeFragment()
         viajesFragment = ViajesFragment()
         solicitudesFragment = SolicitudesFragment()

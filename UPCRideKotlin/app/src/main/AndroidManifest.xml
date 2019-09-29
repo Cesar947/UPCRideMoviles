@@ -32,7 +32,7 @@
         <activity
             android:name=".activities.registro_conductor"
             android:windowSoftInputMode="adjustNothing" />
-        <activity android:name=".activities.MainActivity"
+        <activity android:name=".activities.mActivity"
             android:windowSoftInputMode="adjustNothing" />
 
         <meta-data

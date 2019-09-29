@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.*
+import com.example.upcridekotlin.activities.mActivity
 import com.example.upcridekotlin.R
 import com.example.upcridekotlin.interfaces.UsuarioApiService
 import com.example.upcridekotlin.model.Usuario
@@ -94,7 +95,7 @@ class registro_conductor : AppCompatActivity() {
             AgregarConductor()
 
 
-            val intent = Intent(this, MainActivity::class.java)
+            val intent = Intent(this, mActivity::class.java)
             startActivity(intent)
 
         }
