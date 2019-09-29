@@ -11,10 +11,7 @@ import android.widget.TextView
 
 
 import com.example.upcridekotlin.R
-import com.example.upcridekotlin.activities.HomeFragment
-import com.example.upcridekotlin.activities.PerfilFragment
-import com.example.upcridekotlin.activities.SolicitudesFragment
-import com.example.upcridekotlin.activities.ViajesFragment
+
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 
@@ -45,24 +42,24 @@ class mActivity : AppCompatActivity() {
 
         setSupportActionBar(toolbar)
 
-        mainNav!!.setOnNavigationItemSelectedListener { item ->
+        mainNav?.setOnNavigationItemSelectedListener { item ->
             var selectedFragment: Fragment? = null
 
             when (item.itemId) {
                 R.id.inicio -> {
                     selectedFragment = HomeFragment()
-                    txttoolbar!!.text = "Inicio"
+                    txttoolbar?.text = "Inicio"
                 }
                 R.id.perfil -> {
                     selectedFragment = PerfilFragment()
-                    txttoolbar!!.text = "Perfil"
+                    txttoolbar?.text = "Perfil"
                 }
                 R.id.solis -> {
-                    txttoolbar!!.text = "Solicitudes"
+                    txttoolbar?.text = "Solicitudes"
                     selectedFragment = SolicitudesFragment()
                 }
                 R.id.viajes -> {
-                    txttoolbar!!.text = "Viajes"
+                    txttoolbar?.text = "Viajes"
                     selectedFragment = ViajesFragment()
                 }
             }
