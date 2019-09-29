@@ -21,7 +21,7 @@
         android:layout_height="41dp"
         android:layout_alignParentTop="true"
         android:layout_marginTop="20dp"
-        android:layout_marginEnd="40dp"
+        android:layout_marginEnd="36dp"
         android:layout_marginBottom="20dp"
         android:background="@color/colorPrimary"
         android:text="@string/btnPublicar"
@@ -29,30 +29,37 @@
         app:layout_constraintBottom_toTopOf="@+id/publicacionMap"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etPrecioBase"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <EditText
         android:id="@+id/etHoraPartida"
         android:layout_width="120dp"
         android:layout_height="41dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="21dp"
+        android:layout_marginBottom="16dp"
         android:ems="10"
         android:hint="@string/etHoraPartida"
         android:inputType="time"
         app:layout_constraintBottom_toTopOf="@+id/etHoraLlegada"
+        app:layout_constraintEnd_toStartOf="@+id/etPrecioBase"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/etHoraLlegada"
         android:layout_width="120dp"
         android:layout_height="41dp"
-        android:layout_marginStart="40dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="292dp"
+        android:layout_marginEnd="24dp"
         android:ems="10"
         android:hint="@string/etHoraLlegada"
         android:inputType="time"
-        app:layout_constraintBaseline_toBaselineOf="@+id/btnPublicar"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toStartOf="@+id/btnPublicar"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/etPrecioBase"
@@ -74,7 +81,8 @@
         android:hint="@string/etPuntoDestino"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toTopOf="@+id/etHoraPartida"
-        tools:layout_editor_absoluteX="41dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/etPuntoPartida"
@@ -85,7 +93,8 @@
         android:hint="@string/etPuntoPartida"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toTopOf="@+id/etPuntoDestino"
-        tools:layout_editor_absoluteX="41dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/etMensaje"

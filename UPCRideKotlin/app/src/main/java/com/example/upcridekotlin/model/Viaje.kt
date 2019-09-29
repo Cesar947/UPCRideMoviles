@@ -14,10 +14,10 @@ class Viaje{
     var destinoLongitud: Double = 0.0
     var partidaLatitud: Double = 0.0
     var partidaLongitud: Double = 0.0
-    var horaPartida: Time? = null
-    var horaLlegada: Time? = null
+    var horaPartida: String? = ""
+    var horaLlegada: String? = ""
     var entradaSalida: Int = 0
-    var fecha: Date? = null
+    var fecha: String? = ""
     var dia: String? = ""
     var estado: String? = ""
     var visualizacionHabilitada: Int? = 0
@@ -35,10 +35,10 @@ class Viaje{
         destinoLongitud: Double,
         partidaLatitud: Double,
         partidaLongitud: Double,
-        horaPartida: Time?,
-        horaLlegada: Time?,
+        horaPartida: String?,
+        horaLlegada: String?,
         entradaSalida: Int,
-        fecha: Date?,
+        fecha: String?,
         dia: String?,
         estado: String?,
         visualizacionHabilitada: Int,
@@ -76,10 +76,10 @@ class Viaje{
         destinoLongitud: Double,
         partidaLatitud: Double,
         partidaLongitud: Double,
-        horaPartida: Time?,
-        horaLlegada: Time?,
+        horaPartida: String,
+        horaLlegada: String?,
         entradaSalida: Int,
-        fecha: Date?,
+        fecha: String?,
         dia: String?,
         estado: String?,
         visualizacionHabilitada: Int?,

@@ -8,10 +8,10 @@ import retrofit2.http.POST
 
 interface SolicitudApiService {
 
-    @GET("autos")
+    @GET("solicitudes")
     fun getAllSolicitudes(): Call<List<Auto>>
 
-    @POST("autos")
+    @POST("solicitudes")
     fun insetarSolicitud(@Body auto: Auto?): Call<Auto>
 }
 

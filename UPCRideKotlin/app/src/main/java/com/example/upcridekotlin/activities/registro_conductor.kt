@@ -57,7 +57,7 @@ class registro_conductor : AppCompatActivity() {
 
 
         val adapter = ArrayAdapter.createFromResource(this,
-            R.array.sedes, android.R.layout.simple_spinner_item)
+        R.array.sedes, android.R.layout.simple_spinner_item)
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         spSede.adapter = adapter
 

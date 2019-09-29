@@ -8,10 +8,10 @@ import retrofit2.http.POST
 
 interface TransaccionApiService {
 
-    @GET("autos")
+    @GET("transacciones")
     fun getAllTransacciones(): Call<List<Auto>>
 
-    @POST("autos")
+    @POST("transacciones")
     fun insertarTransaccion(@Body auto: Auto?): Call<Auto>
 }
 

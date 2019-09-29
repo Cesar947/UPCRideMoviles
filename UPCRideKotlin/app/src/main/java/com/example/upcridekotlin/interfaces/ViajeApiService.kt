@@ -9,15 +9,15 @@ import retrofit2.http.Path
 
 interface ViajeApiService {
 
-    @POST("/publicar/")
-    fun publicarViaje(@Body viaje: Viaje?): Call<Viaje>
+    @POST("viajes/publicar/{conductorId}")
+    fun publicarViaje(@Path("conductorId") conductorId: Int, @Body viaje: Viaje?): Call<Viaje>
 
 
     /* @RequestMapping(path="/solicitar/{viajeId}", method = RequestMethod.POST)
     public Solicitud solictarViaje( @PathVariable Integer viajeId,  @RequestBody Solicitud s) throws Exception {
 */
 
-    @POST("/solicitar/{viajeId}")
+    @POST("viajes/solicitar/{viajeId}")
     fun solicitarViaje(@Path("viajeId") viajeId: Int ): Call<Solicitud>
 
 

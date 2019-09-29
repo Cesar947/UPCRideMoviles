@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.*
 import com.example.upcridekotlin.R
+import com.example.upcridekotlin.interfaces.UsuarioApiService
 import com.example.upcridekotlin.interfaces.ViajeApiService
 import com.example.upcridekotlin.model.Usuario
 import com.example.upcridekotlin.model.Viaje
@@ -16,6 +17,8 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.sql.Date
 import java.sql.Time
+import java.time.LocalDate
+import java.time.LocalDateTime
 
 
 class publicar_viaje : AppCompatActivity() {
@@ -24,6 +27,7 @@ class publicar_viaje : AppCompatActivity() {
 
 
     lateinit var viajeService: ViajeApiService
+    lateinit var userService: UsuarioApiService
 
     private lateinit var btnPublicar: Button
 
@@ -38,7 +42,7 @@ class publicar_viaje : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_publicar_viaje)
+        setContentView(com.example.upcridekotlin.R.layout.activity_publicar_viaje)
 
 
         val retrofit: Retrofit = Retrofit.Builder()
@@ -46,14 +50,25 @@ class publicar_viaje : AppCompatActivity() {
             .addConverterFactory(GsonConverterFactory.create())
             .build()
 
-
+        userService = retrofit.create<UsuarioApiService>(UsuarioApiService::class.java)
         viajeService = retrofit.create<ViajeApiService>(ViajeApiService::class.java)
 
-        btnPublicar = findViewById(R.id.btnPublicar)
+
+
+        etHoraPartida = findViewById<EditText>(R.id.etHoraPartida)
+        etHoraLlegada = findViewById<EditText>(R.id.etHoraLlegada)
+        etPrecioBase = findViewById<EditText>(R.id.etPrecioBase)
+        etPuntoDestino = findViewById<EditText>(R.id.etPuntoDestino)
+        etPuntoPartida = findViewById<EditText>(R.id.etPuntoPartida)
+        etMensaje = findViewById<EditText>(R.id.etMensaje)
+
+        etHoraPartida.setText("12:00:00")
+        etHoraLlegada.setText("12:00:00")
 
 
 
 
+        btnPublicar = findViewById(com.example.upcridekotlin.R.id.btnPublicar)
 
         btnPublicar.setOnClickListener {
 
@@ -67,36 +82,75 @@ class publicar_viaje : AppCompatActivity() {
     fun PublicarViaje() {
 
 
-        etHoraPartida = findViewById<EditText>(R.id.etHoraPartida)
-        etHoraLlegada = findViewById<EditText>(R.id.etHoraLlegada)
-        etPrecioBase = findViewById<EditText>(R.id.etPrecioBase)
-        etPuntoDestino = findViewById<EditText>(R.id.etPuntoDestino)
-        etPuntoPartida = findViewById<EditText>(R.id.etPuntoPartida)
-        etMensaje = findViewById<EditText>(R.id.etMensaje)
 
 
 
-        var conductor: Usuario = Usuario("u2017", "a", "x", "a", "b","a" ,123.0, 123.0,
-            "s", "a", "a", 'c', "asd", "SM")
+        var conductor : Usuario? = null
 
-        var viaje: Viaje? = Viaje( conductor,"descrpcion","lima","limades",
-            12.0,24.0,25.0,50.0,Time(19,0,0),Time(19,0,0),1,
-            Date(2019,9,28),"Lunes","Feliz",1,4,3,5.00)
 
-        Log.i(TAG_LOGS, Gson().toJson(viaje))
+        var dia: String = LocalDateTime.now().dayOfMonth.toString();
+        var mes: String = LocalDateTime.now().monthValue.toString();
+        var año: String = LocalDateTime.now().year.toString();
+        var fecha :String
+        if(LocalDateTime.now().monthValue<10)
+        {
+            fecha = año+"-0"+mes+"-"+dia
+        }
+        else
+        {
+            fecha = año+"-"+mes+"-"+dia
+        }
 
-        viajeService.publicarViaje(viaje).enqueue(object : Callback<Viaje> {
-            override fun onResponse(call: Call<Viaje>?, response: Response<Viaje>?) {
-                viaje = response?.body()
+        Log.i(TAG_LOGS, Gson().toJson(mes))
+
+
+        userService.getUsuarioById(2).enqueue(object : Callback<Usuario> {
+            override fun onResponse(call: Call<Usuario>?, response: Response<Usuario>?) {
+                conductor = response?.body()
+                Log.i(TAG_LOGS, Gson().toJson(conductor))
+
+
+                var viaje: Viaje? = Viaje( null ,etMensaje.text.toString(),etPuntoPartida.text.toString(),etPuntoDestino.text.toString(),
+                    12.0,24.0,25.0,50.0, etHoraPartida.text.toString() ,
+                    etHoraLlegada.text.toString(),1, fecha,"Lunes","Feliz",
+                    1,4,3,etPrecioBase.text.toString().toDouble())
+
                 Log.i(TAG_LOGS, Gson().toJson(viaje))
+
+                viajeService.publicarViaje(3,viaje).enqueue(object : Callback<Viaje> {
+                    override fun onResponse(call: Call<Viaje>?, response: Response<Viaje>?) {
+                        viaje = response?.body()
+                        Log.i(TAG_LOGS, Gson().toJson(viaje))
+                        Log.i(TAG_LOGS, Gson().toJson(conductor!!.id))
+
+                        Log.i(TAG_LOGS, Gson().toJson("bonito"))
+
+                    }
+                    override fun onFailure(call: Call<Viaje>?, t: Throwable?) {
+                        t?.printStackTrace()
+                        Log.i(TAG_LOGS, Gson().toJson("faloooooooooooooooooooo"))
+                    }
+                })
+
 
 
             }
 
-            override fun onFailure(call: Call<Viaje>?, t: Throwable?) {
+            override fun onFailure(call: Call<Usuario>?, t: Throwable?) {
                 t?.printStackTrace()
             }
         })
+
+
+
+
+
+
+
+
+
+
+
     }
 
 
