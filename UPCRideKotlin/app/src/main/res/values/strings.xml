@@ -22,8 +22,9 @@
     <string name="etHoraLlegada">Hora Llegada</string>
     <string name="etPrecioBase">Precio</string>
     <string name="btnPublicar">Publicar</string>
-
-    <string name="tvRegistro">Registro</string>
+    <string name="tvBienvenido">Bienvenido a UPCRide</string>
+    <string name="btnIniciarSesion">INICIAR SESIÓN</string>
+    <string name="btnRegistrarme">Registrarme</string>
 
     <string name="nat_inicio">Inicio</string>
     <string name="nat_viajes">Viajes</string>
@@ -35,5 +36,8 @@
     <string name="toolbarText">Inicio</string>
     <string name="history">Historial</string>
     <string name="pendientes">Pendientes</string>
+
+
+
 </resources>
 

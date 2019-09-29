@@ -52,7 +52,7 @@ class publicar_viaje : AppCompatActivity() {
 
         btnPublicar = findViewById(R.id.btnPublicar)
 
-        
+
 
 
         btnPublicar.setOnClickListener {
