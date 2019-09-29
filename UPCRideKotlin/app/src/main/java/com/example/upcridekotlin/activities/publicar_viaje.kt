@@ -124,12 +124,12 @@ class publicar_viaje : AppCompatActivity() {
                         Log.i(TAG_LOGS, Gson().toJson(viaje))
                         Log.i(TAG_LOGS, Gson().toJson(conductor!!.id))
 
-                        Log.i(TAG_LOGS, Gson().toJson("bonito"))
+                        Log.i(TAG_LOGS, Gson().toJson("funciona"))
 
                     }
                     override fun onFailure(call: Call<Viaje>?, t: Throwable?) {
                         t?.printStackTrace()
-                        Log.i(TAG_LOGS, Gson().toJson("faloooooooooooooooooooo"))
+                        Log.i(TAG_LOGS, Gson().toJson("no funciona"))
                     }
                 })
 

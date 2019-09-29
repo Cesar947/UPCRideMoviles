@@ -29,7 +29,7 @@ class HomeFragment : Fragment() {
     private var recyclerViewViaje: RecyclerView? = null
     private var adaptadorViaje: RecyclerViewAdaptador? = null
     lateinit var viajeService: ViajeApiService
-    lateinit var viajesLista: List<Viaje>
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -58,16 +58,14 @@ class HomeFragment : Fragment() {
 
         viajeService = retrofit.create<ViajeApiService>(ViajeApiService::class.java)
         viajeService.visualizarViajes().enqueue(object : Callback<List<Viaje>>{
-            override fun onFailure(call: Call<Viaje>, t: Throwable) {
-                TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+            override fun onFailure(call: Call<List<Viaje>>, t: Throwable) {
+              //
             }
 
-            override fun onResponse(call: Call<Viaje>, response: Response<Viaje>) {
-
-
-
+            override fun onResponse(call: Call<List<Viaje>>, response: Response<List<Viaje>>) {
 
             }
+
 
         })
 
@@ -77,6 +75,7 @@ class HomeFragment : Fragment() {
 
     fun carteraViajes(): List<ViajeModelo> {
         val viajes = ArrayList<ViajeModelo>()
+
         viajes.add(
             ViajeModelo(
                 "Brian",

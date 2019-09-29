@@ -46,9 +46,9 @@ class ViajesFragment : Fragment() {
             ViajeModelo(
                 "Brian",
                 "09:10",
-                "Nuevo viaje Gaaaaa",
-                "Mi Casa",
-                "La Mierda",
+                "Nuevo viaje",
+                "Av. Sucre 111",
+                "UPC Villa",
                 "20",
                 "10",
                 R.drawable.ricardo
@@ -58,9 +58,9 @@ class ViajesFragment : Fragment() {
             ViajeModelo(
                 "Sebastian",
                 "22:10",
-                "Ahhh mi pcihulaaa",
-                "Mi Casa",
-                "La Bika",
+                "Nuevo viaje",
+                "Av. La Marina 344",
+                "UPC Monterrico",
                 "20",
                 "10",
                 R.drawable.queso
@@ -70,9 +70,9 @@ class ViajesFragment : Fragment() {
             ViajeModelo(
                 "Emilio",
                 "21:10",
-                "Muchachos me canse",
-                "Mi Casa",
-                "Desempleo",
+                "Muchachos, les tengo un viaje",
+                "Av. Izaguirre 999",
+                "UPC San Miguel",
                 "20",
                 "10",
                 R.drawable.calamardo
@@ -82,9 +82,9 @@ class ViajesFragment : Fragment() {
             ViajeModelo(
                 "Brian",
                 "09:10",
-                "Nuevo viaje Gaaaaa",
-                "Mi Casa",
-                "La Mierda",
+                "Nuevo viaje",
+                "Av. Sucre 111",
+                "UPC Villa",
                 "20",
                 "10",
                 R.drawable.ricardo
