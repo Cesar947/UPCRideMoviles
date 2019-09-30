@@ -21,19 +21,6 @@
 
     </com.google.android.material.bottomnavigation.BottomNavigationView>
 
-    <FrameLayout
-        android:id="@+id/main_frame"
-        android:layout_width="422dp"
-        android:layout_height="574dp"
-        android:layout_marginTop="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.573">
-
-    </FrameLayout>
-
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="434dp"
@@ -42,11 +29,8 @@
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
         app:layout_constraintBottom_toBottomOf="@+id/main_nav"
-        app:layout_constraintEnd_toEndOf="@+id/main_frame"
-        app:layout_constraintStart_toStartOf="@+id/main_frame"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-         />
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/toolbartxt"
