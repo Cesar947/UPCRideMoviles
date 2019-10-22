@@ -42,7 +42,7 @@ class publicar_viaje : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(com.example.upcridekotlin.R.layout.activity_publicar_viaje)
+        setContentView(R.layout.activity_publicar_viaje)
 
 
         val retrofit: Retrofit = Retrofit.Builder()
@@ -69,7 +69,7 @@ class publicar_viaje : AppCompatActivity() {
 
 
 
-        btnPublicar = findViewById(com.example.upcridekotlin.R.id.btnPublicar)
+        btnPublicar = findViewById(R.id.btnPublicar)
 
         btnPublicar.setOnClickListener {
 
