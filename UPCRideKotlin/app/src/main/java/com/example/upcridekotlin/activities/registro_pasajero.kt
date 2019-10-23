@@ -55,6 +55,7 @@ class registro_pasajero : AppCompatActivity() {
 
 
         val adapter = ArrayAdapter.createFromResource(this,
+
             R.array.sedes, android.R.layout.simple_spinner_item)
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         spSede.adapter = adapter
@@ -64,7 +65,7 @@ class registro_pasajero : AppCompatActivity() {
 
 
 
-        userService = retrofit.create<UsuarioApiService>(UsuarioApiService::class.java)
+        userService = retrofit.create(UsuarioApiService::class.java)
 
         btnRegistrarme = findViewById<Button>(R.id.btnIrRegistro)
 
@@ -104,7 +105,7 @@ class registro_pasajero : AppCompatActivity() {
         etDNI = findViewById<EditText>(R.id.etDNI)
         etNombre = findViewById<EditText>(R.id.etNombres)
         etApellido = findViewById<EditText>(R.id.etApellidos)
-        etContraseña = findViewById<EditText>(R.id.etContraseña)
+        etContraseña = findViewById<EditText>(R.id.etContraseñaLogin)
         etEmail = findViewById<EditText>(R.id.etEmail)
         etCodigo = findViewById<EditText>(R.id.etCodigo)
 

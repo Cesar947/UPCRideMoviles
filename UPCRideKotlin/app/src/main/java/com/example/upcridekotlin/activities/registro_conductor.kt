@@ -6,7 +6,6 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.*
-import com.example.upcridekotlin.activities.mActivity
 import com.example.upcridekotlin.R
 import com.example.upcridekotlin.interfaces.UsuarioApiService
 import com.example.upcridekotlin.model.Usuario
@@ -111,7 +110,7 @@ class registro_conductor : AppCompatActivity() {
         etDNI = findViewById<EditText>(R.id.etDNI)
         etNombre = findViewById<EditText>(R.id.etNombres)
         etApellido = findViewById<EditText>(R.id.etApellidos)
-        etContraseña = findViewById<EditText>(R.id.etContraseña)
+        etContraseña = findViewById<EditText>(R.id.etContraseñaLogin)
         etEmail = findViewById<EditText>(R.id.etEmail)
         etCodigo = findViewById<EditText>(R.id.etCodigo)
         etFacebook = findViewById<EditText>(R.id.etFacebook)

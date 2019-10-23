@@ -40,7 +40,9 @@ class mActivity : AppCompatActivity() {
         solicitudesFragment = SolicitudesFragment()
         perfilFragment = PerfilFragment()
         mainNav = findViewById(R.id.main_nav)
-        supportFragmentManager.beginTransaction().add(R.id.main_frame, ViajesFragment()).commit()
+
+
+        supportFragmentManager.beginTransaction().add(R.id.main_frame, HomeFragment()).commit()
 
         setSupportActionBar(toolbar)
 

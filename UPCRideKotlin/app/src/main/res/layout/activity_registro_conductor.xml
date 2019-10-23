@@ -80,7 +80,7 @@
                 android:inputType="textEmailAddress" />
 
             <EditText
-                android:id="@+id/etContraseña"
+                android:id="@+id/etContraseñaLogin"
                 android:layout_width="350dp"
                 android:layout_height="50dp"
                 android:layout_marginTop="10dp"
