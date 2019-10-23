@@ -49,8 +49,7 @@ class LoginActivity : AppCompatActivity() {
 
 
 
-        var miBundle  = Bundle();
-        miBundle.putString("id", id.toString())
+
 
 
         btnIngresar?.setOnClickListener{
@@ -71,14 +70,23 @@ class LoginActivity : AppCompatActivity() {
                         if(token == item.correoUPC + item.contraseña)
                         {
                             id = item.id
+
+                            var miBundle  = Bundle();
+                            miBundle.putInt("id", id)
+                            intent.putExtras(miBundle)
+
                             startActivity(intent)
-                            Toast.makeText(this@LoginActivity,"Entraste",Toast.LENGTH_LONG).show();
+                            //Toast.makeText(this@LoginActivity,"Entraste",Toast.LENGTH_LONG).show();
                             Log.i(TAG_LOGS, Gson().toJson(item))
 
                         }
                         else
+                        {
+                            Log.i(TAG_LOGS, Gson().toJson(usuarios))
                             Toast.makeText(this@LoginActivity,"Ingrese un correo y contraseña existente",Toast.LENGTH_LONG).show();
+                        }
                     }
+
 
 
 

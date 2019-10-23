@@ -8,6 +8,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
 import com.example.upcridekotlin.R
+import com.example.upcridekotlin.model.ViajeModelo
 
 class ViajesAdapterHistory(var viajeLista: List<ViajeModelo>) :
     RecyclerView.Adapter<ViajesAdapterHistory.ViewHolder>() {

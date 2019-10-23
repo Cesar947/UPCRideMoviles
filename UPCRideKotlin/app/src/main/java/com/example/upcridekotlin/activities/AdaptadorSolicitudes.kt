@@ -8,6 +8,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
 import com.example.upcridekotlin.R
+import com.example.upcridekotlin.model.SolicitudModelo
 
 class AdaptadorSolicitudes(var solicitudLista: List<SolicitudModelo>) :
     RecyclerView.Adapter<AdaptadorSolicitudes.ViewHolder>() {

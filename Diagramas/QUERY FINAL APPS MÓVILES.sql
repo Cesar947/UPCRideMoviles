@@ -26,7 +26,7 @@ VALUES ('Kevin', 'Vergara Gonzáles', 'U201811327', 'U201811327@upc.edu.pe', 'as
 INSERT INTO auto(limite_personas, marca, modelo, placa, poliza_soat, conductor_id)
 VALUES(4, 'Toyota', 'Corolla', 'AX8-BBC', '11779120', 1);
 INSERT INTO auto(limite_personas, marca, modelo, placa, poliza_soat, conductor_id)
-VALUES(4, 'Chevrolet', 'Camaro', 'AX8-BBC', '11231120', 6);
+VALUES(4, 'Chevrolet', 'Camaro', 'AX8-BBC', '11231120', 5);
 
 INSERT INTO viaje(descripcion, dia, entrada_salida, estado, fecha, hora_partida, hora_llegada, punto_partida, punto_destino, partida_latitud, partida_longitud, destino_latitud,
  destino_longitud, visualizacion_habilitada, conductor_id, numero_pasajeros, limite_pasajeros, precio_base) 

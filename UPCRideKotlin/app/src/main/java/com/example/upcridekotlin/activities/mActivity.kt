@@ -5,9 +5,11 @@ import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
 
 import android.os.Bundle
+import android.util.Log
 
 import android.widget.FrameLayout
 import android.widget.TextView
+import android.widget.Toast
 
 
 import com.example.upcridekotlin.R
@@ -41,30 +43,38 @@ class mActivity : AppCompatActivity() {
         perfilFragment = PerfilFragment()
         mainNav = findViewById(R.id.main_nav)
 
+        var miBundle = this.intent.extras
+        var id = miBundle!!.getInt("id")
 
-        supportFragmentManager.beginTransaction().add(R.id.main_frame, HomeFragment()).commit()
+        homeFragment!!.arguments = miBundle
+        perfilFragment!!.arguments = miBundle
+
+        //Toast.makeText(this,id.toString(), Toast.LENGTH_LONG).show();
+        Log.i("AAAAAAAA", id.toString())
+        supportFragmentManager.beginTransaction().add(R.id.main_frame, homeFragment!!).commit()
+
 
         setSupportActionBar(toolbar)
 
         mainNav?.setOnNavigationItemSelectedListener { item ->
-            var selectedFragment: Fragment = HomeFragment()
+            var selectedFragment: Fragment = homeFragment!!
 
             when (item.itemId) {
                 R.id.inicio -> {
-                    selectedFragment = HomeFragment()
+                    selectedFragment = homeFragment!!
                     txttoolbar?.text = "Inicio"
                 }
                 R.id.perfil -> {
-                    selectedFragment = PerfilFragment()
+                    selectedFragment = perfilFragment!!
                     txttoolbar?.text = "Perfil"
                 }
                 R.id.solis -> {
                     txttoolbar?.text = "Solicitudes"
-                    selectedFragment = SolicitudesFragment()
+                    selectedFragment = solicitudesFragment!!
                 }
                 R.id.viajes -> {
                     txttoolbar?.text = "Viajes"
-                    selectedFragment = ViajesFragment()
+                    selectedFragment = viajesFragment!!
                 }
             }
 

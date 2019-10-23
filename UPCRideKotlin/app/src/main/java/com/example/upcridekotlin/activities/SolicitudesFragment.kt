@@ -12,6 +12,7 @@ import android.view.View
 import android.view.ViewGroup
 
 import com.example.upcridekotlin.R
+import com.example.upcridekotlin.model.SolicitudModelo
 
 
 import java.util.ArrayList
@@ -43,7 +44,14 @@ class SolicitudesFragment : Fragment() {
 
     fun carteraSolicitudes(): List<SolicitudModelo> {
         val solicitudes = ArrayList<SolicitudModelo>()
-        solicitudes.add(SolicitudModelo("Burga", "09:10", "Yo no quiero jalar", R.drawable.ricardo))
+        solicitudes.add(
+            SolicitudModelo(
+                "Burga",
+                "09:10",
+                "Yo no quiero jalar",
+                R.drawable.ricardo
+            )
+        )
         solicitudes.add(
             SolicitudModelo(
                 "Semanche",
@@ -60,7 +68,14 @@ class SolicitudesFragment : Fragment() {
                 R.drawable.calamardo
             )
         )
-        solicitudes.add(SolicitudModelo("Elba", "09:10", "Tu yo piensale", R.drawable.ricardo))
+        solicitudes.add(
+            SolicitudModelo(
+                "Elba",
+                "09:10",
+                "Tu yo piensale",
+                R.drawable.ricardo
+            )
+        )
         return solicitudes
     }
 

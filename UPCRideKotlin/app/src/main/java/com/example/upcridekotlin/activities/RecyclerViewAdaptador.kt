@@ -7,6 +7,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.upcridekotlin.R
+import com.example.upcridekotlin.model.ViajeModelo
 
 
 class RecyclerViewAdaptador(var viajeLista: List<ViajeModelo>) :

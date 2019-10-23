@@ -1,4 +1,4 @@
-package com.example.upcridekotlin.activities
+package com.example.upcridekotlin.model
 
 class SolicitudModelo {
     var nombre: String? = null

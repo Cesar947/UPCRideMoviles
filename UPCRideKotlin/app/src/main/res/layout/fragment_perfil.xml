@@ -3,12 +3,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.PerfilFragment">
+    tools:context=".activities.PerfilFragment"
+    android:layout_margin="45dp">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
+        android:id="@+id/tvPerfil"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:text="hola"
+        android:textSize="30sp"
+        tools:text="hola"
+        />
 
 </FrameLayout>

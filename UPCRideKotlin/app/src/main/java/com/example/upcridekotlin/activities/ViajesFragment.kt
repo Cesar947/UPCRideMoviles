@@ -11,6 +11,7 @@ import android.view.View
 import android.view.ViewGroup
 
 import com.example.upcridekotlin.R
+import com.example.upcridekotlin.model.ViajeModelo
 
 import java.util.ArrayList
 

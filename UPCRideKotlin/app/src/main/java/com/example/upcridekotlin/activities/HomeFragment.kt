@@ -11,11 +11,12 @@ import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 
 import com.example.upcridekotlin.R
 import com.example.upcridekotlin.interfaces.ViajeApiService
 import com.example.upcridekotlin.model.Viaje
-import com.google.gson.Gson
+import com.example.upcridekotlin.model.ViajeModelo
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.Call
@@ -30,13 +31,11 @@ class HomeFragment : Fragment() {
 
     val TAG_LOGS = "Bryan Miramira"
 
-    var Viajes : List<ViajeModelo> = ArrayList()
     var ViajesAux : ArrayList<ViajeModelo> = ArrayList()
 
     private var recyclerViewViaje: RecyclerView? = null
     private var adaptadorViaje: RecyclerViewAdaptador? = null
     private var viajeService: ViajeApiService? = null
-
 
 
 
@@ -49,36 +48,29 @@ class HomeFragment : Fragment() {
         // Inflate the layout for this fragment
         val vista = inflater.inflate(R.layout.fragment_home, container, false)
 
-
         val retrofit: Retrofit = Retrofit.Builder()
             .baseUrl("http://ec2-52-15-215-247.us-east-2.compute.amazonaws.com:8080/")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
-
         viajeService = retrofit.create(ViajeApiService::class.java)
 
+        Log.i(TAG_LOGS, arguments.toString())
 
+        var id = arguments!!.getInt("id",0)
 
+        recyclerViewViaje = vista.findViewById(R.id.viajes_recycler)
+        recyclerViewViaje!!.layoutManager = LinearLayoutManager(context)
 
-
+        Toast.makeText(activity, id.toString(), Toast.LENGTH_LONG).show()
 
         viajeService!!.getAllViajes().enqueue(object: Callback<List<Viaje>> {
             override fun onResponse(call: Call<List<Viaje>>, response: Response<List<Viaje>>) {
                 val viajesaux = response.body()
 
-
                 anadir(viajesaux!!);
-
-                Viajes = ViajesAux;
-
-                Log.i(TAG_LOGS, Gson().toJson(ViajesAux))
-
-                recyclerViewViaje = vista.findViewById(R.id.viajes_recycler)
-                recyclerViewViaje!!.layoutManager = LinearLayoutManager(context)
-
-                adaptadorViaje = RecyclerViewAdaptador(Viajes)
+                //Log.i(TAG_LOGS, Gson().toJson(ViajesAux))
+                adaptadorViaje = RecyclerViewAdaptador(ViajesAux)
                 recyclerViewViaje!!.adapter = adaptadorViaje
-
             }
             override fun onFailure(call: Call<List<Viaje>>?, t: Throwable?) {
                 t?.printStackTrace()
@@ -87,16 +79,10 @@ class HomeFragment : Fragment() {
 
         })
 
-
-
-
-
-
-
         return vista
     }
 
-    fun anadir (lista:List<Viaje> ){
+    fun anadir (lista:List<Viaje>){
 
         for(item : Viaje in lista)
         {
@@ -108,15 +94,13 @@ class HomeFragment : Fragment() {
             var n_solis =  "20"
             var n_reseñas = "10"
 
-            ViajesAux.add(ViajeModelo(nombre,fecha,descripcion,ptoPartida,ptoDestino,
-                n_solis,n_reseñas,R.drawable.queso))
-
+            ViajesAux.add(
+                ViajeModelo(
+                    nombre, fecha, descripcion, ptoPartida, ptoDestino,
+                    n_solis, n_reseñas, R.drawable.queso
+                )
+            )
 
         }
-
-
     }
-
-
-
 }
