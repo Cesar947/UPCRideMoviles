@@ -16,6 +16,8 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 
 
 class mActivity : AppCompatActivity() {
+
+
     private var toolbar: Toolbar? = null
     private var txttoolbar: TextView? = null
 
@@ -37,13 +39,13 @@ class mActivity : AppCompatActivity() {
         viajesFragment = ViajesFragment()
         solicitudesFragment = SolicitudesFragment()
         perfilFragment = PerfilFragment()
-
-        supportFragmentManager.beginTransaction().replace(R.id.main_frame, HomeFragment()).commit()
+        mainNav = findViewById(R.id.main_nav)
+        supportFragmentManager.beginTransaction().add(R.id.main_frame, ViajesFragment()).commit()
 
         setSupportActionBar(toolbar)
 
         mainNav?.setOnNavigationItemSelectedListener { item ->
-            var selectedFragment: Fragment? = null
+            var selectedFragment: Fragment = HomeFragment()
 
             when (item.itemId) {
                 R.id.inicio -> {
@@ -64,7 +66,7 @@ class mActivity : AppCompatActivity() {
                 }
             }
 
-            supportFragmentManager.beginTransaction().replace(R.id.main_frame, selectedFragment!!)
+            supportFragmentManager.beginTransaction().replace(R.id.main_frame, selectedFragment)
                 .commit()
 
             true

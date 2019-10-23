@@ -14,6 +14,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
+        <activity android:name=".LoginActivity"></activity>
         <activity android:name=".activities.Bienvenido">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,7 +22,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity android:name=".activities.solicitar_viaje" />
         <activity
             android:name=".activities.publicar_viaje"
@@ -32,7 +32,8 @@
         <activity
             android:name=".activities.registro_conductor"
             android:windowSoftInputMode="adjustNothing" />
-        <activity android:name=".activities.mActivity"
+        <activity
+            android:name=".activities.mActivity"
             android:windowSoftInputMode="adjustNothing" />
 
         <meta-data
