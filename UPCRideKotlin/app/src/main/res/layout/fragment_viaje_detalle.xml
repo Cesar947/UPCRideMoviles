@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.ViajeDetalleFragment">
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="match_parent"
+        android:layout_height="320dp"
+        android:src="@drawable/viaje_back" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/viaje_detalle_recycler"
+        android:layout_width="match_parent"
+        android:layout_height="607dp" />
+</FrameLayout>
