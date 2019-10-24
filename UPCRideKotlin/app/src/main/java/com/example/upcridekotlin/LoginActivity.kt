@@ -17,18 +17,26 @@ import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import com.google.android.material.textfield.TextInputEditText
+import androidx.core.app.ComponentActivity.ExtraData
+import androidx.core.content.ContextCompat.getSystemService
+import android.icu.lang.UCharacter.GraphemeClusterBreak.T
+import com.google.android.material.textfield.TextInputLayout
+
 
 class LoginActivity : AppCompatActivity() {
 
 
+    var etCorreo: TextInputLayout? = null
+
+    var etContraseña: TextInputLayout? = null
+
     val TAG_LOGS = "Bryan Miramira"
     lateinit var userService: UsuarioApiService
 
-    var etCorreo : EditText? = null
-    var etContraseña : EditText? = null
     var btnIngresar : Button? = null
     var id = 0
-     var existe :Boolean = false
+    var existe :Boolean = false
 
 
 
@@ -48,15 +56,11 @@ class LoginActivity : AppCompatActivity() {
         btnIngresar = findViewById(R.id.btnIngresarLogin)
 
 
-
-
-
-
         btnIngresar?.setOnClickListener{
 
             val intent = Intent(this, mActivity::class.java)
 
-            var token = etCorreo?.text.toString() + etContraseña?.text.toString();
+            var token = etCorreo?.editText?.text.toString() + etContraseña?.editText?.text.toString();
 
             userService.getAllUsers().enqueue(object : Callback<List<Usuario>> {
                 override fun onResponse(call: Call<List<Usuario>>?, response: Response<List<Usuario>>?) {
