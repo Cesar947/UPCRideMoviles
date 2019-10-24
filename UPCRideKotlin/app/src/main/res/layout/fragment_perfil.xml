@@ -22,16 +22,18 @@
             <ImageView
                 android:id="@+id/imageView7"
                 android:layout_width="match_parent"
-                android:layout_height="246dp"
+                android:layout_height="wrap_content"
                 android:src="@drawable/ricardo" />
 
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="397dp"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="2dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="425dp"
                     android:orientation="vertical">
 
                     <LinearLayout
@@ -60,14 +62,16 @@
                                 android:layout_height="wrap_content"
                                 android:layout_margin="10dp"
                                 android:text=""
-                                android:textSize="20sp"/>
+                                android:textSize="20sp" />
                         </LinearLayout>
                     </LinearLayout>
 
                     <androidx.cardview.widget.CardView
-                        android:layout_width="355dp"
+                        android:layout_width="309dp"
                         android:layout_height="235dp"
-                        android:layout_margin="30dp">
+                        android:layout_marginLeft="30dp"
+                        app:cardCornerRadius="20dp"
+                        app:cardElevation="2dp">
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -86,18 +90,21 @@
                                     android:layout_weight="1"
                                     android:orientation="vertical">
 
-                                    <Button
+                                    <ImageButton
                                         android:id="@+id/button3"
                                         android:layout_width="31dp"
                                         android:layout_height="27dp"
-                                        android:layout_margin="20dp"
+                                        android:layout_marginLeft="32dp"
+                                        android:layout_marginTop="20dp"
                                         android:layout_weight="1"
-                                        android:background="@drawable/path1" />
+                                        android:background="@android:color/transparent"
+                                        android:src="@drawable/path1" />
 
                                     <TextView
                                         android:id="@+id/textView4"
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
+                                        android:layout_marginLeft="15dp"
                                         android:layout_weight="1"
                                         android:text="Reseñas"
                                         android:textSize="18sp" />
@@ -109,18 +116,22 @@
                                     android:layout_weight="1"
                                     android:orientation="vertical">
 
-                                    <Button
+                                    <ImageButton
                                         android:id="@+id/button4"
                                         android:layout_width="31dp"
                                         android:layout_height="25dp"
-                                        android:layout_margin="20dp"
+                                        android:layout_marginLeft="32dp"
+                                        android:layout_marginTop="20dp"
                                         android:layout_weight="1"
-                                        android:background="@drawable/path2" />
+                                        android:background="@android:color/transparent"
+                                        android:src="@drawable/path2"
+                                        tools:src="@drawable/path2" />
 
                                     <TextView
                                         android:id="@+id/textView5"
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
+                                        android:layout_marginLeft="22dp"
                                         android:layout_weight="1"
                                         android:text="Viajes"
                                         android:textSize="18sp" />
@@ -132,18 +143,21 @@
                                     android:layout_weight="1"
                                     android:orientation="vertical">
 
-                                    <Button
+                                    <ImageButton
                                         android:id="@+id/button5"
                                         android:layout_width="24dp"
                                         android:layout_height="27dp"
-                                        android:layout_margin="20dp"
+                                        android:layout_marginLeft="32dp"
+                                        android:layout_marginTop="20dp"
                                         android:layout_weight="1"
-                                        android:background="@drawable/path3" />
+                                        android:background="@android:color/transparent"
+                                        android:src="@drawable/path3" />
 
                                     <TextView
                                         android:id="@+id/textView6"
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
+                                        android:layout_marginLeft="25dp"
                                         android:layout_weight="1"
                                         android:text="Sede"
                                         android:textSize="18sp" />
@@ -163,18 +177,21 @@
                                     android:layout_weight="1"
                                     android:orientation="vertical">
 
-                                    <Button
+                                    <ImageButton
                                         android:id="@+id/button8"
                                         android:layout_width="30dp"
                                         android:layout_height="35dp"
-                                        android:layout_margin="20dp"
+                                        android:layout_marginLeft="32dp"
+                                        android:layout_marginTop="15dp"
                                         android:layout_weight="1"
-                                        android:background="@drawable/ic_action_viaje" />
+                                        android:background="@android:color/transparent"
+                                        android:src="@drawable/ic_action_viaje" />
 
                                     <TextView
                                         android:id="@+id/textView7"
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
+                                        android:layout_marginLeft="30dp"
                                         android:layout_weight="1"
                                         android:text="Auto" />
                                 </LinearLayout>
@@ -185,13 +202,15 @@
                                     android:layout_weight="1"
                                     android:orientation="vertical">
 
-                                    <Button
+                                    <ImageButton
                                         android:id="@+id/button7"
                                         android:layout_width="31dp"
                                         android:layout_height="26dp"
-                                        android:layout_margin="20dp"
+                                        android:layout_marginLeft="32dp"
+                                        android:layout_marginTop="20dp"
                                         android:layout_weight="1"
-                                        android:background="@drawable/path4" />
+                                        android:background="@android:color/transparent"
+                                        android:src="@drawable/path4" />
 
                                     <TextView
                                         android:id="@+id/textView8"
@@ -207,18 +226,21 @@
                                     android:layout_weight="1"
                                     android:orientation="vertical">
 
-                                    <Button
+                                    <ImageButton
                                         android:id="@+id/button6"
                                         android:layout_width="40dp"
                                         android:layout_height="31dp"
-                                        android:layout_margin="20dp"
+                                        android:layout_marginLeft="28dp"
+                                        android:layout_marginTop="20dp"
                                         android:layout_weight="1"
-                                        android:background="@drawable/path5" />
+                                        android:background="@android:color/transparent"
+                                        android:src="@drawable/path5" />
 
                                     <TextView
                                         android:id="@+id/textView9"
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
+                                        android:layout_marginLeft="12dp"
                                         android:layout_weight="1"
                                         android:text="Solicitudes" />
                                 </LinearLayout>
