@@ -38,7 +38,7 @@
         android:id="@+id/btnIngresarLogin"
         android:layout_width="276dp"
         android:layout_height="33dp"
-        android:background="@color/colorPrimary"
+        android:background="@drawable/l"
         android:bottomLeftRadius="120dp"
         android:bottomRightRadius="20dp"
         android:text="Continuar"
