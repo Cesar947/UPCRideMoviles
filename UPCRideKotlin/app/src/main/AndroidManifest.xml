@@ -14,8 +14,11 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
+
         <activity android:name=".activities.elegirRegistro"></activity>
-        <activity android:name=".LoginActivity" />
+
+        <activity android:name=".activities.LoginActivity"></activity>
+
         <activity android:name=".activities.Bienvenido">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -38,5 +38,10 @@
     <string name="pendientes">Pendientes</string>
 
 
+    <!--Solicitar-->
+    <string name="tvConductorSol">Conductor:</string>
+    <string name="tvMensajeSol">Mensaje:</string>
+    <string name="tvPuntoPartidaSol">Punto de partida:</string>
+    <string name="tvPuntoDestinoSol">Punto de destino:</string>
 </resources>
 

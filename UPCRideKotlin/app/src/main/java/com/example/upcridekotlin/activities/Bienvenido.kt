@@ -3,12 +3,8 @@ package com.example.upcridekotlin.activities
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
-import android.view.View
 import android.widget.Button
-import com.example.upcridekotlin.LoginActivity
 import com.example.upcridekotlin.R
-import kotlinx.android.synthetic.main.activity_bienvenido.*
 
 class Bienvenido : AppCompatActivity() {
 

@@ -1,4 +1,4 @@
-package com.example.upcridekotlin
+package com.example.upcridekotlin.activities
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -7,8 +7,7 @@ import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
-import com.example.upcridekotlin.activities.mActivity
-import com.example.upcridekotlin.activities.registro_pasajero
+import com.example.upcridekotlin.R
 import com.example.upcridekotlin.interfaces.UsuarioApiService
 import com.example.upcridekotlin.model.Usuario
 import com.google.gson.Gson

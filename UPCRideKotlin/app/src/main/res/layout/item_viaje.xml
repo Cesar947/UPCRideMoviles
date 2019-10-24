@@ -159,8 +159,8 @@
                         android:text="TextView"
                         android:textSize="10sp" />
 
-                    <ImageView
-                        android:id="@+id/d_solis"
+                    <ImageButton
+                        android:id="@+id/btnSolicitar"
                         android:layout_width="22dp"
                         android:layout_height="match_parent"
                         android:layout_margin="2dp"

@@ -92,10 +92,6 @@ class publicar_viaje : AppCompatActivity() {
 
     fun PublicarViaje() {
 
-
-
-
-
         var conductor : Usuario? = null
 
 
