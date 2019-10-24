@@ -1,5 +1,6 @@
 package com.example.upcridekotlin.activities
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -37,6 +38,8 @@ class publicar_viaje : AppCompatActivity() {
     private lateinit var etPuntoDestino: EditText
     private lateinit var etPuntoPartida: EditText
     private lateinit var etMensaje: EditText
+    var id = 0
+
 
 
 
@@ -61,19 +64,26 @@ class publicar_viaje : AppCompatActivity() {
         etPuntoPartida = findViewById<EditText>(R.id.etPuntoPartida)
         etMensaje = findViewById<EditText>(R.id.etMensaje)
 
+        btnPublicar = findViewById(R.id.btnPublicar)
+
+
         etHoraPartida.setText("12:00:00")
         etHoraLlegada.setText("12:00:00")
 
+        var miBundle = this.intent.extras
+        id = miBundle!!.getInt("id")
 
-        btnPublicar = findViewById(R.id.btnPublicar)
 
 
-
-        btnPublicar = findViewById(R.id.btnPublicar)
 
         btnPublicar.setOnClickListener {
 
             PublicarViaje()
+
+            var intent = Intent(this,mActivity::class.java)
+            intent.putExtras(miBundle)
+            startActivity(intent)
+
         }
 
 
@@ -105,55 +115,27 @@ class publicar_viaje : AppCompatActivity() {
         Log.i(TAG_LOGS, Gson().toJson(mes))
 
 
-        userService.getUsuarioById(2).enqueue(object : Callback<Usuario> {
-            override fun onResponse(call: Call<Usuario>?, response: Response<Usuario>?) {
-                conductor = response?.body()
-                Log.i(TAG_LOGS, Gson().toJson(conductor))
-
-
-                var viaje: Viaje? = Viaje( null ,etMensaje.text.toString(),etPuntoPartida.text.toString(),etPuntoDestino.text.toString(),
-                    12.0,24.0,25.0,50.0, etHoraPartida.text.toString() ,
+            var viaje: Viaje? = Viaje( null ,etMensaje.text.toString(),etPuntoPartida.text.toString(),etPuntoDestino.text.toString(), 12.0,24.0,25.0,50.0, etHoraPartida.text.toString() ,
                     etHoraLlegada.text.toString(),1, fecha,"Lunes","Feliz",
                     1,4,3,etPrecioBase.text.toString().toDouble())
 
                 Log.i(TAG_LOGS, Gson().toJson(viaje))
 
-                viajeService.publicarViaje(3,viaje).enqueue(object : Callback<Viaje> {
+                viajeService.publicarViaje(id,viaje).enqueue(object : Callback<Viaje> {
                     override fun onResponse(call: Call<Viaje>?, response: Response<Viaje>?) {
                         viaje = response?.body()
+
                         Log.i(TAG_LOGS, Gson().toJson(viaje))
                         Log.i(TAG_LOGS, Gson().toJson(conductor!!.id))
-
                         Log.i(TAG_LOGS, Gson().toJson("funciona"))
 
                     }
                     override fun onFailure(call: Call<Viaje>?, t: Throwable?) {
                         t?.printStackTrace()
                         Log.i(TAG_LOGS, Gson().toJson("no funciona"))
-                    }
-                })
-
-
+                    } })
 
             }
-
-            override fun onFailure(call: Call<Usuario>?, t: Throwable?) {
-                t?.printStackTrace()
-            }
-        })
-
-
-
-
-
-
-
-
-
-
-
     }
 
 
-
-}

@@ -1,11 +1,13 @@
 package com.example.upcridekotlin.activities
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
 
 import android.os.Bundle
 import android.util.Log
+import android.widget.Button
 
 import android.widget.FrameLayout
 import android.widget.TextView
@@ -15,6 +17,7 @@ import android.widget.Toast
 import com.example.upcridekotlin.R
 
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 
 class mActivity : AppCompatActivity() {
@@ -26,7 +29,7 @@ class mActivity : AppCompatActivity() {
     private var mainNav: BottomNavigationView? = null
 
     private var mainFrame: FrameLayout? = null
-
+    private var btnAgregarViaje : FloatingActionButton? = null
     private var homeFragment: HomeFragment? = null
     private var viajesFragment: ViajesFragment? = null
     private var solicitudesFragment: SolicitudesFragment? = null
@@ -42,6 +45,9 @@ class mActivity : AppCompatActivity() {
         solicitudesFragment = SolicitudesFragment()
         perfilFragment = PerfilFragment()
         mainNav = findViewById(R.id.main_nav)
+        btnAgregarViaje = findViewById(R.id.btnAgregarViaje)
+
+
 
         var miBundle = this.intent.extras
         var id = miBundle!!.getInt("id")
@@ -50,10 +56,14 @@ class mActivity : AppCompatActivity() {
         perfilFragment!!.arguments = miBundle
 
         //Toast.makeText(this,id.toString(), Toast.LENGTH_LONG).show();
-        Log.i("AAAAAAAA", id.toString())
+        //Log.i("AAAAAAAA", id.toString())
+        btnAgregarViaje!!.setOnClickListener {
+            val intent = Intent(this,publicar_viaje::class.java)
+            intent.putExtras(miBundle)
+            startActivity(intent)
+        }
+
         supportFragmentManager.beginTransaction().add(R.id.main_frame, homeFragment!!).commit()
-
-
         setSupportActionBar(toolbar)
 
         mainNav?.setOnNavigationItemSelectedListener { item ->

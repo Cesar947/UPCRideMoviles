@@ -109,7 +109,7 @@ class LoginActivity : AppCompatActivity() {
     }
 
 
-    fun validar()
+    /*fun validar()
     {
         var token = etCorreo?.text.toString() + etContraseña?.text.toString();
 
@@ -137,7 +137,7 @@ class LoginActivity : AppCompatActivity() {
             }
         })
 
-    }
+    }*/
 
 
 

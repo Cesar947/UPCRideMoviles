@@ -29,7 +29,9 @@ import retrofit2.converter.gson.GsonConverterFactory
  */
 class PerfilFragment : Fragment() {
 
-    var lblPerfil : TextView? = null
+    var lblNombrePerfil : TextView? = null
+    var lblUbicación : TextView? = null
+
 
     private var usuarioService: UsuarioApiService? = null
 
@@ -49,7 +51,8 @@ class PerfilFragment : Fragment() {
             .build()
         usuarioService = retrofit.create(UsuarioApiService::class.java)
 
-        lblPerfil = vista.findViewById(R.id.tvPerfil)
+        lblNombrePerfil = vista.findViewById(R.id.nombrePerfilTxt)
+        lblUbicación = vista.findViewById(R.id.ubicacionPerfilTxt)
 
         var id = arguments!!.getInt("id",0)
 
@@ -58,8 +61,8 @@ class PerfilFragment : Fragment() {
                 val pasajero = response?.body()
                 Log.i("AAAAAAA", Gson().toJson(pasajero))
 
-                lblPerfil!!.setText( Gson().toJson(pasajero).toString())
-
+                lblNombrePerfil!!.setText(pasajero!!.nombres+ " " + pasajero.apellidos)
+                lblUbicación!!.setText("Latitud: "+pasajero.ubicacionLatitud +"\nLongitud:" + pasajero.ubicacionLongitud)
 
 
             }

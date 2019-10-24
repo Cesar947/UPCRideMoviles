@@ -16,7 +16,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:layout_margin="20dp">
 
             <ImageView
                 android:id="@+id/imageView7"
@@ -40,16 +41,17 @@
                         android:orientation="horizontal">
 
                         <LinearLayout
-                            android:layout_width="320dp"
+                            android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:orientation="vertical">
 
                             <TextView
                                 android:id="@+id/nombrePerfilTxt"
-                                android:layout_width="match_parent"
+                                android:layout_width="326dp"
                                 android:layout_height="wrap_content"
                                 android:layout_margin="10dp"
-                                android:text="TextView"
+                                android:gravity="center"
+                                android:text=""
                                 android:textSize="24sp" />
 
                             <TextView
@@ -57,7 +59,8 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_margin="10dp"
-                                android:text="TextView" />
+                                android:text=""
+                                android:textSize="20sp"/>
                         </LinearLayout>
                     </LinearLayout>
 
@@ -228,14 +231,6 @@
 
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
-
-            <TextView
-                android:id="@+id/tvPerfil"
-                android:layout_width="410dp"
-                android:layout_height="622dp"
-                android:text="hola"
-                android:textSize="30sp"
-                tools:text="hola" />
         </LinearLayout>
     </ScrollView>
 
