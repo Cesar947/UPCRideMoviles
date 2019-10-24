@@ -15,7 +15,6 @@ class Bienvenido : AppCompatActivity() {
     val TAG_LOGS = "Bryan Miramira"
     var btnRegistrarme : Button? = null
     var btnIniciar : Button? = null
-    var btinRegistroPas : Button? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,10 +23,9 @@ class Bienvenido : AppCompatActivity() {
 
         btnRegistrarme = findViewById(R.id.btnRegistrarme)
         btnIniciar = findViewById(R.id.btnIniciarSesion)
-        btinRegistroPas = findViewById(R.id.btnRegistrarPasajero)
 
         btnRegistrarme?.setOnClickListener {
-            val intent = Intent(this, registro_conductor::class.java)
+            val intent = Intent(this, elegirRegistro::class.java)
             startActivity(intent)
         }
 
@@ -36,13 +34,6 @@ class Bienvenido : AppCompatActivity() {
 
            startActivity(intent)
         }
-
-        btinRegistroPas?.setOnClickListener{
-            val intent = Intent(this,registro_pasajero::class.java)
-            startActivity(intent)
-        }
-
-
 
 
     }

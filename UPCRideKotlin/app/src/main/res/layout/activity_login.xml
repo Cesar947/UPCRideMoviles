@@ -55,8 +55,8 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/etCorreoLogin"
-        android:layout_width="280dp"
-        android:layout_height="46dp"
+        android:layout_width="288dp"
+        android:layout_height="57dp"
         android:hint="Correo UPC"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -72,8 +72,8 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/etContraseñaLogin"
-        android:layout_width="280dp"
-        android:layout_height="46dp"
+        android:layout_width="287dp"
+        android:layout_height="61dp"
         android:hint="Contraseña"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

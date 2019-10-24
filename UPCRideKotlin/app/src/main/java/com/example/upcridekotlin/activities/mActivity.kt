@@ -39,7 +39,7 @@ class mActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-
+        txttoolbar = findViewById(R.id.toolbartxt)
         homeFragment = HomeFragment()
         viajesFragment = ViajesFragment()
         solicitudesFragment = SolicitudesFragment()
