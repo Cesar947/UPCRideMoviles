@@ -78,7 +78,7 @@ class solicitar_viaje : AppCompatActivity(), MapsFragment.OnFragmentInteractionL
 
 
 
-    fun solicitarViaje() {
+    /*fun solicitarViaje() {
 
 
         var conductor : Usuario? = null
@@ -124,5 +124,5 @@ class solicitar_viaje : AppCompatActivity(), MapsFragment.OnFragmentInteractionL
 
             } })
 
-    }
+    }*/
 }

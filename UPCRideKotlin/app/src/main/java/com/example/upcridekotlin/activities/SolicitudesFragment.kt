@@ -48,16 +48,16 @@ class SolicitudesFragment : Fragment() {
             SolicitudModelo(
                 "Burga",
                 "09:10",
-                "Yo no quiero jalar",
-                R.drawable.ricardo
+                "Baja en 3 calles",
+                R.drawable.user
             )
         )
         solicitudes.add(
             SolicitudModelo(
                 "Semanche",
                 "22:10",
-                "Cuanto por tu caca",
-                R.drawable.queso
+                "Porfa tengo un bautizo",
+                R.drawable.user
             )
         )
         solicitudes.add(
@@ -65,15 +65,15 @@ class SolicitudesFragment : Fragment() {
                 "Emilio",
                 "21:10",
                 "Muchachos me canse",
-                R.drawable.calamardo
+                R.drawable.user
             )
         )
         solicitudes.add(
             SolicitudModelo(
                 "Elba",
                 "09:10",
-                "Tu yo piensale",
-                R.drawable.ricardo
+                "Tu, yo  y un codelab, piensalo",
+                R.drawable.user
             )
         )
         return solicitudes
