@@ -104,7 +104,7 @@ class solicitar_viaje : AppCompatActivity(), MapsFragment.OnFragmentInteractionL
             etHoraLlegada.text.toString(),1, fecha,"Lunes","Feliz",
             1,4,3,etPrecioBase.text.toString().toDouble())
 
-       var solicitud: Solicitud? = Solicitud(
+      /* var solicitud: Solicitud? = Solicitud(
         pasajero: Usuario?,
         viaje: Viaje?,
         mensaje: String?,
@@ -122,7 +122,7 @@ class solicitar_viaje : AppCompatActivity(), MapsFragment.OnFragmentInteractionL
             override fun onFailure(call: Call<Viaje>?, t: Throwable?) {
                 t?.printStackTrace()
 
-            } })
+            } })*/
 
     }
 }
