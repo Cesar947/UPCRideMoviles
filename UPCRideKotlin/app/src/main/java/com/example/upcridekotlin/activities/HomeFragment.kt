@@ -86,6 +86,7 @@ class HomeFragment : Fragment() {
 
         for(item : Viaje in lista)
         {
+            var id = item?.id
             var nombre = item?.conductor?.nombres.toString();
             var fecha =  item?.fecha.toString();
             var descripcion =  item?.descripcion.toString();
@@ -95,7 +96,7 @@ class HomeFragment : Fragment() {
             var n_reseñas = "10"
 
             ViajesAux.add(
-                ViajeModelo(
+                ViajeModelo(id,
                     nombre, fecha, descripcion, ptoPartida, ptoDestino,
                     n_solis, n_reseñas, R.drawable.queso
                 )

@@ -1,6 +1,7 @@
 package com.example.upcridekotlin.model
 
 class ViajeModelo {
+    var id: Int? = null
     var nombre: String? = null
     var fecha: String? = null
     var descripcion: String? = null
@@ -13,6 +14,7 @@ class ViajeModelo {
     constructor() {}
 
     constructor(
+        id: Int,
         nombre: String,
         fecha: String,
         descripcion: String,
@@ -22,6 +24,7 @@ class ViajeModelo {
         n_resenias: String,
         foto_perfil: Int
     ) {
+        this.id = id
         this.nombre = nombre
         this.fecha = fecha
         this.descripcion = descripcion

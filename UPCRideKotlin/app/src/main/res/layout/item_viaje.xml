@@ -158,7 +158,6 @@
                         android:layout_weight="1"
                         android:text="TextView"
                         android:textSize="10sp" />
-
                     <ImageButton
                         android:id="@+id/btnSolicitar"
                         android:layout_width="22dp"
@@ -166,6 +165,7 @@
                         android:layout_margin="2dp"
                         android:layout_weight="1"
                         app:srcCompat="@drawable/icons_rideshare" />
+
                 </LinearLayout>
 
             </LinearLayout>

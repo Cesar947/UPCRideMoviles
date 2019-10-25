@@ -1,8 +1,11 @@
 package com.example.upcridekotlin.activities
 
+import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
@@ -13,8 +16,10 @@ import com.example.upcridekotlin.model.ViajeModelo
 class RecyclerViewAdaptador(var viajeLista: List<ViajeModelo>) :
     RecyclerView.Adapter<RecyclerViewAdaptador.ViewHolder>() {
 
-    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView), View.OnClickListener {
 
+
+        var id: Int?
         var nombre: TextView
         var fecha: TextView
         var descripcion: TextView
@@ -23,6 +28,8 @@ class RecyclerViewAdaptador(var viajeLista: List<ViajeModelo>) :
         var n_solis: TextView
         var n_resenias: TextView
         var foto_perfil: ImageView
+        var btnSolicitar: ImageButton
+        var context: Context
 
         init {
             nombre = itemView.findViewById<View>(R.id.n_usuario) as TextView
@@ -33,7 +40,25 @@ class RecyclerViewAdaptador(var viajeLista: List<ViajeModelo>) :
             n_solis = itemView.findViewById<View>(R.id.n_solis) as TextView
             n_resenias = itemView.findViewById<View>(R.id.n_resenias) as TextView
             foto_perfil = itemView.findViewById<View>(R.id.foto_perfil) as ImageView
+            btnSolicitar = itemView.findViewById<View>(R.id.btnSolicitar) as ImageButton
+            context = itemView.context
+            id = 0
         }
+
+        fun setOnClickListeners(){
+           btnSolicitar.setOnClickListener(this)
+        }
+
+        override fun onClick(v: View?) {
+          when(v!!.id){
+              R.id.btnSolicitar -> {
+                  var intent = Intent(context, solicitar_viaje::class.java)
+                  intent.putExtra("id", id)
+                  context.startActivity(intent)
+              }
+          }
+        }
+
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -42,6 +67,7 @@ class RecyclerViewAdaptador(var viajeLista: List<ViajeModelo>) :
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        holder.id = viajeLista[position].id
         holder.nombre.setText(viajeLista[position].nombre  )
         holder.fecha.setText(viajeLista[position].fecha)
         holder.descripcion.setText(viajeLista[position].descripcion)
@@ -50,6 +76,8 @@ class RecyclerViewAdaptador(var viajeLista: List<ViajeModelo>) :
         holder.n_solis.setText(viajeLista[position].n_solis)
         holder.n_resenias.setText(viajeLista[position].n_resenias)
         holder.foto_perfil.setImageResource(viajeLista[position].foto_perfil)
+
+        holder.setOnClickListeners()
     }
 
     override fun getItemCount(): Int {
