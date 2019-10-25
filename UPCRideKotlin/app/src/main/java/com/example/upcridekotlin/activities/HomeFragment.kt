@@ -33,7 +33,7 @@ class HomeFragment : Fragment() {
 
     val TAG_LOGS = "Bryan Miramira"
 
-    var ViajesAux : ArrayList<ViajeModelo> = ArrayList()
+
 
     private var recyclerViewViaje: RecyclerView? = null
     private var adaptadorViaje: RecyclerViewAdaptador? = null
@@ -89,7 +89,7 @@ class HomeFragment : Fragment() {
 
                 adaptadorViaje!!.setOnClickListener( object : View.OnClickListener{
                     override fun onClick(view:View){
-                        Toast.makeText(activity,ViajesAux.get(recyclerViewViaje!!.getChildAdapterPosition(view)).nombre,Toast.LENGTH_LONG).show()
+                        Toast.makeText(activity,viajesaux.get(recyclerViewViaje!!.getChildAdapterPosition(view)).id.toString(),Toast.LENGTH_LONG).show()
                     }
                 })
 
