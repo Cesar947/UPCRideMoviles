@@ -97,12 +97,14 @@ class HomeFragment : Fragment() {
                         miBundleViaje.putInt("idViaje",viajesaux.get(recyclerViewViaje!!.getChildAdapterPosition(view)).id)
                         viajeDetalleFragment!!.arguments = miBundleViaje
 
+
                         fragmentManager!!.beginTransaction().replace(R.id.main_frame,viajeDetalleFragment!!).commit()
 
                     }
                 })
-
                 recyclerViewViaje!!.adapter = adaptadorViaje
+
+
             }
             override fun onFailure(call: Call<List<Viaje>>?, t: Throwable?) {
                 t?.printStackTrace()

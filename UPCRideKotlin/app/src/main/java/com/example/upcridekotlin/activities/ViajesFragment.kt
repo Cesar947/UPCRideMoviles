@@ -55,7 +55,7 @@ class ViajesFragment : Fragment() {
                 "UPC Villa",
                 "20",
                 "10",
-                R.drawable.ricardo
+                R.drawable.user
             )
         )
         viajes.add(
@@ -70,7 +70,7 @@ class ViajesFragment : Fragment() {
                 "UPC Monterrico",
                 "20",
                 "10",
-                R.drawable.queso
+                R.drawable.user
             )
         )
         viajes.add(
@@ -84,7 +84,7 @@ class ViajesFragment : Fragment() {
                 "UPC San Miguel",
                 "20",
                 "10",
-                R.drawable.calamardo
+                R.drawable.user
             )
         )
         viajes.add(
@@ -98,7 +98,7 @@ class ViajesFragment : Fragment() {
                 "UPC Villa",
                 "20",
                 "10",
-                R.drawable.ricardo
+                R.drawable.user
             )
         )
         return viajes

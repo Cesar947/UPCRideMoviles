@@ -73,7 +73,7 @@ class ViajeDetalleFragment : Fragment() {
         idViaje = arguments!!.getInt("idViaje",0)
 
 
-        Toast.makeText(activity,id.toString(),Toast.LENGTH_LONG).show()
+        Toast.makeText(activity,idViaje.toString(),Toast.LENGTH_LONG).show()
 
         mostrarViaje()
 

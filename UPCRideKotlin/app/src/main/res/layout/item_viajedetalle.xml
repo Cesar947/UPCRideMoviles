@@ -38,7 +38,7 @@
                         android:layout_width="42dp"
                         android:layout_height="match_parent"
                         android:layout_margin="2dp"
-                        android:background="@drawable/calamardo" />
+                        android:background="@drawable/user" />
 
                     <LinearLayout
                         android:layout_width="match_parent"

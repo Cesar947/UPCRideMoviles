@@ -49,10 +49,12 @@ class solicitar_viaje : AppCompatActivity(), MapsFragment.OnFragmentInteractionL
        // var id = miBundle!!.getInt("id")
       var fragmento: MapsFragment = MapsFragment()
       supportFragmentManager.beginTransaction().replace(R.id.contenedor,fragmento).commit()
+
 //////////////////////////////////////////////////////////////////////////////////////////////
+
         var miBundle = this.intent.extras
         var id = miBundle!!.getInt("id")
-        obtenerUsuarioPorId(1)
+        //btenerUsuarioPorId(1)
         usuarioService = retrofit.create(UsuarioApiService::class.java)
 
         var dia: String = LocalDateTime.now().dayOfMonth.toString();
@@ -70,7 +72,7 @@ class solicitar_viaje : AppCompatActivity(), MapsFragment.OnFragmentInteractionL
         }
 
 
-        var solicitud: Solicitud? = Solicitud( pasajero ,
+        /*var solicitud: Solicitud? = Solicitud( pasajero ,
         null,
         etMensajeSol.text.toString(),
         "Pendiente",
@@ -91,7 +93,7 @@ class solicitar_viaje : AppCompatActivity(), MapsFragment.OnFragmentInteractionL
             override fun onFailure(call: Call<Viaje>?, t: Throwable?) {
                 t?.printStackTrace()
                 Log.i(TAG_LOGS, Gson().toJson("no funciona"))
-            } })
+            } })*/
 
 
 
@@ -102,8 +104,9 @@ class solicitar_viaje : AppCompatActivity(), MapsFragment.OnFragmentInteractionL
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
-
+/*
     fun obtenerUsuarioPorId(id: Int): Usuario?{
+
 
         usuarioService!!.getUsuarioById(id).enqueue(object : Callback<Usuario> {
             override fun onResponse(call: Call<Usuario>?, response: Response<Usuario>?) {
@@ -117,12 +120,12 @@ class solicitar_viaje : AppCompatActivity(), MapsFragment.OnFragmentInteractionL
         })
 
 
+
     }
 
 
 
-
-    /*fun solicitarViaje() {
+   fun solicitarViaje() {
 
 
         var conductor : Usuario? = null
