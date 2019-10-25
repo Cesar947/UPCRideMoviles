@@ -1,17 +1,19 @@
 package com.example.upcridekotlin.activities
 
 import android.content.Context
+import android.location.Location
 import android.net.Uri
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 
 import com.example.upcridekotlin.R
-import com.google.android.gms.maps.GoogleMap
-import com.google.android.gms.maps.OnMapReadyCallback
-import com.google.android.gms.maps.SupportMapFragment
+import com.google.android.gms.maps.*
+import com.google.android.gms.maps.model.LatLng
+import com.google.android.gms.maps.model.MarkerOptions
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -26,12 +28,30 @@ private const val ARG_PARAM2 = "param2"
  * Use the [MapsFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class MapsFragment : Fragment(), OnMapReadyCallback {
+class MapsFragment : Fragment(), OnMapReadyCallback, GoogleMap.OnMapClickListener,
+    GoogleMap.OnMyLocationButtonClickListener,
+    GoogleMap.OnMyLocationClickListener{
+
+    override fun onMyLocationButtonClick(): Boolean {
+        return false
+    }
+
+    override fun onMyLocationClick(p0: Location) {
+
+    }
+
+    override fun onMapClick(p0: LatLng?) {
+        map.addMarker(p0?.let { MarkerOptions().position(it) })
+        
+        //map.moveCamera(CameraUpdateFactory.newLatLng(p0))
+    }
 
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
     private var listener: OnFragmentInteractionListener? = null
+    private lateinit var map: GoogleMap
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -53,13 +73,22 @@ class MapsFragment : Fragment(), OnMapReadyCallback {
         return view
     }
     override fun onMapReady(p0: GoogleMap?) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+
+        //p0.moveCamera(CameraUpdateFactory.newLatLng(LatLng()))
+        map = p0!!
+        map?.setOnMapClickListener(this)
+        map.setMyLocationEnabled(true);
+        map.setOnMyLocationButtonClickListener(this);
+        map.setOnMyLocationClickListener(this);
+
     }
 
     // TODO: Rename method, update argument and hook method into UI event
     fun onButtonPressed(uri: Uri) {
         listener?.onFragmentInteraction(uri)
     }
+
+
 
     override fun onAttach(context: Context) {
         super.onAttach(context)

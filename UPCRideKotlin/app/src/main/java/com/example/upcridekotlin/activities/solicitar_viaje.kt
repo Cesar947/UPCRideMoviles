@@ -4,6 +4,7 @@ import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.EditText
 import android.widget.TextView
 
@@ -31,6 +32,8 @@ class solicitar_viaje : AppCompatActivity(), MapsFragment.OnFragmentInteractionL
     lateinit var viajeService: ViajeApiService
     lateinit var usuarioService: UsuarioApiService
     var pasajero: Usuario? = null
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_solicitar_viaje)
@@ -44,15 +47,19 @@ class solicitar_viaje : AppCompatActivity(), MapsFragment.OnFragmentInteractionL
         tvPuntoPartidaSol = findViewById(R.id.tvPartidaTextoSol) as TextView
         tvPuntoDestinoSol = findViewById(R.id.tvDestinoTextoSol) as TextView
         etMensajeSol = findViewById(R.id.etMensaje) as EditText
+
         viajeService = retrofit.create<ViajeApiService>(ViajeApiService::class.java)
+
+
         //var miBundle = this.intent.extras
        // var id = miBundle!!.getInt("id")
-      var fragmento: MapsFragment = MapsFragment()
+
+        var fragmento: MapsFragment = MapsFragment()
       supportFragmentManager.beginTransaction().replace(R.id.contenedor,fragmento).commit()
 //////////////////////////////////////////////////////////////////////////////////////////////
         var miBundle = this.intent.extras
         var id = miBundle!!.getInt("id")
-        obtenerUsuarioPorId(1)
+       // obtenerUsuarioPorId(1)
         usuarioService = retrofit.create(UsuarioApiService::class.java)
 
         var dia: String = LocalDateTime.now().dayOfMonth.toString();
@@ -60,6 +67,7 @@ class solicitar_viaje : AppCompatActivity(), MapsFragment.OnFragmentInteractionL
         var año: String = LocalDateTime.now().year.toString();
 
         var fecha :String
+
         if(LocalDateTime.now().monthValue<10)
         {
             fecha = año+"-0"+mes+"-"+dia
@@ -68,27 +76,48 @@ class solicitar_viaje : AppCompatActivity(), MapsFragment.OnFragmentInteractionL
         {
             fecha = año+"-"+mes+"-"+dia
         }
+        val TAG_LOGS = "Juanelv"
+
+        var solicitud: Solicitud? = Solicitud(
+            pasajero ,
+            null,
+            etMensajeSol.text.toString(),
+            "Pendiente",
+            "Izaguirre",
+            -12.057462,
+            -71.223312,
+            null)
+
+        var viaje: Viaje
+
+        viajeService.getViajeById(id).enqueue(object: Callback<Viaje>{
+            override fun onResponse(call: Call<Viaje>?, response: Response<Viaje>?) {
+                viaje = response?.body()!!
+
+                Log.i(TAG_LOGS, Gson().toJson("funciona el viaje "))
+                tvConductorSol.text = viaje.conductor?.nombres.toString()
+                tvPuntoPartidaSol.text = viaje.puntoPartida.toString()
+                tvPuntoDestinoSol.text = viaje.puntoDestino.toString()
 
 
-        var solicitud: Solicitud? = Solicitud( pasajero ,
-        null,
-        etMensajeSol.text.toString(),
-        "Pendiente",
-       "Izaguirre",
-        -12.057462,
-        -71.223312,
-        fecha: Date?)
+            }
+            override fun onFailure(call: Call<Viaje>, t: Throwable) {
+                Log.i(TAG_LOGS, Gson().toJson("no funciona el viaje "))
+            } })
 
-        viajeService.solicitarViaje(id,1).enqueue(object : Callback<Solicitud> {
+        viajeService.solicitarViaje(id,solicitud).enqueue(object : Callback<Solicitud> {
             override fun onResponse(call: Call<Solicitud>?, response: Response<Solicitud>?) {
                 solicitud = response?.body()
 
-                Log.i(TAG_LOGS, Gson().toJson(viaje))
-                Log.i(TAG_LOGS, Gson().toJson(conductor!!.id))
+
+
+                Log.i(TAG_LOGS, Gson().toJson(solicitud?.viaje?.conductor?.nombres))
+                //Log.i(TAG_LOGS, Gson().toJson(conductor!!.id))
                 Log.i(TAG_LOGS, Gson().toJson("funciona"))
 
+
             }
-            override fun onFailure(call: Call<Viaje>?, t: Throwable?) {
+            override fun onFailure(call: Call<Solicitud>, t: Throwable) {
                 t?.printStackTrace()
                 Log.i(TAG_LOGS, Gson().toJson("no funciona"))
             } })
@@ -102,7 +131,11 @@ class solicitar_viaje : AppCompatActivity(), MapsFragment.OnFragmentInteractionL
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
+    fun solicitarViaje(view: View) {
 
+    }
+
+/*
     fun obtenerUsuarioPorId(id: Int): Usuario?{
 
         usuarioService!!.getUsuarioById(id).enqueue(object : Callback<Usuario> {
@@ -169,4 +202,6 @@ class solicitar_viaje : AppCompatActivity(), MapsFragment.OnFragmentInteractionL
             } })*/
 
     }*/
+
+     */
 }

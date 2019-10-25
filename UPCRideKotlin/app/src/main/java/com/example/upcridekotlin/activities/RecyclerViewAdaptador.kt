@@ -2,6 +2,7 @@ package com.example.upcridekotlin.activities
 
 import android.content.Context
 import android.content.Intent
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.View.OnClickListener
@@ -66,6 +67,7 @@ class RecyclerViewAdaptador(var viajeLista: List<Viaje>) :
                     var intent = Intent(context, solicitar_viaje::class.java)
                     intent.putExtra("id", id)
                     context.startActivity(intent)
+
                 }
             }
         }
