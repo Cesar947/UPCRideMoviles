@@ -86,7 +86,7 @@ class LoginActivity : AppCompatActivity() {
                         else
                         {
                             Log.i(TAG_LOGS, Gson().toJson(usuarios))
-                            Toast.makeText(this@LoginActivity,"Ingrese un correo y contraseña existente",Toast.LENGTH_LONG).show();
+                            Toast.makeText(this@LoginActivity,"Ingrese un correo y contraseña existente",Toast.LENGTH_SHORT).show();
                         }
                     }
 

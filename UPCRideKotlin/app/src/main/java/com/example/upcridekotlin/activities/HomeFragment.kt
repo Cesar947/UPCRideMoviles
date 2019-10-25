@@ -87,7 +87,10 @@ class HomeFragment : Fragment() {
 
                 anadir(viajesaux!!);
                 //Log.i(TAG_LOGS, Gson().toJson(ViajesAux))
-                adaptadorViaje = RecyclerViewAdaptador(ViajesAux)
+                adaptadorViaje = RecyclerViewAdaptador(ViajesAux, View.OnClickListener {
+                    Toast.makeText(context, "GAAAAA", Toast.LENGTH_LONG ).show()
+                } )
+
                 recyclerViewViaje!!.adapter = adaptadorViaje
             }
             override fun onFailure(call: Call<List<Viaje>>?, t: Throwable?) {
@@ -104,12 +107,12 @@ class HomeFragment : Fragment() {
 
         for(item : Viaje in lista)
         {
-            var id = item?.id
-            var nombre = item?.conductor?.nombres.toString();
-            var fecha =  item?.fecha.toString();
-            var descripcion =  item?.descripcion.toString();
-            var ptoPartida=  item?.puntoPartida.toString();
-            var ptoDestino=  item?.puntoDestino.toString();
+            var id = item.id
+            var nombre = item.conductor?.nombres.toString();
+            var fecha =  item.fecha.toString();
+            var descripcion =  item.descripcion.toString();
+            var ptoPartida=  item.puntoPartida.toString();
+            var ptoDestino=  item.puntoDestino.toString();
             var n_solis =  "20"
             var n_reseñas = "10"
 

@@ -13,8 +13,11 @@ import com.example.upcridekotlin.R
 import com.example.upcridekotlin.model.ViajeModelo
 
 
-class RecyclerViewAdaptador(var viajeLista: List<ViajeModelo>) :
-    RecyclerView.Adapter<RecyclerViewAdaptador.ViewHolder>() {
+class RecyclerViewAdaptador(var viajeLista: List<ViajeModelo>,var listener: View.OnClickListener) :
+    RecyclerView.Adapter<RecyclerViewAdaptador.ViewHolder>(),
+View.OnClickListener{
+
+
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView), View.OnClickListener {
 
@@ -53,7 +56,7 @@ class RecyclerViewAdaptador(var viajeLista: List<ViajeModelo>) :
           when(v!!.id){
               R.id.btnSolicitar -> {
                   var intent = Intent(context, solicitar_viaje::class.java)
-                  intent.putExtra("id", id)
+                  //intent.putExtra("id", id)
                   context.startActivity(intent)
               }
           }
@@ -63,6 +66,7 @@ class RecyclerViewAdaptador(var viajeLista: List<ViajeModelo>) :
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_viaje, parent, false)
+        view.setOnClickListener(this)
         return ViewHolder(view)
     }
 
@@ -82,5 +86,14 @@ class RecyclerViewAdaptador(var viajeLista: List<ViajeModelo>) :
 
     override fun getItemCount(): Int {
         return viajeLista.size
+    }
+
+    /*fun setOnClickListener(listener: View.OnClickListener){
+
+        this.listener = listener
+    }*/
+
+    override fun onClick(v: View?) {
+           listener.onClick(v)
     }
 }

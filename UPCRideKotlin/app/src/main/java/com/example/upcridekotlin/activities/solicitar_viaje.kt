@@ -32,8 +32,8 @@ class solicitar_viaje : AppCompatActivity(), MapsFragment.OnFragmentInteractionL
         tvPuntoDestinoSol = findViewById(R.id.tvDestinoTextoSol) as TextView
         etMensajeSol = findViewById(R.id.etMensaje) as EditText
 
-        var miBundle = this.intent.extras
-        var id = miBundle!!.getInt("id")
+        //var miBundle = this.intent.extras
+       // var id = miBundle!!.getInt("id")
 
        supportFragmentManager.beginTransaction().replace(R.id.contenedor, MapsFragment()).commit()
 
@@ -43,7 +43,7 @@ class solicitar_viaje : AppCompatActivity(), MapsFragment.OnFragmentInteractionL
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
-    fun PublicarViaje() {
+   /* fun PublicarViaje() {
 
         var conductor : Usuario? = null
 
@@ -84,5 +84,5 @@ class solicitar_viaje : AppCompatActivity(), MapsFragment.OnFragmentInteractionL
                 Log.i(TAG_LOGS, Gson().toJson("no funciona"))
             } })
 
-    }
+    }*/
 }
