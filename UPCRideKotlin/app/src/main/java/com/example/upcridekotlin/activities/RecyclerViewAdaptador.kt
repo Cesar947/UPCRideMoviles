@@ -64,7 +64,7 @@ class RecyclerViewAdaptador(var viajeLista: List<Viaje>) :
             when(v!!.id){
                 R.id.btnSolicitar -> {
                     var intent = Intent(context, solicitar_viaje::class.java)
-                    //intent.putExtra("id", id)
+                    intent.putExtra("id", id)
                     context.startActivity(intent)
                 }
             }
