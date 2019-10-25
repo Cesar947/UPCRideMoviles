@@ -26,7 +26,7 @@ interface ViajeApiService {
 
 
     @POST("viajes/solicitar/{viajeId}")
-    fun solicitarViaje(@Path("viajeId") viajeId: Int ): Call<Solicitud>
+    fun solicitarViaje(@Path("viajeId") viajeId: Int, pasajeroId: Int): Call<Solicitud>
 
 
 }

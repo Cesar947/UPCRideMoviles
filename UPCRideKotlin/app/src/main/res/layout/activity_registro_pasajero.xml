@@ -18,6 +18,18 @@
         app:layout_constraintVertical_bias="0.103"
         app:srcCompat="@drawable/gradient2" />
 
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/btnIrRegistro"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.444"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.103"
+        app:srcCompat="@drawable/gradient2" />
+
     <TextView
         android:id="@+id/tvRegistro"
         android:layout_width="wrap_content"
@@ -26,10 +38,10 @@
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/scrollView4"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.165"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.455" />
+        app:layout_constraintVertical_bias="0.341" />
 
     <Spinner
         android:id="@+id/spSede"
@@ -40,14 +52,16 @@
         app:layout_constraintHorizontal_bias="0.462"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.886" />
+        app:layout_constraintVertical_bias="0.81" />
 
     <Button
         android:id="@+id/btnIrRegistro"
-        android:layout_width="350dp"
-        android:layout_height="46dp"
+        android:layout_width="296dp"
+        android:layout_height="30dp"
         android:layout_marginBottom="16dp"
+        android:background="@drawable/l"
         android:text="@string/btnRegistrar"
+        android:textColor="@color/common_google_signin_btn_text_dark_default"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.508"
@@ -57,14 +71,13 @@
 
     <ScrollView
         android:id="@+id/scrollView4"
-        android:layout_width="333dp"
-        android:layout_height="432dp"
+        android:layout_width="307dp"
+        android:layout_height="434dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.538"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.354">
+        app:layout_constraintVertical_bias="0.344">
 
 
         <LinearLayout
@@ -146,7 +159,6 @@
 
         </LinearLayout>
     </ScrollView>
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
