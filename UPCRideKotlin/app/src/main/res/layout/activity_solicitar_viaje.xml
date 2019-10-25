@@ -10,8 +10,8 @@
 
     <TextView
         android:id="@+id/tvConductorSol"
-        android:layout_width="134dp"
-        android:layout_height="34dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginStart="25dp"
         android:layout_marginTop="24dp"
         android:text="@string/tvConductorSol"
@@ -24,74 +24,94 @@
         android:id="@+id/tvPuntoPartida"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="203dp"
         android:text="@string/tvPuntoPartidaSol"
         android:textSize="18dp"
-        tools:layout_editor_absoluteX="25dp"
-        tools:layout_editor_absoluteY="79dp" />
+        app:layout_constraintEnd_toStartOf="@+id/tvPartidaTextoSol"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvConductorSol" />
 
     <TextView
         android:id="@+id/tvPuntoDestino"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="20dp"
         android:text="@string/tvPuntoDestinoSol"
         android:textSize="18dp"
-        tools:layout_editor_absoluteX="22dp"
-        tools:layout_editor_absoluteY="130dp" />
+        app:layout_constraintEnd_toStartOf="@+id/tvDestinoTextoSol"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvPuntoPartida" />
 
     <TextView
         android:id="@+id/tvMensajeSol"
-        android:layout_width="134dp"
-        android:layout_height="34dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="25dp"
         android:text="@string/tvMensajeSol"
         android:textSize="20dp"
-        tools:layout_editor_absoluteX="25dp"
-        tools:layout_editor_absoluteY="192dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/etMensaje"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvPuntoDestino"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/tvConductorTextoSol"
-        android:layout_width="134dp"
-        android:layout_height="34dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginStart="25dp"
-        android:layout_marginTop="25dp"
-        android:layout_marginBottom="609dp"
+        android:layout_marginTop="24dp"
         android:text="TextView"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:textSize="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/tvConductorSol"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        android:textSize="20dp"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/tvPartidaTextoSol"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="25dp"
         android:text="TextView"
         android:textSize="18dp"
-        tools:layout_editor_absoluteX="184dp"
-        tools:layout_editor_absoluteY="79dp" />
+        app:layout_constraintStart_toEndOf="@+id/tvPuntoPartida"
+        app:layout_constraintTop_toBottomOf="@+id/tvConductorTextoSol" />
 
     <TextView
         android:id="@+id/tvDestinoTextoSol"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="20dp"
         android:text="TextView"
         android:textSize="18dp"
-        tools:layout_editor_absoluteX="184dp"
-        tools:layout_editor_absoluteY="130dp" />
+        app:layout_constraintStart_toEndOf="@+id/tvPuntoDestino"
+        app:layout_constraintTop_toBottomOf="@+id/tvPartidaTextoSol" />
 
     <EditText
         android:id="@+id/etMensaje"
-        android:layout_width="203dp"
-        android:layout_height="35dp"
+        android:layout_width="273dp"
+        android:layout_height="39dp"
+        android:layout_marginStart="22dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="10dp"
         android:ems="10"
         android:gravity="start|top"
         android:inputType="textMultiLine"
-        tools:layout_editor_absoluteX="177dp"
-        tools:layout_editor_absoluteY="194dp" />
-
-
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tvMensajeSol"
+        app:layout_constraintTop_toBottomOf="@+id/tvDestinoTextoSol"
+        app:layout_constraintVertical_bias="0.0" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

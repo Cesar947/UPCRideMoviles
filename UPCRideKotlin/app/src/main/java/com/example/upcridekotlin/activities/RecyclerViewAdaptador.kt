@@ -88,7 +88,7 @@ class RecyclerViewAdaptador(var viajeLista: List<Viaje>) :
         holder.n_solis.setText("20")
         holder.n_resenias.setText("20")
         holder.foto_perfil.setImageResource(R.drawable.queso)
-       //holder.setOnClickListeners()
+        holder.setOnClickListeners()
     }
 
     fun setOnClickListener(listener : OnClickListener )
