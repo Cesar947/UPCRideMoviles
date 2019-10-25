@@ -106,7 +106,7 @@
                         android:layout_width="42dp"
                         android:layout_height="match_parent"
                         android:layout_margin="2dp"
-                        tools:srcCompat="@drawable/ricardo" />
+                        tools:srcCompat="@drawable/user" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -118,8 +118,11 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="TextView"
+
+                            android:text=""
+
                             android:textColor="@color/common_google_signin_btn_text_dark_default"
+
                             android:textSize="12sp" />
 
                         <TextView
@@ -127,8 +130,9 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="TextView"
+                            android:text=""
                             android:textColor="@color/common_google_signin_btn_text_dark_default"
+
                             android:textSize="8sp" />
                     </LinearLayout>
 
@@ -146,7 +150,7 @@
                     android:layout_width="311dp"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
-                    android:text="TextView"
+                    android:text=""
                     android:textColor="@color/common_google_signin_btn_text_dark_default" />
 
                 <LinearLayout
@@ -171,7 +175,7 @@
                             android:id="@+id/solo_punto_partida"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="TextView"
+                            android:text=""
                             android:textColor="@color/common_google_signin_btn_text_dark_default" />
 
                         <ImageView
@@ -184,7 +188,7 @@
                             android:id="@+id/solo_punto_destino"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="TextView"
+                            android:text=""
                             android:textColor="@color/common_google_signin_btn_text_dark_default" />
 
                         <ImageView
@@ -202,7 +206,7 @@
                                 android:id="@+id/solo_hora_partida"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="TextView"
+                                android:text=""
                                 android:textColor="@color/common_google_signin_btn_text_dark_default" />
 
                             <ImageView
@@ -215,7 +219,7 @@
                                 android:id="@+id/solo_hora_llegada"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="TextView"
+                                android:text=""
                                 android:textColor="@color/common_google_signin_btn_text_dark_default" />
                         </LinearLayout>
                     </LinearLayout>

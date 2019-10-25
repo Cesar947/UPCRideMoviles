@@ -100,14 +100,14 @@ class registro_pasajero : AppCompatActivity() {
     fun AgregarPasajero() {
 
 
-        etTelefono = findViewById<EditText>(R.id.etTelefono)
-        etDistrito = findViewById<EditText>(R.id.etDistrito)
-        etDNI = findViewById<EditText>(R.id.etDNI)
-        etNombre = findViewById<EditText>(R.id.etNombres)
-        etApellido = findViewById<EditText>(R.id.etApellidos)
-        etContraseña = findViewById<EditText>(R.id.etContraseñaLogin)
-        etEmail = findViewById<EditText>(R.id.etEmail)
-        etCodigo = findViewById<EditText>(R.id.etCodigo)
+        etTelefono = findViewById(R.id.etTelefono)
+        etDistrito = findViewById(R.id.etDistrito)
+        etDNI = findViewById(R.id.etDNI)
+        etNombre = findViewById(R.id.etNombres)
+        etApellido = findViewById(R.id.etApellidos)
+        etContraseña = findViewById(R.id.etContraseñaLogin)
+        etEmail = findViewById(R.id.etEmail)
+        etCodigo = findViewById(R.id.etCodigo)
 
 
 

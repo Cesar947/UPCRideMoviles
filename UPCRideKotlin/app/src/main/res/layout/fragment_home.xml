@@ -27,7 +27,7 @@
         android:background="@color/colorPrimary"
         android:clickable="true"
         android:tint="@color/common_google_signin_btn_text_dark_pressed"
-        android:visibility="visible"
+        android:visibility="gone"
         app:backgroundTint="@color/colorPrimary"
         app:rippleColor="@color/colorPrimary"
         app:srcCompat="@drawable/icon_add_light"></com.google.android.material.floatingactionbutton.FloatingActionButton>

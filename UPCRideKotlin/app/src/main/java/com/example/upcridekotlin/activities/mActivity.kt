@@ -49,7 +49,7 @@ class mActivity : AppCompatActivity() {
 
         var miBundle = this.intent.extras
         var id = miBundle!!.getInt("id")
-
+        var rol = miBundle!!.getChar("rol")
         homeFragment!!.arguments = miBundle
         perfilFragment!!.arguments = miBundle
 
@@ -57,7 +57,7 @@ class mActivity : AppCompatActivity() {
         //Toast.makeText(this,id.toString(), Toast.LENGTH_LONG).show();
         //Log.i("AAAAAAAA", id.toString())
 
-        supportFragmentManager.beginTransaction().add(R.id.main_frame, homeFragment!!).commit()
+        supportFragmentManager.beginTransaction().replace(R.id.main_frame, homeFragment!!).commit()
         setSupportActionBar(toolbar)
 
         mainNav?.setOnNavigationItemSelectedListener { item ->

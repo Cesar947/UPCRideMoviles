@@ -25,6 +25,10 @@ import java.time.LocalDateTime
 
 class solicitar_viaje : AppCompatActivity(), MapsFragment.OnFragmentInteractionListener {
 
+    override fun onFragmentInteraction(uri: Uri) {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
+
     lateinit var tvConductorSol: TextView
     lateinit var tvPuntoPartidaSol: TextView
     lateinit var tvPuntoDestinoSol: TextView
@@ -52,45 +56,51 @@ class solicitar_viaje : AppCompatActivity(), MapsFragment.OnFragmentInteractionL
 
 
         //var miBundle = this.intent.extras
-       // var id = miBundle!!.getInt("id")
+        // var id = miBundle!!.getInt("id")
 
         var fragmento: MapsFragment = MapsFragment()
-      supportFragmentManager.beginTransaction().replace(R.id.contenedor,fragmento).commit()
-//////////////////////////////////////////////////////////////////////////////////////////////
+        supportFragmentManager.beginTransaction().replace(R.id.contenedor, fragmento).commit()
+
         var miBundle = this.intent.extras
         var id = miBundle!!.getInt("id")
-       // obtenerUsuarioPorId(1)
+
+        // obtenerUsuarioPorId(1)
+
+
         usuarioService = retrofit.create(UsuarioApiService::class.java)
 
         var dia: String = LocalDateTime.now().dayOfMonth.toString();
         var mes: String = LocalDateTime.now().monthValue.toString();
         var año: String = LocalDateTime.now().year.toString();
 
-        var fecha :String
+        var fecha: String
 
-        if(LocalDateTime.now().monthValue<10)
-        {
-            fecha = año+"-0"+mes+"-"+dia
-        }
-        else
-        {
-            fecha = año+"-"+mes+"-"+dia
+        if (LocalDateTime.now().monthValue < 10) {
+            fecha = año + "-0" + mes + "-" + dia
+        } else {
+            fecha = año + "-" + mes + "-" + dia
         }
         val TAG_LOGS = "Juanelv"
 
         var solicitud: Solicitud? = Solicitud(
-            pasajero ,
+            pasajero,
             null,
             etMensajeSol.text.toString(),
             "Pendiente",
             "Izaguirre",
             -12.057462,
             -71.223312,
-            null)
+            null
+        )
+
 
         var viaje: Viaje
 
-        viajeService.getViajeById(id).enqueue(object: Callback<Viaje>{
+        viajeService.getViajeById(id).enqueue(object : Callback<Viaje> {
+            override fun onFailure(call: Call<Viaje>, t: Throwable) {
+                TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+            }
+
             override fun onResponse(call: Call<Viaje>?, response: Response<Viaje>?) {
                 viaje = response?.body()!!
 
@@ -98,6 +108,17 @@ class solicitar_viaje : AppCompatActivity(), MapsFragment.OnFragmentInteractionL
                 tvConductorSol.text = viaje.conductor?.nombres.toString()
                 tvPuntoPartidaSol.text = viaje.puntoPartida.toString()
                 tvPuntoDestinoSol.text = viaje.puntoDestino.toString()
+
+
+                /*var solicitud: Solicitud? = Solicitud( pasajero ,
+        null,
+        etMensajeSol.text.toString(),
+        "Pendiente",
+       "Izaguirre",
+        -12.057462,
+        -71.223312,
+        fecha: Date?)
+>>>>>>> 78fb2ea2b877dc1e1c645e2b35d831cc21b276a3
 
 
             }
@@ -120,23 +141,22 @@ class solicitar_viaje : AppCompatActivity(), MapsFragment.OnFragmentInteractionL
             override fun onFailure(call: Call<Solicitud>, t: Throwable) {
                 t?.printStackTrace()
                 Log.i(TAG_LOGS, Gson().toJson("no funciona"))
-            } })
+            } })*/
+
+
+            }
 
 
 
 
-    }
+            fun solicitarViaje(view: View) {
 
-    override fun onFragmentInteraction(uri: Uri) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
+            }
 
-    fun solicitarViaje(view: View) {
-
-    }
 
 /*
     fun obtenerUsuarioPorId(id: Int): Usuario?{
+
 
         usuarioService!!.getUsuarioById(id).enqueue(object : Callback<Usuario> {
             override fun onResponse(call: Call<Usuario>?, response: Response<Usuario>?) {
@@ -150,12 +170,12 @@ class solicitar_viaje : AppCompatActivity(), MapsFragment.OnFragmentInteractionL
         })
 
 
+
     }
 
 
 
-
-    /*fun solicitarViaje() {
+   fun solicitarViaje() {
 
 
         var conductor : Usuario? = null
@@ -202,6 +222,17 @@ class solicitar_viaje : AppCompatActivity(), MapsFragment.OnFragmentInteractionL
             } })*/
 
     }*/
+        })
 
-     */
+
+
+
+    }
 }
+
+
+
+
+
+
+

@@ -35,6 +35,7 @@ class LoginActivity : AppCompatActivity() {
 
     var btnIngresar : Button? = null
     var id = 0
+    var rol = 'c'
     var existe :Boolean = false
 
 
@@ -73,15 +74,16 @@ class LoginActivity : AppCompatActivity() {
                         if(token == item.correoUPC + item.contraseña)
                         {
                             id = item.id
+                            rol = item.rol
 
                             var miBundle  = Bundle();
                             miBundle.putInt("id", id)
+                            miBundle.putChar("rol",rol)
                             intent.putExtras(miBundle)
 
                             startActivity(intent)
                             //Toast.makeText(this@LoginActivity,"Entraste",Toast.LENGTH_LONG).show();
                             Log.i(TAG_LOGS, Gson().toJson(item))
-
                         }
                         else
                         {
@@ -89,22 +91,12 @@ class LoginActivity : AppCompatActivity() {
                             Toast.makeText(this@LoginActivity,"Ingrese un correo y contraseña existente",Toast.LENGTH_SHORT).show();
                         }
                     }
-
-
-
-
-
                 }
 
                 override fun onFailure(call: Call<List<Usuario>>?, t: Throwable?) {
                     t?.printStackTrace()
                 }
             })
-
-
-
-
-
         }
 
 

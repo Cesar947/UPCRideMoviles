@@ -11,6 +11,9 @@ interface ReseñaApiService {
     @GET("autos")
     fun getAllReseñas(): Call<List<Auto>>
 
+
+
+
     @POST("autos")
     fun insertarReseña(@Body auto: Auto?): Call<Auto>
 }
