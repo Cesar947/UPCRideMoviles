@@ -8,7 +8,10 @@ import android.widget.EditText
 import android.widget.TextView
 
 import com.example.upcridekotlin.R
+import com.example.upcridekotlin.model.Usuario
+import com.example.upcridekotlin.model.Viaje
 import com.google.gson.Gson
+import kotlinx.android.synthetic.main.activity_publicar_viaje.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -43,7 +46,9 @@ class solicitar_viaje : AppCompatActivity(), MapsFragment.OnFragmentInteractionL
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
-   /* fun PublicarViaje() {
+
+    /*fun PublicarViaje() {
+
 
         var conductor : Usuario? = null
 
