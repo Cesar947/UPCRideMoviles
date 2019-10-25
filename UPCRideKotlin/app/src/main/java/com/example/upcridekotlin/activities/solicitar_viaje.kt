@@ -30,7 +30,7 @@ class solicitar_viaje : AppCompatActivity(), MapsFragment.OnFragmentInteractionL
     lateinit var etMensajeSol: EditText
     lateinit var viajeService: ViajeApiService
     lateinit var usuarioService: UsuarioApiService
-
+    var pasajero: Usuario? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_solicitar_viaje)
@@ -50,8 +50,48 @@ class solicitar_viaje : AppCompatActivity(), MapsFragment.OnFragmentInteractionL
       var fragmento: MapsFragment = MapsFragment()
       supportFragmentManager.beginTransaction().replace(R.id.contenedor,fragmento).commit()
 //////////////////////////////////////////////////////////////////////////////////////////////
-
+        var miBundle = this.intent.extras
+        var id = miBundle!!.getInt("id")
+        obtenerUsuarioPorId(1)
         usuarioService = retrofit.create(UsuarioApiService::class.java)
+
+        var dia: String = LocalDateTime.now().dayOfMonth.toString();
+        var mes: String = LocalDateTime.now().monthValue.toString();
+        var año: String = LocalDateTime.now().year.toString();
+
+        var fecha :String
+        if(LocalDateTime.now().monthValue<10)
+        {
+            fecha = año+"-0"+mes+"-"+dia
+        }
+        else
+        {
+            fecha = año+"-"+mes+"-"+dia
+        }
+
+
+        var solicitud: Solicitud? = Solicitud( pasajero ,
+        null,
+        etMensajeSol.text.toString(),
+        "Pendiente",
+       "Izaguirre",
+        -12.057462,
+        -71.223312,
+        fecha: Date?)
+
+        viajeService.solicitarViaje(id,1).enqueue(object : Callback<Solicitud> {
+            override fun onResponse(call: Call<Solicitud>?, response: Response<Solicitud>?) {
+                solicitud = response?.body()
+
+                Log.i(TAG_LOGS, Gson().toJson(viaje))
+                Log.i(TAG_LOGS, Gson().toJson(conductor!!.id))
+                Log.i(TAG_LOGS, Gson().toJson("funciona"))
+
+            }
+            override fun onFailure(call: Call<Viaje>?, t: Throwable?) {
+                t?.printStackTrace()
+                Log.i(TAG_LOGS, Gson().toJson("no funciona"))
+            } })
 
 
 
@@ -63,16 +103,20 @@ class solicitar_viaje : AppCompatActivity(), MapsFragment.OnFragmentInteractionL
     }
 
 
-    fun obtenerUsuarioPorId(id: Int){
+    fun obtenerUsuarioPorId(id: Int): Usuario?{
+
         usuarioService!!.getUsuarioById(id).enqueue(object : Callback<Usuario> {
             override fun onResponse(call: Call<Usuario>?, response: Response<Usuario>?) {
-                val conductor = response?.body()
+                pasajero = response!!.body()
+
             }
 
             override fun onFailure(call: Call<Usuario>?, t: Throwable?) {
                 t?.printStackTrace()
             }
         })
+
+
     }
 
 
