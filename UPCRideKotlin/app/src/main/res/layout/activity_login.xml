@@ -44,7 +44,7 @@
         android:text="Continuar"
         android:textColor="@color/common_google_signin_btn_text_dark_pressed"
         android:textColorHint="@color/common_google_signin_btn_text_dark_default"
-        android:textSize="18sp"
+        android:textSize="15sp"
         android:topLeftRadius="10dp"
         android:topRightRadius="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
