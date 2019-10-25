@@ -64,7 +64,7 @@ class RecyclerViewAdaptador(var viajeLista: List<Viaje>) :
             when(v!!.id){
                 R.id.btnSolicitar -> {
                     var intent = Intent(context, solicitar_viaje::class.java)
-                    //intent.putExtra("id", id)
+                    intent.putExtra("id", id)
                     context.startActivity(intent)
                 }
             }
@@ -89,7 +89,7 @@ class RecyclerViewAdaptador(var viajeLista: List<Viaje>) :
         holder.pnt_destino.setText(viajeLista[position].puntoDestino)
         holder.n_solis.setText("20")
         holder.n_resenias.setText("20")
-        holder.foto_perfil.setImageResource(R.drawable.queso)
+        holder.foto_perfil.setImageResource(R.drawable.user)
         holder.setOnClickListeners()
     }
 
