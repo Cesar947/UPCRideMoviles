@@ -13,12 +13,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.view.isVisible
 
 import com.example.upcridekotlin.R
 import com.example.upcridekotlin.interfaces.ViajeApiService
 import com.example.upcridekotlin.model.Viaje
 import com.example.upcridekotlin.model.ViajeModelo
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.google.gson.Gson
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.Call
@@ -57,11 +59,18 @@ class HomeFragment : Fragment() {
         viajeDetalleFragment = ViajeDetalleFragment()
 
 
+
         btnAgregarViaje = vista.findViewById(R.id.btnAgregarViaje)
+
         //Log.i(TAG_LOGS, arguments.toString())
 
         var id = arguments!!.getInt("id",0)
-
+        var rol = arguments!!.getChar("rol",'P')
+        Log.i(TAG_LOGS, rol.toString())
+        if(rol=='C')
+        {
+            btnAgregarViaje!!.isVisible = true
+        }
 
         btnAgregarViaje!!.setOnClickListener {
 

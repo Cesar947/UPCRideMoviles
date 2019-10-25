@@ -30,7 +30,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 class PerfilFragment : Fragment() {
 
     var lblNombrePerfil : TextView? = null
-    var lblUbicación : TextView? = null
+    var tvRol : TextView? = null
 
 
     private var usuarioService: UsuarioApiService? = null
@@ -52,7 +52,7 @@ class PerfilFragment : Fragment() {
         usuarioService = retrofit.create(UsuarioApiService::class.java)
 
         lblNombrePerfil = vista.findViewById(R.id.nombrePerfilTxt)
-        lblUbicación = vista.findViewById(R.id.ubicacionPerfilTxt)
+        tvRol = vista.findViewById(R.id.ubicacionPerfilTxt)
 
         var id = arguments!!.getInt("id",0)
 
@@ -62,7 +62,14 @@ class PerfilFragment : Fragment() {
                 Log.i("AAAAAAA", Gson().toJson(pasajero))
 
                 lblNombrePerfil!!.setText(pasajero!!.nombres+ " " + pasajero.apellidos)
-                lblUbicación!!.setText("Latitud: "+pasajero.ubicacionLatitud +"\nLongitud:" + pasajero.ubicacionLongitud)
+                if(pasajero.rol=='C')
+                {
+                    tvRol!!.setText("Rol: Conductor")
+                }
+                else
+                    tvRol!!.setText("Rol: Pasajero")
+
+
 
 
             }

@@ -116,11 +116,11 @@ values(3, 4, 'Quiero solicitar el viaje y quisiera que el punto de encuentro sea
 /*ID 1 (Pasajero 2, Viaje 1 (C1, F))*/
 INSERT INTO reseñas(cliente_id, viaje_id, valoracion, contenido) VALUES (2,1,5,'Que buen servicio');
 /*ID 1 (Pasajero 3, Viaje 1 (C1, F))*/
-INSERT INTO reseñas(cliente_id, viaje_id, valoracion, contenido) VALUES (3,1,4,'El carro huele a marihuana :v');
+INSERT INTO reseñas(cliente_id, viaje_id, valoracion, contenido) VALUES (3,1,4,'El carro huele a limon :v');
 /*ID 1 (Pasajero 5, Viaje 1 (C1, F))*/
 INSERT INTO reseñas(cliente_id, viaje_id, valoracion, contenido) VALUES (5,1,5,'GAAAAAA');
 /*ID 1 (Pasajero 3, Viaje 3 (C1, F))*/
-INSERT INTO reseñas(cliente_id, viaje_id, valoracion, contenido) VALUES (3,3,5,'xdxd');
+INSERT INTO reseñas(cliente_id, viaje_id, valoracion, contenido) VALUES (3,3,5,'Las llantas eran redondas');
 
 
 

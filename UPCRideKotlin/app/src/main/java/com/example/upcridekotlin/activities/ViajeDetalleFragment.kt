@@ -33,7 +33,6 @@ class ViajeDetalleFragment : Fragment() {
     var tvDescripcion : TextView? = null
     var tvPuntoPartida : TextView? = null
     var tvPuntoDestino : TextView? = null
-    var tvTelefono : TextView? = null
     var tvHoraPartida :TextView? = null
     var tvHoraLlegada :TextView? = null
     var tvLimitePasajeros : TextView? = null
@@ -63,12 +62,10 @@ class ViajeDetalleFragment : Fragment() {
         tvFecha = vista.findViewById(R.id.solo_fecha)
         tvPuntoPartida = vista.findViewById(R.id.solo_punto_partida)
         tvPuntoDestino = vista.findViewById(R.id.solo_punto_destino)
-        tvTelefono = vista.findViewById(R.id.solo_descrip)
-        tvHoraLlegada = vista.findViewById(R.id.solo_descrip)
-        tvHoraPartida = vista.findViewById(R.id.solo_descrip)
+        tvHoraLlegada = vista.findViewById(R.id.solo_hora_llegada)
+        tvHoraPartida = vista.findViewById(R.id.solo_hora_partida)
         tvSolicitudes = vista.findViewById(R.id.solo_n_solis)
         tvReseñas = vista.findViewById(R.id.solo_n_resenias)
-
 
         idViaje = arguments!!.getInt("idViaje",0)
 
@@ -95,6 +92,9 @@ class ViajeDetalleFragment : Fragment() {
                 tvFecha!!.setText(viaje!!.fecha)
                 tvPuntoDestino!!.setText(viaje!!.puntoDestino)
                 tvPuntoPartida!!.setText(viaje!!.puntoPartida)
+                tvHoraPartida!!.setText(viaje!!.horaPartida)
+                tvHoraLlegada!!.setText(viaje!!.horaLlegada)
+
                 tvReseñas!!.setText("20")
                 tvSolicitudes!!.setText("20")
 
