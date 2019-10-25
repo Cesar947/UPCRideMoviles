@@ -85,6 +85,7 @@ class HomeFragment : Fragment() {
                 val viajesaux = response.body()
 
                 //Log.i(TAG_LOGS, Gson().toJson(ViajesAux))
+
                 adaptadorViaje = RecyclerViewAdaptador(viajesaux!!)
 
                 adaptadorViaje!!.setOnClickListener( object : View.OnClickListener{
@@ -115,12 +116,12 @@ class HomeFragment : Fragment() {
 
         for(item : Viaje in lista)
         {
-            var id = item?.id
-            var nombre = item?.conductor?.nombres.toString();
-            var fecha =  item?.fecha.toString();
-            var descripcion =  item?.descripcion.toString();
-            var ptoPartida=  item?.puntoPartida.toString();
-            var ptoDestino=  item?.puntoDestino.toString();
+            var id = item.id
+            var nombre = item.conductor?.nombres.toString();
+            var fecha =  item.fecha.toString();
+            var descripcion =  item.descripcion.toString();
+            var ptoPartida=  item.puntoPartida.toString();
+            var ptoDestino=  item.puntoDestino.toString();
             var n_solis =  "20"
             var n_reseñas = "10"
 

@@ -18,9 +18,13 @@ import com.example.upcridekotlin.model.ViajeModelo
 class RecyclerViewAdaptador(var viajeLista: List<Viaje>) :
     RecyclerView.Adapter<RecyclerViewAdaptador.ViewHolder>(), OnClickListener {
 
+
    var  listener : OnClickListener? = null
 
-    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)/*,View.OnClickListener */{
+
+
+    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView),OnClickListener {
+
 
 
 
@@ -34,8 +38,8 @@ class RecyclerViewAdaptador(var viajeLista: List<Viaje>) :
         var n_solis: TextView
         var n_resenias: TextView
         var foto_perfil: ImageView
-       // var btnSolicitar: ImageButton
-        //var context: Context
+        var btnSolicitar: ImageButton
+        var context: Context
 
 
         init {
@@ -48,23 +52,23 @@ class RecyclerViewAdaptador(var viajeLista: List<Viaje>) :
             n_solis = itemView.findViewById<View>(R.id.n_solis) as TextView
             n_resenias = itemView.findViewById<View>(R.id.n_resenias) as TextView
             foto_perfil = itemView.findViewById<View>(R.id.foto_perfil) as ImageView
-            //btnSolicitar = itemView.findViewById<View>(R.id.btnSolicitar) as ImageButton
-            //context = itemView.context
+            btnSolicitar = itemView.findViewById<View>(R.id.btnSolicitar) as ImageButton
+            context = itemView.context
         }
 
-       /* fun setOnClickListeners(){
+        fun setOnClickListeners(){
            btnSolicitar.setOnClickListener(this)
         }
 
         override fun onClick(v: View?) {
-          when(v!!.id){
-              R.id.btnSolicitar -> {
-                  var intent = Intent(context, solicitar_viaje::class.java)
-                  intent.putExtra("id", id)
-                  context.startActivity(intent)
-              }
-          }
-        }*/
+            when(v!!.id){
+                R.id.btnSolicitar -> {
+                    var intent = Intent(context, solicitar_viaje::class.java)
+                    //intent.putExtra("id", id)
+                    context.startActivity(intent)
+                }
+            }
+        }
 
     }
 
@@ -109,4 +113,6 @@ class RecyclerViewAdaptador(var viajeLista: List<Viaje>) :
     override fun getItemCount(): Int {
         return viajeLista.size
     }
+
+
 }
