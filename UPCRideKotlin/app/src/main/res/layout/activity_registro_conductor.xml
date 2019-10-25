@@ -136,16 +136,18 @@
 
             <EditText
                 android:id="@+id/etLicConduc"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="350dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
                 android:ems="10"
                 android:hint="Licencia de Conducir"
                 android:inputType="textPersonName" />
 
             <EditText
                 android:id="@+id/etFacebook"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="350dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
                 android:ems="10"
                 android:hint="Facebook"
                 android:inputType="textPersonName" />

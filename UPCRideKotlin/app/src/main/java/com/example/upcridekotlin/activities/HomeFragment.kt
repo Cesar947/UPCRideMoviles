@@ -39,7 +39,7 @@ class HomeFragment : Fragment() {
     private var adaptadorViaje: RecyclerViewAdaptador? = null
     private var viajeService: ViajeApiService? = null
     private var btnAgregarViaje : FloatingActionButton? = null
-
+    private var viajeDetalleFragment: ViajeDetalleFragment? = null
 
 
     override fun onCreateView(
@@ -54,7 +54,7 @@ class HomeFragment : Fragment() {
             .addConverterFactory(GsonConverterFactory.create())
             .build()
         viajeService = retrofit.create(ViajeApiService::class.java)
-
+        viajeDetalleFragment = ViajeDetalleFragment()
 
 
         btnAgregarViaje = vista.findViewById(R.id.btnAgregarViaje)
@@ -90,7 +90,15 @@ class HomeFragment : Fragment() {
 
                 adaptadorViaje!!.setOnClickListener( object : View.OnClickListener{
                     override fun onClick(view:View){
+
                         Toast.makeText(activity,viajesaux.get(recyclerViewViaje!!.getChildAdapterPosition(view)).id.toString(),Toast.LENGTH_LONG).show()
+                        var miBundleViaje = Bundle()
+
+                        miBundleViaje.putInt("idViaje",viajesaux.get(recyclerViewViaje!!.getChildAdapterPosition(view)).id)
+                        viajeDetalleFragment!!.arguments = miBundleViaje
+
+                        fragmentManager!!.beginTransaction().replace(R.id.main_frame,viajeDetalleFragment!!).commit()
+
                     }
                 })
 

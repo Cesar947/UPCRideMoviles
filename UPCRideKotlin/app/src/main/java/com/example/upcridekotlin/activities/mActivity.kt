@@ -53,6 +53,7 @@ class mActivity : AppCompatActivity() {
         homeFragment!!.arguments = miBundle
         perfilFragment!!.arguments = miBundle
 
+
         //Toast.makeText(this,id.toString(), Toast.LENGTH_LONG).show();
         //Log.i("AAAAAAAA", id.toString())
 

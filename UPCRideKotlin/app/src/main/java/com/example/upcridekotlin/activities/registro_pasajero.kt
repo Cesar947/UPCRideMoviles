@@ -67,7 +67,7 @@ class registro_pasajero : AppCompatActivity() {
 
         userService = retrofit.create(UsuarioApiService::class.java)
 
-        btnRegistrarme = findViewById<Button>(R.id.btnIrRegistro)
+        btnRegistrarme = findViewById(R.id.btnIrRegistro)
 
 
         spSede.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
@@ -88,7 +88,7 @@ class registro_pasajero : AppCompatActivity() {
 
         btnRegistrarme.setOnClickListener {
             AgregarPasajero()
-            val intent = Intent(this,mActivity::class.java)
+            val intent = Intent(this,Bienvenido::class.java)
             startActivity(intent)
 
         }
@@ -123,7 +123,7 @@ class registro_pasajero : AppCompatActivity() {
             0.0,
             etTelefono.text.toString(),
             etDistrito.text.toString(), 
-            'C', sede)
+            'P', sede)
 
         Log.i(TAG_LOGS, Gson().toJson(pasajero))
 
@@ -132,7 +132,7 @@ class registro_pasajero : AppCompatActivity() {
                 pasajero = response?.body()
                 Log.i(TAG_LOGS, Gson().toJson(pasajero))
 
-
+                Toast.makeText(this@registro_pasajero,"Registro Exitoso",Toast.LENGTH_LONG).show()
 
 
             }

@@ -93,7 +93,7 @@ class registro_conductor : AppCompatActivity() {
 
             AgregarConductor()
 
-            val intent = Intent(this, mActivity::class.java)
+            val intent = Intent(this, Bienvenido::class.java)
             startActivity(intent)
 
         }
@@ -143,6 +143,7 @@ class registro_conductor : AppCompatActivity() {
             override fun onResponse(call: Call<Usuario>?, response: Response<Usuario>?) {
                 conductor = response?.body()
                 Log.i(TAG_LOGS, Gson().toJson(conductor))
+                Toast.makeText(this@registro_conductor,"Registro Exitoso",Toast.LENGTH_LONG).show()
 
 
             }

@@ -21,6 +21,9 @@ interface ViajeApiService {
     @GET("viajes")
     fun getAllViajes(): Call<List<Viaje>>
 
+    @GET("viajes/{id}")
+    fun getViajeById(@Path("id") id: Int): Call<Viaje>
+
 
     @POST("viajes/solicitar/{viajeId}")
     fun solicitarViaje(@Path("viajeId") viajeId: Int ): Call<Solicitud>
