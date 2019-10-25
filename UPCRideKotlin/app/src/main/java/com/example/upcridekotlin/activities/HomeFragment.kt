@@ -42,7 +42,6 @@ class HomeFragment : Fragment() {
 
 
 
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -85,9 +84,15 @@ class HomeFragment : Fragment() {
             override fun onResponse(call: Call<List<Viaje>>, response: Response<List<Viaje>>) {
                 val viajesaux = response.body()
 
-                anadir(viajesaux!!);
                 //Log.i(TAG_LOGS, Gson().toJson(ViajesAux))
-                adaptadorViaje = RecyclerViewAdaptador(ViajesAux)
+                adaptadorViaje = RecyclerViewAdaptador(viajesaux!!)
+
+                adaptadorViaje!!.setOnClickListener( object : View.OnClickListener{
+                    override fun onClick(view:View){
+                        Toast.makeText(activity,ViajesAux.get(recyclerViewViaje!!.getChildAdapterPosition(view)).nombre,Toast.LENGTH_LONG).show()
+                    }
+                })
+
                 recyclerViewViaje!!.adapter = adaptadorViaje
             }
             override fun onFailure(call: Call<List<Viaje>>?, t: Throwable?) {
@@ -97,8 +102,14 @@ class HomeFragment : Fragment() {
 
         })
 
+
+
+
+
         return vista
     }
+
+
 
     fun anadir (lista:List<Viaje>){
 
@@ -121,4 +132,5 @@ class HomeFragment : Fragment() {
 
         }
     }
+
 }
