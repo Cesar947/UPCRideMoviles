@@ -22,7 +22,9 @@ class RecyclerViewAdaptador(var viajeLista: List<Viaje>) :
    var  listener : OnClickListener? = null
 
 
-    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView),View.OnClickListener {
+
+    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView),OnClickListener {
+
 
 
 
@@ -59,13 +61,13 @@ class RecyclerViewAdaptador(var viajeLista: List<Viaje>) :
         }
 
         override fun onClick(v: View?) {
-          when(v!!.id){
-              R.id.btnSolicitar -> {
-                  var intent = Intent(context, solicitar_viaje::class.java)
-                  //intent.putExtra("id", id)
-                  context.startActivity(intent)
-              }
-          }
+            when(v!!.id){
+                R.id.btnSolicitar -> {
+                    var intent = Intent(context, solicitar_viaje::class.java)
+                    //intent.putExtra("id", id)
+                    context.startActivity(intent)
+                }
+            }
         }
 
     }
