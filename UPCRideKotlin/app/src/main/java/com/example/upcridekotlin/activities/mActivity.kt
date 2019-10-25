@@ -29,7 +29,6 @@ class mActivity : AppCompatActivity() {
     private var mainNav: BottomNavigationView? = null
 
     private var mainFrame: FrameLayout? = null
-    private var btnAgregarViaje : FloatingActionButton? = null
     private var homeFragment: HomeFragment? = null
     private var viajesFragment: ViajesFragment? = null
     private var solicitudesFragment: SolicitudesFragment? = null
@@ -45,7 +44,6 @@ class mActivity : AppCompatActivity() {
         solicitudesFragment = SolicitudesFragment()
         perfilFragment = PerfilFragment()
         mainNav = findViewById(R.id.main_nav)
-        btnAgregarViaje = findViewById(R.id.btnAgregarViaje)
 
 
 
@@ -57,11 +55,6 @@ class mActivity : AppCompatActivity() {
 
         //Toast.makeText(this,id.toString(), Toast.LENGTH_LONG).show();
         //Log.i("AAAAAAAA", id.toString())
-        btnAgregarViaje!!.setOnClickListener {
-            val intent = Intent(this,publicar_viaje::class.java)
-            intent.putExtras(miBundle)
-            startActivity(intent)
-        }
 
         supportFragmentManager.beginTransaction().add(R.id.main_frame, homeFragment!!).commit()
         setSupportActionBar(toolbar)
