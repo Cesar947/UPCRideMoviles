@@ -8,7 +8,7 @@ import com.example.upcridekotlin.R
 
 class Bienvenido : AppCompatActivity() {
 
-    val TAG_LOGS = "Bryan Miramira"
+
     var btnRegistrarme : Button? = null
     var btnIniciar : Button? = null
 

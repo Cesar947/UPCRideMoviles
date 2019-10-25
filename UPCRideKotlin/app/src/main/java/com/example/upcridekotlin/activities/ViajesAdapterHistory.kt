@@ -21,7 +21,7 @@ class ViajesAdapterHistory(var viajeLista: List<ViajeModelo>) :
         var pnt_destino: TextView
         var n_resenias: TextView
         var foto_perfil: ImageView
-        var btnSolicitar: ImageButton
+        //var btnSolicitar: ImageButton
 
         init {
             nombre = itemView.findViewById<View>(R.id.n_usuario) as TextView
@@ -30,7 +30,7 @@ class ViajesAdapterHistory(var viajeLista: List<ViajeModelo>) :
             pnt_partida = itemView.findViewById<View>(R.id.pnt_partida) as TextView
             pnt_destino = itemView.findViewById<View>(R.id.pnt_destino) as TextView
             n_resenias = itemView.findViewById<View>(R.id.n_resenias) as TextView
-            btnSolicitar = itemView.findViewById<View>(R.id.btnSolicitar) as ImageButton
+            //btnSolicitar = itemView.findViewById<View>(R.id.btnSolicitar) as ImageButton
         }
     }
 

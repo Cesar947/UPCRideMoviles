@@ -1,6 +1,7 @@
 package com.example.upcridekotlin.activities
 
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 
@@ -17,6 +18,7 @@ import com.example.upcridekotlin.R
 import com.example.upcridekotlin.interfaces.ViajeApiService
 import com.example.upcridekotlin.model.Viaje
 import com.example.upcridekotlin.model.ViajeModelo
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.Call
@@ -36,7 +38,7 @@ class HomeFragment : Fragment() {
     private var recyclerViewViaje: RecyclerView? = null
     private var adaptadorViaje: RecyclerViewAdaptador? = null
     private var viajeService: ViajeApiService? = null
-
+    private var btnAgregarViaje : FloatingActionButton? = null
 
 
 
@@ -54,9 +56,25 @@ class HomeFragment : Fragment() {
             .build()
         viajeService = retrofit.create(ViajeApiService::class.java)
 
-        Log.i(TAG_LOGS, arguments.toString())
+
+
+        btnAgregarViaje = vista.findViewById(R.id.btnAgregarViaje)
+        //Log.i(TAG_LOGS, arguments.toString())
 
         var id = arguments!!.getInt("id",0)
+
+
+        btnAgregarViaje!!.setOnClickListener {
+
+            val intent = Intent(activity, publicar_viaje::class.java)
+            var miBundle = Bundle()
+            miBundle.putInt("id", id)
+            intent.putExtras(miBundle)
+            startActivity(intent)
+        }
+
+
+
 
         recyclerViewViaje = vista.findViewById(R.id.viajes_recycler)
         recyclerViewViaje!!.layoutManager = LinearLayoutManager(context)

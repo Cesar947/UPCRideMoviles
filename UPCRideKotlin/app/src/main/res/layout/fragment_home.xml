@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.HomeFragment">
+    tools:context=".activities.HomeFragment"
+    android:layout_margin="10dp">
 
     <!-- TODO: Update blank fragment layout -->
 
@@ -13,7 +14,21 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:layout_marginRight="10dp" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btnAgregarViaje"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:visibility="visible"
+        android:layout_gravity="bottom|end"
+        android:layout_marginEnd="25dp"
+        android:layout_marginBottom="15dp"
+        app:srcCompat="@android:drawable/ic_input_add">
+    </com.google.android.material.floatingactionbutton.FloatingActionButton>
+
+
 
 </FrameLayout>
