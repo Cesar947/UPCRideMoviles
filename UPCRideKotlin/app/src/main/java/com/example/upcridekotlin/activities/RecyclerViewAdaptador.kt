@@ -1,9 +1,12 @@
 package com.example.upcridekotlin.activities
 
+import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.View.OnClickListener
 import android.view.ViewGroup
+import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
@@ -18,7 +21,10 @@ class RecyclerViewAdaptador(var viajeLista: List<Viaje>) :
    var  listener : OnClickListener? = null
 
 
-    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)/*,View.OnClickListener */{
+
+
+
 
         var id: Int
         var nombre: TextView
@@ -29,6 +35,8 @@ class RecyclerViewAdaptador(var viajeLista: List<Viaje>) :
         var n_solis: TextView
         var n_resenias: TextView
         var foto_perfil: ImageView
+        var btnSolicitar: ImageButton
+        var context: Context
 
 
         init {
@@ -41,7 +49,24 @@ class RecyclerViewAdaptador(var viajeLista: List<Viaje>) :
             n_solis = itemView.findViewById<View>(R.id.n_solis) as TextView
             n_resenias = itemView.findViewById<View>(R.id.n_resenias) as TextView
             foto_perfil = itemView.findViewById<View>(R.id.foto_perfil) as ImageView
+            btnSolicitar = itemView.findViewById<View>(R.id.btnSolicitar) as ImageButton
+            context = itemView.context
         }
+
+       /* fun setOnClickListeners(){
+           btnSolicitar.setOnClickListener(this)
+        }
+
+        override fun onClick(v: View?) {
+          when(v!!.id){
+              R.id.btnSolicitar -> {
+                  var intent = Intent(context, solicitar_viaje::class.java)
+                  intent.putExtra("id", id)
+                  context.startActivity(intent)
+              }
+          }
+        }*/
+
     }
 
 
@@ -52,6 +77,8 @@ class RecyclerViewAdaptador(var viajeLista: List<Viaje>) :
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+
+        holder.id = viajeLista[position].id
         holder.nombre.setText(viajeLista[position].conductor!!.nombres)
         holder.fecha.setText(viajeLista[position].fecha)
         holder.descripcion.setText(viajeLista[position].descripcion)
@@ -60,11 +87,13 @@ class RecyclerViewAdaptador(var viajeLista: List<Viaje>) :
         holder.n_solis.setText("20")
         holder.n_resenias.setText("20")
         holder.foto_perfil.setImageResource(R.drawable.queso)
+       //holder.setOnClickListeners()
     }
 
     fun setOnClickListener(listener : OnClickListener )
     {
         this.listener = listener
+
     }
 
 

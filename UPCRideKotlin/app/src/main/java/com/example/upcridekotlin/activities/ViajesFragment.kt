@@ -45,6 +45,7 @@ class ViajesFragment : Fragment() {
         val viajes = ArrayList<ViajeModelo>()
         viajes.add(
             ViajeModelo(
+                10,
                 "Brian",
                 "09:10",
                 "Nuevo viaje",
@@ -57,6 +58,7 @@ class ViajesFragment : Fragment() {
         )
         viajes.add(
             ViajeModelo(
+                10,
                 "Sebastian",
                 "22:10",
                 "Nuevo viaje",
@@ -68,7 +70,7 @@ class ViajesFragment : Fragment() {
             )
         )
         viajes.add(
-            ViajeModelo(
+            ViajeModelo(10,
                 "Emilio",
                 "21:10",
                 "Muchachos, les tengo un viaje",
@@ -80,7 +82,7 @@ class ViajesFragment : Fragment() {
             )
         )
         viajes.add(
-            ViajeModelo(
+            ViajeModelo(10,
                 "Brian",
                 "09:10",
                 "Nuevo viaje",

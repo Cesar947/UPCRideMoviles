@@ -12,6 +12,6 @@ interface SolicitudApiService {
     fun getAllSolicitudes(): Call<List<Auto>>
 
     @POST("solicitudes")
-    fun insetarSolicitud(@Body auto: Auto?): Call<Auto>
+    fun insertarSolicitud(@Body auto: Auto?): Call<Auto>
 }
 
