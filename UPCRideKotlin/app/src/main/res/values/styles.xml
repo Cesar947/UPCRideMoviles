@@ -15,6 +15,13 @@
         <item name="colorAccent">#ffffff</item>
     </style>
 
+    <style name="LoginTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimaryDark">#454F63</item>
+        <item name="colorPrimary">#0378A6</item>
+        <item name="colorAccent">#0378A6</item>
+    </style>
+
     <style name="LoginTextInputLayoutStyle" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
         <item name="colorAccent">#0378A6</item>
     </style>
