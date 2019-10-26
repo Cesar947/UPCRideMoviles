@@ -142,13 +142,6 @@ class solicitar_viaje : AppCompatActivity(), MapsFragment.OnFragmentInteractionL
 
 
     }
+
+
 }
-
-
-
-
-
-
-
-
-
