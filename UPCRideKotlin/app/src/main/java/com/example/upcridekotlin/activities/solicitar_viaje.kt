@@ -34,12 +34,9 @@ class solicitar_viaje : AppCompatActivity(), MapsFragment.OnFragmentInteractionL
     lateinit var tvPuntoPartidaSol: TextView
     lateinit var tvPuntoDestinoSol: TextView
     lateinit var etMensajeSol: EditText
-    lateinit var viajeService: ViajeApiService
-    lateinit var usuarioService: UsuarioApiService
-    var pasajero: Usuario? = null
-    var solicitud: Solicitud? = null
+    lateinit var viajeApiService: ViajeApiService
 
-    var viajeId: Int = 0
+    var solicitud : Solicitud?= null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -55,24 +52,27 @@ class solicitar_viaje : AppCompatActivity(), MapsFragment.OnFragmentInteractionL
         tvPuntoDestinoSol = findViewById(R.id.tvDestinoTextoSol) as TextView
         etMensajeSol = findViewById(R.id.etMensaje) as EditText
 
-        viajeService = retrofit.create<ViajeApiService>(ViajeApiService::class.java)
+        viajeApiService = retrofit.create(ViajeApiService::class.java)
+
+
+        var miBundle = this.intent.extras
+        var id = miBundle!!.getInt("idViaje")
+
+        Toast.makeText(this,miBundle.toString(),Toast.LENGTH_LONG).show()
+
+        // viajeApiService.solicitarViaje(id,)
+
 
 
         //var miBundle = this.intent.extras
         // var id = miBundle!!.getInt("id")
 
-        var fragmento: MapsFragment = MapsFragment()
+        var fragmento = MapsFragment()
         supportFragmentManager.beginTransaction().replace(R.id.contenedor, fragmento).commit()
 
-        var miBundle = this.intent.extras
-        var id = miBundle!!.getInt("id")
-        viajeId = id
-
-        // obtenerUsuarioPorId(1)
 
 
-        usuarioService = retrofit.create(UsuarioApiService::class.java)
-
+        //Obtener fechas para adjuntarlas a la solicitud (fecha actual)
         var dia: String = LocalDateTime.now().dayOfMonth.toString();
         var mes: String = LocalDateTime.now().monthValue.toString();
         var año: String = LocalDateTime.now().year.toString();
@@ -84,161 +84,17 @@ class solicitar_viaje : AppCompatActivity(), MapsFragment.OnFragmentInteractionL
         } else {
             fecha = año + "-" + mes + "-" + dia
         }
+
+
         val TAG_LOGS = "Juanelv"
 
-        lateinit var viaje: Viaje
-
-        viajeService.getViajeById(id).enqueue(object : Callback<Viaje> {
-            override fun onFailure(call: Call<Viaje>, t: Throwable) {
-                TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-            }
-
-            override fun onResponse(call: Call<Viaje>?, response: Response<Viaje>?) {
-                viaje = response?.body()!!
-
-                Log.i(TAG_LOGS, Gson().toJson("funciona el viaje "))
-                tvConductorSol.text = viaje.conductor?.nombres.toString()
-                tvPuntoPartidaSol.text = viaje.puntoPartida.toString()
-                tvPuntoDestinoSol.text = viaje.puntoDestino.toString()
-
-
-                crearSolicitud(viaje, fragmento)
-                /*var solicitud: Solicitud? = Solicitud( pasajero ,
-        null,
-        etMensajeSol.text.toString(),
-        "Pendiente",
-       "Izaguirre",
-        -12.057462,
-        -71.223312,
-        fecha: Date?)
->>>>>>> 78fb2ea2b877dc1e1c645e2b35d831cc21b276a3
-
-
-            }
-            override fun onFailure(call: Call<Viaje>, t: Throwable) {
-                Log.i(TAG_LOGS, Gson().toJson("no funciona el viaje "))
-            } })
-
-        viajeService.solicitarViaje(id,solicitud).enqueue(object : Callback<Solicitud> {
-            override fun onResponse(call: Call<Solicitud>?, response: Response<Solicitud>?) {
-                solicitud = response?.body()
-
-
-
-                Log.i(TAG_LOGS, Gson().toJson(solicitud?.viaje?.conductor?.nombres))
-                //Log.i(TAG_LOGS, Gson().toJson(conductor!!.id))
-                Log.i(TAG_LOGS, Gson().toJson("funciona"))
-
-
-            }
-            override fun onFailure(call: Call<Solicitud>, t: Throwable) {
-                t?.printStackTrace()
-                Log.i(TAG_LOGS, Gson().toJson("no funciona"))
-            } })*/
-
-
-            }
-
-
-
-/*
-    fun obtenerUsuarioPorId(id: Int): Usuario?{
-
-
-        usuarioService!!.getUsuarioById(id).enqueue(object : Callback<Usuario> {
-            override fun onResponse(call: Call<Usuario>?, response: Response<Usuario>?) {
-                pasajero = response!!.body()
-
-            }
-
-            override fun onFailure(call: Call<Usuario>?, t: Throwable?) {
-                t?.printStackTrace()
-            }
-        })
-
 
 
     }
 
 
-
-   fun solicitarViaje() {
-
-
-        var conductor : Usuario? = null
-
-
-        var dia: String = LocalDateTime.now().dayOfMonth.toString();
-        var mes: String = LocalDateTime.now().monthValue.toString();
-        var año: String = LocalDateTime.now().year.toString();
-        var fecha :String
-        if(LocalDateTime.now().monthValue<10)
-        {
-            fecha = año+"-0"+mes+"-"+dia
-        }
-        else
-        {
-            fecha = año+"-"+mes+"-"+dia
-        }
-
-
-
-
-        var viaje: Viaje? = Viaje( null ,etMensaje.text.toString(),etPuntoPartida.text.toString(),etPuntoDestino.text.toString(), 12.0,24.0,25.0,50.0, etHoraPartida.text.toString() ,
-            etHoraLlegada.text.toString(),1, fecha,"Lunes","Feliz",
-            1,4,3,etPrecioBase.text.toString().toDouble())
-
-      /* var solicitud: Solicitud? = Solicitud(
-        pasajero: Usuario?,
-        viaje: Viaje?,
-        mensaje: String?,
-        confirmacionConductor: String?,
-        puntoEncuentro: String?,
-        encuentroLatitud: Double,
-        encuentroLongitud: Double,
-        fecha: Date?)
-
-        viajeService.publicarViaje(id,viaje).enqueue(object : Callback<Viaje> {
-            override fun onResponse(call: Call<Viaje>?, response: Response<Viaje>?) {
-                viaje = response?.body()
-
-            }
-            override fun onFailure(call: Call<Viaje>?, t: Throwable?) {
-                t?.printStackTrace()
-
-            } })*/
-
-    }*/
-        })
-
-
-
-
+    fun Solicitar()
+    {
 
     }
-
-
-
-    fun crearSolicitud(viaje: Viaje, fragmento: MapsFragment){
-        solicitud = Solicitud(
-            pasajero,
-            viaje,
-            etMensajeSol.text.toString(),
-            "Pendiente",
-            "Izaguirre",
-            fragmento.getLat(),
-            fragmento.getLng(),
-            null
-        )
-
-
-    }
-
 }
-
-
-
-
-
-
-

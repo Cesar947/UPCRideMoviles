@@ -2,6 +2,7 @@ package com.example.upcridekotlin.activities
 
 import android.content.Context
 import android.content.Intent
+import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -41,10 +42,11 @@ class RecyclerViewAdaptador(var viajeLista: List<Viaje>) :
         var foto_perfil: ImageView
         var btnSolicitar: ImageButton
         var context: Context
-
+        var pasajero : Int
 
         init {
             id = 0
+            pasajero = 0
             nombre = itemView.findViewById<View>(R.id.n_usuario) as TextView
             fecha = itemView.findViewById<View>(R.id.d_fecha) as TextView
             descripcion = itemView.findViewById<View>(R.id.t_descrip) as TextView
@@ -55,6 +57,7 @@ class RecyclerViewAdaptador(var viajeLista: List<Viaje>) :
             foto_perfil = itemView.findViewById<View>(R.id.foto_perfil) as ImageView
             btnSolicitar = itemView.findViewById<View>(R.id.btnSolicitar) as ImageButton
             context = itemView.context
+
         }
 
         fun setOnClickListeners(){
@@ -64,8 +67,13 @@ class RecyclerViewAdaptador(var viajeLista: List<Viaje>) :
         override fun onClick(v: View?) {
             when(v!!.id){
                 R.id.btnSolicitar -> {
+
+                    var bundle = Bundle()
                     var intent = Intent(context, solicitar_viaje::class.java)
-                    intent.putExtra("id", id)
+
+                    bundle.putInt("idViaje",id)
+                    intent.putExtras(bundle)
+
                     context.startActivity(intent)
 
                 }
@@ -82,7 +90,6 @@ class RecyclerViewAdaptador(var viajeLista: List<Viaje>) :
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-
         holder.id = viajeLista[position].id
         holder.nombre.setText(viajeLista[position].conductor!!.nombres)
         holder.fecha.setText(viajeLista[position].fecha)

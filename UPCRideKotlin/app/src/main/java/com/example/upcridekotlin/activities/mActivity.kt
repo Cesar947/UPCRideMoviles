@@ -45,8 +45,6 @@ class mActivity : AppCompatActivity() {
         perfilFragment = PerfilFragment()
         mainNav = findViewById(R.id.main_nav)
 
-
-
         var miBundle = this.intent.extras
         var id = miBundle!!.getInt("id")
         var rol = miBundle!!.getChar("rol")

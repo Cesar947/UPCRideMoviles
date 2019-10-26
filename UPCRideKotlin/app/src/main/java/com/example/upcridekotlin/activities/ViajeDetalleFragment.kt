@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 
@@ -27,6 +28,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 class ViajeDetalleFragment : Fragment() {
 
     var idViaje = 0
+    var idPasajero =0
 
     var tvNombre : TextView? = null
     var tvFecha : TextView? = null
@@ -39,6 +41,7 @@ class ViajeDetalleFragment : Fragment() {
     var tvSolicitudes : TextView? = null
     var tvReseñas : TextView? = null
     var PrecioBase : TextView? = null
+    var btnSolicitar : Button? = null
 
 
 
@@ -66,8 +69,11 @@ class ViajeDetalleFragment : Fragment() {
         tvHoraPartida = vista.findViewById(R.id.solo_hora_partida)
         tvSolicitudes = vista.findViewById(R.id.solo_n_solis)
         tvReseñas = vista.findViewById(R.id.solo_n_resenias)
+        btnSolicitar = vista.findViewById(R.id.btnSolicitarVS)
+
 
         idViaje = arguments!!.getInt("idViaje",0)
+        idPasajero = arguments!!.getInt("idPasajero",0)
 
 
         Toast.makeText(activity,idViaje.toString(),Toast.LENGTH_LONG).show()
