@@ -102,6 +102,7 @@ class solicitar_viaje : AppCompatActivity(), MapsFragment.OnFragmentInteractionL
                 tvPuntoDestinoSol.text = viaje.puntoDestino.toString()
 
 
+                crearSolicitud(viaje, fragmento)
                 /*var solicitud: Solicitud? = Solicitud( pasajero ,
         null,
         etMensajeSol.text.toString(),
@@ -211,6 +212,14 @@ class solicitar_viaje : AppCompatActivity(), MapsFragment.OnFragmentInteractionL
         })
 
 
+
+
+
+    }
+
+
+
+    fun crearSolicitud(viaje: Viaje, fragmento: MapsFragment){
         solicitud = Solicitud(
             pasajero,
             viaje,
@@ -224,7 +233,6 @@ class solicitar_viaje : AppCompatActivity(), MapsFragment.OnFragmentInteractionL
 
 
     }
-
 
 }
 

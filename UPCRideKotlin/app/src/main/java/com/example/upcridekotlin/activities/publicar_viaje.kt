@@ -85,8 +85,6 @@ class publicar_viaje : AppCompatActivity() {
             startActivity(intent)
 
         }
-
-
     }
 
 
