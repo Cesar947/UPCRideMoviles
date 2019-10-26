@@ -67,6 +67,7 @@ class HomeFragment : Fragment() {
         var id = arguments!!.getInt("id",0)
         var rol = arguments!!.getChar("rol",'P')
         Log.i(TAG_LOGS, rol.toString())
+
         if(rol=='C')
         {
             btnAgregarViaje!!.isVisible = true
@@ -77,6 +78,7 @@ class HomeFragment : Fragment() {
             val intent = Intent(activity, publicar_viaje::class.java)
             var miBundle = Bundle()
             miBundle.putInt("id", id)
+
             intent.putExtras(miBundle)
             startActivity(intent)
         }
