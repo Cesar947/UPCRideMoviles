@@ -7,6 +7,7 @@ import android.util.Log
 import android.view.View
 import android.widget.EditText
 import android.widget.TextView
+import android.widget.Toast
 
 import com.example.upcridekotlin.R
 import com.example.upcridekotlin.interfaces.UsuarioApiService
@@ -36,7 +37,9 @@ class solicitar_viaje : AppCompatActivity(), MapsFragment.OnFragmentInteractionL
     lateinit var viajeService: ViajeApiService
     lateinit var usuarioService: UsuarioApiService
     var pasajero: Usuario? = null
+    var solicitud: Solicitud? = null
 
+    var viajeId: Int = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -63,6 +66,7 @@ class solicitar_viaje : AppCompatActivity(), MapsFragment.OnFragmentInteractionL
 
         var miBundle = this.intent.extras
         var id = miBundle!!.getInt("id")
+        viajeId = id
 
         // obtenerUsuarioPorId(1)
 
@@ -82,19 +86,7 @@ class solicitar_viaje : AppCompatActivity(), MapsFragment.OnFragmentInteractionL
         }
         val TAG_LOGS = "Juanelv"
 
-        var solicitud: Solicitud? = Solicitud(
-            pasajero,
-            null,
-            etMensajeSol.text.toString(),
-            "Pendiente",
-            "Izaguirre",
-            -12.057462,
-            -71.223312,
-            null
-        )
-
-
-        var viaje: Viaje
+        lateinit var viaje: Viaje
 
         viajeService.getViajeById(id).enqueue(object : Callback<Viaje> {
             override fun onFailure(call: Call<Viaje>, t: Throwable) {
@@ -146,12 +138,6 @@ class solicitar_viaje : AppCompatActivity(), MapsFragment.OnFragmentInteractionL
 
             }
 
-
-
-
-            fun solicitarViaje(view: View) {
-
-            }
 
 
 /*
@@ -225,9 +211,21 @@ class solicitar_viaje : AppCompatActivity(), MapsFragment.OnFragmentInteractionL
         })
 
 
+        solicitud = Solicitud(
+            pasajero,
+            viaje,
+            etMensajeSol.text.toString(),
+            "Pendiente",
+            "Izaguirre",
+            fragmento.getLat(),
+            fragmento.getLng(),
+            null
+        )
 
 
     }
+
+
 }
 
 

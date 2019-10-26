@@ -32,6 +32,10 @@ class MapsFragment : Fragment(), OnMapReadyCallback, GoogleMap.OnMapClickListene
     GoogleMap.OnMyLocationButtonClickListener,
     GoogleMap.OnMyLocationClickListener{
 
+    var markerLat : Double = 0.0
+    var markerLng : Double = 0.0
+
+
     override fun onMyLocationButtonClick(): Boolean {
         return false
     }
@@ -42,8 +46,17 @@ class MapsFragment : Fragment(), OnMapReadyCallback, GoogleMap.OnMapClickListene
 
     override fun onMapClick(p0: LatLng?) {
         map.addMarker(p0?.let { MarkerOptions().position(it) })
-        
+        markerLat = p0?.latitude!!
+        markerLng = p0?.longitude!!
         //map.moveCamera(CameraUpdateFactory.newLatLng(p0))
+    }
+
+    fun getLat(): Double {
+        return markerLat
+    }
+
+    fun getLng(): Double {
+        return markerLng
     }
 
     // TODO: Rename and change types of parameters
