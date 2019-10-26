@@ -105,6 +105,7 @@ class HomeFragment : Fragment() {
 
                         miBundleViaje.putInt("idViaje",viajesaux.get(recyclerViewViaje!!.getChildAdapterPosition(view)).id)
                         miBundleViaje.putInt("idPasajero",id)
+                        miBundleViaje.putChar("rol",rol)
                         viajeDetalleFragment!!.arguments = miBundleViaje
                         fragmentManager!!.beginTransaction().replace(R.id.main_frame,viajeDetalleFragment!!).commit()
 

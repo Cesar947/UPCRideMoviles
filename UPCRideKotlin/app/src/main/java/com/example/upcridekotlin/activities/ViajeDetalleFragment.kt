@@ -30,6 +30,7 @@ class ViajeDetalleFragment : Fragment() {
 
     var idViaje = 0
     var idPasajero =0
+    var rol = 'P'
 
     var tvNombre : TextView? = null
     var tvFecha : TextView? = null
@@ -75,6 +76,7 @@ class ViajeDetalleFragment : Fragment() {
 
         idViaje = arguments!!.getInt("idViaje",0)
         idPasajero = arguments!!.getInt("idPasajero",0)
+        rol = arguments!!.getChar("rol",'P')
 
 
         Toast.makeText(activity,arguments.toString(),Toast.LENGTH_LONG).show()

@@ -55,7 +55,7 @@ class solicitar_viaje : AppCompatActivity(), MapsFragment.OnFragmentInteractionL
         tvConductorSol = findViewById(R.id.tvConductorTextoSol) as TextView
         tvPuntoPartidaSol = findViewById(R.id.tvPartidaTextoSol) as TextView
         tvPuntoDestinoSol = findViewById(R.id.tvDestinoTextoSol) as TextView
-        etMensajeSol = findViewById(R.id.etMensaje) as EditText
+        etMensajeSol = findViewById(R.id.etMensaje)
         btnSolicitarSolo = findViewById(R.id.btnSolicitarViaje)
 
         viajeApiService = retrofit.create(ViajeApiService::class.java)
@@ -66,7 +66,7 @@ class solicitar_viaje : AppCompatActivity(), MapsFragment.OnFragmentInteractionL
         var miBundle = this.intent.extras
         var idViaje = miBundle!!.getInt("idViaje")
         var idPasajero = miBundle!!.getInt("idPasajero")
-
+        var rol = miBundle!!.getChar("rol")
         Toast.makeText(this,miBundle.toString(),Toast.LENGTH_LONG).show()
 
 
@@ -94,7 +94,7 @@ class solicitar_viaje : AppCompatActivity(), MapsFragment.OnFragmentInteractionL
             Solicitar(idViaje,idPasajero)
             val bundle = Bundle()
             bundle.putInt("id",idPasajero)
-            bundle.putChar("rol",'C')
+            bundle.putChar("rol",rol)
             intent.putExtras(bundle)
             startActivity(intent)
 
@@ -108,7 +108,7 @@ class solicitar_viaje : AppCompatActivity(), MapsFragment.OnFragmentInteractionL
     fun Solicitar(idViaje : Int,idPasajero: Int)
     {
 
-        solicitud = Solicitud(null,null,etMensajeSol.text.toString(),"no c","av",
+        solicitud = Solicitud(null,null,etMensajeSol.text.toString(),"Pendiente","av",
             12.00,12.00,fecha )
 
         usuarioApiService!!.getUsuarioById(idPasajero).enqueue(object : Callback<Usuario> {
@@ -124,6 +124,7 @@ class solicitar_viaje : AppCompatActivity(), MapsFragment.OnFragmentInteractionL
                     override fun onResponse(call: Call<Solicitud>?, response: Response<Solicitud>?) {
                         var solicitud2 = response?.body()
 
+                        Log.i("yo pe", Gson().toJson(solicitud2))
 
 
                     }
