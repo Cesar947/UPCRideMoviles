@@ -38,6 +38,7 @@ class solicitar_viaje : AppCompatActivity(), MapsFragment.OnFragmentInteractionL
     lateinit var usuarioService: UsuarioApiService
     var pasajero: Usuario? = null
     var solicitud: Solicitud? = null
+    lateinit var viaje: Viaje
 
     var viajeId: Int = 0
 
@@ -73,6 +74,8 @@ class solicitar_viaje : AppCompatActivity(), MapsFragment.OnFragmentInteractionL
 
         usuarioService = retrofit.create(UsuarioApiService::class.java)
 
+
+        //Obtener fechas para adjuntarlas a la solicitud (fecha actual)
         var dia: String = LocalDateTime.now().dayOfMonth.toString();
         var mes: String = LocalDateTime.now().monthValue.toString();
         var año: String = LocalDateTime.now().year.toString();
@@ -84,10 +87,11 @@ class solicitar_viaje : AppCompatActivity(), MapsFragment.OnFragmentInteractionL
         } else {
             fecha = año + "-" + mes + "-" + dia
         }
+
+
         val TAG_LOGS = "Juanelv"
 
-        lateinit var viaje: Viaje
-
+        //Get viaje por
         viajeService.getViajeById(id).enqueue(object : Callback<Viaje> {
             override fun onFailure(call: Call<Viaje>, t: Throwable) {
                 TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
