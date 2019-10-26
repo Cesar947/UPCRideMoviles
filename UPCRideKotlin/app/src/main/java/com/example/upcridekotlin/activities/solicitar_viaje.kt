@@ -1,10 +1,12 @@
 package com.example.upcridekotlin.activities
 
+import android.content.Intent
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
@@ -23,18 +25,21 @@ import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.time.LocalDateTime
+import java.util.*
 
 class solicitar_viaje : AppCompatActivity(), MapsFragment.OnFragmentInteractionListener {
 
     override fun onFragmentInteraction(uri: Uri) {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
-
+    var fecha: String = ""
     lateinit var tvConductorSol: TextView
     lateinit var tvPuntoPartidaSol: TextView
     lateinit var tvPuntoDestinoSol: TextView
     lateinit var etMensajeSol: EditText
     lateinit var viajeApiService: ViajeApiService
+    lateinit var usuarioApiService: UsuarioApiService
+    lateinit var btnSolicitarSolo : Button
 
     var solicitud : Solicitud?= null
 
@@ -51,29 +56,22 @@ class solicitar_viaje : AppCompatActivity(), MapsFragment.OnFragmentInteractionL
         tvPuntoPartidaSol = findViewById(R.id.tvPartidaTextoSol) as TextView
         tvPuntoDestinoSol = findViewById(R.id.tvDestinoTextoSol) as TextView
         etMensajeSol = findViewById(R.id.etMensaje) as EditText
+        btnSolicitarSolo = findViewById(R.id.btnSolicitarViaje)
 
         viajeApiService = retrofit.create(ViajeApiService::class.java)
+        usuarioApiService = retrofit.create(UsuarioApiService::class.java)
+
 
 
         var miBundle = this.intent.extras
-        var id = miBundle!!.getInt("idViaje")
+        var idViaje = miBundle!!.getInt("idViaje")
+        var idPasajero = miBundle!!.getInt("idPasajero")
 
         Toast.makeText(this,miBundle.toString(),Toast.LENGTH_LONG).show()
 
-       // viajeApiService.solicitarViaje(id,)
-
-
-
-        //var miBundle = this.intent.extras
-        // var id = miBundle!!.getInt("id")
 
         var fragmento = MapsFragment()
         supportFragmentManager.beginTransaction().replace(R.id.contenedor, fragmento).commit()
-
-
-
-
-
 
 
 
@@ -82,7 +80,7 @@ class solicitar_viaje : AppCompatActivity(), MapsFragment.OnFragmentInteractionL
         var mes: String = LocalDateTime.now().monthValue.toString();
         var año: String = LocalDateTime.now().year.toString();
 
-        var fecha: String
+
 
         if (LocalDateTime.now().monthValue < 10) {
             fecha = año + "-0" + mes + "-" + dia
@@ -91,8 +89,56 @@ class solicitar_viaje : AppCompatActivity(), MapsFragment.OnFragmentInteractionL
         }
 
 
-        val TAG_LOGS = "Juanelv"
+        btnSolicitarSolo.setOnClickListener {
+            val intent = Intent(this, mActivity::class.java)
+            Solicitar(idViaje,idPasajero)
+            val bundle = Bundle()
+            bundle.putInt("id",idPasajero)
+            bundle.putChar("rol",'C')
+            intent.putExtras(bundle)
+            startActivity(intent)
 
+        }
+
+    }
+
+
+
+
+    fun Solicitar(idViaje : Int,idPasajero: Int)
+    {
+
+        solicitud = Solicitud(null,null,etMensajeSol.text.toString(),"no c","av",
+            12.00,12.00,fecha )
+
+        usuarioApiService!!.getUsuarioById(idPasajero).enqueue(object : Callback<Usuario> {
+            override fun onResponse(call: Call<Usuario>?, response: Response<Usuario>?) {
+                val pasajero = response?.body()
+
+                solicitud!!.pasajero = pasajero
+
+                Log.i("yo pe", Gson().toJson(solicitud))
+
+
+                viajeApiService.solicitarViaje(idViaje,solicitud).enqueue(object : Callback<Solicitud> {
+                    override fun onResponse(call: Call<Solicitud>?, response: Response<Solicitud>?) {
+                        var solicitud2 = response?.body()
+
+
+
+                    }
+                    override fun onFailure(call: Call<Solicitud>?, t: Throwable?) {
+                        t?.printStackTrace()
+
+                    } })
+
+
+            }
+            override fun onFailure(call: Call<Usuario>?, t: Throwable?) {
+                t?.printStackTrace()
+
+            }
+        })
 
 
     }
