@@ -95,8 +95,6 @@ class HomeFragment : Fragment() {
             override fun onResponse(call: Call<List<Viaje>>, response: Response<List<Viaje>>) {
                 val viajesaux = response.body()
 
-                //Log.i(TAG_LOGS, Gson().toJson(ViajesAux))
-
                 adaptadorViaje = RecyclerViewAdaptador(viajesaux!!)
 
                 adaptadorViaje!!.setOnClickListener( object : View.OnClickListener{
@@ -106,9 +104,8 @@ class HomeFragment : Fragment() {
                         var miBundleViaje = Bundle()
 
                         miBundleViaje.putInt("idViaje",viajesaux.get(recyclerViewViaje!!.getChildAdapterPosition(view)).id)
+                        miBundleViaje.putInt("idPasajero",id)
                         viajeDetalleFragment!!.arguments = miBundleViaje
-
-
                         fragmentManager!!.beginTransaction().replace(R.id.main_frame,viajeDetalleFragment!!).commit()
 
                     }
@@ -119,41 +116,11 @@ class HomeFragment : Fragment() {
             }
             override fun onFailure(call: Call<List<Viaje>>?, t: Throwable?) {
                 t?.printStackTrace()
-
             }
-
         })
-
-
-
-
-
         return vista
     }
 
 
-
-   /* fun anadir (lista:List<Viaje>){
-
-        for(item : Viaje in lista)
-        {
-            var id = item.id
-            var nombre = item.conductor?.nombres.toString();
-            var fecha =  item.fecha.toString();
-            var descripcion =  item.descripcion.toString();
-            var ptoPartida=  item.puntoPartida.toString();
-            var ptoDestino=  item.puntoDestino.toString();
-            var n_solis =  "20"
-            var n_reseñas = "10"
-
-            ViajesAux.add(
-                ViajeModelo(id,
-                    nombre, fecha, descripcion, ptoPartida, ptoDestino,
-                    n_solis, n_reseñas, R.drawable.queso
-                )
-            )
-
-        }
-    }*/
 
 }
