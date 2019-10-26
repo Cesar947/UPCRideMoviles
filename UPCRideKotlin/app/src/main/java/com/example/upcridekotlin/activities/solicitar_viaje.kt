@@ -213,7 +213,9 @@ class solicitar_viaje : AppCompatActivity(), MapsFragment.OnFragmentInteractionL
 
         solicitud = Solicitud(
             pasajero,
-            viaje,
+            Viaje( null ,"hola","ah","ah", 12.0,24.0,25.0,50.0, "ah" ,
+                "ah",1, "ah","Lunes","Feliz",
+                1,4,3,5.0),
             etMensajeSol.text.toString(),
             "Pendiente",
             "Izaguirre",
