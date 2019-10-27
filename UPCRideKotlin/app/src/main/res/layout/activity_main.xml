@@ -9,8 +9,8 @@
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/main_nav"
-        android:layout_width="432dp"
-        android:layout_height="57dp"
+        android:layout_width="392dp"
+        android:layout_height="51dp"
         android:background="?attr/colorAccent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -68,6 +68,7 @@
         android:id="@+id/toolbar3"
         android:layout_width="106dp"
         android:layout_height="55dp"
+        android:layout_marginRight="10dp"
         android:background="?attr/colorAccent"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
