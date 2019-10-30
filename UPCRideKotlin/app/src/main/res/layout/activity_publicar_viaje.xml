@@ -110,7 +110,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
-        android:id="@+id/etPuntoPartida"
+        android:id="@+id/etPuntoPartida2"
         android:layout_width="291dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="12dp"
@@ -126,6 +126,7 @@
         android:id="@+id/etMensaje"
         android:layout_width="335dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="84dp"
         android:layout_marginBottom="20dp"
         android:ems="10"
         android:hint="@string/etMensaje"
@@ -133,7 +134,7 @@
         android:textColor="@android:color/background_light"
         app:layout_constraintBottom_toTopOf="@+id/etPuntoPartida"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.526"
+        app:layout_constraintHorizontal_bias="0.592"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.886" />
