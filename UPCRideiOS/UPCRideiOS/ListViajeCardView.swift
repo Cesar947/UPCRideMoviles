@@ -33,17 +33,16 @@ var cards: [ViajeModel] = [
     precioBase: 20)
 
 ]
-struct ListViajeCardView: View {
+/*struct ListViajeCardView: View {
 
     
     var body: some View {
-        VStack
         List {
                        VStack(spacing: 20) {
-                        ForEach<[ViajeModel], <#ID: Hashable#>, ViajeCardView>(cards) { card in
+                        ForEach<[ViajeModel], , ViajeCardView>(cards) { card in
                                ViajeCardView(
                                 nombreConductor: card.nombreConductor, puntoPartida: card.puntoPartida, puntoDestino: card.puntoDestino, horaPartida: card.horaPartida, horaLlegada: card.horaLlegada, fecha: card.fecha, dia: card.dia, descripcion: card.descripcion, precioBase: card.precioBase)
-                            )                 }
+                                    }
                        }
                    }
                    .frame(minWidth: 0, maxWidth: .infinity)
@@ -59,5 +58,5 @@ struct ListViajeCardView_Previews: PreviewProvider {
             ListViajeCardView().colorScheme(.dark)
         }
     }
-}
+}*/
 

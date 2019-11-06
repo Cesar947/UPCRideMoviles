@@ -7,6 +7,7 @@ target 'UPCRideiOS' do
 
 	pod 'Firebase/Core'
 	pod 'Firebase/Firestore'
+	pod 'Firebase/Analytics'
 
   # Pods for UPCRideiOS
 
