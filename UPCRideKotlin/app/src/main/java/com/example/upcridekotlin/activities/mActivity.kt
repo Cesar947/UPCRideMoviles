@@ -50,7 +50,7 @@ class mActivity : AppCompatActivity() {
         var rol = miBundle!!.getChar("rol")
         homeFragment!!.arguments = miBundle
         perfilFragment!!.arguments = miBundle
-
+        solicitudesFragment!!.arguments = miBundle
 
         //Toast.makeText(this,id.toString(), Toast.LENGTH_LONG).show();
         //Log.i("AAAAAAAA", id.toString())
