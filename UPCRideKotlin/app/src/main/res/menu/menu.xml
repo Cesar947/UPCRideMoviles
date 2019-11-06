@@ -7,8 +7,5 @@
         android:icon="@drawable/ic_search"
         app:showAsAction="ifRoom"
         />
-    <item android:title="Filtrar"
-        android:icon="@drawable/ic_action_filter"
-        app:showAsAction="ifRoom"/>
 
 </menu>

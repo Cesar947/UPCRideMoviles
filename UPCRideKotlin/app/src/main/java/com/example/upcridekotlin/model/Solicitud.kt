@@ -12,7 +12,7 @@ class Solicitud{
     var puntoEncuentro: String?= null
     var encuentroLatitud: Double= 0.0
     var encuentroLongitud: Double= 0.0
-    var fecha: Date?=null
+    var fecha: String?= ""
 
     constructor(
         pasajero: Usuario?,
@@ -22,7 +22,7 @@ class Solicitud{
         puntoEncuentro: String?,
         encuentroLatitud: Double,
         encuentroLongitud: Double,
-        fecha: Date?
+        fecha: String?
     ) {
         this.pasajero = pasajero
         this.viaje = viaje

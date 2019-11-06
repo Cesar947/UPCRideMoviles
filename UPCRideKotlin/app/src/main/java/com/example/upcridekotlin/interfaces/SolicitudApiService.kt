@@ -13,13 +13,7 @@ interface SolicitudApiService {
     @GET("solicitudes")
     fun getAllSolicitudes(): Call<List<Solicitud>>
 
+    fun insertarSolicitud(@Body auto: Solicitud?): Call<Solicitud>
 
-
-    @POST("solicitudes")
-    fun insertarSolicitud(@Body auto: Auto?): Call<Solicitud>
-
-
-    @GET("solicitudes/conductor/{conductorId}")
-    fun obtenerSolicitudesPorConductor(@Path("conductorId") conductorId: Int ): Call<List<Solicitud>>
 }
 

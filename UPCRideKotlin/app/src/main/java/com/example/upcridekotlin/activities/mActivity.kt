@@ -7,11 +7,7 @@ import androidx.fragment.app.Fragment
 
 import android.os.Bundle
 import android.util.Log
-import android.widget.Button
-
-import android.widget.FrameLayout
-import android.widget.TextView
-import android.widget.Toast
+import android.widget.*
 
 
 import com.example.upcridekotlin.R
@@ -22,6 +18,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class mActivity : AppCompatActivity() {
 
+    private var filtrando: Int? = 0
 
     private var toolbar: Toolbar? = null
     private var txttoolbar: TextView? = null
@@ -33,17 +30,24 @@ class mActivity : AppCompatActivity() {
     private var viajesFragment: ViajesFragment? = null
     private var solicitudesFragment: SolicitudesFragment? = null
     private var perfilFragment: PerfilFragment? = null
+    private var filtrarFragment: FiltrarFragment?= null
+
+    private var filtrarBtn: ImageButton? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        filtrando = 0
+
         txttoolbar = findViewById(R.id.toolbartxt)
         homeFragment = HomeFragment()
+        filtrarFragment = FiltrarFragment()
         viajesFragment = ViajesFragment()
         solicitudesFragment = SolicitudesFragment()
         perfilFragment = PerfilFragment()
         mainNav = findViewById(R.id.main_nav)
+        filtrarBtn = findViewById(R.id.filtrarBtn)
 
         var miBundle = this.intent.extras
         var id = miBundle!!.getInt("id")
@@ -56,6 +60,7 @@ class mActivity : AppCompatActivity() {
         //Log.i("AAAAAAAA", id.toString())
 
         supportFragmentManager.beginTransaction().replace(R.id.main_frame, homeFragment!!).commit()
+
         setSupportActionBar(toolbar)
 
         mainNav?.setOnNavigationItemSelectedListener { item ->
@@ -84,6 +89,19 @@ class mActivity : AppCompatActivity() {
                 .commit()
 
             true
+        }
+
+        filtrarBtn!!.setOnClickListener {
+
+            if(filtrando == 0) {
+                supportFragmentManager.beginTransaction()
+                    .replace(R.id.filtrar_frame, filtrarFragment!!)
+                    .commit()
+                filtrando = 1
+            }
+            else{
+                filtrando = 0
+            }
         }
 
 
