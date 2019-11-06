@@ -7,12 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+
 		8B6270E523730A54004D92B5 /* ViajeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6270E423730A54004D92B5 /* ViajeModel.swift */; };
 		8B7C8B0C2372F36300F332F5 /* Usuario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7C8B0B2372F36300F332F5 /* Usuario.swift */; };
 		8B7C8B0E2372F36B00F332F5 /* Viaje.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7C8B0D2372F36B00F332F5 /* Viaje.swift */; };
 		8B7C8B102372F37B00F332F5 /* Solicitud.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7C8B0F2372F37B00F332F5 /* Solicitud.swift */; };
 		8B7C8B132372F66800F332F5 /* ViajeCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7C8B122372F66800F332F5 /* ViajeCardView.swift */; };
 		8B7C8B52237303E400F332F5 /* ListViajeCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7C8B51237303E400F332F5 /* ListViajeCardView.swift */; };
+
+		182CBB6555726D4070468F8F /* Pods_UPCRideiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1BC1E7706129351854BAAC2 /* Pods_UPCRideiOS.framework */; };
+
 		8BD2444423707D0C00B50B15 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD2444323707D0C00B50B15 /* AppDelegate.swift */; };
 		8BD2444623707D0C00B50B15 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD2444523707D0C00B50B15 /* SceneDelegate.swift */; };
 		8BD2444923707D0C00B50B15 /* UPCRideiOS.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8BD2444723707D0C00B50B15 /* UPCRideiOS.xcdatamodeld */; };
@@ -23,12 +27,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+
 		8B6270E423730A54004D92B5 /* ViajeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViajeModel.swift; sourceTree = "<group>"; };
 		8B7C8B0B2372F36300F332F5 /* Usuario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Usuario.swift; sourceTree = "<group>"; };
 		8B7C8B0D2372F36B00F332F5 /* Viaje.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Viaje.swift; sourceTree = "<group>"; };
 		8B7C8B0F2372F37B00F332F5 /* Solicitud.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Solicitud.swift; sourceTree = "<group>"; };
 		8B7C8B122372F66800F332F5 /* ViajeCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViajeCardView.swift; sourceTree = "<group>"; };
 		8B7C8B51237303E400F332F5 /* ListViajeCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViajeCardView.swift; sourceTree = "<group>"; };
+
+		5E5538F8950281C6A82466A5 /* Pods-UPCRideiOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UPCRideiOS.release.xcconfig"; path = "Target Support Files/Pods-UPCRideiOS/Pods-UPCRideiOS.release.xcconfig"; sourceTree = "<group>"; };
+
 		8BD2444023707D0C00B50B15 /* UPCRideiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UPCRideiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BD2444323707D0C00B50B15 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8BD2444523707D0C00B50B15 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -38,6 +46,13 @@
 		8BD2444F23707D0D00B50B15 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		8BD2445223707D0D00B50B15 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8BD2445423707D0D00B50B15 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+
+		A1BC1E7706129351854BAAC2 /* Pods_UPCRideiOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UPCRideiOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BE98E48F13C23A0CFD1F345C /* Pods-UPCRideiOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UPCRideiOS.debug.xcconfig"; path = "Target Support Files/Pods-UPCRideiOS/Pods-UPCRideiOS.debug.xcconfig"; sourceTree = "<group>"; };
+		EC4F0D3523708A690071BDA0 /* Ride.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ride.swift; sourceTree = "<group>"; };
+		EC4F0D3723708A7B0071BDA0 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		EC4F0D3923708AA20071BDA0 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,17 +60,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				182CBB6555726D4070468F8F /* Pods_UPCRideiOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2DCDA64D38E10BC36F7B9E19 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BE98E48F13C23A0CFD1F345C /* Pods-UPCRideiOS.debug.xcconfig */,
+				5E5538F8950281C6A82466A5 /* Pods-UPCRideiOS.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		8BD2443723707D0C00B50B15 = {
 			isa = PBXGroup;
 			children = (
 				8BD2444223707D0C00B50B15 /* UPCRideiOS */,
 				8BD2444123707D0C00B50B15 /* Products */,
+				2DCDA64D38E10BC36F7B9E19 /* Pods */,
+				DE7A9AD627BCBA18274224E6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -93,6 +121,14 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		DE7A9AD627BCBA18274224E6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A1BC1E7706129351854BAAC2 /* Pods_UPCRideiOS.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		EC4F0D342370891F0071BDA0 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -111,9 +147,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8BD2445723707D0D00B50B15 /* Build configuration list for PBXNativeTarget "UPCRideiOS" */;
 			buildPhases = (
+				C57899E5E1E72EE3B61CA164 /* [CP] Check Pods Manifest.lock */,
 				8BD2443C23707D0C00B50B15 /* Sources */,
 				8BD2443D23707D0C00B50B15 /* Frameworks */,
 				8BD2443E23707D0C00B50B15 /* Resources */,
+				391BB540FB81FFF48845F734 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -169,6 +207,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		391BB540FB81FFF48845F734 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-UPCRideiOS/Pods-UPCRideiOS-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-UPCRideiOS/Pods-UPCRideiOS-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-UPCRideiOS/Pods-UPCRideiOS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C57899E5E1E72EE3B61CA164 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-UPCRideiOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		8BD2443C23707D0C00B50B15 /* Sources */ = {
@@ -318,6 +398,7 @@
 		};
 		8BD2445823707D0D00B50B15 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BE98E48F13C23A0CFD1F345C /* Pods-UPCRideiOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -337,6 +418,7 @@
 		};
 		8BD2445923707D0D00B50B15 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5E5538F8950281C6A82466A5 /* Pods-UPCRideiOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
