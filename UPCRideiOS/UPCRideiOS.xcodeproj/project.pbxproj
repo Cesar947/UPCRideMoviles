@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8B6270E523730A54004D92B5 /* ViajeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6270E423730A54004D92B5 /* ViajeModel.swift */; };
+		8B7C8B0C2372F36300F332F5 /* Usuario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7C8B0B2372F36300F332F5 /* Usuario.swift */; };
+		8B7C8B0E2372F36B00F332F5 /* Viaje.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7C8B0D2372F36B00F332F5 /* Viaje.swift */; };
+		8B7C8B102372F37B00F332F5 /* Solicitud.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7C8B0F2372F37B00F332F5 /* Solicitud.swift */; };
+		8B7C8B132372F66800F332F5 /* ViajeCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7C8B122372F66800F332F5 /* ViajeCardView.swift */; };
+		8B7C8B52237303E400F332F5 /* ListViajeCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7C8B51237303E400F332F5 /* ListViajeCardView.swift */; };
 		8BD2444423707D0C00B50B15 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD2444323707D0C00B50B15 /* AppDelegate.swift */; };
 		8BD2444623707D0C00B50B15 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD2444523707D0C00B50B15 /* SceneDelegate.swift */; };
 		8BD2444923707D0C00B50B15 /* UPCRideiOS.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8BD2444723707D0C00B50B15 /* UPCRideiOS.xcdatamodeld */; };
@@ -14,12 +20,15 @@
 		8BD2444D23707D0D00B50B15 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8BD2444C23707D0D00B50B15 /* Assets.xcassets */; };
 		8BD2445023707D0D00B50B15 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8BD2444F23707D0D00B50B15 /* Preview Assets.xcassets */; };
 		8BD2445323707D0D00B50B15 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8BD2445123707D0D00B50B15 /* LaunchScreen.storyboard */; };
-		EC4F0D3623708A690071BDA0 /* Ride.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4F0D3523708A690071BDA0 /* Ride.swift */; };
-		EC4F0D3823708A7B0071BDA0 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4F0D3723708A7B0071BDA0 /* User.swift */; };
-		EC4F0D3A23708AA20071BDA0 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4F0D3923708AA20071BDA0 /* Request.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8B6270E423730A54004D92B5 /* ViajeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViajeModel.swift; sourceTree = "<group>"; };
+		8B7C8B0B2372F36300F332F5 /* Usuario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Usuario.swift; sourceTree = "<group>"; };
+		8B7C8B0D2372F36B00F332F5 /* Viaje.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Viaje.swift; sourceTree = "<group>"; };
+		8B7C8B0F2372F37B00F332F5 /* Solicitud.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Solicitud.swift; sourceTree = "<group>"; };
+		8B7C8B122372F66800F332F5 /* ViajeCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViajeCardView.swift; sourceTree = "<group>"; };
+		8B7C8B51237303E400F332F5 /* ListViajeCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViajeCardView.swift; sourceTree = "<group>"; };
 		8BD2444023707D0C00B50B15 /* UPCRideiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UPCRideiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BD2444323707D0C00B50B15 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8BD2444523707D0C00B50B15 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -29,9 +38,6 @@
 		8BD2444F23707D0D00B50B15 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		8BD2445223707D0D00B50B15 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8BD2445423707D0D00B50B15 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EC4F0D3523708A690071BDA0 /* Ride.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ride.swift; sourceTree = "<group>"; };
-		EC4F0D3723708A7B0071BDA0 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		EC4F0D3923708AA20071BDA0 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +74,8 @@
 				8BD2444323707D0C00B50B15 /* AppDelegate.swift */,
 				8BD2444523707D0C00B50B15 /* SceneDelegate.swift */,
 				8BD2444A23707D0C00B50B15 /* ContentView.swift */,
+				8B7C8B122372F66800F332F5 /* ViajeCardView.swift */,
+				8B7C8B51237303E400F332F5 /* ListViajeCardView.swift */,
 				8BD2444C23707D0D00B50B15 /* Assets.xcassets */,
 				8BD2445123707D0D00B50B15 /* LaunchScreen.storyboard */,
 				8BD2445423707D0D00B50B15 /* Info.plist */,
@@ -88,9 +96,10 @@
 		EC4F0D342370891F0071BDA0 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				EC4F0D3523708A690071BDA0 /* Ride.swift */,
-				EC4F0D3723708A7B0071BDA0 /* User.swift */,
-				EC4F0D3923708AA20071BDA0 /* Request.swift */,
+				8B7C8B0B2372F36300F332F5 /* Usuario.swift */,
+				8B7C8B0D2372F36B00F332F5 /* Viaje.swift */,
+				8B7C8B0F2372F37B00F332F5 /* Solicitud.swift */,
+				8B6270E423730A54004D92B5 /* ViajeModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -166,13 +175,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B7C8B102372F37B00F332F5 /* Solicitud.swift in Sources */,
+				8B7C8B52237303E400F332F5 /* ListViajeCardView.swift in Sources */,
+				8B7C8B0E2372F36B00F332F5 /* Viaje.swift in Sources */,
+				8B7C8B132372F66800F332F5 /* ViajeCardView.swift in Sources */,
+				8B7C8B0C2372F36300F332F5 /* Usuario.swift in Sources */,
 				8BD2444923707D0C00B50B15 /* UPCRideiOS.xcdatamodeld in Sources */,
 				8BD2444423707D0C00B50B15 /* AppDelegate.swift in Sources */,
-				EC4F0D3823708A7B0071BDA0 /* User.swift in Sources */,
 				8BD2444B23707D0C00B50B15 /* ContentView.swift in Sources */,
-				EC4F0D3A23708AA20071BDA0 /* Request.swift in Sources */,
-				EC4F0D3623708A690071BDA0 /* Ride.swift in Sources */,
 				8BD2444623707D0C00B50B15 /* SceneDelegate.swift in Sources */,
+				8B6270E523730A54004D92B5 /* ViajeModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

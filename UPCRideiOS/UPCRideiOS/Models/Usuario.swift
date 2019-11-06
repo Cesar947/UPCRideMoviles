@@ -1,15 +1,15 @@
 //
-//  User.swift
+//  Usuario.swift
 //  UPCRideiOS
 //
-//  Created by Cesar Pizarro Llanos on 11/4/19.
+//  Created by Developer on 11/6/19.
 //  Copyright © 2019 UPC Ride. All rights reserved.
 //
 
 import Foundation
 
 
-struct User {
+struct Usuario {
     var id: Int
     var codigo: Int
     var dni: Int
