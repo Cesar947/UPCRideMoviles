@@ -53,30 +53,6 @@ class SolicitudesFragment : Fragment() {
         recyclerViewSolicitud!!.adapter = adaptadorSolicitudes
 
 
-        val retrofit: Retrofit = Retrofit.Builder()
-            .baseUrl("http://ec2-52-15-215-247.us-east-2.compute.amazonaws.com:8080/")
-            .addConverterFactory(GsonConverterFactory.create())
-            .build()
-
-        solicitudService = retrofit.create(SolicitudApiService::class.java)
-
-        conductorId = arguments!!.getInt("id", 0)
-        Toast.makeText(activity,"El conductor es el número" + conductorId.toString(), Toast.LENGTH_LONG).show()
-
-        solicitudService!!.obtenerSolicitudesPorConductor(conductorId!!).enqueue(object: Callback<List<Solicitud>>{
-            override fun onResponse(call: Call<List<Solicitud>>, response: Response<List<Solicitud>>
-            ) {
-                TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-            }
-
-            override fun onFailure(call: Call<List<Solicitud>>, t: Throwable) {
-                TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-            }
-
-        }
-
-
-
         return vista
     }
 
