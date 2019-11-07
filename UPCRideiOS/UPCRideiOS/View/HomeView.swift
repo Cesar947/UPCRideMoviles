@@ -23,9 +23,7 @@ struct HomeView: View {
         .navigationBarTitle(Text("Inicio"))
         .navigationBarItems(trailing: Button(action: {print("Buscando")}) {
         Text("")
-        Image("ic_action_search").resizable()
-         .aspectRatio(contentMode: .fill)
-        .frame(width: 25, height: 25)
+        Image(systemName: "magnifyingglass").font(Font.system(size: 25, weight: .semibold))
         })
     }
     }

@@ -15,9 +15,9 @@ struct ViajesView: View {
     var body: some View {
         NavigationView{
             ScrollView() {
-                VStack(spacing: 20){
+                VStack(spacing: 5){
                     ForEach(self.viajes) {viajen in
-                        ViajeCardView( nombre: viajen.nombre , fecha: viajen.fecha, descripcion: viajen.descripcion, puntoPartida: viajen.puntoPartida, puntoDestino: viajen.puntoDestino)
+                        MiViajeCardView( nombre: viajen.nombre , fecha: viajen.fecha, puntoPartida: viajen.puntoPartida, puntoDestino: viajen.puntoDestino)
                     }
                 }
             }

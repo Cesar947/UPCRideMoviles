@@ -27,21 +27,17 @@ struct ContentView: View {
       var body: some View {
         TabView{
             HomeView().tabItem{
-            Image("ic_action_home")
-                Text("Inicio")
+                Image(systemName: "house").font(Font.system(size: 30, weight: .semibold))
             }
                 
                 ViajesView().tabItem{
-                    Image("ic_action_logo")
-                    Text("Viajes")
+                    Image(systemName: "car").font(Font.system(size: 30, weight: .semibold))
                 }
                 Text("Solicitudes").tabItem{
-                    Image("ic_action_solis")
-                    Text("Solicitudes")
+                    Image(systemName: "bell").font(Font.system(size: 30, weight: .semibold))
                 }
                 Text("Perfil").tabItem{
-                    Image("ic_action_perfil")
-                    Text("Perfil")
+                    Image(systemName: "person").font(Font.system(size: 30, weight: .semibold))
                 }
             }
         }
