@@ -100,10 +100,20 @@ class publicar_viaje : AppCompatActivity() {
         if(LocalDateTime.now().monthValue<10)
         {
             fecha = año+"-0"+mes+"-"+dia
+
+            if(LocalDateTime.now().dayOfMonth<10)
+            {
+                fecha = año+"-0"+mes+"-"+"0"+dia
+            }
         }
         else
         {
             fecha = año+"-"+mes+"-"+dia
+
+            if(LocalDateTime.now().dayOfMonth<10)
+            {
+                fecha = año+"-"+mes+"-"+"0"+dia
+            }
         }
 
         Log.i(TAG_LOGS, Gson().toJson(mes))

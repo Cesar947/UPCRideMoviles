@@ -82,10 +82,23 @@ class solicitar_viaje : AppCompatActivity(), MapsFragment.OnFragmentInteractionL
 
 
 
-        if (LocalDateTime.now().monthValue < 10) {
-            fecha = año + "-0" + mes + "-" + dia
-        } else {
-            fecha = año + "-" + mes + "-" + dia
+        if(LocalDateTime.now().monthValue<10)
+        {
+            fecha = año+"-0"+mes+"-"+dia
+
+            if(LocalDateTime.now().dayOfMonth<10)
+            {
+                fecha = año+"-0"+mes+"-"+"0"+dia
+            }
+        }
+        else
+        {
+            fecha = año+"-"+mes+"-"+dia
+
+            if(LocalDateTime.now().dayOfMonth<10)
+            {
+                fecha = año+"-"+mes+"-"+"0"+dia
+            }
         }
 
 
