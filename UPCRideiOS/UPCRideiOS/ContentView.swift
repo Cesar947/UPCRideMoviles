@@ -22,7 +22,8 @@ import SwiftUI
      }*/
 
 struct ContentView: View {
-     
+
+ /*
     @ObservedObject var usuario = Usuario()
 
        var body: some View {
@@ -67,6 +68,37 @@ struct ContentView: View {
 }
     
 }
+*/
+
+      
+      var body: some View {
+        TabView{
+            NavigationView{
+                HomeView()
+                .navigationBarTitle(Text("Inicio"))
+            }.tabItem{
+            Image("ic_action_home")
+                Text("Inicio")
+            }
+                
+                Text("Viajes").tabItem{
+                    Image("ic_action_logo")
+                    Text("Viajes")
+                }
+                Text("Solicitudes").tabItem{
+                    Image("ic_action_solis")
+                    Text("Solicitudes")
+                }
+                Text("Perfil").tabItem{
+                    Image("ic_action_perfil")
+                    Text("Perfil")
+                }
+            }
+        }
+    }
+
+      
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
