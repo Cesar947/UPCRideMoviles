@@ -29,10 +29,7 @@ var sede: String*/
 struct RegistrarUsuarioForm: View {
     
     @ObservedObject var usuario = Usuario()
-    
-    /*func registrar(){
-          
-      }*/
+
     
     var body: some View {
         NavigationView{
@@ -51,22 +48,24 @@ struct RegistrarUsuarioForm: View {
             
             Section{
                 VStack{
-                    Picker(selection: $usuario.sedeIdentificador, label: Text("Escoja su sede")){
-                        ForEach(0 ..< usuario.sedes.count) {
+                    
+                    Picker(selection: $usuario.sedeIdentificador, label: Text("Sede")) {
+                        ForEach(0 ..< usuario.sedes.count){
                             Text(self.usuario.sedes[$0]).tag($0)
                         }
                     }
+
+                    
                     TextField("Distrito", text: $usuario.codigo)
                     
                 }
             }
             
-            Section{
-                Button(){
-                    Text("Registrar")
-                }
+            Button(action: {print("Usuario Registrado")} ) {
+                Text("Registrar")
             }
-        }
+            
+            }
         }.navigationBarTitle(Text("Registro"))
     }
   
