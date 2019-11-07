@@ -9,18 +9,15 @@
 import SwiftUI
 
 struct ContentView: View {
-      
+    
       var body: some View {
         TabView{
-            NavigationView{
-                HomeView()
-                .navigationBarTitle(Text("Inicio"))
-            }.tabItem{
+            HomeView().tabItem{
             Image("ic_action_home")
                 Text("Inicio")
             }
                 
-                Text("Viajes").tabItem{
+                ViajesView().tabItem{
                     Image("ic_action_logo")
                     Text("Viajes")
                 }
