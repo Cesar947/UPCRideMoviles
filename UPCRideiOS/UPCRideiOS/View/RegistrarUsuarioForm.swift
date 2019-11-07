@@ -51,18 +51,22 @@ struct RegistrarUsuarioForm: View {
             
             Section{
                 VStack{
-                    Picker(selection: $usuario.sedeIdentificador, label: Text("Escoja su sede")){
-                        ForEach(0 ..< usuario.sedes.count) {
-                            Text(self.usuario.sedes[$0]).tag($0)
-                        }
-                    }
-                    TextField("Distrito", text: $usuario.codigo)
+                    
+                /*Picker(selection: $usuario.sedeIdentificador, label: Text("Escoja su sede")) {
+                      ForEach(0 ..< usuario.sedes.count) {
+                      Text(self.usuario.sedes[$0]).tag($0)
+                  }
+                }*/
+                   
+                TextField("Distrito", text: $usuario.codigo)
                     
                 }
             }
             
             Section{
-                Button(){
+                Button(action: {
+                    print("Registrado")
+                }){
                     Text("Registrar")
                 }
             }

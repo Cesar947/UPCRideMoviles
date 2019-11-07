@@ -9,7 +9,7 @@
 import Foundation
 import Combine
 
-class Usuario: ObservableObject{
+class Usuario: ObservableObject, Identifiable{
     
     var didChange = PassthroughSubject<Void, Never>()
     
