@@ -36,9 +36,9 @@ class SolicitudesFragment : Fragment() {
     private var adaptadorSolicitudes: AdaptadorSolicitudes? = null
     private var solicitudService: SolicitudApiService? = null
     private var conductorId: Int? = 0
-    //Para guia
-/*@GET("solicitudes")
-    fun getAllSolicitudes(): Call<List<Auto>>*/
+
+
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -51,6 +51,7 @@ class SolicitudesFragment : Fragment() {
 
         adaptadorSolicitudes = AdaptadorSolicitudes(carteraSolicitudes())
         recyclerViewSolicitud!!.adapter = adaptadorSolicitudes
+
 
 
         return vista

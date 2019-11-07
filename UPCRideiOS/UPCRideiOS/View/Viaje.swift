@@ -11,7 +11,7 @@ import Foundation
 
 struct Viaje{
     
-      var id: Int
+       var id: Int
        var conductor: Usuario
        var descripcion: String
        var puntoPartida: String
@@ -31,5 +31,6 @@ struct Viaje{
        var limitePasajeros: Int
        var precioBase: Double
 
-    
 }
+
+

@@ -1,4 +1,4 @@
-package com.example.upcridekotlin.activities
+package com.example.upcridekotlin.activities.homefragmentactivity
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -6,9 +6,9 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.*
 import com.example.upcridekotlin.R
+import com.example.upcridekotlin.activities.mActivity
 import com.example.upcridekotlin.interfaces.UsuarioApiService
 import com.example.upcridekotlin.interfaces.ViajeApiService
-import com.example.upcridekotlin.model.Usuario
 import com.example.upcridekotlin.model.Viaje
 import com.google.gson.Gson
 import retrofit2.Call
@@ -16,9 +16,6 @@ import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import java.sql.Date
-import java.sql.Time
-import java.time.LocalDate
 import java.time.LocalDateTime
 
 
@@ -80,7 +77,7 @@ class publicar_viaje : AppCompatActivity() {
 
             PublicarViaje()
 
-            var intent = Intent(this,mActivity::class.java)
+            var intent = Intent(this, mActivity::class.java)
             intent.putExtras(miBundle)
             startActivity(intent)
 

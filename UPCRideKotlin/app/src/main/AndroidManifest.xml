@@ -15,11 +15,11 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
 
-        <activity android:name=".activities.elegirRegistro"></activity>
+        <activity android:name=".activities.loginyregistro.elegirRegistro"></activity>
 
-        <activity android:name=".activities.LoginActivity"></activity>
+        <activity android:name=".activities.loginyregistro.LoginActivity"></activity>
 
-        <activity android:name=".activities.Bienvenido">
+        <activity android:name=".activities.loginyregistro.Bienvenido">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -28,13 +28,13 @@
         </activity>
         <activity android:name=".activities.solicitar_viaje" />
         <activity
-            android:name=".activities.publicar_viaje"
+            android:name=".activities.homefragmentactivity.publicar_viaje"
             android:windowSoftInputMode="adjustNothing" />
         <activity
-            android:name=".activities.registro_pasajero"
+            android:name=".activities.loginyregistro.registro_pasajero"
             android:windowSoftInputMode="adjustNothing" />
         <activity
-            android:name=".activities.registro_conductor"
+            android:name=".activities.loginyregistro.registro_conductor"
             android:windowSoftInputMode="adjustNothing" />
         <activity
             android:name=".activities.mActivity"

@@ -62,9 +62,7 @@ struct RegistrarUsuarioForm: View {
             }
             
             Section{
-                Button(action:{
-                   // self.registrar()
-                }){
+                Button(){
                     Text("Registrar")
                 }
             }

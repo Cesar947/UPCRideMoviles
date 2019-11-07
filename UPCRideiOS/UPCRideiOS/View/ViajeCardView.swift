@@ -9,6 +9,13 @@
 import SwiftUI
 
 struct ViajeCardView: View {
+    
+    var nombre: String
+    var fecha: String
+    var descripcion: String
+    var puntoPartida: String
+    var puntoDestino: String
+    
     var body: some View {
       VStack(alignment: .center) {
         HStack(alignment: .center) {
@@ -19,7 +26,7 @@ struct ViajeCardView: View {
                   .clipped()
                 .cornerRadius(50)
             VStack {
-                Text("Brian Miramira")
+                Text(self.nombre)
                     .font(.caption)
                     .fontWeight(.semibold)
                     .multilineTextAlignment(.center)
@@ -27,7 +34,7 @@ struct ViajeCardView: View {
                 .padding(.bottom, 5)
                 
                 
-                Text("09/11/2019 08:00 pm")
+                Text(self.fecha)
                     .font(.caption)
                     .fontWeight(.thin)
                     .lineLimit(2)
@@ -38,7 +45,7 @@ struct ViajeCardView: View {
             
         }.padding(.top, 20)
           
-        Text("Viaje de San Martin de Miradflores a San Juan de Burga")
+        Text(self.descripcion)
             .font(.callout)
             .padding(.top, 10)
             .padding([.trailing, .leading], 24.5)
@@ -48,13 +55,14 @@ struct ViajeCardView: View {
                 .padding(.trailing, 5)
 
             VStack {
-                Text("Casita")
+                Text(self.puntoPartida)
                     .padding(.top, 10)
-                    .padding(.trailing, 155)
+                    .padding(.leading, -100)
                 Image("divider")
-                Text("UPCex")
+                Text(self.puntoDestino)
+                    .multilineTextAlignment(.leading)
                     .padding(.top, 5)
-                    .padding(.trailing, 155)
+                    .padding(.leading, -80)
             }
             .padding(.bottom)
         }.padding(.trailing, 50)
@@ -84,13 +92,13 @@ struct ViajeCardView: View {
       .padding()
       .background(Color.white)
       .cornerRadius(28)
-      .frame(width: 390, height: 100)
+      .frame(width: 390, height: 300)
       .shadow(radius: 8, y: 14)
     }
 }
 
 struct ViajeCardView_Previews: PreviewProvider {
     static var previews: some View {
-        ViajeCardView()
+        ViajeCardView(nombre: "Brian Miramira", fecha: "2019-11-14" , descripcion: "Viaje de San Martin de Miradflores a San Juan de Burga", puntoPartida:  "Casita", puntoDestino:  "UPC San Miguel")
     }
 }
