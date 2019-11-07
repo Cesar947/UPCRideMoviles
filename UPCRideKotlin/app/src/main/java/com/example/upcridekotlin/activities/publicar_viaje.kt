@@ -53,15 +53,15 @@ class publicar_viaje : AppCompatActivity() {
             .addConverterFactory(GsonConverterFactory.create())
             .build()
 
-        userService = retrofit.create<UsuarioApiService>(UsuarioApiService::class.java)
-        viajeService = retrofit.create<ViajeApiService>(ViajeApiService::class.java)
+        userService = retrofit.create(UsuarioApiService::class.java)
+        viajeService = retrofit.create(ViajeApiService::class.java)
 
 
-        etHoraPartida = findViewById<EditText>(R.id.etHoraPartida)
-        etHoraLlegada = findViewById<EditText>(R.id.etHoraLlegada)
-        etPrecioBase = findViewById<EditText>(R.id.etPrecioBase)
-        etPuntoDestino = findViewById<EditText>(R.id.etPuntoDestino)
-        etPuntoPartida = findViewById<EditText>(R.id.etPuntoPartida)
+        etHoraPartida = findViewById(R.id.etHoraPartida)
+        etHoraLlegada = findViewById(R.id.etHoraLlegada)
+        etPrecioBase = findViewById(R.id.etPrecioBase)
+        etPuntoDestino = findViewById(R.id.etPuntoDestino)
+        etPuntoPartida = findViewById(R.id.etPuntoPartida)
         etMensaje = findViewById<EditText>(R.id.etMensaje)
 
         btnPublicar = findViewById(R.id.btnPublicar)
@@ -89,8 +89,6 @@ class publicar_viaje : AppCompatActivity() {
 
 
     fun PublicarViaje() {
-
-        var conductor : Usuario? = null
 
 
         var dia: String = LocalDateTime.now().dayOfMonth.toString();
@@ -130,7 +128,7 @@ class publicar_viaje : AppCompatActivity() {
                         viaje = response?.body()
 
                         Log.i(TAG_LOGS, Gson().toJson(viaje))
-                        Log.i(TAG_LOGS, Gson().toJson(conductor!!.id))
+
                         Log.i(TAG_LOGS, Gson().toJson("funciona"))
 
                     }
