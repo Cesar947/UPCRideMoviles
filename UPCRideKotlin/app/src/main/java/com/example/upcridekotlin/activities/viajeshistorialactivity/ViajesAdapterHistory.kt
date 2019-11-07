@@ -23,12 +23,12 @@ class ViajesAdapterHistory(var viajeLista: List<ViajeModelo>) :
         //var btnSolicitar: ImageButton
 
         init {
-            nombre = itemView.findViewById<View>(R.id.n_usuario) as TextView
-            fecha = itemView.findViewById<View>(R.id.fechita) as TextView
-            foto_perfil = itemView.findViewById<View>(R.id.foto_perfil) as ImageView
-            pnt_partida = itemView.findViewById<View>(R.id.pnt_partida) as TextView
-            pnt_destino = itemView.findViewById<View>(R.id.pnt_destino) as TextView
-            n_resenias = itemView.findViewById<View>(R.id.n_resenias) as TextView
+            nombre = itemView.findViewById<View>(R.id.h_n_usuario) as TextView
+            fecha = itemView.findViewById<View>(R.id.h_fechita) as TextView
+            foto_perfil = itemView.findViewById<View>(R.id.h_foto_perfil) as ImageView
+            pnt_partida = itemView.findViewById<View>(R.id.h_pnt_partida) as TextView
+            pnt_destino = itemView.findViewById<View>(R.id.h_pnt_destino) as TextView
+            n_resenias = itemView.findViewById<View>(R.id.h_n_resenias) as TextView
             //btnSolicitar = itemView.findViewById<View>(R.id.btnSolicitar) as ImageButton
         }
     }
@@ -49,7 +49,7 @@ class ViajesAdapterHistory(var viajeLista: List<ViajeModelo>) :
         holder.fecha.text = viajeLista[position].fecha
         holder.pnt_partida.text = viajeLista[position].pnt_partida
         holder.pnt_destino.text = viajeLista[position].pnt_destino
-        holder.n_resenias.text = viajeLista[position].n_resenias
+        holder.n_resenias.text = viajeLista[position].n_resenias.toString()
         holder.foto_perfil.setImageResource(viajeLista[position].foto_perfil)
     }
 

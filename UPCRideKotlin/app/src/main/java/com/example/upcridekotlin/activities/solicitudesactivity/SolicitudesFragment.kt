@@ -1,4 +1,4 @@
-package com.example.upcridekotlin.activities
+package com.example.upcridekotlin.activities.solicitudesactivity
 
 
 import android.os.Bundle
@@ -10,19 +10,10 @@ import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 
 import com.example.upcridekotlin.R
 import com.example.upcridekotlin.interfaces.SolicitudApiService
-import com.example.upcridekotlin.interfaces.ViajeApiService
-import com.example.upcridekotlin.model.Solicitud
 import com.example.upcridekotlin.model.SolicitudModelo
-import kotlinx.android.synthetic.main.item_viaje_historial.*
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
-import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
 
 
 import java.util.ArrayList
@@ -49,7 +40,10 @@ class SolicitudesFragment : Fragment() {
         recyclerViewSolicitud = vista.findViewById(R.id.recycle_solis)
         recyclerViewSolicitud!!.layoutManager = LinearLayoutManager(context)
 
-        adaptadorSolicitudes = AdaptadorSolicitudes(carteraSolicitudes())
+        adaptadorSolicitudes =
+            AdaptadorSolicitudes(
+                carteraSolicitudes()
+            )
         recyclerViewSolicitud!!.adapter = adaptadorSolicitudes
 
 

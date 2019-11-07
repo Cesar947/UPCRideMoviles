@@ -4,12 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginLeft="10dp"
-    android:layout_marginRight="10dp"
+    android:layout_marginLeft="0dp"
+    android:layout_marginRight="0dp"
     android:orientation="vertical">
 
     <TextView
-        android:id="@+id/fechita"
+        android:id="@+id/h_fechita"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="15dp"
@@ -57,7 +57,7 @@
                         android:orientation="vertical">
 
                         <TextView
-                            android:id="@+id/conduc"
+                            android:id="@+id/h_conduc"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -65,7 +65,7 @@
                             android:textSize="8sp" />
 
                         <TextView
-                            android:id="@+id/n_usuario"
+                            android:id="@+id/h_n_usuario"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -75,7 +75,7 @@
                     </LinearLayout>
 
                     <ImageView
-                        android:id="@+id/foto_perfil"
+                        android:id="@+id/h_foto_perfil"
                         android:layout_width="42dp"
                         android:layout_height="match_parent"
                         android:layout_margin="2dp"
@@ -109,7 +109,7 @@
                         android:orientation="vertical">
 
                         <TextView
-                            android:id="@+id/pnt_partida"
+                            android:id="@+id/h_pnt_partida"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="TextView" />
@@ -121,7 +121,7 @@
                             app:srcCompat="@drawable/divider" />
 
                         <TextView
-                            android:id="@+id/pnt_destino"
+                            android:id="@+id/h_pnt_destino"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="TextView" />
@@ -135,31 +135,27 @@
                     android:orientation="horizontal">
 
                     <LinearLayout
-                        android:layout_width="296dp"
+                        android:layout_width="250dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:orientation="vertical"></LinearLayout>
 
                     <TextView
-                        android:id="@+id/n_resenias"
-                        android:layout_width="8dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="5dp"
-                        android:layout_marginLeft="20dp"
+                        android:id="@+id/h_n_resenias"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
                         android:layout_marginTop="5dp"
-                        android:layout_marginEnd="5dp"
-                        android:layout_marginRight="5dp"
                         android:layout_weight="1"
-                        android:text="TextView"
-                        android:textSize="10sp" />
+                        android:textSize="15sp" />
 
                     <ImageView
-                        android:id="@+id/d_resenias"
-                        android:layout_width="24dp"
+                        android:id="@+id/h_d_resenias"
+                        android:layout_width="20dp"
                         android:layout_height="match_parent"
-                        android:layout_margin="2dp"
                         android:layout_weight="1"
-                        app:srcCompat="@drawable/icons_comment" />
+                        app:srcCompat="@drawable/icons_comment"
+                        android:layout_gravity="center"/>
 
                 </LinearLayout>
 

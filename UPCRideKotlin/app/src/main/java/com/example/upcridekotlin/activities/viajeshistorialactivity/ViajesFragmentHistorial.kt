@@ -27,7 +27,7 @@ import java.util.ArrayList
 /**
  * A simple [Fragment] subclass.
  */
-class ViajesFragment : Fragment() {
+class ViajesFragmentHistorial : Fragment() {
 
     private var recyclerViewViaje: RecyclerView? = null
     private var adaptadorViaje: ViajesAdapterHistory? = null
@@ -42,7 +42,7 @@ class ViajesFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        val vista = inflater.inflate(R.layout.fragment_viajes, container, false)
+        val vista = inflater.inflate(R.layout.fragment_viajes_historial, container, false)
 
 
         val retrofit: Retrofit = Retrofit.Builder()
@@ -93,15 +93,13 @@ class ViajesFragment : Fragment() {
                         item.descripcion!!,
                         item.puntoPartida!!,
                         item.puntoDestino!!,
-                        "20",
                         "10",
+                        10,
                         R.drawable.user))
                 }
 
                 adaptadorViaje =
-                    ViajesAdapterHistory(
-                        viajes
-                    )
+                    ViajesAdapterHistory(viajes)
                 recyclerViewViaje!!.adapter = adaptadorViaje
 
             }

@@ -1,4 +1,4 @@
-package com.example.upcridekotlin.activities
+package com.example.upcridekotlin.activities.solicitudesactivity
 
 import android.view.LayoutInflater
 import android.view.View
@@ -30,13 +30,15 @@ class AdaptadorSolicitudes(var solicitudLista: List<SolicitudModelo>) :
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
-    ): AdaptadorSolicitudes.ViewHolder {
+    ): ViewHolder {
         val view =
             LayoutInflater.from(parent.context).inflate(R.layout.item_solicitud, parent, false)
-        return ViewHolder(view)
+        return ViewHolder(
+            view
+        )
     }
 
-    override fun onBindViewHolder(holder: AdaptadorSolicitudes.ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.nombre.setText(solicitudLista[position].nombre)
         holder.fecha.setText(solicitudLista[position].fecha)
         holder.descripcion.setText(solicitudLista[position].descripcion)

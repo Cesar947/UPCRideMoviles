@@ -1,6 +1,8 @@
 package com.example.upcridekotlin.activities.loginyregistro
 
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -34,7 +36,7 @@ class LoginActivity : AppCompatActivity() {
     var rol = 'c'
     var existe :Boolean = false
 
-
+    val PREFS_FILENAME = "cuenta"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -47,9 +49,18 @@ class LoginActivity : AppCompatActivity() {
 
         userService = retrofit.create(UsuarioApiService::class.java)
 
+
+         var prefs = getSharedPreferences(PREFS_FILENAME, 0)
+
+
         etCorreo = findViewById(R.id.etCorreoLogin)
         etContraseña = findViewById((R.id.etContraseñaLogin))
         btnIngresar = findViewById(R.id.btnIngresarLogin)
+
+        var email = prefs.getString("Email","No hay dato")
+        var pass = prefs.getString("Contraseña","No hay dato")
+        etCorreo!!.editText!!.setText(email)
+        etContraseña!!.editText!!.setText(pass)
 
 
         btnIngresar?.setOnClickListener{
@@ -77,9 +88,19 @@ class LoginActivity : AppCompatActivity() {
                             miBundle.putChar("rol",rol)
                             intent.putExtras(miBundle)
 
+
+                            var editor = prefs.edit()
+                            editor.putString("Email",etCorreo!!.editText!!.text.toString())
+                            editor.putString("Contraseña",etContraseña!!.editText!!.text.toString())
+                            editor.commit()
+
+
                             startActivity(intent)
                             //Toast.makeText(this@LoginActivity,"Entraste",Toast.LENGTH_LONG).show();
                             Log.i(TAG_LOGS, Gson().toJson(item))
+
+
+
                         }
                         else
                         {

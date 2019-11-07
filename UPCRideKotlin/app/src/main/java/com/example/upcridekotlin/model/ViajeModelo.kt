@@ -8,7 +8,7 @@ class ViajeModelo {
     var pnt_partida: String? = null
     var pnt_destino: String? = null
     var n_solis: String? = null
-    var n_resenias: String? = null
+    var n_resenias: Int? = null
     var foto_perfil: Int = 0
 
     constructor() {}
@@ -21,7 +21,7 @@ class ViajeModelo {
         pnt_partida: String,
         pnt_destino: String,
         n_solis: String,
-        n_resenias: String,
+        n_resenias: Int,
         foto_perfil: Int
     ) {
         this.id = id
