@@ -65,15 +65,13 @@ struct MiViajeCardView: View {
           
         HStack {
             Button(action: {
-                  print("Viaje Comentado")
+                  print("Viaje Iniciado")
               }) {
-                  Text(" ")
-                      .foregroundColor(Color.black)
+                  Text("Iniciar Viaje")
+                      .foregroundColor(Color.blue)
                     .padding(.bottom, 2)
-                    .padding(.trailing, 50)
-                    .background(Image(systemName: "chevron.right.circle.fill"))
             }.padding(5)
-        }.padding(.leading, 280)
+        }.padding(.leading, 250)
       }
       .padding()
       .background(Color.white)

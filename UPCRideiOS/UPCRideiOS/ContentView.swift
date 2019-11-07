@@ -33,7 +33,7 @@ struct ContentView: View {
                 ViajesView().tabItem{
                     Image(systemName: "car").font(Font.system(size: 30, weight: .semibold))
                 }
-                Text("Solicitudes").tabItem{
+                SolicitudesView().tabItem{
                     Image(systemName: "bell").font(Font.system(size: 30, weight: .semibold))
                 }
                 Text("Perfil").tabItem{
