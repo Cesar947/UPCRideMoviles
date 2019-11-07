@@ -21,6 +21,7 @@
 		EC550E682373D45F00BA11A2 /* Usuario.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC550E672373D45F00BA11A2 /* Usuario.swift */; };
 		EC550E6A2373D46C00BA11A2 /* Solicitud.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC550E692373D46B00BA11A2 /* Solicitud.swift */; };
 		EC550E6C2373D47D00BA11A2 /* Resena.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC550E6B2373D47D00BA11A2 /* Resena.swift */; };
+		EC550E6E2373D95100BA11A2 /* RegistrarUsuarioForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC550E6D2373D95100BA11A2 /* RegistrarUsuarioForm.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		EC550E672373D45F00BA11A2 /* Usuario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Usuario.swift; sourceTree = "<group>"; };
 		EC550E692373D46B00BA11A2 /* Solicitud.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Solicitud.swift; sourceTree = "<group>"; };
 		EC550E6B2373D47D00BA11A2 /* Resena.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resena.swift; sourceTree = "<group>"; };
+		EC550E6D2373D95100BA11A2 /* RegistrarUsuarioForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrarUsuarioForm.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +168,7 @@
 			isa = PBXGroup;
 			children = (
 				9ED5BD482373BD8700126CC6 /* ViajeCardView.swift */,
+				EC550E6D2373D95100BA11A2 /* RegistrarUsuarioForm.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -301,6 +304,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC550E6E2373D95100BA11A2 /* RegistrarUsuarioForm.swift in Sources */,
 				9ED5BD492373BD8700126CC6 /* ViajeCardView.swift in Sources */,
 				9E5428F22373A7A300B35C74 /* UPCRideiOS.xcdatamodeld in Sources */,
 				EC550E6A2373D46C00BA11A2 /* Solicitud.swift in Sources */,
