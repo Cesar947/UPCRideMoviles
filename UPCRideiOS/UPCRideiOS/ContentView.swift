@@ -8,59 +8,64 @@
 
 import SwiftUI
 
+
+//let viajes = viajesPrueba
+     
+     /*var body: some View {
+         ScrollView() {
+           VStack(alignment: .center, spacing: 15){
+                 ForEach(self.viajes) {viajen in
+                     ViajeCardView( nombre: viajen.nombre , fecha: viajen.fecha, descripcion: viajen.descripcion, puntoPartida: viajen.puntoPartida, puntoDestino: viajen.puntoDestino)
+                 }
+           }.padding(.top, 10)
+         }.padding(.top, 10)
+     }*/
+
 struct ContentView: View {
-      let viajes = viajesPrueba
-      
-      /*var body: some View {
-          ScrollView() {
-            VStack(alignment: .center, spacing: 15){
-                  ForEach(self.viajes) {viajen in
-                      ViajeCardView( nombre: viajen.nombre , fecha: viajen.fecha, descripcion: viajen.descripcion, puntoPartida: viajen.puntoPartida, puntoDestino: viajen.puntoDestino)
-                  }
-            }.padding(.top, 10)
-          }.padding(.top, 10)
-      }*/
-    
+     
     @ObservedObject var usuario = Usuario()
 
-       
        var body: some View {
            NavigationView{
            Form{
                Section{
                    TextField("Codigo", text: $usuario.codigo)
                    TextField("Correo UPC", text: $usuario.correoUPC)
-                   SecureField("Contraseña", text: $usuario.codigo)
-                   TextField("DNI", text: $usuario.codigo)
-                   TextField("Codigo", text: $usuario.codigo)
-                   TextField("Nombres", text: $usuario.codigo)
-                   TextField("Telefono", text: $usuario.codigo)
+                   SecureField("Contraseña", text: $usuario.contraseña)
+                   TextField("DNI", text: $usuario.dni)
+                   TextField("Nombres", text: $usuario.nombres)
+                   TextField("Apellidos", text: $usuario.apellidos)
+                   TextField("Telefono", text: $usuario.telefono)
                   
                }
-           
-               
                Section{
                    VStack{
                        
-                       Picker(selection: $usuario.sedeIdentificador, label: Text("Sede")) {
+                       Picker(selection: $usuario.sede, label: Text("Sede")) {
                            ForEach(0 ..< usuario.sedes.count){
                                Text(self.usuario.sedes[$0]).tag($0)
                            }
                        }
 
                        
-                       TextField("Distrito", text: $usuario.codigo)
+                       TextField("Distrito", text: $usuario.distrito)
                        
                    }
                }
-               
-               Button(action: {print("Usuario Registrado")} ) {
+            
+            Section{
+                Button(action: {print("Registrar")}) {
                    Text("Registrar")
-               }
-               
-               }
-           }.navigationBarTitle(Text("Registro"))
-       }
+                    
+                }
+            }.disabled(!usuario.isValid)
+           }
+           .navigationBarTitle("Registro")
+          
+    }
+        
+}
+    
 }
 
 struct ContentView_Previews: PreviewProvider {
@@ -68,3 +73,4 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
+
