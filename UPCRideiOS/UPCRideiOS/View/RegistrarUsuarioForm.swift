@@ -52,18 +52,20 @@ struct RegistrarUsuarioForm: View {
             Section (header: Text("Datos Ubicacion")){
                 VStack{
                     
+
                      TextField("Distrito donde vive", text: $usuario.codigo)
                     
                     Picker(selection: $usuario.sedeIdentificador, label: Text("Sede UPC")) {
+
                         ForEach(0 ..< usuario.sedes.count){
                             Text(self.usuario.sedes[$0]).tag($0)
                         }
                     }
-                   
                     
                 }
             }
             
+
             Button(action: {print("Usuario Registrado")} ) {
                 Text("Registrar")
                     
@@ -72,6 +74,7 @@ struct RegistrarUsuarioForm: View {
         }.padding(.top, 20)
         .navigationBarTitle(Text("Registro"))
         }
+
     }
   
 }
