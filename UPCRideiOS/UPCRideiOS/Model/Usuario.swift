@@ -7,24 +7,32 @@
 //
 
 import Foundation
+import Combine
 
-struct Usuario{
+class Usuario: ObservableObject{
     
+    var didChange = PassthroughSubject<Void, Never>()
     
-    var id: Int
-      var codigo: String
-      var correoUPC: String
-      var contraseña: String
-      var dni: String
-      var nombres: String
-      var apellidos: String
-      var ubicacionLatitud: Double
-      var ubicacionLongitud: Double
-      var facebook_id: String
-      var telefono: String
-      var distrito: String
-      var rol: Character
-      var licenciaConducir: String
-      var sede: String
+    var id: Int = 0
+    var codigo: String = "" {didSet {update()}}
+    var correoUPC: String = "" {didSet {update()}}
+    var contraseña: String = "" {didSet {update()}}
+    var dni: String = "" {didSet {update()}}
+    var nombres: String = "" {didSet {update()}}
+    var apellidos: String = "" {didSet {update()}}
+    var ubicacionLatitud: Double = 0.0
+    var ubicacionLongitud: Double = 0.0
+    var facebook_id: String = ""
+    var telefono: String = "" {didSet {update()}}
+    var distrito: String = "" {didSet {update()}}
+    var rol: Character = "P"
+    var licenciaConducir: String = ""
+    var sedes: [String] = ["San Miguel", "San Isidro", "Monterrico", "Villa"]
+    var sedeIdentificador = 0 {didSet {update()}}
+    
+    func update(){
+        didChange.send(())
+    }
+    
 
 }

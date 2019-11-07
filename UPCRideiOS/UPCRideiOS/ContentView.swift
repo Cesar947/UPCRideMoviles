@@ -9,9 +9,17 @@
 import SwiftUI
 
 struct ContentView: View {
-    var body: some View {
-        Text("Hello, World!")
-    }
+      let viajes = viajesPrueba
+      
+      var body: some View {
+          ScrollView() {
+            VStack(alignment: .center, spacing: 15){
+                  ForEach(self.viajes) {viajen in
+                      ViajeCardView( nombre: viajen.nombre , fecha: viajen.fecha, descripcion: viajen.descripcion, puntoPartida: viajen.puntoPartida, puntoDestino: viajen.puntoDestino)
+                  }
+            }.padding(.top, 10)
+          }.padding(.top, 10)
+      }
 }
 
 struct ContentView_Previews: PreviewProvider {
