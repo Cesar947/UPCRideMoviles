@@ -93,7 +93,7 @@ struct ViajeCardView: View {
       .background(Color.white)
       .cornerRadius(28)
       .frame(width: 390, height: 300)
-      .shadow(radius: 8, y: 14)
+      .shadow(radius: 3, y: 5)
     }
 }
 

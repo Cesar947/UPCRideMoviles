@@ -34,39 +34,44 @@ struct RegistrarUsuarioForm: View {
     var body: some View {
         NavigationView{
         Form{
-            Section{
+            Section(header: Text("Datos Alumno")){
                 TextField("Codigo", text: $usuario.codigo)
                 TextField("Correo UPC", text: $usuario.correoUPC)
-                SecureField("Contraseña", text: $usuario.codigo)
-                TextField("DNI", text: $usuario.codigo)
-                TextField("Codigo", text: $usuario.codigo)
-                TextField("Nombres", text: $usuario.codigo)
-                TextField("Telefono", text: $usuario.codigo)
-               
+                SecureField("Contraseña", text: $usuario.contraseña)
+                
+            }
+            
+            Section(header: Text("Datos Personales")){
+                TextField("Nombres", text: $usuario.nombres)
+                TextField("Apellidos", text: $usuario.apellidos)
+                TextField("DNI", text: $usuario.dni)
+                TextField("Telefono", text: $usuario.telefono)
             }
         
             
-            Section{
+            Section (header: Text("Datos Ubicacion")){
                 VStack{
                     
-                    Picker(selection: $usuario.sedeIdentificador, label: Text("Sede")) {
+                     TextField("Distrito donde vive", text: $usuario.codigo)
+                    
+                    Picker(selection: $usuario.sedeIdentificador, label: Text("Sede UPC")) {
                         ForEach(0 ..< usuario.sedes.count){
                             Text(self.usuario.sedes[$0]).tag($0)
                         }
                     }
-
-                    
-                    TextField("Distrito", text: $usuario.codigo)
+                   
                     
                 }
             }
             
             Button(action: {print("Usuario Registrado")} ) {
                 Text("Registrar")
-            }
+                    
+            }.padding(.leading, 300)
             
-            }
-        }.navigationBarTitle(Text("Registro"))
+        }.padding(.top, 20)
+        .navigationBarTitle(Text("Registro"))
+        }
     }
   
 }
