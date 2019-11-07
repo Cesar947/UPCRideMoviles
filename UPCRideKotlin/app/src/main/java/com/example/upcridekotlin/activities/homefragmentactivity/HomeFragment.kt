@@ -1,4 +1,4 @@
-package com.example.upcridekotlin.activities
+package com.example.upcridekotlin.activities.homefragmentactivity
 
 
 import android.content.Intent
@@ -16,17 +16,15 @@ import android.widget.Toast
 import androidx.core.view.isVisible
 
 import com.example.upcridekotlin.R
+import com.example.upcridekotlin.activities.ViajeDetalleFragment
 import com.example.upcridekotlin.interfaces.ViajeApiService
 import com.example.upcridekotlin.model.Viaje
-import com.example.upcridekotlin.model.ViajeModelo
 import com.google.android.material.floatingactionbutton.FloatingActionButton
-import com.google.gson.Gson
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import java.util.ArrayList
 
 /**
  * A simple [Fragment] subclass.
@@ -66,6 +64,7 @@ class HomeFragment : Fragment() {
 
         var id = arguments!!.getInt("id",0)
         var rol = arguments!!.getChar("rol",'P')
+
         Log.i(TAG_LOGS, rol.toString())
 
         if(rol=='C')
@@ -78,7 +77,7 @@ class HomeFragment : Fragment() {
             val intent = Intent(activity, publicar_viaje::class.java)
             var miBundle = Bundle()
             miBundle.putInt("id", id)
-
+            miBundle.putChar("rol", rol)
             intent.putExtras(miBundle)
             startActivity(intent)
         }
@@ -95,7 +94,10 @@ class HomeFragment : Fragment() {
             override fun onResponse(call: Call<List<Viaje>>, response: Response<List<Viaje>>) {
                 val viajesaux = response.body()
 
-                adaptadorViaje = RecyclerViewAdaptador(viajesaux!!)
+                adaptadorViaje =
+                    RecyclerViewAdaptador(
+                        viajesaux!!
+                    )
 
                 adaptadorViaje!!.setOnClickListener( object : View.OnClickListener{
                     override fun onClick(view:View){

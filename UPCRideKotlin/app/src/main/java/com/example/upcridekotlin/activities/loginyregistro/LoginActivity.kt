@@ -1,11 +1,10 @@
-package com.example.upcridekotlin.activities
+package com.example.upcridekotlin.activities.loginyregistro
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
-import android.widget.EditText
 import android.widget.Toast
 import com.example.upcridekotlin.R
 import com.example.upcridekotlin.interfaces.UsuarioApiService
@@ -16,10 +15,7 @@ import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import com.google.android.material.textfield.TextInputEditText
-import androidx.core.app.ComponentActivity.ExtraData
-import androidx.core.content.ContextCompat.getSystemService
-import android.icu.lang.UCharacter.GraphemeClusterBreak.T
+import com.example.upcridekotlin.activities.mActivity
 import com.google.android.material.textfield.TextInputLayout
 
 

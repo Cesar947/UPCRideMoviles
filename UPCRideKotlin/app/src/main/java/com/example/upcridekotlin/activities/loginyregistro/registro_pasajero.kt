@@ -1,4 +1,4 @@
-package com.example.upcridekotlin.activities
+package com.example.upcridekotlin.activities.loginyregistro
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -88,7 +88,7 @@ class registro_pasajero : AppCompatActivity() {
 
         btnRegistrarme.setOnClickListener {
             AgregarPasajero()
-            val intent = Intent(this,Bienvenido::class.java)
+            val intent = Intent(this, Bienvenido::class.java)
             startActivity(intent)
 
         }

@@ -52,14 +52,17 @@ class solicitar_viaje : AppCompatActivity(), MapsFragment.OnFragmentInteractionL
             .addConverterFactory(GsonConverterFactory.create())
             .build()
 
+
+        viajeApiService = retrofit.create(ViajeApiService::class.java)
+        usuarioApiService = retrofit.create(UsuarioApiService::class.java)
+
         tvConductorSol = findViewById(R.id.tvConductorTextoSol) as TextView
         tvPuntoPartidaSol = findViewById(R.id.tvPartidaTextoSol) as TextView
         tvPuntoDestinoSol = findViewById(R.id.tvDestinoTextoSol) as TextView
         etMensajeSol = findViewById(R.id.etMensaje)
         btnSolicitarSolo = findViewById(R.id.btnSolicitarViaje)
 
-        viajeApiService = retrofit.create(ViajeApiService::class.java)
-        usuarioApiService = retrofit.create(UsuarioApiService::class.java)
+
 
 
 

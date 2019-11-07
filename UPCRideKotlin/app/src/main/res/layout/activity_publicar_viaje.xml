@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.publicar_viaje">
+    tools:context=".activities.homefragmentactivity.publicar_viaje">
 
 
     <fragment

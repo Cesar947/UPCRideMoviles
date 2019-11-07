@@ -1,4 +1,4 @@
-package com.example.upcridekotlin.activities
+package com.example.upcridekotlin.activities.loginyregistro
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -25,7 +25,7 @@ class elegirRegistro : AppCompatActivity() {
         }
 
         btinRegistroPas?.setOnClickListener{
-            val intent = Intent(this,registro_pasajero::class.java)
+            val intent = Intent(this, registro_pasajero::class.java)
             startActivity(intent)
         }
     }

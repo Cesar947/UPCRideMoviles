@@ -1,9 +1,8 @@
-package com.example.upcridekotlin.activities
+package com.example.upcridekotlin.activities.viajeshistorialactivity
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
@@ -37,13 +36,15 @@ class ViajesAdapterHistory(var viajeLista: List<ViajeModelo>) :
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
-    ): ViajesAdapterHistory.ViewHolder {
+    ): ViewHolder {
         val view = LayoutInflater.from(parent.context)
             .inflate(R.layout.item_viaje_historial, parent, false)
-        return ViewHolder(view)
+        return ViewHolder(
+            view
+        )
     }
 
-    override fun onBindViewHolder(holder: ViajesAdapterHistory.ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.nombre.text = viajeLista[position].nombre
         holder.fecha.text = viajeLista[position].fecha
         holder.pnt_partida.text = viajeLista[position].pnt_partida

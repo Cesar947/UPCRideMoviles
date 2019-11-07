@@ -1,19 +1,18 @@
 package com.example.upcridekotlin.activities
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
 
 import android.os.Bundle
-import android.util.Log
 import android.widget.*
 
 
 import com.example.upcridekotlin.R
+import com.example.upcridekotlin.activities.homefragmentactivity.HomeFragment
+import com.example.upcridekotlin.activities.viajeshistorialactivity.ViajesFragment
 
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 
 class mActivity : AppCompatActivity() {
@@ -43,11 +42,13 @@ class mActivity : AppCompatActivity() {
         txttoolbar = findViewById(R.id.toolbartxt)
         homeFragment = HomeFragment()
         filtrarFragment = FiltrarFragment()
-        viajesFragment = ViajesFragment()
+        viajesFragment =
+            ViajesFragment()
         solicitudesFragment = SolicitudesFragment()
         perfilFragment = PerfilFragment()
         mainNav = findViewById(R.id.main_nav)
         filtrarBtn = findViewById(R.id.filtrarBtn)
+
 
         var miBundle = this.intent.extras
         var id = miBundle!!.getInt("id")
@@ -55,6 +56,8 @@ class mActivity : AppCompatActivity() {
         homeFragment!!.arguments = miBundle
         perfilFragment!!.arguments = miBundle
         solicitudesFragment!!.arguments = miBundle
+        viajesFragment!!.arguments = miBundle
+
 
         //Toast.makeText(this,id.toString(), Toast.LENGTH_LONG).show();
         //Log.i("AAAAAAAA", id.toString())

@@ -1,9 +1,8 @@
-package com.example.upcridekotlin.activities
+package com.example.upcridekotlin.activities.homefragmentactivity
 
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.View.OnClickListener
@@ -13,8 +12,8 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.upcridekotlin.R
+import com.example.upcridekotlin.activities.solicitar_viaje
 import com.example.upcridekotlin.model.Viaje
-import com.example.upcridekotlin.model.ViajeModelo
 
 
 class RecyclerViewAdaptador(var viajeLista: List<Viaje>) :
@@ -86,7 +85,9 @@ class RecyclerViewAdaptador(var viajeLista: List<Viaje>) :
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_viaje, parent, false)
         view.setOnClickListener(this)
-        return ViewHolder(view)
+        return ViewHolder(
+            view
+        )
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
