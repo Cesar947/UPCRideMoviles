@@ -11,6 +11,8 @@ import Combine
 
 class Usuario: ObservableObject, Identifiable{
     
+
+    
     var didChange = PassthroughSubject<Void, Never>()
     
     var id: Int = 0
@@ -27,8 +29,18 @@ class Usuario: ObservableObject, Identifiable{
     var distrito: String = "" {didSet {update()}}
     var rol: Character = "P"
     var licenciaConducir: String = ""
-    var sedes: [String] = ["San Miguel", "San Isidro", "Monterrico", "Villa"]
-    var sedeIdentificador = 0 {didSet {update()}}
+    var sedes: [String] = ["-", "San Miguel", "San Isidro", "Monterrico", "Villa"]
+    var sede = 0 {didSet {update()}}
+    
+    var isValid: Bool{
+        
+        
+        if codigo.isEmpty || correoUPC.isEmpty || contraseña.isEmpty || dni.isEmpty || nombres.isEmpty || apellidos.isEmpty || telefono.isEmpty || sede < 1 {
+            
+            return false
+        }
+        return true
+    }
     
     func update(){
         didChange.send(())

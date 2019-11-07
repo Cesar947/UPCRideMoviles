@@ -5,33 +5,18 @@
 //  Created by Cesar Pizarro Llanos on 11/6/19.
 //  Copyright © 2019 upcride. All rights reserved.
 //
-import Combine
+
 import SwiftUI
 
-
-/*var codigo: String
-var correoUPC: String
-var contraseña: String
-var dni: String
-var nombres: String
-var apellidos: String
-var ubicacionLatitud: Double
-var ubicacionLongitud: Double
-var facebook_id: String //Conductor
-var telefono: String
-var distrito: String
-var rol: Character
-var licenciaConducir: String //Conductor
-var sede: String*/
-
-
-
 struct RegistrarUsuarioForm: View {
-    
+   
     @ObservedObject var usuario = Usuario()
 
     
     var body: some View {
+        
+        Text("Hello World")
+ /*
         NavigationView{
         Form{
             Section(header: Text("Datos Alumno")){
@@ -75,8 +60,9 @@ struct RegistrarUsuarioForm: View {
         .navigationBarTitle(Text("Registro"))
         }
 
+*/
     }
-  
+ 
 }
 
 
@@ -86,3 +72,4 @@ struct RegistrarUsuarioForm_Previews: PreviewProvider {
         RegistrarUsuarioForm()
     }
 }
+
