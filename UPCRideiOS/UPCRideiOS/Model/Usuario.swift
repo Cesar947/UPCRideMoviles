@@ -23,7 +23,7 @@ struct Usuario{
       var facebook_id: String
       var telefono: String
       var distrito: String
-      var rol: Char
+      var rol: Character
       var licenciaConducir: String
       var sede: String
 
