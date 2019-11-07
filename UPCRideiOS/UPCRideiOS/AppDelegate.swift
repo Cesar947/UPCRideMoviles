@@ -2,14 +2,12 @@
 //  AppDelegate.swift
 //  UPCRideiOS
 //
-//  Created by Developer on 11/4/19.
-//  Copyright © 2019 UPC Ride. All rights reserved.
+//  Created by Sebastian on 11/6/19.
+//  Copyright © 2019 upcride. All rights reserved.
 //
 
 import UIKit
-import Firebase
 import CoreData
-
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -18,7 +16,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        FirebaseApp.configure()
         return true
     }
 
