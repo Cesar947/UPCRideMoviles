@@ -17,6 +17,10 @@
 		9E5429072373A7AB00B35C74 /* UPCRideiOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E5429062373A7AB00B35C74 /* UPCRideiOSTests.swift */; };
 		9E5429122373A7AB00B35C74 /* UPCRideiOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E5429112373A7AB00B35C74 /* UPCRideiOSUITests.swift */; };
 		9ED5BD492373BD8700126CC6 /* ViajeCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED5BD482373BD8700126CC6 /* ViajeCardView.swift */; };
+		EC550E642373D2C100BA11A2 /* Viaje.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC550E632373D2C100BA11A2 /* Viaje.swift */; };
+		EC550E682373D45F00BA11A2 /* Usuario.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC550E672373D45F00BA11A2 /* Usuario.swift */; };
+		EC550E6A2373D46C00BA11A2 /* Solicitud.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC550E692373D46B00BA11A2 /* Solicitud.swift */; };
+		EC550E6C2373D47D00BA11A2 /* Resena.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC550E6B2373D47D00BA11A2 /* Resena.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +57,10 @@
 		9E5429112373A7AB00B35C74 /* UPCRideiOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UPCRideiOSUITests.swift; sourceTree = "<group>"; };
 		9E5429132373A7AB00B35C74 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9ED5BD482373BD8700126CC6 /* ViajeCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViajeCardView.swift; sourceTree = "<group>"; };
+		EC550E632373D2C100BA11A2 /* Viaje.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Viaje.swift; path = UPCRideiOS/View/Viaje.swift; sourceTree = SOURCE_ROOT; };
+		EC550E672373D45F00BA11A2 /* Usuario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Usuario.swift; sourceTree = "<group>"; };
+		EC550E692373D46B00BA11A2 /* Solicitud.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Solicitud.swift; sourceTree = "<group>"; };
+		EC550E6B2373D47D00BA11A2 /* Resena.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resena.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +154,10 @@
 		9ED5BD462373BD2300126CC6 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				EC550E632373D2C100BA11A2 /* Viaje.swift */,
+				EC550E672373D45F00BA11A2 /* Usuario.swift */,
+				EC550E692373D46B00BA11A2 /* Solicitud.swift */,
+				EC550E6B2373D47D00BA11A2 /* Resena.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -291,7 +303,11 @@
 			files = (
 				9ED5BD492373BD8700126CC6 /* ViajeCardView.swift in Sources */,
 				9E5428F22373A7A300B35C74 /* UPCRideiOS.xcdatamodeld in Sources */,
+				EC550E6A2373D46C00BA11A2 /* Solicitud.swift in Sources */,
+				EC550E682373D45F00BA11A2 /* Usuario.swift in Sources */,
+				EC550E6C2373D47D00BA11A2 /* Resena.swift in Sources */,
 				9E5428ED2373A7A300B35C74 /* AppDelegate.swift in Sources */,
+				EC550E642373D2C100BA11A2 /* Viaje.swift in Sources */,
 				9E5428F42373A7A300B35C74 /* ContentView.swift in Sources */,
 				9E5428EF2373A7A300B35C74 /* SceneDelegate.swift in Sources */,
 			);
