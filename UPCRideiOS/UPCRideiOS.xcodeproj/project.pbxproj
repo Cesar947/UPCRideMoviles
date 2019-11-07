@@ -16,6 +16,7 @@
 		9E5428FC2373A7AA00B35C74 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E5428FA2373A7AA00B35C74 /* LaunchScreen.storyboard */; };
 		9E5429072373A7AB00B35C74 /* UPCRideiOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E5429062373A7AB00B35C74 /* UPCRideiOSTests.swift */; };
 		9E5429122373A7AB00B35C74 /* UPCRideiOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E5429112373A7AB00B35C74 /* UPCRideiOSUITests.swift */; };
+		9ED5BD492373BD8700126CC6 /* ViajeCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED5BD482373BD8700126CC6 /* ViajeCardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		9E54290D2373A7AB00B35C74 /* UPCRideiOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UPCRideiOSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E5429112373A7AB00B35C74 /* UPCRideiOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UPCRideiOSUITests.swift; sourceTree = "<group>"; };
 		9E5429132373A7AB00B35C74 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9ED5BD482373BD8700126CC6 /* ViajeCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViajeCardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,8 @@
 		9E5428EB2373A7A300B35C74 /* UPCRideiOS */ = {
 			isa = PBXGroup;
 			children = (
+				9ED5BD462373BD2300126CC6 /* Model */,
+				9ED5BD472373BD4D00126CC6 /* View */,
 				9E5428EC2373A7A300B35C74 /* AppDelegate.swift */,
 				9E5428EE2373A7A300B35C74 /* SceneDelegate.swift */,
 				9E5428F32373A7A300B35C74 /* ContentView.swift */,
@@ -137,6 +141,21 @@
 				9E5429132373A7AB00B35C74 /* Info.plist */,
 			);
 			path = UPCRideiOSUITests;
+			sourceTree = "<group>";
+		};
+		9ED5BD462373BD2300126CC6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		9ED5BD472373BD4D00126CC6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9ED5BD482373BD8700126CC6 /* ViajeCardView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -270,6 +289,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9ED5BD492373BD8700126CC6 /* ViajeCardView.swift in Sources */,
 				9E5428F22373A7A300B35C74 /* UPCRideiOS.xcdatamodeld in Sources */,
 				9E5428ED2373A7A300B35C74 /* AppDelegate.swift in Sources */,
 				9E5428F42373A7A300B35C74 /* ContentView.swift in Sources */,
