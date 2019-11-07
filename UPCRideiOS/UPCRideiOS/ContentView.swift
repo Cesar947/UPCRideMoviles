@@ -36,7 +36,7 @@ struct ContentView: View {
                 SolicitudesView().tabItem{
                     Image(systemName: "bell").font(Font.system(size: 30, weight: .semibold))
                 }
-                Text("Perfil").tabItem{
+                PerfilView().tabItem{
                     Image(systemName: "person").font(Font.system(size: 30, weight: .semibold))
                 }
             }

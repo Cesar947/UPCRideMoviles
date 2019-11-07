@@ -7,3 +7,13 @@
 //
 
 import Foundation
+
+struct UsuarioPrueba : Identifiable {
+    
+    var id = UUID()
+    
+    var nombre = "Brian Miramira"
+    var distrito = "San Miguel"
+    var sede = "UPC San Miguel"
+}
+
