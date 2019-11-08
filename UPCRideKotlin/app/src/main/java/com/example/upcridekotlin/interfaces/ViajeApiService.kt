@@ -29,8 +29,8 @@ interface ViajeApiService {
     fun solicitarViaje(@Path("viajeId") viajeId: Int, @Body solicitud: Solicitud?): Call<Solicitud>
 
 
-    @GET("viajes/{idViaje}/solicitudesPendientes")
-    fun getSolicitudesPendientes(@Path("idViaje") id: Int): Call<List<Solicitud>>
+    @GET("viajes/{viajeId}/solicitudesPendientes")
+    fun getSolicitudesPendientes(@Path("viajeId") id: Int): Call<List<Solicitud>>
 
 
     @GET("viajes/conductor/{idConductor}")

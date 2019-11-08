@@ -12,27 +12,27 @@ import Foundation
 struct Viaje: Codable{
     
     
-       let id: Int
-       let conductor: Usuario
-       let descripcion: String
-       let puntoPartida: String
-       let puntoDestino: String
-       let destinoLatitud: Double
-       let destinoLongitud: Double
-       let partidaLatitud: Double
-       let partidaLongitud: Double
-       let horaPartida: String
-       let horaLlegada: String
-       let entradaSalida: Int
-       let fecha: String
-       let dia: String
-       let estado: String
-       let visualizacionHabilitada: Int
-       let numeroPasajeros: Int
-       let limitePasajeros: Int
-       let precioBase: Double
+       var id: Int
+       var conductor: Usuario
+       var descripcion: String
+       var puntoPartida: String
+       var puntoDestino: String
+       var destinoLatitud: Double
+       var destinoLongitud: Double
+       var partidaLatitud: Double
+       var partidaLongitud: Double
+       var horaPartida: String
+       var horaLlegada: String
+       var entradaSalida: Int
+       var fecha: String
+       var dia: String
+       var estado: String
+       var visualizacionHabilitada: Int
+       var numeroPasajeros: Int
+       var limitePasajeros: Int
+       var precioBase: Double
 
-  /*enum CodingKeys: String, CodingKey {
+  enum CodingKeys: String, CodingKey {
           case id
           case conductor
           case descripcion = "descripcion"
@@ -76,6 +76,6 @@ struct Viaje: Codable{
        numeroPasajeros = try values.decode(Int.self, forKey: .numeroPasajeros)
        limitePasajeros = try values.decode(Int.self, forKey: .limitePasajeros)
        precioBase = try values.decode(Double.self, forKey: .precioBase)
-    }*/
+    }
     
 }

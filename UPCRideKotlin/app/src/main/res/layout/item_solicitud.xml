@@ -8,7 +8,7 @@
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="90dp"
         android:layout_marginLeft="25dp"
         android:layout_marginTop="10dp"
         android:layout_marginRight="20dp"
@@ -19,7 +19,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="90dp"
             android:layout_margin="5dp"
             android:layout_weight="1"
             android:orientation="vertical">
@@ -35,7 +35,7 @@
                     android:orientation="horizontal">
 
                     <ImageView
-                        android:id="@+id/foto_perfil"
+                        android:id="@+id/s_foto_perfil"
                         android:layout_width="42dp"
                         android:layout_height="match_parent"
                         android:layout_margin="2dp"
@@ -47,7 +47,7 @@
                         android:orientation="vertical">
 
                         <TextView
-                            android:id="@+id/n_usuario"
+                            android:id="@+id/s_n_usuario"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -55,7 +55,7 @@
                             android:textSize="12sp" />
 
                         <TextView
-                            android:id="@+id/t_descripcion"
+                            android:id="@+id/s_t_descripcion"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -75,7 +75,7 @@
                             android:orientation="vertical">
 
                             <TextView
-                                android:id="@+id/d_fecha"
+                                android:id="@+id/s_d_fecha"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_margin="10dp"
@@ -94,6 +94,32 @@
 
                 </LinearLayout>
 
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:id="@+id/button1000"
+                    android:layout_width="45dp"
+                    android:layout_height="35dp"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"
+                    android:background="@android:color/transparent"
+                    android:src="@drawable/check_fill"
+                    tools:src="@drawable/check_fill" />
+
+                <ImageButton
+                    android:id="@+id/button1001"
+                    android:layout_width="45dp"
+                    android:layout_height="35dp"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"
+                    android:background="@android:color/transparent"
+                    android:src="@drawable/delete_fill"
+                    tools:src="@drawable/delete_fill" />
             </LinearLayout>
 
             <ImageView

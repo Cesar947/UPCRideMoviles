@@ -52,7 +52,7 @@ struct RegistrarUsuarioForm: View {
                     Picker(selection: self.$sede, label: Text("Sede UPC")) {
 
                         ForEach(0 ..< sedes.count){
-                            Text(self.usuario.sedes[$0]).tag($0)
+                            Text(self.sedes[$0]).tag($0)
                         }
                     }
             }
@@ -62,7 +62,9 @@ struct RegistrarUsuarioForm: View {
             
 
             Button(action: {
-                manager.registrarPasajero(nuevoPasajero())
+                var pasajero = self.nuevoPasajero(codigo: self.codigo, correoUPC: self.correoUPC, contraseña: self.contrasena, dni: self.dni, nombres: self.nombres, apellidos: self.apellidos, telefono: self.telefono, distrito: self.distrito, sede: self.sedes[self.sede])
+                
+                self.manager.registrarPasajero(usuario: pasajero)
             } ) {
                 Text("Registrar")
                     
@@ -75,39 +77,26 @@ struct RegistrarUsuarioForm: View {
 
     }
  
-    func nuevoPasajero() -> Usuario{
-        if self.codigo = "" ||
-           self.correoUPC = "" ||
-           self.contrasena = "" ||
-           self.dni = "" ||
-           self.nombres = "" ||
-           self.apellidos = "" ||
-           self.telefono = "" ||
-           self.distrito = ""
-           {
+    func nuevoPasajero(
+    codigo: String,
+    correoUPC: String,
+    contraseña: String,
+    dni: String,
+    nombres: String,
+    apellidos: String,
+    telefono: String,
+    distrito: String,
+    sede : String) -> Usuario{
+        
+        var usuario = Usuario(codigo: codigo, correoUPC: correoUPC,
+                                       contraseña: contraseña, dni: dni, nombres: nombres,
+                                       apellidos: apellidos, telefono: telefono, distrito: distrito,
+                                       sede: sede)
             
-            
-            var usuario: Usuario = Usuario()
-            
-         
-            usuario.codigo = self.codigo
-            usuario.correoUPC = self.correoUPC
-            usuario.contraseña = self.contrasena
-            usuario.dni = self.dni
-            usuario.nombres = self.nombres
-            usuario.apellidos = self.apellidos
-            usuario.telefono = self.telefono
-            usuario.distrito = self.distrito
-            usuario.sede = self.sede
+         return usuario
             
         }
-    }
 }
-
-
-
-
-
 
 
 struct RegistrarUsuarioForm_Previews: PreviewProvider {

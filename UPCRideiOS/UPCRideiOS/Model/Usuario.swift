@@ -67,9 +67,25 @@ class Usuario:  Identifiable, Decodable{
          
        }
     
-    
-    
-    
-    
-
+    init(codigo: String,
+        correoUPC: String,
+        contraseña: String,
+        dni: String,
+        nombres: String,
+        apellidos: String,
+        telefono: String,
+        distrito: String,
+        sede : String){
+        
+        self.codigo = codigo
+        self.correoUPC = correoUPC
+        self.contraseña = contraseña
+        self.dni = codigo
+        self.nombres = codigo
+        self.apellidos = codigo
+        self.telefono = telefono
+        self.distrito = distrito
+        self.sede = sede
+        
+}
 }
