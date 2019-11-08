@@ -10,7 +10,7 @@ import Foundation
 
 struct Resena{
     
-       var id: Int
+       let id: Int
        var contenido: String
        var valoracion: Double
        var cliente: Usuario

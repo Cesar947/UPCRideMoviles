@@ -9,14 +9,15 @@
 import SwiftUI
 
 struct HomeView: View {
-    let viajes = viajesPrueba
+    @State var viajeServiceManager = ViajeService()
+    //@State private var viajes = [ViajePrueba]()
     
     var body: some View {
         NavigationView{
         ScrollView() {
             VStack(spacing: 20){
-                ForEach(self.viajes) {viajen in
-                    ViajeCardView( nombre: viajen.nombre , fecha: viajen.fecha, descripcion: viajen.descripcion, puntoPartida: viajen.puntoPartida, puntoDestino: viajen.puntoDestino)
+                ForEach(self.viajeServiceManager.viajes) {viajen in
+                    ViajeCardView( nombre: viajen.conductor.nombres , fecha: viajen.fecha, descripcion: viajen.descripcion, puntoPartida: viajen.puntoPartida, puntoDestino: viajen.puntoDestino)
                 }
             }
         }
