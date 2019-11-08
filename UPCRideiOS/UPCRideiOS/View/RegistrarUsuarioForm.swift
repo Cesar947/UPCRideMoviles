@@ -63,14 +63,14 @@ struct RegistrarUsuarioForm: View {
 
             Button(action: {
                 var pasajero = self.nuevoPasajero(codigo: self.codigo, correoUPC: self.correoUPC, contraseña: self.contrasena, dni: self.dni, nombres: self.nombres, apellidos: self.apellidos, telefono: self.telefono, distrito: self.distrito, sede: self.sedes[self.sede])
-                
                 self.manager.registrarPasajero(usuario: pasajero)
+                print("Lo logro senior")
             } ) {
                 Text("Registrar")
                     
             }.padding(.leading, 300)
             
-        }.padding(.top, 20)
+        }.padding(.top, 0)
         .navigationBarTitle(Text("Registro"))
         }
 

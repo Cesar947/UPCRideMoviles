@@ -60,7 +60,7 @@ else {return }
 
 
 
-func obtenerViajes(completion: @escaping ([Viaje]) -> ()){
+/*func obtenerViajes(completion: @escaping ([Viaje]) -> ()){
     guard let url = URL(string:"http://ec2-52-15-215-247.us-east-2.compute.amazonaws.com:8080/viajes")
     else {
         fatalError("URL is not correct!")
@@ -77,7 +77,7 @@ func obtenerViajes(completion: @escaping ([Viaje]) -> ()){
         completion(viajes)
     }
     }.resume()*/
-}
+}*/
 
 
 }

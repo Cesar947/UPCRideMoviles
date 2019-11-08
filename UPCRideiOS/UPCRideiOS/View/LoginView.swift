@@ -8,9 +8,9 @@
 
 import SwiftUI
 
+var estado: Bool = false
+
 struct LoginView: View {
-    
-   @State var estado: Bool = true
      
        var body: some View {
          NavigationView{
@@ -32,21 +32,19 @@ struct LoginView: View {
              }.padding(.bottom, 240)
              
              VStack{
-                 NavigationLink(destination: TransView()){
+                NavigationLink(destination: TransView()){
                      Text("Iniciar Sesion")
                          .foregroundColor(Color.blue)
                  }
                  
-                 Button(action: {print("Registrando")}) {
+                NavigationLink(destination: RegistrarUsuarioForm().navigationBarTitle(Text(" "))
+                    .navigationBarHidden(true)) {
                  Text("Registrarme")
              }.padding()
              }.padding(.top, 100)
          }.padding(.top, 80)
              .navigationBarTitle(Text(" "))
-            .navigationBarHidden(self.estado)
-            .onAppear{
-                self.estado = true
-            }
+            .navigationBarHidden(estado)
          }
      }
 }
@@ -56,7 +54,7 @@ struct LogView: View {
     @State private var username: String = ""
     @State private var password: String = ""
     @Binding var signedIn: Bool
-    @Binding var estado: Bool
+
     
     var body: some View {
         NavigationView{
@@ -83,9 +81,7 @@ struct LogView: View {
                 }.padding([.leading, .trailing], 30)
             }.padding(.bottom, 300)
             .navigationBarTitle(Text(" "))
-            .onAppear{
-                self.estado = false
-            }
+            .navigationBarHidden(false)
         }
     }
 }
@@ -94,7 +90,7 @@ struct LogView: View {
 struct TransView: View{
     
     @State var signedIn = false
-    @State var estado = false
+
     
     var body: some View {
         VStack{
@@ -102,7 +98,7 @@ struct TransView: View{
                 MainView()
             }
             else {
-                LogView(signedIn: $signedIn, estado: $estado)
+                LogView(signedIn: $signedIn)
             }
         }
     }

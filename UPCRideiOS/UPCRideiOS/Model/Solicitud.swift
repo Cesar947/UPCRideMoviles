@@ -11,7 +11,7 @@ import Foundation
 struct Solicitud{
     var id: Int
     var pasajero: Usuario
-    var viaje: Viaje
+    //var viaje: Viaje
     var mensaje: String
     var confirmacionConductor: String
     var puntoEncuentro: String

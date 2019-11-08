@@ -12,21 +12,21 @@ import Combine
 class Usuario:  Identifiable, Decodable{
     
 
-    var id: Int
-    var codigo: String
-    var correoUPC: String
-    var contraseña: String
-    var dni: String
-    var nombres: String
-    var apellidos: String
-    var ubicacionLatitud: Double
-    var ubicacionLongitud: Double
-    var facebook_id: String
-    var telefono: String
-    var distrito: String
-    var rol: String
-    var licenciaConducir: String
-    var sede : String
+    var id: Int?
+    var codigo: String?
+    var correoUPC: String?
+    var contraseña: String?
+    var dni: String?
+    var nombres: String?
+    var apellidos: String?
+    var ubicacionLatitud: Double?
+    var ubicacionLongitud: Double?
+    var facebook_id: String?
+    var telefono: String?
+    var distrito: String?
+    var rol: String?
+    var licenciaConducir: String?
+    var sede : String?
  
     
     enum CodingKeys: String, CodingKey {
@@ -80,12 +80,12 @@ class Usuario:  Identifiable, Decodable{
         self.codigo = codigo
         self.correoUPC = correoUPC
         self.contraseña = contraseña
-        self.dni = codigo
-        self.nombres = codigo
-        self.apellidos = codigo
+        self.dni = dni
+        self.nombres = nombres
+        self.apellidos = apellidos
         self.telefono = telefono
         self.distrito = distrito
         self.sede = sede
         
-}
+ }
 }

@@ -9,7 +9,7 @@
 import Foundation
 
 
-struct Viaje: Codable{
+/*struct Viaje: Encodable, Decodable{
     
     
        var id: Int
@@ -79,3 +79,4 @@ struct Viaje: Codable{
     }
     
 }
+*/
