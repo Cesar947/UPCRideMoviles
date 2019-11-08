@@ -25,6 +25,8 @@
 		9E8AF0772374B6B20092E289 /* SolicitudPrueba.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E8AF0762374B6B20092E289 /* SolicitudPrueba.swift */; };
 		9E8AF0792374B6BF0092E289 /* UsuarioPrueba.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E8AF0782374B6BF0092E289 /* UsuarioPrueba.swift */; };
 		9E8AF07B2374B9EC0092E289 /* PerfilView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E8AF07A2374B9EC0092E289 /* PerfilView.swift */; };
+		9E8AF07D2374CE3F0092E289 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E8AF07C2374CE3F0092E289 /* MainView.swift */; };
+		9E8AF07F2374DA0A0092E289 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E8AF07E2374DA0A0092E289 /* LoginView.swift */; };
 		9ED5BD492373BD8700126CC6 /* ViajeCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED5BD482373BD8700126CC6 /* ViajeCardView.swift */; };
 		EC550E642373D2C100BA11A2 /* Viaje.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC550E632373D2C100BA11A2 /* Viaje.swift */; };
 		EC550E682373D45F00BA11A2 /* Usuario.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC550E672373D45F00BA11A2 /* Usuario.swift */; };
@@ -75,6 +77,8 @@
 		9E8AF0762374B6B20092E289 /* SolicitudPrueba.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolicitudPrueba.swift; sourceTree = "<group>"; };
 		9E8AF0782374B6BF0092E289 /* UsuarioPrueba.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsuarioPrueba.swift; sourceTree = "<group>"; };
 		9E8AF07A2374B9EC0092E289 /* PerfilView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerfilView.swift; sourceTree = "<group>"; };
+		9E8AF07C2374CE3F0092E289 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		9E8AF07E2374DA0A0092E289 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		9ED5BD482373BD8700126CC6 /* ViajeCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViajeCardView.swift; sourceTree = "<group>"; };
 		EC550E632373D2C100BA11A2 /* Viaje.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Viaje.swift; path = UPCRideiOS/View/Viaje.swift; sourceTree = SOURCE_ROOT; };
 		EC550E672373D45F00BA11A2 /* Usuario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Usuario.swift; sourceTree = "<group>"; };
@@ -204,6 +208,8 @@
 				9E8AF0712374AE220092E289 /* SolicitudCardView.swift */,
 				9E8AF0732374B16A0092E289 /* SolicitudesView.swift */,
 				9E8AF07A2374B9EC0092E289 /* PerfilView.swift */,
+				9E8AF07C2374CE3F0092E289 /* MainView.swift */,
+				9E8AF07E2374DA0A0092E289 /* LoginView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -352,7 +358,9 @@
 				9E5428ED2373A7A300B35C74 /* AppDelegate.swift in Sources */,
 				EC550E642373D2C100BA11A2 /* Viaje.swift in Sources */,
 				9E8AF0702374A4410092E289 /* MiViajeCardView.swift in Sources */,
+				9E8AF07D2374CE3F0092E289 /* MainView.swift in Sources */,
 				9E8AF06E23747CE10092E289 /* ViajesView.swift in Sources */,
+				9E8AF07F2374DA0A0092E289 /* LoginView.swift in Sources */,
 				9E8AF07B2374B9EC0092E289 /* PerfilView.swift in Sources */,
 				9E5428F42373A7A300B35C74 /* ContentView.swift in Sources */,
 				9E8AF06C23746F160092E289 /* HomeView.swift in Sources */,

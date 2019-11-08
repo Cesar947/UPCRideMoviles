@@ -12,8 +12,8 @@ struct UsuarioPrueba : Identifiable {
     
     var id = UUID()
     
-    var nombre = "Brian Miramira"
-    var distrito = "San Miguel"
-    var sede = "UPC San Miguel"
+    var nombre: String
+    var codigo: String
+    var contraseña: String
 }
 

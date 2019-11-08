@@ -25,23 +25,38 @@ struct ContentView: View {
 
 
       var body: some View {
-        TabView{
-            HomeView().tabItem{
-                Image(systemName: "house").font(Font.system(size: 30, weight: .semibold))
-            }
+        NavigationView{
+        VStack {
+            VStack{
+                Text("Bienvenido a UPC Ride")
+                    .font(.largeTitle)
+                    .fontWeight(.heavy)
+                    .lineLimit(2)
+                    .padding(.trailing, 100)
+                    .padding(.leading, 25)
+                    .padding(.bottom, 30)
                 
-                ViajesView().tabItem{
-                    Image(systemName: "car").font(Font.system(size: 30, weight: .semibold))
+                Text("La mejor forma de viajar y conocer companeros en la UPC")
+                    .lineLimit(2)
+                    .padding([.leading, .trailing], 50)
+                
+                
+            }.padding(.bottom, 240)
+            
+            VStack{
+                NavigationLink(destination: LoginView()){
+                    Text("Iniciar Sesion")
+                        .foregroundColor(Color.blue)
                 }
-                SolicitudesView().tabItem{
-                    Image(systemName: "bell").font(Font.system(size: 30, weight: .semibold))
-                }
-                PerfilView().tabItem{
-                    Image(systemName: "person").font(Font.system(size: 30, weight: .semibold))
-                }
-            }
+                
+                Button(action: {print("Registrando")}) {
+                Text("Registrarme")
+            }.padding()
+            }.padding(.top, 100)
+        }.padding(.top, 80)
         }
     }
+}
 
       
 
