@@ -20,10 +20,10 @@ class AdaptadorSolicitudes(var solicitudLista: List<SolicitudModelo>) :
         var foto_perfil: ImageView
 
         init {
-            nombre = itemView.findViewById<View>(R.id.n_usuario) as TextView
-            fecha = itemView.findViewById<View>(R.id.d_fecha) as TextView
-            descripcion = itemView.findViewById<View>(R.id.t_descripcion) as TextView
-            foto_perfil = itemView.findViewById<View>(R.id.foto_perfil) as ImageView
+            nombre = itemView.findViewById<View>(R.id.s_n_usuario) as TextView
+            fecha = itemView.findViewById<View>(R.id.s_d_fecha) as TextView
+            descripcion = itemView.findViewById<View>(R.id.s_t_descripcion) as TextView
+            foto_perfil = itemView.findViewById<View>(R.id.s_foto_perfil) as ImageView
         }
     }
 

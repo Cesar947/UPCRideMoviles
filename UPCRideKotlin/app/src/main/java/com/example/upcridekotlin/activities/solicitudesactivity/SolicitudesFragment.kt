@@ -2,6 +2,7 @@ package com.example.upcridekotlin.activities.solicitudesactivity
 
 
 import android.os.Bundle
+import android.util.Log
 
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -10,10 +11,23 @@ import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 
 import com.example.upcridekotlin.R
+import com.example.upcridekotlin.activities.homefragmentactivity.RecyclerViewAdaptador
+import com.example.upcridekotlin.activities.viajeshistorialactivity.ViajesAdapterHistory
 import com.example.upcridekotlin.interfaces.SolicitudApiService
+import com.example.upcridekotlin.interfaces.ViajeApiService
+import com.example.upcridekotlin.model.Solicitud
 import com.example.upcridekotlin.model.SolicitudModelo
+import com.example.upcridekotlin.model.Viaje
+import com.example.upcridekotlin.model.ViajeModelo
+import com.google.gson.Gson
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
+import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
 
 
 import java.util.ArrayList
@@ -28,6 +42,9 @@ class SolicitudesFragment : Fragment() {
     private var solicitudService: SolicitudApiService? = null
     private var conductorId: Int? = 0
 
+    var idUsuario = 0
+    var rol = 'P'
+    lateinit var ViajeService : ViajeApiService
 
 
     override fun onCreateView(
@@ -37,14 +54,21 @@ class SolicitudesFragment : Fragment() {
         // Inflate the layout for this fragment
         val vista = inflater.inflate(R.layout.fragment_solicitudes, container, false)
 
+        val retrofit: Retrofit = Retrofit.Builder()
+            .baseUrl("http://ec2-52-15-215-247.us-east-2.compute.amazonaws.com:8080/")
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
+
+        ViajeService = retrofit.create(ViajeApiService::class.java)
+
+        idUsuario = arguments!!.getInt("id",0)
+        rol = arguments!!.getChar("rol",'P')
+
         recyclerViewSolicitud = vista.findViewById(R.id.recycle_solis)
         recyclerViewSolicitud!!.layoutManager = LinearLayoutManager(context)
 
-        adaptadorSolicitudes =
-            AdaptadorSolicitudes(
-                carteraSolicitudes()
-            )
-        recyclerViewSolicitud!!.adapter = adaptadorSolicitudes
+        obtenerSolicitudes()
+
 
 
 
@@ -52,43 +76,59 @@ class SolicitudesFragment : Fragment() {
     }
 
 
-
-
-    fun carteraSolicitudes(): List<SolicitudModelo> {
+    fun obtenerSolicitudes()
+    {
         val solicitudes = ArrayList<SolicitudModelo>()
-        solicitudes.add(
-            SolicitudModelo(
-                "Burga",
-                "09:10",
-                "Baja en 3 calles",
-                R.drawable.user
-            )
-        )
-        solicitudes.add(
-            SolicitudModelo(
-                "Semanche",
-                "22:10",
-                "Porfa tengo un bautizo",
-                R.drawable.user
-            )
-        )
-        solicitudes.add(
-            SolicitudModelo(
-                "Emilio",
-                "21:10",
-                "Muchachos me canse",
-                R.drawable.user
-            )
-        )
-        solicitudes.add(
-            SolicitudModelo(
-                "Elba",
-                "09:10",
-                "Tu, yo  y un codelab, piensalo",
-                R.drawable.user
-            )
-        )
-        return solicitudes
+
+
+        ViajeService.getViajesPorConductor(idUsuario).enqueue(object: Callback<List<Viaje>> {
+            override fun onResponse(call: Call<List<Viaje>>, response: Response<List<Viaje>>) {
+                val viajesaux = response.body()
+
+                Log.i("viajesaux", Gson().toJson(viajesaux))
+
+                /*for( item in viajesaux!!)
+                {*/
+                    //Log.i("item", Gson().toJson(item))
+
+                    ViajeService.getSolicitudesPendientes(4).enqueue(object: Callback<List<Solicitud>> {
+                        override fun onResponse(call: Call<List<Solicitud>>, response: Response<List<Solicitud>>) {
+                            val solicitudesaux = response.body()
+
+                            Log.i("solicitudes", Gson().toJson(solicitudesaux))
+
+                            for(item in solicitudesaux!!)
+                            {
+                                solicitudes.add(
+                                    SolicitudModelo(
+                                        item.pasajero!!.nombres!!,
+                                        item.fecha!!,
+                                        item.mensaje!!,
+                                        R.drawable.user))
+                                Log.i("items", Gson().toJson(solicitudes))
+                            }
+                            adaptadorSolicitudes = AdaptadorSolicitudes(solicitudes)
+                            recyclerViewSolicitud!!.adapter = adaptadorSolicitudes
+                        }
+                        override fun onFailure(call: Call<List<Solicitud>>?, t: Throwable?) {
+                            t?.printStackTrace()
+                        }
+                    })
+
+                //}
+
+            }
+            override fun onFailure(call: Call<List<Viaje>>?, t: Throwable?) {
+                t?.printStackTrace()
+            }
+        })
+
+
+
+
+
     }
+
+
 
 }// Required empty public constructor
