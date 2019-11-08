@@ -31,6 +31,7 @@
 		EC550E6A2373D46C00BA11A2 /* Solicitud.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC550E692373D46B00BA11A2 /* Solicitud.swift */; };
 		EC550E6C2373D47D00BA11A2 /* Resena.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC550E6B2373D47D00BA11A2 /* Resena.swift */; };
 		EC550E6E2373D95100BA11A2 /* RegistrarUsuarioForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC550E6D2373D95100BA11A2 /* RegistrarUsuarioForm.swift */; };
+		ECC770232374E6CC00DC78EC /* ApiServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC770222374E6CC00DC78EC /* ApiServiceManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +82,7 @@
 		EC550E692373D46B00BA11A2 /* Solicitud.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Solicitud.swift; sourceTree = "<group>"; };
 		EC550E6B2373D47D00BA11A2 /* Resena.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resena.swift; sourceTree = "<group>"; };
 		EC550E6D2373D95100BA11A2 /* RegistrarUsuarioForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrarUsuarioForm.swift; sourceTree = "<group>"; };
+		ECC770222374E6CC00DC78EC /* ApiServiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiServiceManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +133,7 @@
 		9E5428EB2373A7A300B35C74 /* UPCRideiOS */ = {
 			isa = PBXGroup;
 			children = (
+				ECC770212374E69300DC78EC /* WebApiService */,
 				9E8AF0752374B6860092E289 /* Pruebas */,
 				9ED5BD462373BD2300126CC6 /* Model */,
 				9ED5BD472373BD4D00126CC6 /* View */,
@@ -206,6 +209,14 @@
 				9E8AF07A2374B9EC0092E289 /* PerfilView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		ECC770212374E69300DC78EC /* WebApiService */ = {
+			isa = PBXGroup;
+			children = (
+				ECC770222374E6CC00DC78EC /* ApiServiceManager.swift */,
+			);
+			path = WebApiService;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -339,6 +350,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ECC770232374E6CC00DC78EC /* ApiServiceManager.swift in Sources */,
 				EC550E6E2373D95100BA11A2 /* RegistrarUsuarioForm.swift in Sources */,
 				9ED5BD492373BD8700126CC6 /* ViajeCardView.swift in Sources */,
 				9E5428F22373A7A300B35C74 /* UPCRideiOS.xcdatamodeld in Sources */,
