@@ -118,7 +118,6 @@
 				9E5428EB2373A7A300B35C74 /* UPCRideiOS */,
 				9E5429052373A7AB00B35C74 /* UPCRideiOSTests */,
 				9E5429102373A7AB00B35C74 /* UPCRideiOSUITests */,
-				9E5428EA2373A7A300B35C74 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
@@ -130,6 +129,7 @@
 				9E54290D2373A7AB00B35C74 /* UPCRideiOSUITests.xctest */,
 			);
 			name = Products;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		9E5428EB2373A7A300B35C74 /* UPCRideiOS */ = {
@@ -172,6 +172,7 @@
 			children = (
 				9E5429112373A7AB00B35C74 /* UPCRideiOSUITests.swift */,
 				9E5429132373A7AB00B35C74 /* Info.plist */,
+				9E5428EA2373A7A300B35C74 /* Products */,
 			);
 			path = UPCRideiOSUITests;
 			sourceTree = "<group>";

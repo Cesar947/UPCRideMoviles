@@ -23,7 +23,8 @@ import SwiftUI
 
 struct ContentView: View {
 
-
+    @State var estado: Bool = true
+    
       var body: some View {
         NavigationView{
         VStack {
@@ -54,6 +55,10 @@ struct ContentView: View {
             }.padding()
             }.padding(.top, 100)
         }.padding(.top, 80)
+            .navigationBarTitle(Text(" "))
+            .navigationBarHidden(self.estado)
+            
+        
         }
     }
 }

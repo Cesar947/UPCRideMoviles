@@ -12,6 +12,7 @@ struct LoginView: View {
     
     @State private var username: String = ""
     @State private var password: String = ""
+    @State var estadito: Bool = false
     
     var body: some View {
         NavigationView{
@@ -35,7 +36,8 @@ struct LoginView: View {
                     
                 }.padding([.leading, .trailing], 30)
             }.padding(.bottom, 300)
-            
+            .navigationBarTitle(Text(" "))
+            .navigationBarHidden(true)
         }
     }
 }

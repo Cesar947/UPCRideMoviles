@@ -14,17 +14,23 @@ struct MainView: View {
         TabView{
             HomeView().tabItem{
                 Image(systemName: "house").font(Font.system(size: 30, weight: .semibold))
-            }
+            }.navigationBarTitle(Text(""))
+            .navigationBarHidden(true)
                 
                 ViajesView().tabItem{
                     Image(systemName: "car").font(Font.system(size: 30, weight: .semibold))
-                }
+                }.navigationBarTitle(Text(""))
+                .navigationBarHidden(true)
                 SolicitudesView().tabItem{
                     Image(systemName: "bell").font(Font.system(size: 30, weight: .semibold))
-                }
+                }.navigationBarTitle(Text(""))
+                .navigationBarHidden(true)
+            
                 PerfilView().tabItem{
                     Image(systemName: "person").font(Font.system(size: 30, weight: .semibold))
                 }
+                .navigationBarTitle(Text(""))
+                .navigationBarHidden(true)
             }
         }
 }
