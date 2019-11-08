@@ -7,6 +7,9 @@ import retrofit2.http.Path
 
 interface GoogleMapsApiService {
 
-    //@GET("json?origin={originLat},{originLng}&destination={destinationLat},{destinationLng}&key={apiKey}")
+    val baseUrl : String
+        get() = "http://maps.googleapis.com/maps/api/directions/"
+
+   // @GET("json?origin={originLat},{originLng}&destination={destinationLat},{destinationLng}&key=AIzaSyAkSoqQ9v3nMJ9Tv60ZSwkZcgjoNkCGBsw")
     //fun getDirections(@ParameterName("originLat", "originLng","destinationLat","destinationLng", "apiKey") originLat: Double, originLng: Double, destinationLatLng:Double, ): Call<Usuario>
 }

@@ -66,9 +66,6 @@ class solicitar_viaje : AppCompatActivity(), MapsFragment.OnFragmentInteractionL
         btnSolicitarSolo = findViewById(R.id.btnSolicitarViaje)
 
 
-
-
-
         var miBundle = this.intent.extras
         var idViaje = miBundle!!.getInt("idViaje")
         var idPasajero = miBundle!!.getInt("idPasajero")
@@ -76,18 +73,33 @@ class solicitar_viaje : AppCompatActivity(), MapsFragment.OnFragmentInteractionL
         Toast.makeText(this,miBundle.toString(),Toast.LENGTH_LONG).show()
 
 
+        viajeApiService.getViajeById(idViaje).enqueue(object: Callback<Viaje>{
+            override fun onFailure(call: Call<Viaje>, t: Throwable) {
+                TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+            }
+
+            override fun onResponse(call: Call<Viaje>, response: Response<Viaje>) {
+                tvConductorSol.text = response.body()?.conductor?.nombres.toString() + " " + response.body()?.conductor?.apellidos.toString()
+                tvPuntoPartidaSol.text = response.body()?.puntoPartida.toString()
+                tvPuntoDestinoSol.text = response.body()?.puntoDestino.toString()
+            }
+
+        })
+
         fragmento = MapsFragment()
         supportFragmentManager.beginTransaction().replace(R.id.contenedor, fragmento!!).commit()
 
 
 
         //Obtener fechas para adjuntarlas a la solicitud (fecha actual)
-        var dia: String = LocalDateTime.now().dayOfMonth.toString();
+        var dia: String = LocalDateTime.now().dayOfWeek.toString();
         var mes: String = LocalDateTime.now().monthValue.toString();
         var año: String = LocalDateTime.now().year.toString();
 
 
 
+
+        //Formatear la fecha
         if(LocalDateTime.now().monthValue<10)
         {
             fecha = año+"-0"+mes+"-"+dia
@@ -106,6 +118,7 @@ class solicitar_viaje : AppCompatActivity(), MapsFragment.OnFragmentInteractionL
                 fecha = año+"-"+mes+"-"+"0"+dia
             }
         }
+        //////
 
         //Google Maps Direction Request
         var latOrigin = "-12.333"
@@ -113,10 +126,9 @@ class solicitar_viaje : AppCompatActivity(), MapsFragment.OnFragmentInteractionL
         var latDestiny = "-12.0765"
         var lngDestiny = "-77.0992"
 
-
-
         //////////////////////////
 
+        //btnSolicitarSolo: Solicita un viaje
         btnSolicitarSolo.setOnClickListener {
             val intent = Intent(this, mActivity::class.java)
             Solicitar(idViaje,idPasajero)
@@ -136,13 +148,20 @@ class solicitar_viaje : AppCompatActivity(), MapsFragment.OnFragmentInteractionL
     fun Solicitar(idViaje : Int,idPasajero: Int)
     {
 
-        solicitud = Solicitud(null,null,etMensajeSol.text.toString(),"Pendiente","av",
-            fragmento?.getLat()!!, fragmento!!.getLng()!!,fecha )
+        solicitud = Solicitud(null,
+            null,
+            etMensajeSol.text.toString(),
+            "Pendiente",
+            "av",
+            fragmento?.getLat()!!,
+            fragmento!!.getLng()!!,
+            fecha )
 
 
 
         usuarioApiService!!.getUsuarioById(idPasajero).enqueue(object : Callback<Usuario> {
             override fun onResponse(call: Call<Usuario>?, response: Response<Usuario>?) {
+
                 val pasajero = response?.body()
 
                 solicitud!!.pasajero = pasajero
