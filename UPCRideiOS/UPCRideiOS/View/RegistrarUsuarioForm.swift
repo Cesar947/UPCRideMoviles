@@ -58,7 +58,7 @@ struct RegistrarUsuarioForm: View {
             }
                 
             Button(action: {
-                var pasajero = self.nuevoPasajero(codigo: self.codigo, correoUPC: self.correoUPC, contraseña: self.contrasena, dni: self.dni, nombres: self.nombres, apellidos: self.apellidos, telefono: self.telefono, distrito: self.distrito, sede: self.sedes[self.sede])
+               let pasajero = self.nuevoPasajero(codigo: self.codigo, correoUPC: self.correoUPC, contraseña: self.contrasena, dni: self.dni, nombres: self.nombres, apellidos: self.apellidos, telefono: self.telefono, distrito: self.distrito, sede: self.sedes[self.sede])
                 self.manager.registrarPasajero(usuario: pasajero)
                 print("Lo logro senior")
             } ) {
@@ -84,7 +84,7 @@ struct RegistrarUsuarioForm: View {
     distrito: String,
     sede : String) -> Usuario{
         
-        var usuario = Usuario(codigo: codigo, correoUPC: correoUPC,
+       let usuario = Usuario(codigo: codigo, correoUPC: correoUPC,
                                        contraseña: contraseña, dni: dni, nombres: nombres,
                                        apellidos: apellidos, telefono: telefono, distrito: distrito,
                                        sede: sede)
