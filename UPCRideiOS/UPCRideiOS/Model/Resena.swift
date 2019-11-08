@@ -14,5 +14,5 @@ struct Resena{
        var contenido: String
        var valoracion: Double
        var cliente: Usuario
-       var viaje: Viaje
+       //var viaje: Viaje
 }

@@ -13,6 +13,7 @@ import android.widget.Toast
 import com.example.upcridekotlin.R
 import com.google.android.gms.maps.*
 import com.google.android.gms.maps.model.LatLng
+import com.google.android.gms.maps.model.Marker
 import com.google.android.gms.maps.model.MarkerOptions
 
 // TODO: Rename parameter arguments, choose names that match
@@ -32,8 +33,7 @@ class MapsFragment : Fragment(), OnMapReadyCallback, GoogleMap.OnMapClickListene
     GoogleMap.OnMyLocationButtonClickListener,
     GoogleMap.OnMyLocationClickListener{
 
-    var markerLat : Double = 0.0
-    var markerLng : Double = 0.0
+    var marker: Marker? = null
 
 
     override fun onMyLocationButtonClick(): Boolean {
@@ -45,18 +45,20 @@ class MapsFragment : Fragment(), OnMapReadyCallback, GoogleMap.OnMapClickListene
     }
 
     override fun onMapClick(p0: LatLng?) {
-        map.addMarker(p0?.let { MarkerOptions().position(it) })
-        markerLat = p0?.latitude!!
-        markerLng = p0?.longitude!!
+
+        marker?.remove()
+
+        marker = map.addMarker(p0?.let { MarkerOptions().position(it) })
+
         //map.moveCamera(CameraUpdateFactory.newLatLng(p0))
     }
 
-    fun getLat(): Double {
-        return markerLat
+    fun getLat(): Double? {
+        return marker?.position?.latitude
     }
 
-    fun getLng(): Double {
-        return markerLng
+    fun getLng(): Double? {
+        return marker?.position?.longitude
     }
 
     // TODO: Rename and change types of parameters

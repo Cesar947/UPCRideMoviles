@@ -9,7 +9,9 @@
 import Foundation
 
 
+
 class Viaje: Codable, Identifiable{
+
     
     
        let id: Int = 0
@@ -36,3 +38,4 @@ class Viaje: Codable, Identifiable{
         
     }
 }
+

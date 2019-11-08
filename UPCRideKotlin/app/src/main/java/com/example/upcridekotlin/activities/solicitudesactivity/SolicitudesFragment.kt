@@ -87,13 +87,15 @@ class SolicitudesFragment : Fragment() {
 
                 Log.i("viajesaux", Gson().toJson(viajesaux))
 
-                /*for( item in viajesaux!!)
-                {*/
-                    //Log.i("item", Gson().toJson(item))
+                for( item in viajesaux!!)
+                {
+                    Log.i("item", item.id.toString())
 
-                    ViajeService.getSolicitudesPendientes(4).enqueue(object: Callback<List<Solicitud>> {
+                    ViajeService.getSolicitudesPendientes(item.id).enqueue(object: Callback<List<Solicitud>> {
                         override fun onResponse(call: Call<List<Solicitud>>, response: Response<List<Solicitud>>) {
                             val solicitudesaux = response.body()
+
+                            if(solicitudesaux == null) return
 
                             Log.i("solicitudes", Gson().toJson(solicitudesaux))
 
@@ -115,7 +117,7 @@ class SolicitudesFragment : Fragment() {
                         }
                     })
 
-                //}
+                }
 
             }
             override fun onFailure(call: Call<List<Viaje>>?, t: Throwable?) {
