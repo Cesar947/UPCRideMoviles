@@ -9,25 +9,53 @@
 import Foundation
 import Combine
 
-class Usuario:  Identifiable, Decodable{
+class Usuario:  Identifiable, Codable{
     
-
-    var id: Int
-    var codigo: String
-    var correoUPC: String
-    var contraseña: String
-    var dni: String
-    var nombres: String
-    var apellidos: String
-    var ubicacionLatitud: Double
-    var ubicacionLongitud: Double
-    var facebook_id: String
-    var telefono: String
-    var distrito: String
-    var rol: String
-    var licenciaConducir: String
-    var sede : String
- 
+    let id: Int = 0
+    var codigo: String = ""
+    var correoUPC: String = ""
+    var contraseña: String = ""
+    var dni: String = ""
+    var nombres: String = ""
+    var apellidos: String = ""
+    var ubicacionLatitud: Double = 0.0
+    var ubicacionLongitud: Double = 0.0
+    var facebook_id: String = ""
+    var telefono: String = ""
+    var distrito: String = ""
+    var rol: String = ""
+    var licenciaConducir: String = ""
+    var sede : String = ""
+    
+    init(){
+        
+    }
+    
+    init(codigo: String,
+            correoUPC: String,
+            contraseña: String,
+            dni: String,
+            nombres: String,
+            apellidos: String,
+            telefono: String,
+            distrito: String,
+            sede : String){
+            
+            self.codigo = codigo
+            self.correoUPC = correoUPC
+            self.contraseña = contraseña
+            self.dni = codigo
+            self.nombres = codigo
+            self.apellidos = codigo
+            self.telefono = telefono
+            self.distrito = distrito
+            self.sede = sede
+            
+    }
+    
+    
+    
+ /*
     
     enum CodingKeys: String, CodingKey {
         case id
@@ -64,28 +92,11 @@ class Usuario:  Identifiable, Decodable{
           rol = try values.decode(String.self, forKey: .rol)
           licenciaConducir = try values.decode(String.self, forKey: .licenciaConducir )
           sede = try values.decode(String.self, forKey: .sede)
+     
+     
+     
          
        }
     
-    init(codigo: String,
-        correoUPC: String,
-        contraseña: String,
-        dni: String,
-        nombres: String,
-        apellidos: String,
-        telefono: String,
-        distrito: String,
-        sede : String){
-        
-        self.codigo = codigo
-        self.correoUPC = correoUPC
-        self.contraseña = contraseña
-        self.dni = codigo
-        self.nombres = codigo
-        self.apellidos = codigo
-        self.telefono = telefono
-        self.distrito = distrito
-        self.sede = sede
-        
-}
+    */
 }

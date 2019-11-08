@@ -56,11 +56,7 @@ struct RegistrarUsuarioForm: View {
                         }
                     }
             }
-                    
                 
-            
-            
-
             Button(action: {
                 var pasajero = self.nuevoPasajero(codigo: self.codigo, correoUPC: self.correoUPC, contraseña: self.contrasena, dni: self.dni, nombres: self.nombres, apellidos: self.apellidos, telefono: self.telefono, distrito: self.distrito, sede: self.sedes[self.sede])
                 

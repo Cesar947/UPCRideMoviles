@@ -28,6 +28,7 @@
 		9E8AF07D2374CE3F0092E289 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E8AF07C2374CE3F0092E289 /* MainView.swift */; };
 		9E8AF07F2374DA0A0092E289 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E8AF07E2374DA0A0092E289 /* LoginView.swift */; };
 		9ED5BD492373BD8700126CC6 /* ViajeCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED5BD482373BD8700126CC6 /* ViajeCardView.swift */; };
+		EC473DF023753D9700784881 /* ApiServiceViajes.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC473DEF23753D9700784881 /* ApiServiceViajes.swift */; };
 		EC550E642373D2C100BA11A2 /* Viaje.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC550E632373D2C100BA11A2 /* Viaje.swift */; };
 		EC550E682373D45F00BA11A2 /* Usuario.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC550E672373D45F00BA11A2 /* Usuario.swift */; };
 		EC550E6A2373D46C00BA11A2 /* Solicitud.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC550E692373D46B00BA11A2 /* Solicitud.swift */; };
@@ -81,6 +82,7 @@
 		9E8AF07C2374CE3F0092E289 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		9E8AF07E2374DA0A0092E289 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		9ED5BD482373BD8700126CC6 /* ViajeCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViajeCardView.swift; sourceTree = "<group>"; };
+		EC473DEF23753D9700784881 /* ApiServiceViajes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiServiceViajes.swift; sourceTree = "<group>"; };
 		EC550E632373D2C100BA11A2 /* Viaje.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Viaje.swift; path = UPCRideiOS/View/Viaje.swift; sourceTree = SOURCE_ROOT; };
 		EC550E672373D45F00BA11A2 /* Usuario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Usuario.swift; sourceTree = "<group>"; };
 		EC550E692373D46B00BA11A2 /* Solicitud.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Solicitud.swift; sourceTree = "<group>"; };
@@ -222,6 +224,7 @@
 			isa = PBXGroup;
 			children = (
 				ECC770222374E6CC00DC78EC /* ApiServiceManager.swift */,
+				EC473DEF23753D9700784881 /* ApiServiceViajes.swift */,
 			);
 			path = WebApiService;
 			sourceTree = "<group>";
@@ -363,6 +366,7 @@
 				9E5428F22373A7A300B35C74 /* UPCRideiOS.xcdatamodeld in Sources */,
 				9E8AF0742374B16A0092E289 /* SolicitudesView.swift in Sources */,
 				EC550E6A2373D46C00BA11A2 /* Solicitud.swift in Sources */,
+				EC473DF023753D9700784881 /* ApiServiceViajes.swift in Sources */,
 				9E8AF0722374AE220092E289 /* SolicitudCardView.swift in Sources */,
 				EC550E682373D45F00BA11A2 /* Usuario.swift in Sources */,
 				9E8AF0772374B6B20092E289 /* SolicitudPrueba.swift in Sources */,
@@ -545,13 +549,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"UPCRideiOS/Preview Content\"";
+				DEVELOPMENT_TEAM = 8468U436K8;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = UPCRideiOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = UPC.UPCRideiOS;
+				PRODUCT_BUNDLE_IDENTIFIER = pe.edu.upc.UPCRideiOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -564,13 +569,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"UPCRideiOS/Preview Content\"";
+				DEVELOPMENT_TEAM = 8468U436K8;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = UPCRideiOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = UPC.UPCRideiOS;
+				PRODUCT_BUNDLE_IDENTIFIER = pe.edu.upc.UPCRideiOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

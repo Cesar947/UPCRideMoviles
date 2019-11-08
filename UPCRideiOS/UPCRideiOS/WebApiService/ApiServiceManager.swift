@@ -21,11 +21,11 @@ var didChange = PassthroughSubject<WebService, Never>()
 func registrarPasajero(usuario: Usuario){
 
 guard let url = URL(string:"http://ec2-52-15-215-247.us-east-2.compute.amazonaws.com:8080/usuarios/pasajero")
-else {return }
+else {return}
 
 
- var jsonViajes = [String:Any]()
- jsonViajes = [
+ var jsonUsuario = [String:Any]()
+ jsonUsuario = [
  "codigo": usuario.codigo,
  "correoUPC": usuario.correoUPC,
  "contraseña": usuario.contraseña,
@@ -37,7 +37,7 @@ else {return }
  "dni": usuario.dni
  ]
       
-      let finalBody = try! JSONSerialization.data(withJSONObject: jsonViajes)
+      let finalBody = try! JSONSerialization.data(withJSONObject: jsonUsuario)
       
       var request = URLRequest(url: url)
       request.httpMethod = "POST"
@@ -60,24 +60,6 @@ else {return }
 
 
 
-func obtenerViajes(completion: @escaping ([Viaje]) -> ()){
-    guard let url = URL(string:"http://ec2-52-15-215-247.us-east-2.compute.amazonaws.com:8080/viajes")
-    else {
-        fatalError("URL is not correct!")
-    }
-
-    var request = URLRequest(url: url)
-    request.httpMethod = "GET"
-    request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-    
-   /* URLSession.shared.dataTask(with: request) { (data, response, error)  in
-    
-    let viajes = try JSONDecoder().decode([Viaje].self, from: data!)
-    DispatchQueue.main.async{
-        completion(viajes)
-    }
-    }.resume()*/
-}
 
 
 }

@@ -9,7 +9,7 @@
 import Foundation
 
 struct Solicitud{
-    var id: Int
+    let id: Int
     var pasajero: Usuario
     var viaje: Viaje
     var mensaje: String
