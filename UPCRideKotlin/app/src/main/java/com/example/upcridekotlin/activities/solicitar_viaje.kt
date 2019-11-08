@@ -42,6 +42,9 @@ class solicitar_viaje : AppCompatActivity(), MapsFragment.OnFragmentInteractionL
     lateinit var btnSolicitarSolo : Button
 
     var solicitud : Solicitud?= null
+    var fragmento : MapsFragment?=null
+    var directionsRequestUrl: String = "https://maps.googleapis.com/maps/api/directions/json?origin=Toronto&destination=Montreal&key=AIzaSyAkSoqQ9v3nMJ9Tv60ZSwkZcgjoNkCGB"
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -70,8 +73,8 @@ class solicitar_viaje : AppCompatActivity(), MapsFragment.OnFragmentInteractionL
         Toast.makeText(this,miBundle.toString(),Toast.LENGTH_LONG).show()
 
 
-        var fragmento = MapsFragment()
-        supportFragmentManager.beginTransaction().replace(R.id.contenedor, fragmento).commit()
+        fragmento = MapsFragment()
+        supportFragmentManager.beginTransaction().replace(R.id.contenedor, fragmento!!).commit()
 
 
 
@@ -88,6 +91,15 @@ class solicitar_viaje : AppCompatActivity(), MapsFragment.OnFragmentInteractionL
             fecha = año + "-" + mes + "-" + dia
         }
 
+        //Google Maps Direction Request
+        var latOrigin = "-12.333"
+        var lngOrigin = "-77.5366"
+        var latDestiny = "-12.0765"
+        var lngDestiny = "-77.0992"
+
+
+
+        //////////////////////////
 
         btnSolicitarSolo.setOnClickListener {
             val intent = Intent(this, mActivity::class.java)
@@ -109,7 +121,9 @@ class solicitar_viaje : AppCompatActivity(), MapsFragment.OnFragmentInteractionL
     {
 
         solicitud = Solicitud(null,null,etMensajeSol.text.toString(),"Pendiente","av",
-            12.00,12.00,fecha )
+            fragmento?.getLat()!!, fragmento!!.getLng()!!,fecha )
+
+
 
         usuarioApiService!!.getUsuarioById(idPasajero).enqueue(object : Callback<Usuario> {
             override fun onResponse(call: Call<Usuario>?, response: Response<Usuario>?) {
