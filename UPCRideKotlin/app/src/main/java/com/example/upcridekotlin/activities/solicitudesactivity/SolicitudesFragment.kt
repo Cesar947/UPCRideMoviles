@@ -101,7 +101,7 @@ class SolicitudesFragment : Fragment() {
                             {
                                 solicitudes.add(
                                     SolicitudModelo(
-                                        item.pasajero!!.nombres!!,
+                                        item.pasajero!!.nombres +" "+ item.pasajero!!.apellidos,
                                         item.fecha!!,
                                         item.mensaje!!,
                                         R.drawable.user))
