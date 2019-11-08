@@ -9,49 +9,63 @@
 import SwiftUI
 
 struct RegistrarUsuarioForm: View {
-   
-    @ObservedObject var usuario = Usuario()
 
+ @State var codigo: String = ""
+ @State var correoUPC: String = ""
+ @State var contrasena: String = ""
+ @State var dni: String = ""
+ @State var nombres: String = ""
+ @State var apellidos: String = ""
+ @State var telefono: String = ""
+ @State var distrito: String = ""
+ @State var sede: Int = 0
+ var manager = WebService()
     
+ var sedes: [String] = ["-", "San Miguel", "San Isidro", "Monterrico", "Villa"]
+ 
     var body: some View {
         
-        Text("Hello World")
- /*
+
         NavigationView{
         Form{
             Section(header: Text("Datos Alumno")){
-                TextField("Codigo", text: $usuario.codigo)
-                TextField("Correo UPC", text: $usuario.correoUPC)
-                SecureField("Contraseña", text: $usuario.contraseña)
+                TextField("Codigo", text: self.$codigo)
+                TextField("Correo UPC", text: self.$correoUPC)
+                SecureField("Contraseña", text: self.$contrasena)
                 
             }
             
             Section(header: Text("Datos Personales")){
-                TextField("Nombres", text: $usuario.nombres)
-                TextField("Apellidos", text: $usuario.apellidos)
-                TextField("DNI", text: $usuario.dni)
-                TextField("Telefono", text: $usuario.telefono)
+                TextField("Nombres", text: self.$nombres)
+                TextField("Apellidos", text: self.$apellidos)
+                TextField("DNI", text: self.$dni)
+                TextField("Telefono", text: self.$telefono)
             }
         
             
             Section (header: Text("Datos Ubicacion")){
-                VStack{
-                    
+               
+                TextField("Distrito donde vive", text: self.$distrito)
+                
+            }
+            Section (header: Text("Sede")){
+                    Picker(selection: self.$sede, label: Text("Sede UPC")) {
 
-                     TextField("Distrito donde vive", text: $usuario.codigo)
-                    
-                    Picker(selection: $usuario.sedeIdentificador, label: Text("Sede UPC")) {
-
-                        ForEach(0 ..< usuario.sedes.count){
-                            Text(self.usuario.sedes[$0]).tag($0)
+                        ForEach(0 ..< sedes.count){
+                            Text(self.sedes[$0]).tag($0)
                         }
                     }
-                    
-                }
             }
+                    
+                
+            
             
 
-            Button(action: {print("Usuario Registrado")} ) {
+            Button(action: {
+                var pasajero = self.nuevoPasajero(codigo: self.codigo, correoUPC: self.correoUPC, contraseña: self.contrasena, dni: self.dni, nombres: self.nombres, apellidos: self.apellidos, telefono: self.telefono, distrito: self.distrito, sede: self.sedes[self.sede])
+                
+                self.manager.registrarPasajero(usuario: pasajero)
+            } ) {
                 Text("Registrar")
                     
             }.padding(.leading, 300)
@@ -60,11 +74,29 @@ struct RegistrarUsuarioForm: View {
         .navigationBarTitle(Text("Registro"))
         }
 
-*/
+
     }
  
+    func nuevoPasajero(
+    codigo: String,
+    correoUPC: String,
+    contraseña: String,
+    dni: String,
+    nombres: String,
+    apellidos: String,
+    telefono: String,
+    distrito: String,
+    sede : String) -> Usuario{
+        
+        var usuario = Usuario(codigo: codigo, correoUPC: correoUPC,
+                                       contraseña: contraseña, dni: dni, nombres: nombres,
+                                       apellidos: apellidos, telefono: telefono, distrito: distrito,
+                                       sede: sede)
+            
+         return usuario
+            
+        }
 }
-
 
 
 struct RegistrarUsuarioForm_Previews: PreviewProvider {

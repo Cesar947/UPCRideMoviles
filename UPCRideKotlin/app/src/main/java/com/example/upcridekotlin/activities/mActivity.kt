@@ -100,7 +100,7 @@ class mActivity : AppCompatActivity() {
             true
         }
 
-        filtrarBtn!!.setOnClickListener {
+       /* filtrarBtn!!.setOnClickListener {
 
             if(filtrando == 0) {
                 supportFragmentManager.beginTransaction()
@@ -111,7 +111,7 @@ class mActivity : AppCompatActivity() {
             else{
                 filtrando = 0
             }
-        }
+        }*/
 
 
     }
