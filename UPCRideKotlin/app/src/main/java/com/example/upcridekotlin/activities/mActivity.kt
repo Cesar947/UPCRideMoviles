@@ -5,6 +5,7 @@ import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
 
 import android.os.Bundle
+import android.util.Log
 import android.widget.*
 
 
@@ -12,8 +13,17 @@ import com.example.upcridekotlin.R
 import com.example.upcridekotlin.activities.homefragmentactivity.HomeFragment
 import com.example.upcridekotlin.activities.solicitudesactivity.SolicitudesFragment
 import com.example.upcridekotlin.activities.viajeshistorialactivity.ViajesFragmentHistorial
+import com.example.upcridekotlin.interfaces.GoogleMapsApiService
+import com.example.upcridekotlin.interfaces.ViajeApiService
+import com.example.upcridekotlin.model.Viaje
 
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.gson.Gson
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
+import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
 
 
 class mActivity : AppCompatActivity() {
@@ -24,6 +34,8 @@ class mActivity : AppCompatActivity() {
     private var txttoolbar: TextView? = null
 
     private var mainNav: BottomNavigationView? = null
+    private var ApiGoogle : GoogleMapsApiService? = null
+
 
     private var mainFrame: FrameLayout? = null
     private var homeFragment: HomeFragment? = null
@@ -38,8 +50,31 @@ class mActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        filtrando = 0
+        val retrofit: Retrofit = Retrofit.Builder()
+            .baseUrl("https://maps.googleapis.com/maps/api/directions/")
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
 
+
+        ApiGoogle = retrofit.create(GoogleMapsApiService::class.java)
+
+
+        ApiGoogle!!.getDirections2("-12.067311,-77.130092","-12.103745,-76.963401","AIzaSyAkSoqQ9v3nMJ9Tv60ZSwkZcgjoNkCGBsw").enqueue(object: Callback<Any> {
+            override fun onFailure(call: Call<Any>, t: Throwable) {
+                t?.printStackTrace()
+            }
+
+            override fun onResponse(call: Call<Any>, response: Response<Any>) {
+
+                Log.i("yo pe", response.body().toString())
+            }
+
+        })
+
+
+
+
+        filtrando = 0
         txttoolbar = findViewById(R.id.toolbartxt)
         homeFragment = HomeFragment()
         filtrarFragment = FiltrarFragment()
