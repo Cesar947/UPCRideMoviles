@@ -79,7 +79,7 @@ class ViajesFragmentHistorial : Fragment() {
 
         val viajes = ArrayList<ViajeModelo>()
 
-        ViajeService.getViajesPorConductor(6).enqueue(object: Callback<List<Viaje>> {
+        ViajeService.getViajesPorConductor(idUsuario).enqueue(object: Callback<List<Viaje>> {
             override fun onResponse(call: Call<List<Viaje>>, response: Response<List<Viaje>>) {
                 val viajesaux = response.body()
 

@@ -2,6 +2,7 @@ package com.example.upcridekotlin.activities
 
 
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.util.Log
 
@@ -81,6 +82,8 @@ class PerfilFragment : Fragment() {
 
         btnImgSignOut!!.setOnClickListener{
             val intent = Intent(activity, Bienvenido::class.java)
+
+            context!!.getSharedPreferences("cuenta",0).edit().clear().commit()
             startActivity(intent)
         }
 

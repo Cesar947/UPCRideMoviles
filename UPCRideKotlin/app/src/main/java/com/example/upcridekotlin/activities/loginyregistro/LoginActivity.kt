@@ -34,7 +34,6 @@ class LoginActivity : AppCompatActivity() {
     var btnIngresar : Button? = null
     var id = 0
     var rol = 'c'
-    var existe :Boolean = false
 
     val PREFS_FILENAME = "cuenta"
 
@@ -57,8 +56,9 @@ class LoginActivity : AppCompatActivity() {
         etContraseña = findViewById((R.id.etContraseñaLogin))
         btnIngresar = findViewById(R.id.btnIngresarLogin)
 
-        var email = prefs.getString("Email","No hay dato")
-        var pass = prefs.getString("Contraseña","No hay dato")
+        var email = prefs.getString("Email","")
+        var pass = prefs.getString("Contraseña","")
+        var idUser = prefs.getInt("idUser",0)
         etCorreo!!.editText!!.setText(email)
         etContraseña!!.editText!!.setText(pass)
 
@@ -90,8 +90,12 @@ class LoginActivity : AppCompatActivity() {
 
 
                             var editor = prefs.edit()
+
                             editor.putString("Email",etCorreo!!.editText!!.text.toString())
                             editor.putString("Contraseña",etContraseña!!.editText!!.text.toString())
+
+                            editor.putInt("idUser",item!!.id)
+                            editor.putString("rol",item!!.rol.toString())
                             editor.commit()
 
 
@@ -105,6 +109,7 @@ class LoginActivity : AppCompatActivity() {
                         else
                         {
                             Log.i(TAG_LOGS, Gson().toJson(usuarios))
+                            if(item == usuarios.last())
                             Toast.makeText(this@LoginActivity,"Ingrese un correo y contraseña existente",Toast.LENGTH_SHORT).show();
                         }
                     }
