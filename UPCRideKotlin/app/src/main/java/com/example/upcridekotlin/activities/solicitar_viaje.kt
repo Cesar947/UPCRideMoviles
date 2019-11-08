@@ -55,14 +55,17 @@ class solicitar_viaje : AppCompatActivity(), MapsFragment.OnFragmentInteractionL
             .addConverterFactory(GsonConverterFactory.create())
             .build()
 
+
+        viajeApiService = retrofit.create(ViajeApiService::class.java)
+        usuarioApiService = retrofit.create(UsuarioApiService::class.java)
+
         tvConductorSol = findViewById(R.id.tvConductorTextoSol) as TextView
         tvPuntoPartidaSol = findViewById(R.id.tvPartidaTextoSol) as TextView
         tvPuntoDestinoSol = findViewById(R.id.tvDestinoTextoSol) as TextView
         etMensajeSol = findViewById(R.id.etMensaje)
         btnSolicitarSolo = findViewById(R.id.btnSolicitarViaje)
 
-        viajeApiService = retrofit.create(ViajeApiService::class.java)
-        usuarioApiService = retrofit.create(UsuarioApiService::class.java)
+
 
 
 
@@ -85,10 +88,23 @@ class solicitar_viaje : AppCompatActivity(), MapsFragment.OnFragmentInteractionL
 
 
 
-        if (LocalDateTime.now().monthValue < 10) {
-            fecha = año + "-0" + mes + "-" + dia
-        } else {
-            fecha = año + "-" + mes + "-" + dia
+        if(LocalDateTime.now().monthValue<10)
+        {
+            fecha = año+"-0"+mes+"-"+dia
+
+            if(LocalDateTime.now().dayOfMonth<10)
+            {
+                fecha = año+"-0"+mes+"-"+"0"+dia
+            }
+        }
+        else
+        {
+            fecha = año+"-"+mes+"-"+dia
+
+            if(LocalDateTime.now().dayOfMonth<10)
+            {
+                fecha = año+"-"+mes+"-"+"0"+dia
+            }
         }
 
         //Google Maps Direction Request

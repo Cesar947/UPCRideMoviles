@@ -94,7 +94,7 @@ values(3, 2, 'Quiero solicitar el viaje y quisiera que el punto de encuentro sea
 'Aeropuerto Jorge Chavez', -12.0240474, -77.1142247, '2019-10-23');
 /*ID 5 (Pasajero 3, Viaje 3 (C1, F, 3/4, 2019-10-23), Conf 'A')*/
  INSERT INTO solicitud(pasajero_id, viaje_id, mensaje, confirmacion_conductor, punto_encuentro, encuentro_latitud, encuentro_longitud, fecha )
-values(3, 3 'Quiero solicitar el viaje y quisiera que el punto de encuentro sea en el Aeropuerto Jorge Chávez', 'Aceptado',
+values(3, 3, 'Quiero solicitar el viaje y quisiera que el punto de encuentro sea en el Aeropuerto Jorge Chávez', 'Aceptado',
 'Aeropuerto Jorge Chavez', -12.0240474, -77.1142247, '2019-10-23');
 /*ID 6 (Pasajero 2, Viaje 3 (C1, F, 3/4, 2019-10-23), Conf 'A')*/
 INSERT INTO solicitud(pasajero_id, viaje_id, mensaje, confirmacion_conductor, punto_encuentro, encuentro_latitud, encuentro_longitud, fecha )
@@ -114,13 +114,13 @@ values(3, 4, 'Quiero solicitar el viaje y quisiera que el punto de encuentro sea
 */
 
 /*ID 1 (Pasajero 2, Viaje 1 (C1, F))*/
-INSERT INTO reseñas(cliente_id, viaje_id, valoracion, contenido) VALUES (2,1,5,'Que buen servicio');
+INSERT INTO resena(cliente_id, viaje_id, valoracion, contenido) VALUES (2,1,5,'Que buen servicio');
 /*ID 1 (Pasajero 3, Viaje 1 (C1, F))*/
-INSERT INTO reseñas(cliente_id, viaje_id, valoracion, contenido) VALUES (3,1,4,'El carro huele a limon :v');
+INSERT INTO resena(cliente_id, viaje_id, valoracion, contenido) VALUES (3,1,4,'El carro huele a limon :v');
 /*ID 1 (Pasajero 5, Viaje 1 (C1, F))*/
-INSERT INTO reseñas(cliente_id, viaje_id, valoracion, contenido) VALUES (5,1,5,'GAAAAAA');
+INSERT INTO resena(cliente_id, viaje_id, valoracion, contenido) VALUES (5,1,5,'GAAAAAA');
 /*ID 1 (Pasajero 3, Viaje 3 (C1, F))*/
-INSERT INTO reseñas(cliente_id, viaje_id, valoracion, contenido) VALUES (3,3,5,'Las llantas eran redondas');
+INSERT INTO resena(cliente_id, viaje_id, valoracion, contenido) VALUES (3,3,5,'Las llantas eran redondas');
 
 
 

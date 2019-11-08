@@ -1,19 +1,19 @@
 package com.example.upcridekotlin.activities
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
 
 import android.os.Bundle
-import android.util.Log
 import android.widget.*
 
 
 import com.example.upcridekotlin.R
+import com.example.upcridekotlin.activities.homefragmentactivity.HomeFragment
+import com.example.upcridekotlin.activities.solicitudesactivity.SolicitudesFragment
+import com.example.upcridekotlin.activities.viajeshistorialactivity.ViajesFragmentHistorial
 
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 
 class mActivity : AppCompatActivity() {
@@ -27,7 +27,7 @@ class mActivity : AppCompatActivity() {
 
     private var mainFrame: FrameLayout? = null
     private var homeFragment: HomeFragment? = null
-    private var viajesFragment: ViajesFragment? = null
+    private var viajesFragmentHistorial: ViajesFragmentHistorial? = null
     private var solicitudesFragment: SolicitudesFragment? = null
     private var perfilFragment: PerfilFragment? = null
     private var filtrarFragment: FiltrarFragment?= null
@@ -43,17 +43,21 @@ class mActivity : AppCompatActivity() {
         txttoolbar = findViewById(R.id.toolbartxt)
         homeFragment = HomeFragment()
         filtrarFragment = FiltrarFragment()
-        viajesFragment = ViajesFragment()
+        viajesFragmentHistorial = ViajesFragmentHistorial()
         solicitudesFragment = SolicitudesFragment()
         perfilFragment = PerfilFragment()
         mainNav = findViewById(R.id.main_nav)
         filtrarBtn = findViewById(R.id.filtrarBtn)
 
+
         var miBundle = this.intent.extras
         var id = miBundle!!.getInt("id")
         var rol = miBundle!!.getChar("rol")
+
         homeFragment!!.arguments = miBundle
         perfilFragment!!.arguments = miBundle
+        solicitudesFragment!!.arguments = miBundle
+        viajesFragmentHistorial!!.arguments = miBundle
 
 
         //Toast.makeText(this,id.toString(), Toast.LENGTH_LONG).show();
@@ -62,6 +66,11 @@ class mActivity : AppCompatActivity() {
         supportFragmentManager.beginTransaction().replace(R.id.main_frame, homeFragment!!).commit()
 
         setSupportActionBar(toolbar)
+
+
+
+
+
 
         mainNav?.setOnNavigationItemSelectedListener { item ->
             var selectedFragment: Fragment = homeFragment!!
@@ -81,17 +90,17 @@ class mActivity : AppCompatActivity() {
                 }
                 R.id.viajes -> {
                     txttoolbar?.text = "Viajes"
-                    selectedFragment = viajesFragment!!
+                    selectedFragment = viajesFragmentHistorial!!
                 }
             }
 
-            supportFragmentManager.beginTransaction().replace(R.id.main_frame, selectedFragment)
-                .commit()
+            //supportFragmentManager.beginTransaction().replace(R.id.main_frame, selectedFragment).addToBackStack(txttoolbar!!.text.toString()).commit()
+            supportFragmentManager.beginTransaction().replace(R.id.main_frame, selectedFragment).commit()
 
             true
         }
 
-        filtrarBtn!!.setOnClickListener {
+       /* filtrarBtn!!.setOnClickListener {
 
             if(filtrando == 0) {
                 supportFragmentManager.beginTransaction()
@@ -102,8 +111,17 @@ class mActivity : AppCompatActivity() {
             else{
                 filtrando = 0
             }
-        }
+        }*/
 
+
+    }
+
+    override fun onBackPressed()
+    {
+        txttoolbar?.text = "Inicio"
+        supportFragmentManager.beginTransaction().replace(R.id.main_frame, homeFragment!!).commit()
+
+        mainNav!!.menu.findItem(R.id.inicio).isChecked=true;
 
     }
 
