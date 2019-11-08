@@ -111,7 +111,7 @@
                 android:orientation="horizontal">
 
                 <ImageButton
-                    android:id="@+id/button1000"
+                    android:id="@+id/btnAceptarSolicitud"
                     android:layout_width="match_parent"
                     android:layout_height="35dp"
 
@@ -121,7 +121,7 @@
                     tools:src="@drawable/check_fill" />
 
                 <ImageButton
-                    android:id="@+id/button1001"
+                    android:id="@+id/btnRechazarSolicitud"
                     android:layout_width="match_parent"
                     android:layout_height="35dp"
 

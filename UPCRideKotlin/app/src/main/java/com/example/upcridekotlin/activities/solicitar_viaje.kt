@@ -92,7 +92,7 @@ class solicitar_viaje : AppCompatActivity(), MapsFragment.OnFragmentInteractionL
 
 
         //Obtener fechas para adjuntarlas a la solicitud (fecha actual)
-        var dia: String = LocalDateTime.now().dayOfWeek.toString();
+        var dia: String = LocalDateTime.now().dayOfMonth.toString();
         var mes: String = LocalDateTime.now().monthValue.toString();
         var año: String = LocalDateTime.now().year.toString();
 
