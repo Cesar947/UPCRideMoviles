@@ -94,9 +94,12 @@ class HomeFragment : Fragment() {
             override fun onResponse(call: Call<List<Viaje>>, response: Response<List<Viaje>>) {
                 val viajesaux = response.body()
 
+                var sorted = viajesaux!!.sortedWith(compareByDescending ({it.id}))
+
+
                 adaptadorViaje =
                     RecyclerViewAdaptador(
-                        viajesaux!!
+                        sorted!!
                     )
 
                 adaptadorViaje!!.setOnClickListener( object : View.OnClickListener{
