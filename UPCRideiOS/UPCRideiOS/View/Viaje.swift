@@ -10,7 +10,7 @@ import Foundation
 
 
 
-class Viaje: Codable, Identifiable{
+class Viaje: Codable, Identifiable, ObservableObject{
 
     
     

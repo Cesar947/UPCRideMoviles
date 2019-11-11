@@ -11,7 +11,7 @@ import Combine
 
 class Usuario:  Identifiable, Codable{
     
-
+    
     let id: Int = 0
     var codigo: String = ""
     var correoUPC: String = ""
@@ -32,25 +32,17 @@ class Usuario:  Identifiable, Codable{
         
     }
     
-    init(codigo: String,
-            correoUPC: String,
-            contraseña: String,
-            dni: String,
-            nombres: String,
-            apellidos: String,
-            telefono: String,
-            distrito: String,
-            sede : String){
+    init(usuario: UsuarioPasajeroViewModel){
             
-            self.codigo = codigo
-            self.correoUPC = correoUPC
-            self.contraseña = contraseña
-            self.dni = codigo
-            self.nombres = codigo
-            self.apellidos = codigo
-            self.telefono = telefono
-            self.distrito = distrito
-            self.sede = sede
+        self.codigo = usuario.codigo
+            self.correoUPC = usuario.correoUPC
+            self.contraseña = usuario.contraseña
+            self.dni = usuario.dni
+            self.nombres = usuario.nombres
+            self.apellidos = usuario.apellidos
+            self.telefono = usuario.telefono
+            self.distrito = usuario.distrito
+            self.sede = usuario.sede
             
     }
     

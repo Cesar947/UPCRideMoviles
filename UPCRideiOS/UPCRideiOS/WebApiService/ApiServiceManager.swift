@@ -2,26 +2,15 @@ import Foundation
 import Combine
 
 
-struct ServerMessage: Decodable{
-    let status, message: String
-}
+
+class WebService{
 
 
-
-class WebService: ObservableObject{
-
-var didChange = PassthroughSubject<WebService, Never>()
-
-    var loLogroSeñor = false {
-        didSet{
-            didChange.send(self)
-        }
-    }
     
 func registrarPasajero(usuario: Usuario){
 
 guard let url = URL(string:"http://ec2-52-15-215-247.us-east-2.compute.amazonaws.com:8080/usuarios/pasajero")
-else {return}
+else { fatalError("URL inválido")}
 
 
  var jsonUsuario = [String:Any]()
@@ -45,18 +34,15 @@ else {return}
 
       request.setValue("application/json", forHTTPHeaderField: "Content-Type")
 
- URLSession.shared.dataTask(with: request) { (data, response, error) in
-    guard let data = data else {return}
-    let finalData = try! JSONDecoder().decode(ServerMessage.self, from: data)
-    if finalData.status == "ok"{
-        DispatchQueue.main.async {
-            self.loLogroSeñor = true
-        }
+ URLSession.shared.uploadTask(with: request, from: finalBody) { (data, response, error) in
+   
+   if let data = data, let dataString = String(data: data, encoding: .utf8) {
+        print(dataString)
     }
     
  }.resume()
 
 }
-
+    
 
 }

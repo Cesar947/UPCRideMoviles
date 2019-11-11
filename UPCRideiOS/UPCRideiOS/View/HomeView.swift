@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct HomeView: View {
-    @State var viajeServiceManager = ViajeService()
+    @ObservedObject var viajeServiceManager = ViajeService()
     //@State private var viajes = [ViajePrueba]()
     
     var body: some View {
