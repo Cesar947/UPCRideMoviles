@@ -10,7 +10,8 @@ import Foundation
 
 class UsuarioPasajeroViewModel: ObservableObject {
     
-   
+   var id: Int = 0
+    
    @Published var codigo: String = ""
    @Published var correoUPC: String = ""
    @Published var contraseña: String = ""

@@ -34,7 +34,7 @@ else { fatalError("URL inválido")}
 
       request.setValue("application/json", forHTTPHeaderField: "Content-Type")
 
- URLSession.shared.uploadTask(with: request, from: finalBody) { (data, response, error) in
+ URLSession.shared.uploadTask(with: request, from: finalBody) { (data, _, _) in
    
    if let data = data, let dataString = String(data: data, encoding: .utf8) {
         print(dataString)

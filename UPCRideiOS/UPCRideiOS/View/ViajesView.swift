@@ -7,13 +7,16 @@
 //
 
 import SwiftUI
-
+ 
 struct ViajesView: View {
     
-    let viajes = viajesPrueba
+ /*  let viajes = viajesPrueba */
+ 
+ 
+ 
     
     var body: some View {
-        NavigationView{
+       /* NavigationView{
             ScrollView() {
                 VStack(spacing: 5){
                     ForEach(self.viajes) {viajen in
@@ -23,7 +26,10 @@ struct ViajesView: View {
             }
             .navigationBarTitle(Text("Viajes"))
         }
+    }*/
+        Text("Hello World")
     }
+    
 }
 
 struct ViajesView_Previews: PreviewProvider {
@@ -31,3 +37,4 @@ struct ViajesView_Previews: PreviewProvider {
         ViajesView()
     }
 }
+

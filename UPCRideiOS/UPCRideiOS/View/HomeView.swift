@@ -9,15 +9,20 @@
 import SwiftUI
 
 struct HomeView: View {
-    @ObservedObject var viajeServiceManager = ViajeService()
-    //@State private var viajes = [ViajePrueba]()
+   @ObservedObject var networkManager = ViajeService()
+
+    init(){
+        networkManager.listarViajes()
+        
+    }
     
     var body: some View {
         NavigationView{
         ScrollView() {
             VStack(spacing: 20){
-                ForEach(self.viajeServiceManager.viajes) {viajen in
-                    ViajeCardView( nombre: viajen.conductor.nombres , fecha: viajen.fecha, descripcion: viajen.descripcion, puntoPartida: viajen.puntoPartida, puntoDestino: viajen.puntoDestino)
+                List(networkManager.viajes, id: \.id){ viaje in
+                    ViajeCardView(nombre: viaje.conductor.nombres, fecha: viaje.fecha, descripcion: viaje.descripcion, puntoPartida: viaje.puntoPartida, puntoDestino: viaje.puntoDestino)
+                    
                 }
             }
         }
@@ -35,3 +40,4 @@ struct HomeView_Previews: PreviewProvider {
         HomeView()
     }
 }
+

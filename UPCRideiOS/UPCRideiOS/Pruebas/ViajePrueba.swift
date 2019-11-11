@@ -8,19 +8,59 @@
 
 import Foundation
 
-struct ViajePrueba : Identifiable {
+
+
+class ViajeHomeViewModel : ObservableObject {
     
-    var id = UUID()
+    @Published var viajes = [ViajeModel]()
+
+    init(){
+        
+        
+        
+          
+            
+        }
+    }
+
+
+
+class ViajeModel{
     
-    var nombre = "Brian Miramira"
-    var fecha = "2019-06-11"
-    var descripcion = "Viaje de San Martin de Miradflores a San Juan de Burga"
-    var puntoPartida = "Casita"
-    var puntoDestino = "UPC San Miguel"
+    
+    var viaje: Viaje
+    
+    
+    init(viaje: Viaje){
+        self.viaje = viaje
+        
+    }
+    
+    var id: Int{
+        return self.viaje.id
+    }
+    
+    var nombre: String{
+        return self.viaje.conductor.nombres + self.viaje.conductor.apellidos
+    }
+    var fecha: String{
+        return self.viaje.fecha
+    }
+
+    var descripcion: String{
+        return self.viaje.descripcion
+    }
+    
+    var puntoPartida: String{
+        return self.viaje.puntoPartida
+    }
+    
+  
+    var puntoDestino: String{
+        return self.viaje.puntoDestino
+    }
+   
+    
 }
 
-let viajesPrueba: [ViajePrueba] = [
-    .init(),
-    .init(),
-    .init()
-]
+
