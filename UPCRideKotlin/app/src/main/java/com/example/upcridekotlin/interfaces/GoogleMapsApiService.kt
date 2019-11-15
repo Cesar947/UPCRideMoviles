@@ -2,6 +2,7 @@ package com.example.upcridekotlin.interfaces
 
 import com.example.upcridekotlin.model.Usuario
 import com.example.upcridekotlin.model.Viaje
+import org.json.JSONObject
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Path
@@ -17,5 +18,5 @@ interface GoogleMapsApiService {
 
 
     @GET("json")
-    fun getDirections2(@Query("origin") originLatLng: String, @Query("destination") destinationLatLng: String, @Query("key")key:String): Call<Any>
+    fun getDirections2(@Query("origin") originLatLng: String, @Query("destination") destinationLatLng: String, @Query("key")key:String): Call<JSONObject>
 }

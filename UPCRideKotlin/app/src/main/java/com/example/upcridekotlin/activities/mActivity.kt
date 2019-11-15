@@ -59,7 +59,7 @@ class mActivity : AppCompatActivity() {
         ApiGoogle = retrofit.create(GoogleMapsApiService::class.java)
 
 
-        ApiGoogle!!.getDirections2("-12.067311,-77.130092","-12.103745,-76.963401","AIzaSyAkSoqQ9v3nMJ9Tv60ZSwkZcgjoNkCGBsw").enqueue(object: Callback<Any> {
+        /*ApiGoogle!!.getDirections2("-12.067311,-77.130092","-12.103745,-76.963401","AIzaSyAkSoqQ9v3nMJ9Tv60ZSwkZcgjoNkCGBsw").enqueue(object: Callback<Any> {
             override fun onFailure(call: Call<Any>, t: Throwable) {
                 t?.printStackTrace()
             }
@@ -69,7 +69,7 @@ class mActivity : AppCompatActivity() {
                 Log.i("yo pe", response.body().toString())
             }
 
-        })
+        })*/
 
 
 

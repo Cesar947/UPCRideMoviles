@@ -1,6 +1,7 @@
 package com.example.upcridekotlin.activities
 
 import android.content.Context
+import android.graphics.Color
 import android.location.Location
 import android.net.Uri
 import android.os.Bundle
@@ -15,6 +16,10 @@ import com.google.android.gms.maps.*
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.Marker
 import com.google.android.gms.maps.model.MarkerOptions
+import com.google.android.gms.maps.model.PolylineOptions
+import com.google.maps.android.PolyUtil
+import org.json.JSONArray
+import org.json.JSONObject
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -118,6 +123,45 @@ class MapsFragment : Fragment(), OnMapReadyCallback, GoogleMap.OnMapClickListene
         super.onDetach()
         listener = null
     }
+
+    fun trazarRuta(jso : JSONObject)
+    {
+        var jRoutes : JSONArray
+        var jLegs : JSONArray
+        var jSteps : JSONArray
+
+        try{
+            jRoutes = jso.getJSONArray("routes")
+            for (i in 0 until jRoutes.length())
+            {
+                jLegs = ((jRoutes.get(i))as JSONObject).getJSONArray("legs")
+
+                for (j in 0 until jLegs.length())
+                {
+                    jSteps = ((jLegs.get(j))as JSONObject).getJSONArray("steps")
+
+                    for (k in 0 until jSteps.length())
+                    {
+                        var poly = ""+(((jSteps.get(k)) as JSONObject).get("polyline") as JSONObject).get("points")
+
+                        var list : List<LatLng> = PolyUtil.decode(poly)
+
+
+                        map.addPolyline(PolylineOptions().addAll(list).color(Color.GRAY).width((5).toFloat()))
+
+                    }
+
+                }
+
+            }
+        }
+        finally{
+
+        }
+
+
+    }
+
 
     /**
      * This interface must be implemented by activities that contain this

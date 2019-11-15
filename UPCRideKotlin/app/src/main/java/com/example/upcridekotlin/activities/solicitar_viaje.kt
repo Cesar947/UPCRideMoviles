@@ -12,13 +12,20 @@ import android.widget.TextView
 import android.widget.Toast
 
 import com.example.upcridekotlin.R
+import com.example.upcridekotlin.interfaces.GoogleMapsApiService
 import com.example.upcridekotlin.interfaces.UsuarioApiService
 import com.example.upcridekotlin.interfaces.ViajeApiService
 import com.example.upcridekotlin.model.Solicitud
 import com.example.upcridekotlin.model.Usuario
 import com.example.upcridekotlin.model.Viaje
+import com.google.android.gms.common.api.Api
+import com.google.android.gms.maps.model.LatLng
 import com.google.gson.Gson
+import com.google.gson.JsonObject
+import com.google.maps.android.PolyUtil
 import kotlinx.android.synthetic.main.activity_publicar_viaje.*
+import org.json.JSONArray
+import org.json.JSONObject
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -26,6 +33,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.time.LocalDateTime
 import java.util.*
+import kotlin.collections.ArrayList
 
 class solicitar_viaje : AppCompatActivity(), MapsFragment.OnFragmentInteractionListener {
 
@@ -41,6 +49,8 @@ class solicitar_viaje : AppCompatActivity(), MapsFragment.OnFragmentInteractionL
     lateinit var usuarioApiService: UsuarioApiService
     lateinit var btnSolicitarSolo : Button
 
+    lateinit var ApiGoogle:GoogleMapsApiService
+
     var solicitud : Solicitud?= null
     var fragmento : MapsFragment?=null
     var directionsRequestUrl: String = "https://maps.googleapis.com/maps/api/directions/json?origin=Toronto&destination=Montreal&key=AIzaSyAkSoqQ9v3nMJ9Tv60ZSwkZcgjoNkCGB"
@@ -54,6 +64,17 @@ class solicitar_viaje : AppCompatActivity(), MapsFragment.OnFragmentInteractionL
             .baseUrl("http://ec2-52-15-215-247.us-east-2.compute.amazonaws.com:8080/")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
+
+        val retrofitGM: Retrofit = Retrofit.Builder()
+            .baseUrl("https://maps.googleapis.com/maps/api/directions/")
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
+
+
+        ApiGoogle = retrofitGM.create(GoogleMapsApiService::class.java)
+
+
+
 
 
         viajeApiService = retrofit.create(ViajeApiService::class.java)
@@ -91,9 +112,23 @@ class solicitar_viaje : AppCompatActivity(), MapsFragment.OnFragmentInteractionL
 
 
 
+       /* ApiGoogle!!.getDirections2("-12.067311,-77.130092","-12.103745,-76.963401","AIzaSyAkSoqQ9v3nMJ9Tv60ZSwkZcgjoNkCGBsw").enqueue(object: Callback<JSONObject> {
+            override fun onFailure(call: Call<JSONObject>, t: Throwable) {
+                t?.printStackTrace()
+            }
+
+            override fun onResponse(call: Call<JSONObject>, response: Response<JSONObject>) {
+
+                fragmento!!.trazarRuta(response.body()!!)
+
+                    Log.i("yo pe", response.body().toString())
+            }
+
+        })*/
         var dia: String = LocalDateTime.now().dayOfMonth.toString();
         var mes: String = LocalDateTime.now().monthValue.toString();
         var año: String = LocalDateTime.now().year.toString();
+
         if(LocalDateTime.now().monthValue<10)
         {
             fecha = año+"-0"+mes+"-"+dia
@@ -194,4 +229,16 @@ class solicitar_viaje : AppCompatActivity(), MapsFragment.OnFragmentInteractionL
     }
 
 
+
+
 }
+
+
+
+
+
+
+
+
+
+
