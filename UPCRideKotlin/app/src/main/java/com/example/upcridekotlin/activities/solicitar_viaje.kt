@@ -91,15 +91,9 @@ class solicitar_viaje : AppCompatActivity(), MapsFragment.OnFragmentInteractionL
 
 
 
-        //Obtener fechas para adjuntarlas a la solicitud (fecha actual)
         var dia: String = LocalDateTime.now().dayOfMonth.toString();
         var mes: String = LocalDateTime.now().monthValue.toString();
         var año: String = LocalDateTime.now().year.toString();
-
-
-
-
-        //Formatear la fecha
         if(LocalDateTime.now().monthValue<10)
         {
             fecha = año+"-0"+mes+"-"+dia
@@ -130,8 +124,9 @@ class solicitar_viaje : AppCompatActivity(), MapsFragment.OnFragmentInteractionL
 
         //btnSolicitarSolo: Solicita un viaje
         btnSolicitarSolo.setOnClickListener {
-            val intent = Intent(this, mActivity::class.java)
+
             Solicitar(idViaje,idPasajero)
+            val intent = Intent(this, mActivity::class.java)
             val bundle = Bundle()
             bundle.putInt("id",idPasajero)
             bundle.putChar("rol",rol)
@@ -169,18 +164,23 @@ class solicitar_viaje : AppCompatActivity(), MapsFragment.OnFragmentInteractionL
                 Log.i("yo pe", Gson().toJson(solicitud))
 
 
-                viajeApiService.solicitarViaje(idViaje,solicitud).enqueue(object : Callback<Solicitud> {
+                viajeApiService!!.solicitarViaje(idViaje,solicitud ).enqueue(object : Callback<Solicitud> {
                     override fun onResponse(call: Call<Solicitud>?, response: Response<Solicitud>?) {
-                        var solicitud2 = response?.body()
 
-                        Log.i("yo pe", Gson().toJson(solicitud2))
+                        val solicitud = response?.body()
+
+
+                        Log.i("la soli", Gson().toJson(solicitud))
 
 
                     }
                     override fun onFailure(call: Call<Solicitud>?, t: Throwable?) {
                         t?.printStackTrace()
 
-                    } })
+                    }
+                })
+
+
 
 
             }

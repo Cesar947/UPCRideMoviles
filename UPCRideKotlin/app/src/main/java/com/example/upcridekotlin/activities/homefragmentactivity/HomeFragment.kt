@@ -105,10 +105,10 @@ class HomeFragment : Fragment() {
                 adaptadorViaje!!.setOnClickListener( object : View.OnClickListener{
                     override fun onClick(view:View){
 
-                        Toast.makeText(activity,viajesaux.get(recyclerViewViaje!!.getChildAdapterPosition(view)).id.toString(),Toast.LENGTH_LONG).show()
+                        Toast.makeText(activity,sorted.get(recyclerViewViaje!!.getChildAdapterPosition(view)).id.toString(),Toast.LENGTH_LONG).show()
                         var miBundleViaje = Bundle()
 
-                        miBundleViaje.putInt("idViaje",viajesaux.get(recyclerViewViaje!!.getChildAdapterPosition(view)).id)
+                        miBundleViaje.putInt("idViaje",sorted.get(recyclerViewViaje!!.getChildAdapterPosition(view)).id)
                         miBundleViaje.putInt("idPasajero",id)
                         miBundleViaje.putChar("rol",rol)
                         viajeDetalleFragment!!.arguments = miBundleViaje
