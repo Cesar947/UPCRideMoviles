@@ -112,19 +112,21 @@ class solicitar_viaje : AppCompatActivity(), MapsFragment.OnFragmentInteractionL
 
 
 
-       /* ApiGoogle!!.getDirections2("-12.067311,-77.130092","-12.103745,-76.963401","AIzaSyAkSoqQ9v3nMJ9Tv60ZSwkZcgjoNkCGBsw").enqueue(object: Callback<JSONObject> {
-            override fun onFailure(call: Call<JSONObject>, t: Throwable) {
+        ApiGoogle!!.getDirections2("-12.077007,20-77.093124","-12.078541,-77.080264","AIzaSyAkSoqQ9v3nMJ9Tv60ZSwkZcgjoNkCGBsw").enqueue(object: Callback<String> {
+            override fun onFailure(call: Call<String>, t: Throwable) {
                 t?.printStackTrace()
             }
 
-            override fun onResponse(call: Call<JSONObject>, response: Response<JSONObject>) {
+            override fun onResponse(call: Call<String>, response: Response<String>) {
 
-                fragmento!!.trazarRuta(response.body()!!)
+                var jso = response.body() as JSONObject
+                Log.i("el json ahhhhhh", jso.toString())
+                fragmento!!.trazarRuta(jso)
 
-                    Log.i("yo pe", response.body().toString())
+
             }
 
-        })*/
+        })
         var dia: String = LocalDateTime.now().dayOfMonth.toString();
         var mes: String = LocalDateTime.now().monthValue.toString();
         var año: String = LocalDateTime.now().year.toString();

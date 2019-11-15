@@ -19,6 +19,7 @@ import com.example.upcridekotlin.model.Viaje
 
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.gson.Gson
+import org.json.JSONObject
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -59,17 +60,18 @@ class mActivity : AppCompatActivity() {
         ApiGoogle = retrofit.create(GoogleMapsApiService::class.java)
 
 
-        /*ApiGoogle!!.getDirections2("-12.067311,-77.130092","-12.103745,-76.963401","AIzaSyAkSoqQ9v3nMJ9Tv60ZSwkZcgjoNkCGBsw").enqueue(object: Callback<Any> {
+        ApiGoogle!!.getDirections("-12.067311,-77.130092","-12.103745,-76.963401","AIzaSyAkSoqQ9v3nMJ9Tv60ZSwkZcgjoNkCGBsw").enqueue(object: Callback<Any> {
             override fun onFailure(call: Call<Any>, t: Throwable) {
                 t?.printStackTrace()
             }
 
             override fun onResponse(call: Call<Any>, response: Response<Any>) {
 
-                Log.i("yo pe", response.body().toString())
+                var jso = response.body()
+                Log.i("yo pe", jso.toString())
             }
 
-        })*/
+        })
 
 
 
