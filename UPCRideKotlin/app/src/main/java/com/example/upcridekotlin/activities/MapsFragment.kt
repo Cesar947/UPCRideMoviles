@@ -1,25 +1,31 @@
 package com.example.upcridekotlin.activities
 
 import android.content.Context
+import android.content.pm.PackageManager
 import android.graphics.Color
 import android.location.Location
 import android.net.Uri
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
 
 import com.example.upcridekotlin.R
 import com.google.android.gms.maps.*
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.Marker
 import com.google.android.gms.maps.model.MarkerOptions
+
 import com.google.android.gms.maps.model.PolylineOptions
+import com.google.gson.JsonArray
+import com.google.gson.JsonObject
 import com.google.maps.android.PolyUtil
-import org.json.JSONArray
-import org.json.JSONObject
+
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -95,11 +101,18 @@ class MapsFragment : Fragment(), OnMapReadyCallback, GoogleMap.OnMapClickListene
     override fun onMapReady(p0: GoogleMap?) {
 
         //p0.moveCamera(CameraUpdateFactory.newLatLng(LatLng()))
+
+
+        comprobarPermisos()
+
+
+
         map = p0!!
         map?.setOnMapClickListener(this)
         map.setMyLocationEnabled(true);
         map.setOnMyLocationButtonClickListener(this);
         map.setOnMyLocationClickListener(this);
+        map.moveCamera( CameraUpdateFactory.newLatLngZoom(LatLng(-12.077023, -77.093466) , 14.0f) )
 
     }
 
@@ -124,28 +137,30 @@ class MapsFragment : Fragment(), OnMapReadyCallback, GoogleMap.OnMapClickListene
         listener = null
     }
 
-    fun trazarRuta(jso : JSONObject)
+    fun trazarRuta(jso : JsonObject)
     {
-        var jRoutes : JSONArray
-        var jLegs : JSONArray
-        var jSteps : JSONArray
+        var jRoutes : JsonArray
+        var jLegs : JsonArray
+        var jSteps : JsonArray
 
         try{
-            jRoutes = jso.getJSONArray("routes")
-            for (i in 0 until jRoutes.length())
+
+            jRoutes = jso.getAsJsonArray("routes")
+            for (i in 0 until jRoutes.size())
             {
-                jLegs = ((jRoutes.get(i))as JSONObject).getJSONArray("legs")
+                jLegs = ((jRoutes.get(i))as JsonObject).getAsJsonArray("legs")
 
-                for (j in 0 until jLegs.length())
+                for (j in 0 until jLegs.size())
                 {
-                    jSteps = ((jLegs.get(j))as JSONObject).getJSONArray("steps")
+                    jSteps = ((jLegs.get(j))as JsonObject).getAsJsonArray("steps")
 
-                    for (k in 0 until jSteps.length())
+                    for (k in 0 until jSteps.size())
                     {
-                        var poly = ""+(((jSteps.get(k)) as JSONObject).get("polyline") as JSONObject).get("points")
+                        var polyline = ""+(((jSteps.get(k)) as JsonObject).get("polyline") as JsonObject).get("points")
 
-                        var list : List<LatLng> = PolyUtil.decode(poly)
+                        var list : List<LatLng> = PolyUtil.decode(polyline)
 
+                        Log.i("end",""+polyline);
 
                         map.addPolyline(PolylineOptions().addAll(list).color(Color.GRAY).width((5).toFloat()))
 
@@ -161,6 +176,54 @@ class MapsFragment : Fragment(), OnMapReadyCallback, GoogleMap.OnMapClickListene
 
 
     }
+
+    fun comprobarPermisos()
+    {
+        if (ContextCompat.checkSelfPermission(context!!,
+                android.Manifest.permission.ACCESS_FINE_LOCATION)
+            != PackageManager.PERMISSION_GRANTED  &&  ContextCompat.checkSelfPermission(context!!,
+                android.Manifest.permission.ACCESS_COARSE_LOCATION)
+            != PackageManager.PERMISSION_GRANTED ) {
+
+
+            if (ActivityCompat.shouldShowRequestPermissionRationale(activity!!,
+                    android.Manifest.permission.ACCESS_FINE_LOCATION)) {
+            } else {
+                ActivityCompat.requestPermissions(activity!!,
+                    arrayOf(android.Manifest.permission.ACCESS_FINE_LOCATION),1
+                    )
+            }
+
+            if (ActivityCompat.shouldShowRequestPermissionRationale(activity!!,
+                    android.Manifest.permission.ACCESS_COARSE_LOCATION)) {
+            } else {
+                ActivityCompat.requestPermissions(activity!!,
+                    arrayOf(android.Manifest.permission.ACCESS_COARSE_LOCATION),1
+                )
+            }
+
+        }
+    }
+
+
+    override fun onRequestPermissionsResult(requestCode: Int,
+                                            permissions: Array<String>, grantResults: IntArray) {
+        when (requestCode) {
+            1 -> {
+                if ((grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED)) {
+
+                } else {
+
+                }
+                return
+            }
+            else -> {
+            }
+        }
+    }
+
+
+
 
 
     /**

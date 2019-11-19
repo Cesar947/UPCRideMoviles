@@ -112,16 +112,16 @@ class solicitar_viaje : AppCompatActivity(), MapsFragment.OnFragmentInteractionL
 
 
 
-        ApiGoogle!!.getDirections2("-12.077007,20-77.093124","-12.078541,-77.080264","AIzaSyAkSoqQ9v3nMJ9Tv60ZSwkZcgjoNkCGBsw").enqueue(object: Callback<String> {
-            override fun onFailure(call: Call<String>, t: Throwable) {
+        ApiGoogle!!.getDirections("-12.067311,-77.130092","-12.103745,-76.963401","AIzaSyAkSoqQ9v3nMJ9Tv60ZSwkZcgjoNkCGBsw").enqueue(object: Callback<JsonObject> {
+            override fun onFailure(call: Call<JsonObject>, t: Throwable) {
                 t?.printStackTrace()
             }
 
-            override fun onResponse(call: Call<String>, response: Response<String>) {
+            override fun onResponse(call: Call<JsonObject>, response: Response<JsonObject>) {
 
-                var jso = response.body() as JSONObject
-                Log.i("el json ahhhhhh", jso.toString())
-                fragmento!!.trazarRuta(jso)
+               var jso = response.body()
+                Log.i("el json ahhhhhh", response.body().toString())
+                fragmento!!.trazarRuta (jso!!)
 
 
             }

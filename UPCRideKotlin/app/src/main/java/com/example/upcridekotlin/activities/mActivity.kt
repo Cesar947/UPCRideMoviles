@@ -51,29 +51,6 @@ class mActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val retrofit: Retrofit = Retrofit.Builder()
-            .baseUrl("https://maps.googleapis.com/maps/api/directions/")
-            .addConverterFactory(GsonConverterFactory.create())
-            .build()
-
-
-        ApiGoogle = retrofit.create(GoogleMapsApiService::class.java)
-
-
-        ApiGoogle!!.getDirections("-12.067311,-77.130092","-12.103745,-76.963401","AIzaSyAkSoqQ9v3nMJ9Tv60ZSwkZcgjoNkCGBsw").enqueue(object: Callback<Any> {
-            override fun onFailure(call: Call<Any>, t: Throwable) {
-                t?.printStackTrace()
-            }
-
-            override fun onResponse(call: Call<Any>, response: Response<Any>) {
-
-                var jso = response.body()
-                Log.i("yo pe", jso.toString())
-            }
-
-        })
-
-
 
 
         filtrando = 0
