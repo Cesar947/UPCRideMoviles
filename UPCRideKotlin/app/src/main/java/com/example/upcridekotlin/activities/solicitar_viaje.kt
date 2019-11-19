@@ -53,7 +53,7 @@ class solicitar_viaje : AppCompatActivity(), MapsFragment.OnFragmentInteractionL
 
     var solicitud : Solicitud?= null
     var fragmento : MapsFragment?=null
-    var directionsRequestUrl: String = "https://maps.googleapis.com/maps/api/directions/json?origin=Toronto&destination=Montreal&key=AIzaSyAkSoqQ9v3nMJ9Tv60ZSwkZcgjoNkCGB"
+    var directionsRequestUrl: String = "https://maps.googleapis.com/maps/api/directions/json?origin=-12.067311,-77.130092&destination=-12.103745,-76.963401&key=AIzaSyAkSoqQ9v3nMJ9Tv60ZSwkZcgjoNkCGBsw"
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -113,17 +113,16 @@ class solicitar_viaje : AppCompatActivity(), MapsFragment.OnFragmentInteractionL
 
 
         ApiGoogle!!.getDirections("-12.067311,-77.130092","-12.103745,-76.963401","AIzaSyAkSoqQ9v3nMJ9Tv60ZSwkZcgjoNkCGBsw").enqueue(object: Callback<JsonObject> {
-            override fun onFailure(call: Call<JsonObject>, t: Throwable) {
-                t?.printStackTrace()
-            }
+
 
             override fun onResponse(call: Call<JsonObject>, response: Response<JsonObject>) {
 
                var jso = response.body()
                 Log.i("el json ahhhhhh", response.body().toString())
-                fragmento!!.trazarRuta (jso!!)
-
-
+               fragmento!!.trazarRuta (jso!!)
+            }
+            override fun onFailure(call: Call<JsonObject>, t: Throwable) {
+                    t?.printStackTrace()
             }
 
         })

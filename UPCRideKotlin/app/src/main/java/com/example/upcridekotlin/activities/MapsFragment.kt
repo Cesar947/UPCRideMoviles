@@ -17,14 +17,18 @@ import androidx.core.content.ContextCompat
 
 import com.example.upcridekotlin.R
 import com.google.android.gms.maps.*
-import com.google.android.gms.maps.model.LatLng
-import com.google.android.gms.maps.model.Marker
-import com.google.android.gms.maps.model.MarkerOptions
+import com.google.android.gms.maps.model.*
 
-import com.google.android.gms.maps.model.PolylineOptions
 import com.google.gson.JsonArray
 import com.google.gson.JsonObject
 import com.google.maps.android.PolyUtil
+import com.google.android.gms.maps.model.LatLng
+import com.google.android.gms.maps.CameraUpdateFactory
+import com.google.android.gms.maps.model.PolylineOptions
+import com.google.android.gms.maps.model.Polyline
+
+
+
 
 
 // TODO: Rename parameter arguments, choose names that match
@@ -42,7 +46,15 @@ private const val ARG_PARAM2 = "param2"
  */
 class MapsFragment : Fragment(), OnMapReadyCallback, GoogleMap.OnMapClickListener,
     GoogleMap.OnMyLocationButtonClickListener,
-    GoogleMap.OnMyLocationClickListener{
+    GoogleMap.OnMyLocationClickListener,GoogleMap.OnPolygonClickListener,GoogleMap.OnPolylineClickListener{
+
+    override fun onPolygonClick(p0: Polygon?) {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
+
+    override fun onPolylineClick(p0: Polyline?) {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
 
     var marker: Marker? = null
 
@@ -106,13 +118,36 @@ class MapsFragment : Fragment(), OnMapReadyCallback, GoogleMap.OnMapClickListene
         comprobarPermisos()
 
 
-
         map = p0!!
+
+
         map?.setOnMapClickListener(this)
         map.setMyLocationEnabled(true);
         map.setOnMyLocationButtonClickListener(this);
         map.setOnMyLocationClickListener(this);
-        map.moveCamera( CameraUpdateFactory.newLatLngZoom(LatLng(-12.077023, -77.093466) , 14.0f) )
+        map?.setOnPolylineClickListener(this);
+        map?.setOnPolygonClickListener(this);
+
+       /*map.addPolyline(
+            PolylineOptions()
+                .clickable(true)
+                .add(
+                    LatLng(-35.016, 143.321),
+                    LatLng(-34.747, 145.592),
+                    LatLng(-34.364, 147.891),
+                    LatLng(-33.501, 150.217),
+                    LatLng(-32.306, 149.248),
+                    LatLng(-32.491, 147.309)
+                )
+        )*/
+
+        // Position the map's camera near Alice Springs in the center of Australia,
+        // and set the zoom factor so most of Australia shows on the screen.
+        //map.moveCamera(CameraUpdateFactory.newLatLngZoom(LatLng(-23.684, 133.903), 4f))
+
+
+
+        map.moveCamera( CameraUpdateFactory.newLatLngZoom(LatLng(-12.06731,-77.13084) , 16.0f) )
 
     }
 
@@ -156,13 +191,20 @@ class MapsFragment : Fragment(), OnMapReadyCallback, GoogleMap.OnMapClickListene
 
                     for (k in 0 until jSteps.size())
                     {
-                        var polyline = ""+(((jSteps.get(k)) as JsonObject).get("polyline") as JsonObject).get("points")
+                        var polyline = ((((jSteps.get(k) as JsonObject).get("polyline")) as JsonObject).get("points"))
 
-                        var list : List<LatLng> = PolyUtil.decode(polyline)
 
-                        Log.i("end",""+polyline);
+                        var aaa = polyline.asString
 
-                        map.addPolyline(PolylineOptions().addAll(list).color(Color.GRAY).width((5).toFloat()))
+                        var string :String = PolyUtil.decode(aaa).toString()
+                        var list : List<LatLng> = PolyUtil.decode(aaa)
+
+                        Log.i("string",string);
+                        Log.i("polylines",polyline.toString());
+                        Log.i("list",list.toString());
+
+                        var tamaño = 10.toFloat()
+                        map.addPolyline(PolylineOptions().addAll(list).color(Color.BLACK).width(tamaño))
 
                     }
 
@@ -226,17 +268,7 @@ class MapsFragment : Fragment(), OnMapReadyCallback, GoogleMap.OnMapClickListene
 
 
 
-    /**
-     * This interface must be implemented by activities that contain this
-     * fragment to allow an interaction in this fragment to be communicated
-     * to the activity and potentially other fragments contained in that
-     * activity.
-     *
-     *
-     * See the Android Training lesson [Communicating with Other Fragments]
-     * (http://developer.android.com/training/basics/fragments/communicating.html)
-     * for more information.
-     */
+
     interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
         fun onFragmentInteraction(uri: Uri)
