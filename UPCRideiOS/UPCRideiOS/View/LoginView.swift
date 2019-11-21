@@ -37,7 +37,7 @@ struct LoginView: View {
                          .foregroundColor(Color.blue)
                  }
                  
-                NavigationLink(destination: RegistrarUsuarioPasajeroForm().navigationBarTitle(Text(" "))
+                NavigationLink(destination: RegistrarUsuarioForm().navigationBarTitle(Text(" "))
                     .navigationBarHidden(true)) {
                  Text("Registrarme")
              }.padding()

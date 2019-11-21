@@ -1,5 +1,5 @@
 //
-//  ViajePrueba.swift
+//  ViajeViewModel.swift
 //  UPCRideiOS
 //
 //  Created by Sebastian on 11/6/19.
@@ -8,25 +8,9 @@
 
 import Foundation
 
-
-
-class ViajeHomeViewModel : ObservableObject {
+class ViajeViewModel: Identifiable{
     
-    @Published var viajes = [ViajeModel]()
-
-    init(){
-        
-        
-        
-          
-            
-        }
-    }
-
-
-
-class ViajeModel{
-    
+  
     
     var viaje: Viaje
     
@@ -40,7 +24,7 @@ class ViajeModel{
         return self.viaje.id
     }
     
-    var nombre: String{
+    var nombres: String{
         return self.viaje.conductor.nombres + self.viaje.conductor.apellidos
     }
     var fecha: String{

@@ -21,7 +21,7 @@ class Usuario:  Identifiable, Codable{
     var apellidos: String = ""
     var ubicacionLatitud: Double = 0.0
     var ubicacionLongitud: Double = 0.0
-    var facebook_id: String = ""
+    var facebookId: String = ""
     var telefono: String = ""
     var distrito: String = ""
     var rol: String = ""
@@ -43,7 +43,27 @@ class Usuario:  Identifiable, Codable{
             self.telefono = usuario.telefono
             self.distrito = usuario.distrito
             self.sede = usuario.sede
+            self.ubicacionLatitud = usuario.ubicacionLatitud
+            self.ubicacionLongitud = usuario.ubicacionLongitud
             
+    }
+    
+    init(usuario: UsuarioConductorViewModel){
+        self.codigo = usuario.codigo
+        self.correoUPC = usuario.correoUPC
+        self.contraseña = usuario.contraseña
+        self.dni = usuario.dni
+        self.nombres = usuario.nombres
+        self.apellidos = usuario.apellidos
+        self.telefono = usuario.telefono
+        self.distrito = usuario.distrito
+        self.sede = usuario.sede
+        
+        
+        self.ubicacionLatitud = usuario.ubicacionLatitud
+        self.ubicacionLongitud = usuario.ubicacionLongitud
+        self.facebookId = usuario.facebookId
+        self.licenciaConducir = usuario.licenciaConducir
     }
     
     

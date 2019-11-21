@@ -16,14 +16,14 @@
 		9E5428FC2373A7AA00B35C74 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E5428FA2373A7AA00B35C74 /* LaunchScreen.storyboard */; };
 		9E5429072373A7AB00B35C74 /* UPCRideiOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E5429062373A7AB00B35C74 /* UPCRideiOSTests.swift */; };
 		9E5429122373A7AB00B35C74 /* UPCRideiOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E5429112373A7AB00B35C74 /* UPCRideiOSUITests.swift */; };
-		9E8AF06A2373E1670092E289 /* ViajePrueba.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E8AF0692373E1670092E289 /* ViajePrueba.swift */; };
+		9E8AF06A2373E1670092E289 /* ViajeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E8AF0692373E1670092E289 /* ViajeViewModel.swift */; };
 		9E8AF06C23746F160092E289 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E8AF06B23746F160092E289 /* HomeView.swift */; };
 		9E8AF06E23747CE10092E289 /* ViajesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E8AF06D23747CE10092E289 /* ViajesView.swift */; };
 		9E8AF0702374A4410092E289 /* MiViajeCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E8AF06F2374A4410092E289 /* MiViajeCardView.swift */; };
 		9E8AF0722374AE220092E289 /* SolicitudCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E8AF0712374AE220092E289 /* SolicitudCardView.swift */; };
 		9E8AF0742374B16A0092E289 /* SolicitudesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E8AF0732374B16A0092E289 /* SolicitudesView.swift */; };
 		9E8AF0772374B6B20092E289 /* SolicitudPrueba.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E8AF0762374B6B20092E289 /* SolicitudPrueba.swift */; };
-		9E8AF0792374B6BF0092E289 /* UsuarioPrueba.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E8AF0782374B6BF0092E289 /* UsuarioPrueba.swift */; };
+		9E8AF0792374B6BF0092E289 /* UsuarioViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E8AF0782374B6BF0092E289 /* UsuarioViewModel.swift */; };
 		9E8AF07B2374B9EC0092E289 /* PerfilView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E8AF07A2374B9EC0092E289 /* PerfilView.swift */; };
 		9E8AF07D2374CE3F0092E289 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E8AF07C2374CE3F0092E289 /* MainView.swift */; };
 		9E8AF07F2374DA0A0092E289 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E8AF07E2374DA0A0092E289 /* LoginView.swift */; };
@@ -35,6 +35,9 @@
 		EC550E6C2373D47D00BA11A2 /* Resena.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC550E6B2373D47D00BA11A2 /* Resena.swift */; };
 		EC550E6E2373D95100BA11A2 /* RegistrarUsuarioForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC550E6D2373D95100BA11A2 /* RegistrarUsuarioForm.swift */; };
 		ECC770232374E6CC00DC78EC /* ApiServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC770222374E6CC00DC78EC /* ApiServiceManager.swift */; };
+		ECCC6AEA2385E08600BA1A72 /* ViajeListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCC6AE92385E08600BA1A72 /* ViajeListViewModel.swift */; };
+		ECCC6AEC2385EB8300BA1A72 /* ApiServiceUsuario.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCC6AEB2385EB8300BA1A72 /* ApiServiceUsuario.swift */; };
+		ECCC6AEE2385EE3400BA1A72 /* RegistrarUsuarioConductorForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCC6AED2385EE3400BA1A72 /* RegistrarUsuarioConductorForm.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,14 +73,14 @@
 		9E54290D2373A7AB00B35C74 /* UPCRideiOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UPCRideiOSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E5429112373A7AB00B35C74 /* UPCRideiOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UPCRideiOSUITests.swift; sourceTree = "<group>"; };
 		9E5429132373A7AB00B35C74 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9E8AF0692373E1670092E289 /* ViajePrueba.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViajePrueba.swift; sourceTree = "<group>"; };
+		9E8AF0692373E1670092E289 /* ViajeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViajeViewModel.swift; sourceTree = "<group>"; };
 		9E8AF06B23746F160092E289 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		9E8AF06D23747CE10092E289 /* ViajesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViajesView.swift; sourceTree = "<group>"; };
 		9E8AF06F2374A4410092E289 /* MiViajeCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiViajeCardView.swift; sourceTree = "<group>"; };
 		9E8AF0712374AE220092E289 /* SolicitudCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolicitudCardView.swift; sourceTree = "<group>"; };
 		9E8AF0732374B16A0092E289 /* SolicitudesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolicitudesView.swift; sourceTree = "<group>"; };
 		9E8AF0762374B6B20092E289 /* SolicitudPrueba.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolicitudPrueba.swift; sourceTree = "<group>"; };
-		9E8AF0782374B6BF0092E289 /* UsuarioPrueba.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsuarioPrueba.swift; sourceTree = "<group>"; };
+		9E8AF0782374B6BF0092E289 /* UsuarioViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsuarioViewModel.swift; sourceTree = "<group>"; };
 		9E8AF07A2374B9EC0092E289 /* PerfilView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerfilView.swift; sourceTree = "<group>"; };
 		9E8AF07C2374CE3F0092E289 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		9E8AF07E2374DA0A0092E289 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -89,6 +92,9 @@
 		EC550E6B2373D47D00BA11A2 /* Resena.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resena.swift; sourceTree = "<group>"; };
 		EC550E6D2373D95100BA11A2 /* RegistrarUsuarioForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrarUsuarioForm.swift; sourceTree = "<group>"; };
 		ECC770222374E6CC00DC78EC /* ApiServiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiServiceManager.swift; sourceTree = "<group>"; };
+		ECCC6AE92385E08600BA1A72 /* ViajeListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViajeListViewModel.swift; sourceTree = "<group>"; };
+		ECCC6AEB2385EB8300BA1A72 /* ApiServiceUsuario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiServiceUsuario.swift; sourceTree = "<group>"; };
+		ECCC6AED2385EE3400BA1A72 /* RegistrarUsuarioConductorForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrarUsuarioConductorForm.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +145,7 @@
 		9E5428EB2373A7A300B35C74 /* UPCRideiOS */ = {
 			isa = PBXGroup;
 			children = (
+				ECCC6AE82385E03200BA1A72 /* ViewModels */,
 				ECC770212374E69300DC78EC /* WebApiService */,
 				9E8AF0752374B6860092E289 /* Pruebas */,
 				9ED5BD462373BD2300126CC6 /* Model */,
@@ -185,9 +192,7 @@
 		9E8AF0752374B6860092E289 /* Pruebas */ = {
 			isa = PBXGroup;
 			children = (
-				9E8AF0692373E1670092E289 /* ViajePrueba.swift */,
 				9E8AF0762374B6B20092E289 /* SolicitudPrueba.swift */,
-				9E8AF0782374B6BF0092E289 /* UsuarioPrueba.swift */,
 			);
 			path = Pruebas;
 			sourceTree = "<group>";
@@ -216,6 +221,7 @@
 				9E8AF07A2374B9EC0092E289 /* PerfilView.swift */,
 				9E8AF07C2374CE3F0092E289 /* MainView.swift */,
 				9E8AF07E2374DA0A0092E289 /* LoginView.swift */,
+				ECCC6AED2385EE3400BA1A72 /* RegistrarUsuarioConductorForm.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -225,8 +231,19 @@
 			children = (
 				ECC770222374E6CC00DC78EC /* ApiServiceManager.swift */,
 				EC473DEF23753D9700784881 /* ApiServiceViajes.swift */,
+				ECCC6AEB2385EB8300BA1A72 /* ApiServiceUsuario.swift */,
 			);
 			path = WebApiService;
+			sourceTree = "<group>";
+		};
+		ECCC6AE82385E03200BA1A72 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				9E8AF0782374B6BF0092E289 /* UsuarioViewModel.swift */,
+				9E8AF0692373E1670092E289 /* ViajeViewModel.swift */,
+				ECCC6AE92385E08600BA1A72 /* ViajeListViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -362,6 +379,8 @@
 			files = (
 				ECC770232374E6CC00DC78EC /* ApiServiceManager.swift in Sources */,
 				EC550E6E2373D95100BA11A2 /* RegistrarUsuarioForm.swift in Sources */,
+				ECCC6AEC2385EB8300BA1A72 /* ApiServiceUsuario.swift in Sources */,
+				ECCC6AEA2385E08600BA1A72 /* ViajeListViewModel.swift in Sources */,
 				9ED5BD492373BD8700126CC6 /* ViajeCardView.swift in Sources */,
 				9E5428F22373A7A300B35C74 /* UPCRideiOS.xcdatamodeld in Sources */,
 				9E8AF0742374B16A0092E289 /* SolicitudesView.swift in Sources */,
@@ -371,9 +390,10 @@
 				EC550E682373D45F00BA11A2 /* Usuario.swift in Sources */,
 				9E8AF0772374B6B20092E289 /* SolicitudPrueba.swift in Sources */,
 				EC550E6C2373D47D00BA11A2 /* Resena.swift in Sources */,
-				9E8AF0792374B6BF0092E289 /* UsuarioPrueba.swift in Sources */,
+				9E8AF0792374B6BF0092E289 /* UsuarioViewModel.swift in Sources */,
 				9E5428ED2373A7A300B35C74 /* AppDelegate.swift in Sources */,
 				EC550E642373D2C100BA11A2 /* Viaje.swift in Sources */,
+				ECCC6AEE2385EE3400BA1A72 /* RegistrarUsuarioConductorForm.swift in Sources */,
 				9E8AF0702374A4410092E289 /* MiViajeCardView.swift in Sources */,
 				9E8AF07D2374CE3F0092E289 /* MainView.swift in Sources */,
 				9E8AF06E23747CE10092E289 /* ViajesView.swift in Sources */,
@@ -381,7 +401,7 @@
 				9E8AF07B2374B9EC0092E289 /* PerfilView.swift in Sources */,
 				9E5428F42373A7A300B35C74 /* ContentView.swift in Sources */,
 				9E8AF06C23746F160092E289 /* HomeView.swift in Sources */,
-				9E8AF06A2373E1670092E289 /* ViajePrueba.swift in Sources */,
+				9E8AF06A2373E1670092E289 /* ViajeViewModel.swift in Sources */,
 				9E5428EF2373A7A300B35C74 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
