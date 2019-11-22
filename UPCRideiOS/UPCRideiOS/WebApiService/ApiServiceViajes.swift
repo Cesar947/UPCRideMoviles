@@ -16,8 +16,8 @@ class ViajeService: ObservableObject{
     
     let generalURL: String = "http://ec2-52-15-215-247.us-east-2.compute.amazonaws.com:8080/"
     
-    func listarViajes(/*completion: @escaping ([Viaje]?) -> ()*/){
-        
+    func listarViajes() -> [Viaje]{
+        var viajes = [Viaje]()
         guard let url = URL(string: generalURL + "viajes") else {fatalError("Invalid URL")}
               
               URLSession.shared.dataTask(with: url) { (data, response, error) in
@@ -31,13 +31,17 @@ class ViajeService: ObservableObject{
                   
                   let viajesData = try! JSONDecoder().decode([Viaje].self, from: data)
                   DispatchQueue.main.async{
-                    print(viajesData)
-                    self.viajes = viajesData
+                    
+                    viajes = viajesData
                    
                   }
               }.resume()
         
+        return viajes
         
     }
+    
+    
+    
 
 }
