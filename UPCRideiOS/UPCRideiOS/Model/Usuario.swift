@@ -21,7 +21,7 @@ class Usuario:  Identifiable, Codable{
     var apellidos: String = ""
     var ubicacionLatitud: Double = 0.0
     var ubicacionLongitud: Double = 0.0
-    var facebookId: String = ""
+    var facebook_id: String = ""
     var telefono: String = ""
     var distrito: String = ""
     var rol: String = ""
@@ -62,7 +62,7 @@ class Usuario:  Identifiable, Codable{
         
         self.ubicacionLatitud = usuario.ubicacionLatitud
         self.ubicacionLongitud = usuario.ubicacionLongitud
-        self.facebookId = usuario.facebookId
+        self.facebook_id = usuario.facebook_id
         self.licenciaConducir = usuario.licenciaConducir
     }
     

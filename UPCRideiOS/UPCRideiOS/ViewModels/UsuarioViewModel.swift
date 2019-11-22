@@ -46,7 +46,7 @@ class UsuarioConductorViewModel: ObservableObject {
     
     @Published var ubicacionLatitud: Double = 0.0
     @Published var ubicacionLongitud: Double = 0.0
-    @Published var facebookId: String = ""
+    @Published var facebook_id: String = ""
     @Published var licenciaConducir: String = ""
     
     

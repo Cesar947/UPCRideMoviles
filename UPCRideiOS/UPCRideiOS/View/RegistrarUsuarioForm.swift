@@ -132,7 +132,7 @@ struct RegistrarConductorForm: View{
             
             Section(header: Text("Conductor")){
                 TextField("Código de licencia de conducir", text: self.$usuario.licenciaConducir)
-                TextField("Cómo te llamas en facebook?", text: self.$usuario.facebookId)
+                TextField("Cómo te llamas en facebook?", text: self.$usuario.facebook_id)
             }
             
                 
@@ -157,7 +157,7 @@ struct RegistrarConductorForm: View{
 
 struct RegistrarUsuarioForm_Previews: PreviewProvider {
     static var previews: some View {
-        RegistrarUsuarioForm()
+        RegistrarPasajeroForm()
     }
 }
 

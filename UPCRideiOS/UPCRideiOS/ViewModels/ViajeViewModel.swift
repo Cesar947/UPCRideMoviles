@@ -20,6 +20,7 @@ class ViajeViewModel: Identifiable{
         
     }
     
+    
     var id: Int{
         return self.viaje.id
     }

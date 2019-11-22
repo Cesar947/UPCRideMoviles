@@ -15,7 +15,7 @@ struct HomeView: View {
         NavigationView{
             VStack{
                 List(self.viajesListViewModel.viajes){ viaje in
-                     ViajeCardView(nombre: viaje.nombres, fecha: viaje.fecha, descripcion: viaje.descripcion, puntoPartida: viaje.puntoPartida, puntoDestino: viaje.puntoDestino)
+                    ViajeCardView(viaje: viaje.viaje, nombre: viaje.nombres, fecha: viaje.fecha, descripcion: viaje.descripcion, puntoPartida: viaje.puntoPartida, puntoDestino: viaje.puntoDestino)
                 }
             }
                 
