@@ -9,7 +9,8 @@
 import SwiftUI
 
 struct ViajeCardView: View {
-    
+    var viaje: Viaje
+    var pasajero: Usuario
     var nombre: String
     var fecha: String
     var descripcion: String
@@ -17,7 +18,7 @@ struct ViajeCardView: View {
     var puntoDestino: String
     
     var body: some View {
-      VStack(alignment: .center) {
+        VStack(alignment: .center){
         HStack(alignment: .center) {
             Image("loli")
                   .resizable()
@@ -44,49 +45,56 @@ struct ViajeCardView: View {
             }.padding(.trailing, 160)
             
         }.padding(.top, 20)
-          
-        Text(self.descripcion)
-            .font(.callout)
-            .padding(.top, 10)
-            .padding([.trailing, .leading], 24.5)
-        
-        HStack {
-            Image("left")
-                .padding(.trailing, 5)
+        VStack{
+            Text(self.descripcion)
+                       .font(.callout)
+                       .padding(.top, 10)
+                       .padding([.trailing, .leading], 24.5)
+                       .multilineTextAlignment(.center)
+                   
+                   HStack {
+                       Image("left")
+                           .padding(.trailing, 5)
 
-            VStack {
-                Text(self.puntoPartida)
-                    .padding(.top, 10)
-                    .padding(.leading, -100)
-                Image("divider")
-                Text(self.puntoDestino)
-                    .multilineTextAlignment(.leading)
-                    .padding(.top, 5)
-                    .padding(.leading, -80)
-            }
-            .padding(.bottom)
-        }.padding(.trailing, 50)
+                       VStack {
+                           Text(self.puntoPartida)
+                               .padding(.top, 10)
+                               .padding(.leading, -100)
+                           Image("divider")
+                           Text(self.puntoDestino)
+                               .multilineTextAlignment(.leading)
+                               .padding(.top, 5)
+                               .padding(.leading, -80)
+                       }
+                       .padding(.bottom)
+                   }.padding(.trailing, 50)
+        }
+       
             
           
         HStack {
-            Button(action: {
+            /*Button(action: {
                   print("Viaje Comentado")
               }) {
-                  Text(" ")
-                      .foregroundColor(Color.black)
-                    .padding(.bottom, 2)
-                    .padding(.trailing, 50)
-                      .background(Image("icons_comment"))
-            }.padding(5)
-            
-            Button(action: {
-                  print("Viaje Solicitado")
-              }) {
-                  Text(" ")
-                      .foregroundColor(Color.black)
-                    .padding(.bottom, 2)
-                      .background(Image("icons_rideshare"))
-            }.padding(5)
+              
+                    Text("Resenar")
+                
+                    
+                     // .background(Image("icons_comment"))
+            }.padding(1)*/
+            /* Button(action: {
+                            print("Viaje Solicitado")
+                        }) {
+                            Text("Solicitar")
+                                
+                              
+                               // .background(Image("icons_rideshare"))
+                      }.padding(1)*/
+            NavigationLink(destination: SolicitarViajeView(viaje: self.viaje, pasajero: self.pasajero)) {
+                Text("Solicitar").foregroundColor(Color.blue)
+                }
+          
+         
         }.padding(.leading, 220)
       }
       .padding()
@@ -97,8 +105,10 @@ struct ViajeCardView: View {
     }
 }
 
+
+
 struct ViajeCardView_Previews: PreviewProvider {
     static var previews: some View {
-        ViajeCardView(nombre: "Brian Miramira", fecha: "2019-11-14" , descripcion: "Viaje de San Martin de Miradflores a San Juan de Burga", puntoPartida:  "Casita", puntoDestino:  "UPC San Miguel")
+        ViajeCardView(viaje: Viaje(), pasajero: Usuario(),nombre: "Brian Miramira", fecha: "2019-11-14" , descripcion: "Viaje de San Martin de Miradflores a San Juan de Burga", puntoPartida:  "Casita", puntoDestino:  "UPC San Miguel")
     }
 }

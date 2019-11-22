@@ -4,8 +4,6 @@ import Combine
 
 
 class WebService{
-
-
     
 func registrarPasajero(usuario: Usuario){
 

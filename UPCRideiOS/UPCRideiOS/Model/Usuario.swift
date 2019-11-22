@@ -43,7 +43,27 @@ class Usuario:  Identifiable, Codable{
             self.telefono = usuario.telefono
             self.distrito = usuario.distrito
             self.sede = usuario.sede
+            self.ubicacionLatitud = usuario.ubicacionLatitud
+            self.ubicacionLongitud = usuario.ubicacionLongitud
             
+    }
+    
+    init(usuario: UsuarioConductorViewModel){
+        self.codigo = usuario.codigo
+        self.correoUPC = usuario.correoUPC
+        self.contraseña = usuario.contraseña
+        self.dni = usuario.dni
+        self.nombres = usuario.nombres
+        self.apellidos = usuario.apellidos
+        self.telefono = usuario.telefono
+        self.distrito = usuario.distrito
+        self.sede = usuario.sede
+        
+        
+        self.ubicacionLatitud = usuario.ubicacionLatitud
+        self.ubicacionLongitud = usuario.ubicacionLongitud
+        self.facebook_id = usuario.facebook_id
+        self.licenciaConducir = usuario.licenciaConducir
     }
     
     

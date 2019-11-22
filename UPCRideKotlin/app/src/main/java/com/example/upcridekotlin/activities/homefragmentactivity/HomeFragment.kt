@@ -88,7 +88,7 @@ class HomeFragment : Fragment() {
         recyclerViewViaje = vista.findViewById(R.id.viajes_recycler)
         recyclerViewViaje!!.layoutManager = LinearLayoutManager(context)
 
-        Toast.makeText(activity, id.toString(), Toast.LENGTH_LONG).show()
+        //Toast.makeText(activity, id.toString(), Toast.LENGTH_LONG).show()
 
         viajeService!!.getAllViajes().enqueue(object: Callback<List<Viaje>> {
             override fun onResponse(call: Call<List<Viaje>>, response: Response<List<Viaje>>) {
@@ -105,7 +105,7 @@ class HomeFragment : Fragment() {
                 adaptadorViaje!!.setOnClickListener( object : View.OnClickListener{
                     override fun onClick(view:View){
 
-                        Toast.makeText(activity,sorted.get(recyclerViewViaje!!.getChildAdapterPosition(view)).id.toString(),Toast.LENGTH_LONG).show()
+                       // Toast.makeText(activity,sorted.get(recyclerViewViaje!!.getChildAdapterPosition(view)).id.toString(),Toast.LENGTH_LONG).show()
                         var miBundleViaje = Bundle()
 
                         miBundleViaje.putInt("idViaje",sorted.get(recyclerViewViaje!!.getChildAdapterPosition(view)).id)

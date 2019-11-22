@@ -12,27 +12,29 @@ import Foundation
 
 class Viaje: Codable, Identifiable{
     
-      let id: Int
-      let conductor: Usuario
-      let descripcion: String
-      let puntoPartida: String
-      let puntoDestino: String
-      let destinoLatitud: Double
-      let destintoLongitud: Double
-      let partidaLatitud: Double
-      let partidaLongitud: Double
-      let horaPartida: String
-      let horaLlegada: String
-      let entradaSalida: Int
-      let fecha: String
-      let dia: String
-      let estado: String
-      let visualizacionHabilitada: Int
-      let numeroPasajeros: Int
-      let limitePasajeros: Int
-      let precioBase: Double
+      let id: Int = 0
+      var conductor: Usuario = Usuario()
+      var descripcion: String = ""
+      var puntoPartida: String = ""
+      var puntoDestino: String = ""
+      var destinoLatitud: Double = 0.00
+      var destintoLongitud: Double = 0.00
+      var partidaLatitud: Double = 0.00
+      var partidaLongitud: Double = 0.00
+      var horaPartida: String = ""
+      var horaLlegada: String = ""
+      var entradaSalida: Int = 0
+      var fecha: String = ""
+      var dia: String = ""
+      var estado: String = ""
+      var visualizacionHabilitada: Int = 0
+      var numeroPasajeros: Int = 0
+      var limitePasajeros: Int = 0
+      var precioBase: Double = 0.00
 
-   
+    init(){
+        
+    }
   
     
     

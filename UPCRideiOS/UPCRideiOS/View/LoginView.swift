@@ -37,7 +37,7 @@ struct LoginView: View {
                          .foregroundColor(Color.blue)
                  }
                  
-                NavigationLink(destination: RegistrarUsuarioPasajeroForm().navigationBarTitle(Text(" "))
+                NavigationLink(destination: RegistrarUsuarioForm().navigationBarTitle(Text(" "))
                     .navigationBarHidden(true)) {
                  Text("Registrarme")
              }.padding()
@@ -49,14 +49,25 @@ struct LoginView: View {
      }
 }
 
+func getuser() -> String{
+    let preferences = UserDefaults.standard
+    if preferences.string(forKey: "currentLevel") != nil{
+        let access_token = preferences.string(forKey: "currentLevel")
+        return access_token!
+    } else {
+        return ""
+    }
+}
+
 struct LogView: View {
     
-    @State private var username: String = ""
+    @State private var username: String = getuser()
     @State private var password: String = ""
     @Binding var signedIn: Bool
 
     
     var body: some View {
+       
         NavigationView{
             VStack{
                 VStack{
@@ -72,19 +83,29 @@ struct LogView: View {
                 VStack{
                     TextField("Correo UPC", text: $username).padding()
                     SecureField("Contraseña", text: $password).padding()
+
+                    
                     Button(action: { if self.username == "Ola" && self.password == "123"{
+
                         self.signedIn = true
+                        
+                        let preferences = UserDefaults.standard
+                        let currentLevel = "Ola"
+                        let currentLevelKey = "currentLevel"
+                        preferences.set(currentLevel, forKey: currentLevelKey)
                     } else{ self.signedIn = false} }) {
                         Text("Iniciar Sesion")
                     }
                     
                 }.padding([.leading, .trailing], 30)
             }.padding(.bottom, 300)
-            .navigationBarTitle(Text(" "))
-            .navigationBarHidden(false)
+                .navigationBarTitle(Text(" "))
+                .navigationBarHidden(false)
         }
+        
     }
 }
+
 
 
 struct TransView: View{
