@@ -49,6 +49,11 @@ class solicitar_viaje : AppCompatActivity(), MapsFragment.OnFragmentInteractionL
     lateinit var usuarioApiService: UsuarioApiService
     lateinit var btnSolicitarSolo : Button
 
+    lateinit var tvFechaViaje : TextView
+    lateinit var tvHoraPartida : TextView
+    lateinit var tvHoraLlegada : TextView
+    lateinit var tvDescripcionViaje : TextView
+
     lateinit var ApiGoogle:GoogleMapsApiService
 
     var solicitud : Solicitud?= null
@@ -86,12 +91,18 @@ class solicitar_viaje : AppCompatActivity(), MapsFragment.OnFragmentInteractionL
         etMensajeSol = findViewById(R.id.etMensaje)
         btnSolicitarSolo = findViewById(R.id.btnSolicitarViaje)
 
+        tvFechaViaje = findViewById(R.id.solo_fecha) as TextView
+        tvHoraLlegada = findViewById(R.id.solo_hora_llegada) as TextView
+        tvHoraPartida = findViewById(R.id.solo_hora_partida) as TextView
+        tvDescripcionViaje = findViewById(R.id.solo_descrip) as TextView
+
+
 
         var miBundle = this.intent.extras
         var idViaje = miBundle!!.getInt("idViaje")
         var idPasajero = miBundle!!.getInt("idPasajero")
         var rol = miBundle!!.getChar("rol")
-        Toast.makeText(this,miBundle.toString(),Toast.LENGTH_LONG).show()
+        //Toast.makeText(this,miBundle.toString(),Toast.LENGTH_LONG).show()
 
 
         viajeApiService.getViajeById(idViaje).enqueue(object: Callback<Viaje>{
@@ -103,12 +114,17 @@ class solicitar_viaje : AppCompatActivity(), MapsFragment.OnFragmentInteractionL
                 tvConductorSol.text = response.body()?.conductor?.nombres.toString() + " " + response.body()?.conductor?.apellidos.toString()
                 tvPuntoPartidaSol.text = response.body()?.puntoPartida.toString()
                 tvPuntoDestinoSol.text = response.body()?.puntoDestino.toString()
+                tvHoraPartida.text = response.body()?.horaPartida.toString()
+                tvHoraLlegada.text = response.body()?.horaLlegada.toString()
+                tvDescripcionViaje.text = response.body()?.descripcion.toString()
+                tvFechaViaje.text = response.body()?.fecha.toString()
+
             }
 
         })
 
         fragmento = MapsFragment()
-        supportFragmentManager.beginTransaction().replace(R.id.contenedor, fragmento!!).commit()
+        supportFragmentManager.beginTransaction().replace(R.id.mapita, fragmento!!).commit()
 
 
 
@@ -123,9 +139,12 @@ class solicitar_viaje : AppCompatActivity(), MapsFragment.OnFragmentInteractionL
             }
             override fun onFailure(call: Call<JsonObject>, t: Throwable) {
                     t?.printStackTrace()
+                Log.i("el json ahhhhhh", "what xuxa fue")
             }
 
         })
+
+
         var dia: String = LocalDateTime.now().dayOfMonth.toString();
         var mes: String = LocalDateTime.now().monthValue.toString();
         var año: String = LocalDateTime.now().year.toString();

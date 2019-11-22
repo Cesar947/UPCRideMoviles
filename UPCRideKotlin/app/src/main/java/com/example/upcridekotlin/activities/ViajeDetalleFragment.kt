@@ -79,7 +79,7 @@ class ViajeDetalleFragment : Fragment() {
         rol = arguments!!.getChar("rol",'P')
 
 
-        Toast.makeText(activity,arguments.toString(),Toast.LENGTH_LONG).show()
+        //Toast.makeText(activity,arguments.toString(),Toast.LENGTH_LONG).show()
 
         mostrarViaje()
 

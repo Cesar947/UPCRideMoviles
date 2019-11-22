@@ -8,123 +8,233 @@
     android:id = "@+id/contenedor">
 
 
-    <TextView
-        android:id="@+id/tvConductorSol"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="25dp"
-        android:layout_marginTop="24dp"
-        android:text="@string/tvConductorSol"
-        android:textSize="20dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView2"
+        android:layout_width="409dp"
+        android:layout_height="381dp"
 
-
-    <TextView
-        android:id="@+id/tvPuntoPartida"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="25dp"
-        android:layout_marginTop="25dp"
-        android:layout_marginEnd="203dp"
-        android:text="@string/tvPuntoPartidaSol"
-        android:textSize="18dp"
-        app:layout_constraintEnd_toStartOf="@+id/tvPartidaTextoSol"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvConductorSol" />
-
-    <TextView
-        android:id="@+id/tvPuntoDestino"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="25dp"
-        android:layout_marginTop="20dp"
-        android:text="@string/tvPuntoDestinoSol"
-        android:textSize="18dp"
-        app:layout_constraintEnd_toStartOf="@+id/tvDestinoTextoSol"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvPuntoPartida" />
-
-    <TextView
-        android:id="@+id/tvMensajeSol"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="25dp"
-        android:layout_marginTop="25dp"
-        android:text="@string/tvMensajeSol"
-        android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/etMensaje"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvPuntoDestino"
-        app:layout_constraintVertical_bias="0.0" />
 
-    <TextView
-        android:id="@+id/tvConductorTextoSol"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="25dp"
-        android:layout_marginTop="24dp"
-        android:text="TextView"
-        android:textSize="20dp"
+        app:layout_constraintBottom_toTopOf="@id/mapita"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/tvConductorSol"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-    <TextView
-        android:id="@+id/tvPartidaTextoSol"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="25dp"
-        android:text="TextView"
-        android:textSize="18dp"
-        app:layout_constraintStart_toEndOf="@+id/tvPuntoPartida"
-        app:layout_constraintTop_toBottomOf="@+id/tvConductorTextoSol" />
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            android:src="@drawable/postear" />
 
-    <TextView
-        android:id="@+id/tvDestinoTextoSol"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="25dp"
-        android:layout_marginTop="20dp"
-        android:text="TextView"
-        android:textSize="18dp"
-        app:layout_constraintStart_toEndOf="@+id/tvPuntoDestino"
-        app:layout_constraintTop_toBottomOf="@+id/tvPartidaTextoSol" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="25dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
 
-    <EditText
-        android:id="@+id/etMensaje"
-        android:layout_width="273dp"
-        android:layout_height="39dp"
-        android:layout_marginStart="22dp"
-        android:layout_marginTop="25dp"
-        android:layout_marginEnd="10dp"
-        android:ems="10"
-        android:gravity="start|top"
-        android:inputType="textMultiLine"
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/foto_perfil"
+                        android:layout_width="42dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="2dp"
+                        tools:srcCompat="@drawable/user" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tvConductorTextoSol"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+
+                            android:fontFamily="sans-serif-medium"
+
+                            android:text=""
+
+                            android:textColor="@color/common_google_signin_btn_text_dark_default"
+                            android:textSize="15sp" />
+
+                        <TextView
+                            android:id="@+id/solo_fecha"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text=""
+                            android:textColor="@color/common_google_signin_btn_text_dark_default"
+
+                            android:textSize="8sp" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="260dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/solo_descrip"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginBottom="10dp"
+                    android:text=""
+                    android:textColor="@color/common_google_signin_btn_text_dark_default" />
+
+                <LinearLayout
+                    android:layout_width="412dp"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/solo_sentido"
+                        android:layout_width="33dp"
+                        android:layout_height="44dp"
+                        android:layout_margin="10dp"
+                        android:layout_weight="1"
+                        app:srcCompat="@drawable/left2" />
+
+                    <LinearLayout
+                        android:layout_width="372dp"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tvPartidaTextoSol"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text=""
+                            android:textColor="@color/common_google_signin_btn_text_dark_default" />
+
+                        <ImageView
+                            android:id="@+id/d_division"
+                            android:layout_width="150dp"
+                            android:layout_height="14dp"
+                            app:srcCompat="@drawable/divider3" />
+
+                        <TextView
+                            android:id="@+id/tvDestinoTextoSol"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text=""
+                            android:textColor="@color/common_google_signin_btn_text_dark_default" />
+
+                        <ImageView
+                            android:id="@+id/imageView10"
+                            android:layout_width="match_parent"
+                            android:layout_height="25dp"
+                            android:src="@android:color/transparent" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/solo_hora_partida"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text=""
+                                android:textColor="@color/common_google_signin_btn_text_dark_default" />
+
+                            <ImageView
+                                android:id="@+id/d_division2"
+                                android:layout_width="150dp"
+                                android:layout_height="14dp"
+                                app:srcCompat="@drawable/divider3" />
+
+                            <TextView
+                                android:id="@+id/solo_hora_llegada"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text=""
+                                android:textColor="@color/common_google_signin_btn_text_dark_default" />
+
+                            <ImageView
+                                android:id="@+id/d_division3"
+                                android:layout_width="291dp"
+                                android:layout_height="14dp"
+                                app:srcCompat="@drawable/divider3" />
+
+                            <EditText
+                                android:id="@+id/etMensaje"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="80dp"
+                                android:ems="10"
+                                android:gravity="start|top"
+                                android:hint="Escriba un breve mensaje para el conductor"
+                                android:inputType="textMultiLine"
+                                android:textColor="@color/common_google_signin_btn_text_dark_default"
+                                android:textColorHint="@color/common_google_signin_btn_text_dark_pressed"
+                                android:textSize="14sp" />
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/textView12"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="0dp"
+                android:fontFamily="sans-serif-medium"
+
+
+                android:text="Marque el punto de recojo en el mapa"
+                android:textAlignment="center"
+                android:textColor="@color/common_google_signin_btn_text_dark_default"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <fragment
+        android:id="@+id/mapita"
+        android:name="com.example.upcridekotlin.activities.MapsFragment"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/tvMensajeSol"
-        app:layout_constraintTop_toBottomOf="@+id/tvDestinoTextoSol"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cardView2" />
+
 
     <Button
         android:id="@+id/btnSolicitarViaje"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:backgroundTint="@color/colorPrimary"
         android:text="Solicitar viaje"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etMensaje"
-        app:layout_constraintVertical_bias="0.928"
-        />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.977" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

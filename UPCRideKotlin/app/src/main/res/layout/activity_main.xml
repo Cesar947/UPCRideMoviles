@@ -11,12 +11,15 @@
         android:id="@+id/main_nav"
         android:layout_width="match_parent"
         android:layout_height="55dp"
-        android:background="?attr/colorAccent"
+        android:background="@color/colorPrimary"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:itemTextColor="@color/bnv_tab_item_foreground"
+        app:itemIconTint="@color/bnv_tab_item_foreground"
         app:layout_constraintVertical_bias="1.0"
+
         app:menu="@menu/navbar_items">
 
     </com.google.android.material.bottomnavigation.BottomNavigationView>
@@ -37,7 +40,7 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="71dp"
-        android:background="?attr/colorAccent"
+        android:background="@color/colorPrimary"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
         app:layout_constraintBottom_toBottomOf="@+id/main_nav"
@@ -51,18 +54,20 @@
         android:id="@+id/toolbartxt"
         android:layout_width="311dp"
         android:layout_height="45dp"
-        android:fontFamily="@font/gibson_regular"
+        android:layout_marginLeft="8dp"
+
+        android:fontFamily="sans-serif-medium"
         android:gravity="start"
         android:text="@string/toolbarText"
-        android:textColor="?attr/colorPrimaryDark"
-        android:textSize="28sp"
-        android:layout_marginLeft="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/filtrar_frame"
+        android:textColor="#FFF"
+        android:textSize="35sp"
+
+        app:layout_constraintBottom_toBottomOf="@+id/main_nav"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.16"
         app:layout_constraintStart_toStartOf="@+id/toolbar"
         app:layout_constraintTop_toTopOf="@+id/toolbar"
-        app:layout_constraintVertical_bias="0.461" />
+        app:layout_constraintVertical_bias="0.022" />
 
     <FrameLayout
         android:id="@+id/filtrar_frame"
@@ -82,6 +87,7 @@
         android:layout_height="45dp"
         android:layout_marginRight="5dp"
         android:background="@android:color/transparent"
+        android:visibility="invisible"
         app:layout_constraintBottom_toTopOf="@+id/filtrar_frame"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.555"
