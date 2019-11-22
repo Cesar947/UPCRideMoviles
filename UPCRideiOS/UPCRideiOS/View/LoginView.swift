@@ -72,7 +72,7 @@ struct LogView: View {
                 VStack{
                     TextField("Correo UPC", text: $username).padding()
                     SecureField("Contraseña", text: $password).padding()
-                    Button(action: { if self.username == "Ola" && self.password == "123"{
+                    Button(action: { if self.username == "U201710947@upc.edu.pe" && self.password == "123"{
                         self.signedIn = true
                     } else{ self.signedIn = false} }) {
                         Text("Iniciar Sesion")

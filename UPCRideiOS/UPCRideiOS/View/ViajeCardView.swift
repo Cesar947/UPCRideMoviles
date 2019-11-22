@@ -10,6 +10,7 @@ import SwiftUI
 
 struct ViajeCardView: View {
     var viaje: Viaje
+    var pasajero: Usuario
     var nombre: String
     var fecha: String
     var descripcion: String
@@ -89,7 +90,7 @@ struct ViajeCardView: View {
                               
                                // .background(Image("icons_rideshare"))
                       }.padding(1)*/
-            NavigationLink(destination: SolicitarViajeView(viaje: self.viaje, pasajero: Usuario())) {
+            NavigationLink(destination: SolicitarViajeView(viaje: self.viaje, pasajero: self.pasajero)) {
                 Text("Solicitar").foregroundColor(Color.blue)
                 }
           
@@ -108,6 +109,6 @@ struct ViajeCardView: View {
 
 struct ViajeCardView_Previews: PreviewProvider {
     static var previews: some View {
-        ViajeCardView(viaje: Viaje(), nombre: "Brian Miramira", fecha: "2019-11-14" , descripcion: "Viaje de San Martin de Miradflores a San Juan de Burga", puntoPartida:  "Casita", puntoDestino:  "UPC San Miguel")
+        ViajeCardView(viaje: Viaje(), pasajero: Usuario(),nombre: "Brian Miramira", fecha: "2019-11-14" , descripcion: "Viaje de San Martin de Miradflores a San Juan de Burga", puntoPartida:  "Casita", puntoDestino:  "UPC San Miguel")
     }
 }

@@ -40,6 +40,7 @@
 		ECCC6AEE2385EE3400BA1A72 /* RegistrarUsuarioConductorForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCC6AED2385EE3400BA1A72 /* RegistrarUsuarioConductorForm.swift */; };
 		ECDC4EF523878F0800978F59 /* SolicitudViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECDC4EF423878F0800978F59 /* SolicitudViewModel.swift */; };
 		ECDC4EF72387914A00978F59 /* SolicitarViajeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECDC4EF62387914A00978F59 /* SolicitarViajeView.swift */; };
+		ECDC4EF92387BCFF00978F59 /* ApiServiceSolicitud.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECDC4EF82387BCFF00978F59 /* ApiServiceSolicitud.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +100,7 @@
 		ECCC6AED2385EE3400BA1A72 /* RegistrarUsuarioConductorForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrarUsuarioConductorForm.swift; sourceTree = "<group>"; };
 		ECDC4EF423878F0800978F59 /* SolicitudViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolicitudViewModel.swift; sourceTree = "<group>"; };
 		ECDC4EF62387914A00978F59 /* SolicitarViajeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolicitarViajeView.swift; sourceTree = "<group>"; };
+		ECDC4EF82387BCFF00978F59 /* ApiServiceSolicitud.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiServiceSolicitud.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -237,6 +239,7 @@
 				ECC770222374E6CC00DC78EC /* ApiServiceManager.swift */,
 				EC473DEF23753D9700784881 /* ApiServiceViajes.swift */,
 				ECCC6AEB2385EB8300BA1A72 /* ApiServiceUsuario.swift */,
+				ECDC4EF82387BCFF00978F59 /* ApiServiceSolicitud.swift */,
 			);
 			path = WebApiService;
 			sourceTree = "<group>";
@@ -383,6 +386,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ECDC4EF92387BCFF00978F59 /* ApiServiceSolicitud.swift in Sources */,
 				ECC770232374E6CC00DC78EC /* ApiServiceManager.swift in Sources */,
 				EC550E6E2373D95100BA11A2 /* RegistrarUsuarioForm.swift in Sources */,
 				ECCC6AEC2385EB8300BA1A72 /* ApiServiceUsuario.swift in Sources */,
